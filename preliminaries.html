@@ -198,67 +198,62 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-coding">
-   1.1. What is coding?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notation">
-   1.2. Notation
+   1.1. Notation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computational-environment">
-   1.3. Computational environment
+   1.2. Computational environment
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#choice-of-programming-language">
-     1.3.1. Choice of programming language
+     1.2.1. Choice of programming language
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-python">
-     1.3.2. Installing Python
+     1.2.2. Installing Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-an-integrated-development-environment-ide">
-     1.3.3. Installing an integrated development environment (IDE)
+     1.2.3. Installing an integrated development environment (IDE)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-your-first-code-hello-world">
-   1.4. Running your first code: Hello World!
+   1.3. Running your first code: Hello World!
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packages-environments-and-the-terminal">
-   1.5. Packages, environments, and the terminal
+   1.4. Packages, environments, and the terminal
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-terminal">
-     1.5.1. The terminal
+     1.4.1. The terminal
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-packages">
-     1.5.2. Installing packages
+     1.4.2. Installing packages
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#advanced-working-with-python-environments-and-anaconda">
-     1.5.3. (Advanced) Working with Python environments and Anaconda
+     1.4.3. (Advanced) Working with Python environments and Anaconda
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   1.6. Review
+   1.5. Review
   </a>
  </li>
 </ul>
@@ -275,20 +270,14 @@
   <div class="section" id="preliminaries">
 <h1><span class="section-number">1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll find out how to install and setup everything you need to get coding.</p>
-<div class="section" id="what-is-coding">
-<h2><span class="section-number">1.1. </span>What is coding?<a class="headerlink" href="#what-is-coding" title="Permalink to this headline">¶</a></h2>
-<p>Computer programming, or coding, is the process of issuing a series of commands that a computer can understand and execute in order to perform a task. Given so much of economics is quantitative, coding is an essential skill for many economists.</p>
-<p>As a skill, programming is incredibly useful in a wide range of domains. It can be hugely rewarding. It’s worth saying at the outset though, that, <em>no-one</em>, and I mean no-one, memorises half of the stuff you’ll see in this book. 80% or more of time spent programming is actually time spent looking up how to do this or that online, ‘debugging’ a code for errors, or testing code. This applies to all programmers, regardless of level. You are here to learn the skills and concepts of programming, not the precise syntax (which is easy to look up later).</p>
-<p><img alt="xkcd-what-did-you-see" src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" /></p>
-</div>
 <div class="section" id="notation">
-<h2><span class="section-number">1.2. </span>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
 <p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Letters from the Latin alphabet denote the values of data, for instance <span class="math notranslate nohighlight">\(x\)</span> for a variable or vector. Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{N} \displaystyle\sum_{i} x_i\)</span>.</p>
 </div>
 <div class="section" id="computational-environment">
-<h2><span class="section-number">1.3. </span>Computational environment<a class="headerlink" href="#computational-environment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Computational environment<a class="headerlink" href="#computational-environment" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="choice-of-programming-language">
-<h3><span class="section-number">1.3.1. </span>Choice of programming language<a class="headerlink" href="#choice-of-programming-language" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.1. </span>Choice of programming language<a class="headerlink" href="#choice-of-programming-language" title="Permalink to this headline">¶</a></h3>
 <p>This book uses Python, which is usually ranked as the first or second most popular programming language in the world and, just as importantly, it’s also one of the easiest to learn. It’s a general purpose language, which means it can do a wide range of tasks. The joke goes that Python is the 2nd best language at everything, and there’s some truth to that (although Python is 1st best in machine learning). But a language that covers such a lot of ground is also very useful; and Python is widely used across industry, academia, and the public sector. It is used for everything from computer games to websites, data science to software applications. As an economist, you will know that this means Python benefits from strong positive network externalities. As such, learning Python has a lot of value and, once you have, learning more specialised languages like C++ or R is much easier. Basic programming concepts can be found in almost any programming language. Because of their similarities, however, readers will find that they can follow even more of the content of the book in some specific other languages, especially Julia and R.</p>
 <p><img alt="xkcd-python" src="https://imgs.xkcd.com/comics/python.png" /></p>
 <p>Different languages have different strengths and weaknesses. Python and Julia are so-called high-level languages that are easier to write code in. C++ and Fortran are more low-level languages and much more fussy and labour-intensive to write code in; but, once the code is written, it runs <em>fast</em>.</p>
@@ -302,11 +291,11 @@
 </ul>
 </div>
 <div class="section" id="installing-python">
-<h3><span class="section-number">1.3.2. </span>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.2. </span>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h3>
 <p>Download the individual edition of the <a class="reference external" href="https://www.anaconda.com/">Anaconda distribution</a> of Python for your operating system and install it (currently found under Products -&gt; Individual Edition). This will provide you with a Python installation and a host of the most useful libraries.</p>
 </div>
 <div class="section" id="installing-an-integrated-development-environment-ide">
-<h3><span class="section-number">1.3.3. </span>Installing an integrated development environment (IDE)<a class="headerlink" href="#installing-an-integrated-development-environment-ide" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.3. </span>Installing an integrated development environment (IDE)<a class="headerlink" href="#installing-an-integrated-development-environment-ide" title="Permalink to this headline">¶</a></h3>
 <p>An integrated development environment is a software application that provides a few tools to make coding easier. The most important of these is a way to write the code itself! IDEs are not the only way to programme, but they are the most useful. If you have used <strong>Stata</strong> or <strong>Matlab</strong>, you may not have realised it, but these package up the language and the IDE together. But they are separate things: the language is like a language, the IDE is the notebook that you write it in.</p>
 <p>Here are some of the useful features an IDE might have:</p>
 <ul class="simple">
@@ -327,8 +316,8 @@
 </div>
 </div>
 <div class="section" id="running-your-first-code-hello-world">
-<h2><span class="section-number">1.4. </span>Running your first code: Hello World!<a class="headerlink" href="#running-your-first-code-hello-world" title="Permalink to this headline">¶</a></h2>
-<p>Now you will run your first code. Create a new folder for your work (perhaps named ‘codingforeconomists’, no white space), open that folder with Visual Studio Code ,and create a new file, naming it <code class="docutils literal notranslate"><span class="pre">hello_world.py</span></code>. In the Visual Studio Code editor, add a single line to the file:</p>
+<h2><span class="section-number">1.3. </span>Running your first code: Hello World!<a class="headerlink" href="#running-your-first-code-hello-world" title="Permalink to this headline">¶</a></h2>
+<p>Now you will run your first code. Create a new folder for your work (perhaps named ‘codingforeconomists’, no white space), open that folder with Visual Studio Code and create a new file, naming it <code class="docutils literal notranslate"><span class="pre">hello_world.py</span></code>. In the Visual Studio Code editor, add a single line to the file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -336,13 +325,17 @@
 <p>To run the code in the <strong>terminal</strong>, right-click and select ‘Run Python file in terminal’. This will bring up a new window terminal <em>within</em> Visual Studio Code that runs your entire script–and you should see ‘Hello World!’ pop up!</p>
 <p>The other way of working, with the interactive window, will be much more familiar to anyone who has used Stata or Matlab and is much more suited to the way economists tend to work because it doesn’t require you to write the whole script, start to finish, ahead of time. Instead, you can jam, changing code as you go, (re-)running it line by line. To run the code in an interactive window, <strong>right-click and select ‘Run Selection/Line in Interactive Window’</strong>. This should cause a new interactive window to appear within Visual Studio Code, and the line to execute within it.</p>
 <p>At this point, you may see a message about the default behaviour when you press shift+return; for this book, it’s good to have shift+return default to running a line in the interactive window.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Making code run in interactive window by default</p>
+<p>Open up Visual Studio Code and go to settings (click on the cog in the bottom left-hand corner, then click settings). Type ‘python send’ into the search box. Depending on your configuration and Visual Studio Code version, you will either see ‘Python › Data Science: Send Selection To Interactive Window’ or ‘Jupyter: Send Selection To Interactive Window’. Make sure that there is a tick in the box. This will ensure that when you hit shift+enter on code scripts, it will execute your code in Visual Studio’s interactive window.</p>
+</div>
 <p>Let’s make more use of the interactive window. At the bottom of it, there is a box that says ‘Type code here and press shift-enter to run’. Go ahead and type <code class="docutils literal notranslate"><span class="pre">print('Hello</span> <span class="pre">World!')</span></code> directly in there to achieve the same effect as running the line from your script. Also, any variables you run in the interactive window (from your script or directly) will persist.</p>
 <p>This shows the two ways of working with the interactive window–running from a script, or writing code directly.</p>
 </div>
 <div class="section" id="packages-environments-and-the-terminal">
-<h2><span class="section-number">1.5. </span>Packages, environments, and the terminal<a class="headerlink" href="#packages-environments-and-the-terminal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Packages, environments, and the terminal<a class="headerlink" href="#packages-environments-and-the-terminal" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-terminal">
-<h3><span class="section-number">1.5.1. </span>The terminal<a class="headerlink" href="#the-terminal" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.4.1. </span>The terminal<a class="headerlink" href="#the-terminal" title="Permalink to this headline">¶</a></h3>
 <p>In the section above, I mentioned the <em>terminal</em>. This is a text-based way to issue commands to your computer and knowing a little bit about it is really useful for coding (and more) because managing packages, environments (which we haven’t yet discussed), and version control (ditto) is all done via the terminal. We’ll come to these in due course, but for now, a little background on what the terminal is and what it does.</p>
 <p>Firstly, everything you can do by clicking on icons to launch programmes on your computer, you can also do via the terminal, also known as the command line. For many programmes, a lot of their functionality can be accessed using the command line, and other programmes <em>only</em> have a command line interface (CLI), including some that are used for data science. If you have installed the Anaconda distribution of Python, your terminal should look something like this as your ‘command prompt’:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> your-username@your-computer current-directory %
@@ -358,7 +351,7 @@
 <p>If you’re using a bash or zsh terminal, there are a couple of commands that are so essential it would be remiss <em>not</em> to mention them. One is to list the contents of the current directory, for which the command is <code class="docutils literal notranslate"><span class="pre">ls</span></code>. The other is to move directory, for which the command is <code class="docutils literal notranslate"><span class="pre">cd</span></code>. If you find that you’ve opened a terminal you can always get a sense of where you are from <code class="docutils literal notranslate"><span class="pre">ls</span></code> and move to where you need to be using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">directory/</span></code>. One of the advantages of opening a folder in Visual Studio Code and then opening a terminal with Code using ‘New Terminal’ is that the terminal will open in the folder you’re working in.</p>
 </div>
 <div class="section" id="installing-packages">
-<h3><span class="section-number">1.5.2. </span>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.4.2. </span>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
 <p>The default installation of Anaconda comes with many of the packages you’ll need, but it won’t be long before you’ll need to install some extra ones. Extra packages, for example for regression, deliver a lot of the value of a programming language. You may sometimes hear that Python is a ‘batteries included’ programming language, meaning that the base language is very rich. This is definitely true! But even so, we’ll extend it further</p>
 <p>To install extra Python packages, there are two options, and both use the command line. Once you have activated the environment you’d like to install the package in, for instance with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">environmentname</span></code>, you install packages using another command.</p>
 <p>For very widely used packages, you can often use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. Anaconda provide pre-built packages that are convenient for a host of reasons. If there isn’t a pre-built Anaconda version of the package available, you can fall back on installing via pip using</p>
@@ -368,7 +361,7 @@
 <p>In true programming-humour style, pip is a recursive acronym that stands for ‘pip install packages’. By default, packages are installed into your <code class="docutils literal notranslate"><span class="pre">base</span></code> Python environment.</p>
 </div>
 <div class="section" id="advanced-working-with-python-environments-and-anaconda">
-<h3><span class="section-number">1.5.3. </span>(Advanced) Working with Python environments and Anaconda<a class="headerlink" href="#advanced-working-with-python-environments-and-anaconda" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.4.3. </span>(Advanced) Working with Python environments and Anaconda<a class="headerlink" href="#advanced-working-with-python-environments-and-anaconda" title="Permalink to this headline">¶</a></h3>
 <p>You can get by just fine using the base Python environment to follow this book. However, it’s always good practice to <em>use a new environment for every project</em> because, for reproducible research, we want to know what packages were used and be able to export them to a file that others can use too. For example, if you’re following this book by running the code yourself, it’s a good idea to create a new environment using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n codeforecon <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
 </pre></div>
@@ -411,7 +404,7 @@
 </div>
 </div>
 <div class="section" id="review">
-<h2><span class="section-number">1.6. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>If you have:</p>
 <ul class="simple">
 <li><p>[x] installed Python, using the Anaconda distribution of Python;</p></li>

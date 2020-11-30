@@ -217,58 +217,117 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-you-get-stuck">
+   2.1. If you get stuck
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-and-types">
-   2.1. Variables and types
+   2.2. Variables and types
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lists-and-slicing">
-   2.2. Lists and slicing
+   2.3. Lists and slicing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   2.3. Operators
+   2.4. Operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#strings">
-   2.4. Strings
+   2.5. Strings
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#booleans-and-conditions">
-   2.5. Booleans and conditions
+   2.6. Booleans and conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indentation">
+   2.7. Indentation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loops-and-list-comprehensions">
-   2.6. Loops and list comprehensions
+   2.8. Loops and list comprehensions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions">
-   2.7. Functions
+   2.9. Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dictionaries">
-   2.8. Dictionaries
+   2.10. Dictionaries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-packages-and-modules-work">
-   2.9. How packages and modules work
+  <a class="reference internal nav-link" href="#using-packages-and-modules">
+   2.11. Using packages and modules
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modules">
+     2.11.1. Modules
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#splat-and-splatty-splat">
-   2.10. Splat and splatty-splat
+   2.12. Splat and splatty-splat
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#miscellaneous">
-   2.11. Miscellaneous
+  <a class="reference internal nav-link" href="#best-practices-for-coding">
+   2.13. Best practices for coding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-in-style">
+     2.13.1. Code in style
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-not-repeat-yourself-dry">
+     2.13.2. Do not repeat yourself (DRY)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naming-conventions">
+     2.13.3. Naming conventions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-comments">
+     2.13.4. Code comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-review">
+     2.13.5. Code review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-zen-of-python">
+     2.13.6. The Zen of Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miscellaneous-fun">
+   2.14. Miscellaneous fun
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   2.15. Review
   </a>
  </li>
 </ul>
@@ -284,8 +343,21 @@
                 
   <div class="section" id="basics-of-coding">
 <h1><span class="section-number">2. </span>Basics of coding<a class="headerlink" href="#basics-of-coding" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, you’ll learn about the basics of objects, types, operations, conditions, loops, functions, and imports. These are the basic building blocks of any programming language.</p>
+<div class="section" id="if-you-get-stuck">
+<h2><span class="section-number">2.1. </span>If you get stuck<a class="headerlink" href="#if-you-get-stuck" title="Permalink to this headline">¶</a></h2>
+<p>It’s worth saying at the outset that, <em>no-one</em>, and I mean no-one, memorises half of the stuff you’ll see in this book. 80% or more of time spent programming is actually time spent looking up how to do this or that online, ‘debugging’ a code for errors, or testing code. This applies to all programmers, regardless of level. You are here to learn the skills and concepts of programming, not the precise syntax (which is easy to look up later).</p>
+<p><img alt="xkcd-what-did-you-see" src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" /></p>
+<p>Knowing how to Google is one of the most important skills of any coder. No-one remembers every function from every library. Here are some useful coding resources:</p>
+<ul class="simple">
+<li><p>when you have an error, look on Stack Overflow to see if anyone else had the same error (they probably did) and how they overcame it.</p></li>
+<li><p>if you’re having trouble navigating a new package or library, look up the documentation online. The best libraries put as much effort into documentation as they do the code base.</p></li>
+<li><p>use cheat sheets to get on top of a range of functionality quickly. For instance, this excellent (mostly) base Python <a class="reference external" href="https://gto76.github.io/python-cheatsheet/">Cheat Sheet</a>.</p></li>
+<li><p>if you’re having a coding issue, take a walk to think about the problem, or explain your problem to an animal toy on your desk (<a class="reference external" href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">traditionally</a> a rubber duck, but other animals are available).</p></li>
+</ul>
+</div>
 <div class="section" id="variables-and-types">
-<h2><span class="section-number">2.1. </span>Variables and types<a class="headerlink" href="#variables-and-types" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Variables and types<a class="headerlink" href="#variables-and-types" title="Permalink to this headline">¶</a></h2>
 <p>Creating a variable in Python is achieved via an assignment. It’s simpler than it sounds:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -350,7 +422,7 @@
 </div>
 </div>
 <div class="section" id="lists-and-slicing">
-<h2><span class="section-number">2.2. </span>Lists and slicing<a class="headerlink" href="#lists-and-slicing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Lists and slicing<a class="headerlink" href="#lists-and-slicing" title="Permalink to this headline">¶</a></h2>
 <p>Lists are a really useful way to work with lots of data at once. They’re defined with square brackets, with entries separated by commas. You can also construct them by appending entries:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -427,7 +499,7 @@ one more entry
 </div>
 </div>
 <div class="section" id="operators">
-<h2><span class="section-number">2.3. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
 <p>All of the basic operators you see in mathematics are available to use: <code class="docutils literal notranslate"><span class="pre">+</span></code> for addition, <code class="docutils literal notranslate"><span class="pre">-</span></code> for subtraction, <code class="docutils literal notranslate"><span class="pre">*</span></code> for multiplication, <code class="docutils literal notranslate"><span class="pre">**</span></code> for powers, <code class="docutils literal notranslate"><span class="pre">/</span></code> for division, and <code class="docutils literal notranslate"><span class="pre">%</span></code> for modulo. These work as you’d expect on numbers. But these operators are sometimes defined for other built-in data types too. For instance, we can ‘sum’ strings (which really concatenates them):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -476,7 +548,7 @@ one more entry
 </div>
 </div>
 <div class="section" id="strings">
-<h2><span class="section-number">2.4. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.5. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
 <p>In some ways, strings are treated a bit like lists, meaning you can access the individual characters via slicing and indexing. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,7 +622,7 @@ List of numbers has length:
 </div>
 </div>
 <div class="section" id="booleans-and-conditions">
-<h2><span class="section-number">2.5. </span>Booleans and conditions<a class="headerlink" href="#booleans-and-conditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.6. </span>Booleans and conditions<a class="headerlink" href="#booleans-and-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Some of the most important operations you will perform are with True and False values, also known as boolean data types. First, these behave as you’d expect: <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>, while <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>. There’s also the <code class="docutils literal notranslate"><span class="pre">not</span></code> keyword. For example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -628,7 +700,7 @@ False
 <p>One of the most useful conditional keywords is <code class="docutils literal notranslate"><span class="pre">in</span></code>. I must use this one ten times a day to pick out a variable or make sure something is where it’s supposed to be.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lovelace&#39;</span><span class="p">,</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Pigou&#39;</span><span class="p">,</span> <span class="s1">&#39;Babbage&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lovelace&#39;</span><span class="p">,</span> <span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Hopper&#39;</span><span class="p">,</span> <span class="s1">&#39;Babbage&#39;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lovelace&#39;</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">)</span>
 
@@ -668,8 +740,13 @@ False
 </div>
 <p>Note that this does nothing if the score is between 11 and 90, and prints a message otherwise.</p>
 </div>
+<div class="section" id="indentation">
+<h2><span class="section-number">2.7. </span>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h2>
+<p>You’ll have seen that certain parts of the code examples are indented. Code that is part of a function, conditional clause, or loop is indented. This isn’t a code style choice, it’s actually what tells the language that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.</p>
+<p>The standard for indentation is that each sub-statement should be indented by 4 spaces. It can be hard to keep track of these but, as usual, Visual Studio Code has you covered. Go to Settings (the cog in the bottom left-hand corner, then click Settings) and type ‘Whitespace’ into the search bar. Under ‘Editor: Render Whitespace’, select ‘boundary’. This will show any whitespace that is more than one character long using faint grey dots. Each level of indentation in your Python code should now begin with four grey dots showing that it consists of four spaces.</p>
+</div>
 <div class="section" id="loops-and-list-comprehensions">
-<h2><span class="section-number">2.6. </span>Loops and list comprehensions<a class="headerlink" href="#loops-and-list-comprehensions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.8. </span>Loops and list comprehensions<a class="headerlink" href="#loops-and-list-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>A loop is a way of executing a similar piece of code over and over in a similar way. The most useful loops are <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and list comprehensions.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop does something <em>for</em> the time that the condition is satisfied. For example,</p>
 <div class="cell docutils container">
@@ -738,6 +815,9 @@ The name in position 3 is Babbage
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Adam Smith&#39;, &#39;leonara smith&#39;]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Note how we used ‘smith’ rather than ‘Smith’ and then used <code class="docutils literal notranslate"><span class="pre">lower()</span></code> to ensure we matched names regardless of the case they are written in. We can even do a whole <code class="docutils literal notranslate"><span class="pre">if</span></code> … <code class="docutils literal notranslate"><span class="pre">else</span></code> construct <em>inside</em> a list comprehension:</p>
@@ -791,7 +871,7 @@ The name in position 3 is Babbage
 <p>This gives a nested structure that (in this case) iterates over <code class="docutils literal notranslate"><span class="pre">first_names</span></code> first, and then <code class="docutils literal notranslate"><span class="pre">last_names</span></code>.</p>
 </div>
 <div class="section" id="functions">
-<h2><span class="section-number">2.7. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>If you’re an economist, I hardly need to tell you what a function is. In coding, it’s much the same as in mathematics: a function has inputs, it performs its function, and it returns any outputs. Functions begin with a <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword for ‘define a function’. The body of the function is then indented relative to the left-most text. Function arguments are defined in brackets following the name, with different inputs separated by commas. Any outputs are given with the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword, again with different variables separated by commas. Let’s see a very simple example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -867,7 +947,7 @@ score_message(score, name=&#39;student&#39;)
 </div>
 </div>
 <div class="section" id="dictionaries">
-<h2><span class="section-number">2.8. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.10. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>Another built-in Python type that is enormously useful is the <em>dictionary</em>. This provides a mapping one set of variables to another (either one-to-one or many-to-one). Let’s see an example of defining a dictionary and using it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,9 +966,6 @@ score_message(score, name=&#39;student&#39;)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Apple&#39;, &#39;Apple&#39;, &#39;Satsuma&#39;, &#39;Apple&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -912,12 +989,109 @@ Cox maps into Apple
 </div>
 </div>
 </div>
-<div class="section" id="how-packages-and-modules-work">
-<h2><span class="section-number">2.9. </span>How packages and modules work<a class="headerlink" href="#how-packages-and-modules-work" title="Permalink to this headline">¶</a></h2>
-<p>We already saw how to install package work in the previous chapter.</p>
+<div class="section" id="using-packages-and-modules">
+<h2><span class="section-number">2.11. </span>Using packages and modules<a class="headerlink" href="#using-packages-and-modules" title="Permalink to this headline">¶</a></h2>
+<p>We already saw how to install packages in the previous chapter: using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on the command line. What about using a package that you’ve installed? That’s what we’ll look at now.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to install packages into a dedicated conda environment, remember to <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">environmentname</span></code> before using the package install command(s).</p>
+</div>
+<p>Let’s see an example of using the powerful numerical library <strong>numpy</strong>. There are different ways to import packages, you can import the entire package in one go or just import the functions you need. When an entire package is imported, you can give it any name you like and the convention for <strong>numpy</strong> is to import it as the shortened ‘np’. All of the functions and methods of the package can be accessed by typing <code class="docutils literal notranslate"><span class="pre">np</span></code> followed by <code class="docutils literal notranslate"><span class="pre">.</span></code> and then typing the function name. As well as demonstrating importing the whole package, the example below shows importing just one specific function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matrix:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="n">inv_mat</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inverse:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inv_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix:
+[[4. 2. 4.]
+ [4. 5. 6.]
+ [7. 8. 9.]]
+Inverse:
+[[ 0.25       -1.16666667  0.66666667]
+ [-0.5        -0.66666667  0.66666667]
+ [ 0.25        1.5        -1.        ]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could have imported all of <strong>numpy</strong> using <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">*</span></code> but this is considered bad practice as it fills our ‘namespace’ with function names that might clash with other packages and it’s less easy to parse which package’s function is doing what. R also relies heavily on imported libraries but uses a different convention for namespaces: in that case, everything is imported but the <em>order</em> of package imports matters for what functions are default.</p>
+<div class="section" id="modules">
+<h3><span class="section-number">2.11.1. </span>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, you will want to call in some code from a different script. Imagine you have several code scripts (a, b, and c), all of which use the same underlying function that <em>you</em> have written. A central tenet of good coding is that you <em>do not repeat yourself</em>. Therefore, a bad solution to this problem would be to copy and paste the same code into all three of the scripts. A <em>good</em> solution is to write the code that’s need just once in a separate ‘utility’ script and have the other scripts import that one function:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/basics-of-coding_71_0.png" src="_images/basics-of-coding_71_0.png" />
+</div>
+</div>
+<p>How would this work in practice? We would define a file ‘utilities.py’ that had the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">really_useful_func</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">number</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Then, in ‘code_script_a.py’:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utilities</span> <span class="k">as</span> <span class="nn">utils</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">really_useful_func</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
+</pre></div>
+</div>
+</div>
+</div>
+<p>An alternative is to <em>just</em> import the function we want, with the name we want:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utilities</span> <span class="kn">import</span> <span class="n">really_useful_func</span> <span class="k">as</span> <span class="n">ru_fn</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ru_fn</span><span class="p">(</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another important example is the case where you want to run ‘utilities.py’ as a script, but still want to borrow functions from it to run in other scripts. There’s a way to do this. Let’s change utilities.py to</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">really_useful_func</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">number</span><span class="o">*</span><span class="mi">10</span>
+
+
+<span class="k">def</span> <span class="nf">default_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Script has run&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">default_func</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>What this says is that if we call ‘utilities.py’ from the command line, eg</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python utilities.py
+</pre></div>
+</div>
+<p>It will return <code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">has</span> <span class="pre">run</span></code> because, by executing the script alone, we are asking for anything in the <code class="docutils literal notranslate"><span class="pre">main</span></code> block defined at the end of the file to be run. But we can still import anything from utilities into other scripts as before–and in this case it is not the main script, but an import, and so the <code class="docutils literal notranslate"><span class="pre">main</span></code> block will <em>not</em> be executed.</p>
+</div>
 </div>
 <div class="section" id="splat-and-splatty-splat">
-<h2><span class="section-number">2.10. </span>Splat and splatty-splat<a class="headerlink" href="#splat-and-splatty-splat" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12. </span>Splat and splatty-splat<a class="headerlink" href="#splat-and-splatty-splat" title="Permalink to this headline">¶</a></h2>
 <p>You read those right, yes. These are also known as unpacking operators for, respectively, arguments and dictionaries. For instance, if I have a function that takes two arguments I can send variables to it in different ways:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -934,9 +1108,7 @@ Cox maps into Apple
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+17
 </pre></div>
 </div>
 </div>
@@ -957,9 +1129,7 @@ Cox maps into Apple
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+17
 </pre></div>
 </div>
 </div>
@@ -988,8 +1158,104 @@ Cox maps into Apple
 </div>
 </div>
 </div>
-<div class="section" id="miscellaneous">
-<h2><span class="section-number">2.11. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="best-practices-for-coding">
+<h2><span class="section-number">2.13. </span>Best practices for coding<a class="headerlink" href="#best-practices-for-coding" title="Permalink to this headline">¶</a></h2>
+<p>The validity of your research depends, to a frightening degree, on the quality of your code. There are many ways to write code and, over the years, software developers have worked out best practices that help to make writing, using, debugging, and reading code more fun, and to make the end product higher quality. (There’s nothing worse than wading through someone’s terrible code.)</p>
+<p><img alt="Code quality 2" src="https://imgs.xkcd.com/comics/code_quality_2.png" /></p>
+<p>Most of the time, you are going to be writing code for your co-authors or for future you. Following best practice will save you hours, and hours, and <em>hours</em> of time. You may think that by cutting out some of these practices that you’ll save time. Well, it depends how heavily you discount your future time. Regardless of your discount rate, it’s almost always worth it to follow best practices.</p>
+<p>Fortunately there’s lot of great advice, and even tools, to help you do this.</p>
+<p>(Reproducibility is also an important part of coding best practice, but we’ll talk about that in a later chapter. Likewise, I won’t talk about a more advanced best practice, testing, here.)</p>
+<div class="section" id="code-in-style">
+<h3><span class="section-number">2.13.1. </span>Code in style<a class="headerlink" href="#code-in-style" title="Permalink to this headline">¶</a></h3>
+<p>The first thing to think about is code style, ie how you write equivalent valid code. Python has a whole set of conventions about good style called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">‘PEP8’</a>, which it’s worth taking a quick look at. It includes advice like indentation should always be 4 spaces per level and to surround top-level function and class definitions with two blank lines.</p>
+<p>Learning all of these would be tedious beyond belief. The good news is that a combination of packages and Visual Studio Code will do almost all of them for you!</p>
+<p>Visual Studio Code can use a so-called ‘linter’ package to highlight any lines of your code that don’t comply with PEP8. I use <a class="reference external" href="https://pypi.org/project/pycodestyle/"><strong>pycodestyle</strong></a>. Once you’ve installed it and set it up in Visual Studio Code (Command Palette -&gt; Python: Set Linter) you select some of your code in a script and hit Command+K, Command+F on Mac (Ctrl+K, Ctrl+F otherwise) and pycodestyle will automatically fix what it can.</p>
+<p>You can go even further than just linting and allow all of your code to be restyled more dramatically using a ‘code formatter’. I sometimes use <a class="reference external" href="https://black.readthedocs.io/en/stable/"><strong>black</strong></a> (you can have any code style you like, as long as it’s black), which is very opinionated but great it you just want to forget about formatting your own code nicely.</p>
+<p>To use <strong>black</strong>, install it according to the documentation. Then it runs from the command line, eg <code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">yourscript.py</span></code>. Here’s an example of the kind of reformatting it does:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in:</span>
+
+<span class="k">def</span> <span class="nf">very_important_function</span><span class="p">(</span><span class="n">template</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">variables</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">,</span> <span class="n">engine</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Applies `variables` to the `template` and writes to `file`.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="o">...</span>
+
+<span class="c1"># out:</span>
+
+<span class="k">def</span> <span class="nf">very_important_function</span><span class="p">(</span>
+    <span class="n">template</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">variables</span><span class="p">,</span>
+    <span class="n">file</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">,</span>
+    <span class="n">engine</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">header</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Applies `variables` to the `template` and writes to `file`.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Most programming languages have a style guide or at least some conventions.</p>
+<p><img alt="Code quality" src="https://imgs.xkcd.com/comics/code_quality.png" /></p>
+</div>
+<div class="section" id="do-not-repeat-yourself-dry">
+<h3><span class="section-number">2.13.2. </span>Do not repeat yourself (DRY)<a class="headerlink" href="#do-not-repeat-yourself-dry" title="Permalink to this headline">¶</a></h3>
+<p>The DRY principle is ‘Every piece of knowledge or logic must have a single, unambiguous representation within a system.’ Divide your code into re-usable pieces that you can call when and where you want. Don’t write lengthy methods, but divide logic up into clearly differentiated chunks.</p>
+<p>This saves having to repeat code, having no idea whether it’s this or that version of the same function doing the work, and will help your debugging efforts no end.</p>
+</div>
+<div class="section" id="naming-conventions">
+<h3><span class="section-number">2.13.3. </span>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
+<p>In Python, the naming convention for almost all objects is lower case separated by underscores, e.g. ‘this_is_a_script.py’. This style of naming is also known as snake case. There are different naming conventions though–<a class="reference external" href="https://twitter.com/allison_horst">Allison Horst</a> made this fantastic cartoon of the different conventions that are in use.</p>
+<p><img alt="Different naming conventions" src="http://aeturrell.github.io/home/images/in_that_case.jpeg" /></p>
+<p>But good naming isn’t just about following the conventions, it’s also about giving objects names that are clear and useful. Instead of calling a variable that measures incomes <code class="docutils literal notranslate"><span class="pre">variable_one</span></code>, call it <code class="docutils literal notranslate"><span class="pre">income_measure</span></code>. Instead of calling a function that inverts a matrix <code class="docutils literal notranslate"><span class="pre">matrix_stuff</span></code>, call it <code class="docutils literal notranslate"><span class="pre">matrix_invert</span></code>. The better named your variables, the clearer your code will be–and the fewer comments you will need to write!</p>
+</div>
+<div class="section" id="code-comments">
+<h3><span class="section-number">2.13.4. </span>Code comments<a class="headerlink" href="#code-comments" title="Permalink to this headline">¶</a></h3>
+<p>Code comments, extra information that is not executed when the code is run, can be added by a preceding hash character <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">comment</span></code>. Use code comments to provide extra contextual information that <em>isn’t</em> conveyed by function and variable names.</p>
+</div>
+<div class="section" id="code-review">
+<h3><span class="section-number">2.13.5. </span>Code review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h3>
+<p>Perform code reviews. Give what you’ve done to a colleague and ask them to go through it line-by-line checking it works as intended. If they do this properly and don’t find any mistakes or issues then I’d be very surprised. Return the favour to magically become a better coder yourself.</p>
+</div>
+<div class="section" id="the-zen-of-python">
+<h3><span class="section-number">2.13.6. </span>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h3>
+<p>For a more poetic take on how to code, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> in your Python session.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, it’s always good to start by choosing clarity over optimisation. Computation is cheap, brain time is not. If you really need to optimise, do it later when you’ve figured out where it will count.</p>
+</div>
+</div>
+<div class="section" id="miscellaneous-fun">
+<h2><span class="section-number">2.14. </span>Miscellaneous fun<a class="headerlink" href="#miscellaneous-fun" title="Permalink to this headline">¶</a></h2>
 <p>Here are some other bits of basic coding that might be useful. They really show why Python is such a delightful language.</p>
 <p>You can use unicode characters for variables</p>
 <div class="cell docutils container">
@@ -1025,20 +1291,6 @@ Cox maps into Apple
 </div>
 </div>
 </div>
-<p>You can sum elements in a list:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="nb">sum</span><span class="p">(</span><span class="n">fruit_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
-</pre></div>
-</div>
-</div>
-</div>
 <p><strong>iterools</strong> offers counting, repeating, cycling, chaining, and slicing. Here’s a cycling example that uses the <code class="docutils literal notranslate"><span class="pre">next</span></code> keyword to get the next iteraction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1050,17 +1302,13 @@ Cox maps into Apple
 <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">lorry_iter</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">lorry_iter</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">lorry_iter</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">lorry_iter</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>red lorry
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yellow lorry
-red lorry
 yellow lorry
+red lorry
 </pre></div>
 </div>
 </div>
@@ -1069,12 +1317,12 @@ yellow lorry
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;itertools.combinations object at 0x7f88e7f991d0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;a&#39;, &#39;b&#39;), (&#39;a&#39;, &#39;c&#39;), (&#39;b&#39;, &#39;c&#39;)]
 </pre></div>
 </div>
 </div>
@@ -1083,17 +1331,45 @@ yellow lorry
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-11-29
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-11-30
 </pre></div>
 </div>
 </div>
 </div>
+<p>Because functions are just objects, you can iterate over them just like any other object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">functions</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="o">.</span><span class="n">isdigit</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">islower</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">isupper</span><span class="p">]</span>
+
+<span class="n">raw_str</span> <span class="o">=</span> <span class="s1">&#39;asdfaa3fa&#39;</span>
+
+<span class="k">for</span> <span class="n">str_func</span> <span class="ow">in</span> <span class="n">functions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Function name: </span><span class="si">{</span><span class="n">str_func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">, value is:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">str_func</span><span class="p">(</span><span class="n">raw_str</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Function name: isdigit, value is:
+False
+Function name: islower, value is:
+True
+Function name: isupper, value is:
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is just a taster of what can be done using ‘batteries included’ base Python; for more see the Advanced Coding Chapter.</p>
+</div>
+<div class="section" id="review">
+<h2><span class="section-number">2.15. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>If you now understand a bit about what objects, types, operators, conditional statements, loops, functions, and imports are, and <em>how</em> to use them, you are well on your way to becoming a coder. What you’ve seen in this chapter are the building blocks and you need to know a bit about them. But bricks by themselves do not a house make. In subsequent chapters, we’ll see how to combine the elements here to do productive analysis in economics.</p>
 </div>
 </div>
 
@@ -1106,16 +1382,16 @@ yellow lorry
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "codeforecon"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "codeforecon",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'codeforecon'</script>
 
               </div>
               
