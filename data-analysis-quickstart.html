@@ -1,0 +1,1886 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Data Analysis Quickstart &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Introduction to Data Analysis" href="introduction-to-data-analysis.html" />
+    <link rel="prev" title="3. Best practice in coding" href="best-practice-coding.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="preliminaries.html">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-of-coding.html">
+   2. Basics of coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   3. Best practice in coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Science
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction-to-data-analysis.html">
+   2. Introduction to Data Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from Stata and Matlab
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   1. Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   2. Coming from Matlab
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/data-analysis-quickstart.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-analysis-quickstart.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/data-analysis-quickstart.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/data-analysis-quickstart.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   1.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data-and-checking-datatypes">
+   1.2. Loading data and checking datatypes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#look-at-the-first-few-rows-with-head">
+     1.2.1. Look at the first few rows with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       head()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter-rows-and-columns-with-conditions-using-df-loc-condition-s-column-s">
+   1.3. Filter rows and columns with conditions using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     df.loc[condition(s),
+    </span>
+    <span class="pre">
+     column(s)]
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-rows-or-columns-with-sort-values">
+   1.4. Sort rows or columns with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .sort_values()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choose-multiple-rows-or-columns-using-slices">
+   1.5. Choose multiple rows or columns using slices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#randomly-selecting-a-sample-using-sample">
+   1.6. Randomly selecting a sample using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .sample
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rename-with-rename">
+   1.7. Rename with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .rename
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-new-columns-with-assign-or-assignment">
+   1.8. Add new columns with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .assign
+    </span>
+   </code>
+   or assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarise-numerical-values-with-describe">
+   1.9. Summarise numerical values with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .describe()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-variables-values-with-groupby">
+   1.10. Group variables values with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .groupby()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-transformed-columns-using-transform">
+   1.11. Add transformed columns using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .transform()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-quick-charts-with-plot">
+   1.12. Make quick charts with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .plot.*
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-analysis-quickstart">
+<h1><span class="section-number">1. </span>Data Analysis Quickstart<a class="headerlink" href="#data-analysis-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Here we’ll do a whistlestop tour of what’s possible when using code to execute data analysis on a single dataframe using the Star Wars’ characters dataset as an example. For a more thorough introduction to data analysis, see the next chapter.</p>
+<p>This chapter will use the <strong>pandas</strong> package; if you don’t already have it installed you may need to run</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install pandas
+conda install pyarrow
+</pre></div>
+</div>
+<p>on your computer’s command line.</p>
+</div>
+<div class="section" id="loading-data-and-checking-datatypes">
+<h2><span class="section-number">1.2. </span>Loading data and checking datatypes<a class="headerlink" href="#loading-data-and-checking-datatypes" title="Permalink to this headline">¶</a></h2>
+<p>Loading data into a dataframe is achieved with commands like <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(...)</span></code> or <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_stata(...)</span></code>. Let’s load the Star Wars data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Set seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Set max rows displayed for readability</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+
+<span class="c1"># Read in data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;starwars.feather&#39;</span><span class="p">))</span>
+<span class="c1"># Check info about dataframe</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 87 entries, 0 to 86
+Data columns (total 10 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   name        87 non-null     string  
+ 1   height      81 non-null     float64 
+ 2   mass        59 non-null     float64 
+ 3   hair_color  81 non-null     category
+ 4   skin_color  85 non-null     category
+ 5   eye_color   84 non-null     category
+ 6   birth_year  43 non-null     string  
+ 7   gender      84 non-null     category
+ 8   homeworld   77 non-null     category
+ 9   species     82 non-null     category
+dtypes: category(6), float64(2), string(2)
+memory usage: 9.3 KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="look-at-the-first-few-rows-with-head">
+<h3><span class="section-number">1.2.1. </span>Look at the first few rows with <code class="docutils literal notranslate"><span class="pre">head()</span></code><a class="headerlink" href="#look-at-the-first-few-rows-with-head" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+      <th>gender</th>
+      <th>homeworld</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Luke Skywalker</td>
+      <td>172.0</td>
+      <td>77.0</td>
+      <td>blond</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>19BBY</td>
+      <td>male</td>
+      <td>Tatooine</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C-3PO</td>
+      <td>167.0</td>
+      <td>75.0</td>
+      <td>NaN</td>
+      <td>gold</td>
+      <td>yellow</td>
+      <td>112BBY</td>
+      <td>NaN</td>
+      <td>Tatooine</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>R2-D2</td>
+      <td>96.0</td>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>white, blue</td>
+      <td>red</td>
+      <td>33BBY</td>
+      <td>NaN</td>
+      <td>Naboo</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Darth Vader</td>
+      <td>202.0</td>
+      <td>136.0</td>
+      <td>none</td>
+      <td>white</td>
+      <td>yellow</td>
+      <td>41.9BBY</td>
+      <td>male</td>
+      <td>Tatooine</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Leia Organa</td>
+      <td>150.0</td>
+      <td>49.0</td>
+      <td>brown</td>
+      <td>light</td>
+      <td>brown</td>
+      <td>19BBY</td>
+      <td>female</td>
+      <td>Alderaan</td>
+      <td>Human</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="filter-rows-and-columns-with-conditions-using-df-loc-condition-s-column-s">
+<h2><span class="section-number">1.3. </span>Filter rows and columns with conditions using <code class="docutils literal notranslate"><span class="pre">df.loc[condition(s),</span> <span class="pre">column(s)]</span></code><a class="headerlink" href="#filter-rows-and-columns-with-conditions-using-df-loc-condition-s-column-s" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> stands for location. By passing conditions to <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, you are able to select and work with a subset of rows in a dataframe. The second argument passes columns of interest (use <code class="docutils literal notranslate"><span class="pre">:</span></code> for all columns).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;skin_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;light&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;eye_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;brown&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;species&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Leia Organa</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Biggs Darklighter</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Cordé</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Raymus Antilles</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Poe Dameron</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Padmé Amidala</td>
+      <td>Human</td>
+    </tr>
+  </tbody>
+</table>
+<p>7 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="sort-rows-or-columns-with-sort-values">
+<h2><span class="section-number">1.4. </span>Sort rows or columns with <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code><a class="headerlink" href="#sort-rows-or-columns-with-sort-values" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">sort_values(columns,</span> <span class="pre">ascending=False)</span></code> for descending order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;mass&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+      <th>gender</th>
+      <th>homeworld</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18</th>
+      <td>Yoda</td>
+      <td>66.0</td>
+      <td>17.0</td>
+      <td>white</td>
+      <td>green</td>
+      <td>brown</td>
+      <td>896BBY</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>Yoda's species</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>Ratts Tyerell</td>
+      <td>79.0</td>
+      <td>15.0</td>
+      <td>none</td>
+      <td>grey, blue</td>
+      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>Aleen Minor</td>
+      <td>Aleena</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Wicket Systri Warrick</td>
+      <td>88.0</td>
+      <td>20.0</td>
+      <td>brown</td>
+      <td>brown</td>
+      <td>brown</td>
+      <td>8BBY</td>
+      <td>male</td>
+      <td>Endor</td>
+      <td>Ewok</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Poe Dameron</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>brown</td>
+      <td>light</td>
+      <td>brown</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>BB8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>none</td>
+      <td>none</td>
+      <td>black</td>
+      <td>&lt;NA&gt;</td>
+      <td>none</td>
+      <td>NaN</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Captain Phasma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 10 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="choose-multiple-rows-or-columns-using-slices">
+<h2><span class="section-number">1.5. </span>Choose multiple rows or columns using slices<a class="headerlink" href="#choose-multiple-rows-or-columns-using-slices" title="Permalink to this headline">¶</a></h2>
+<p>Slices can be passed by name using <code class="docutils literal notranslate"><span class="pre">.loc[startrow:stoprow:step,</span> <span class="pre">startcolumn:stopcolumn:step]</span></code> or by position using <code class="docutils literal notranslate"><span class="pre">.iloc[start:stop:step,</span> <span class="pre">start:stop:step]</span></code>.</p>
+<p>Choosing every 10th row, and the columns between ‘name’ and ‘birth_year’:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;birth_year&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Luke Skywalker</td>
+      <td>172.0</td>
+      <td>77.0</td>
+      <td>blond</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>19BBY</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Anakin Skywalker</td>
+      <td>188.0</td>
+      <td>84.0</td>
+      <td>blond</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>41.9BBY</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Boba Fett</td>
+      <td>183.0</td>
+      <td>78.2</td>
+      <td>black</td>
+      <td>fair</td>
+      <td>brown</td>
+      <td>31.5BBY</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Luminara Unduli</td>
+      <td>170.0</td>
+      <td>56.2</td>
+      <td>black</td>
+      <td>yellow</td>
+      <td>blue</td>
+      <td>58BBY</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Jocasta Nu</td>
+      <td>167.0</td>
+      <td>NaN</td>
+      <td>white</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Tion Medon</td>
+      <td>206.0</td>
+      <td>80.0</td>
+      <td>none</td>
+      <td>grey</td>
+      <td>black</td>
+      <td>&lt;NA&gt;</td>
+    </tr>
+  </tbody>
+</table>
+<p>9 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Choosing the first 5 rows and the last 2 columns by position:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>homeworld</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Tatooine</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tatooine</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Naboo</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Tatooine</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Alderaan</td>
+      <td>Human</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="randomly-selecting-a-sample-using-sample">
+<h2><span class="section-number">1.6. </span>Randomly selecting a sample using <code class="docutils literal notranslate"><span class="pre">.sample</span></code><a class="headerlink" href="#randomly-selecting-a-sample-using-sample" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.sample(n)</span></code> randomly selects <code class="docutils literal notranslate"><span class="pre">n</span></code> rows, <code class="docutils literal notranslate"><span class="pre">.sample(frac=0.4)</span></code> selects 40% of the data, <code class="docutils literal notranslate"><span class="pre">replace=True</span></code> samples with replacement, and passing <code class="docutils literal notranslate"><span class="pre">weights=</span></code> selects a number of fraction with the probabilities given by the passed weights.</p>
+<p>Taking a sample of 5 rows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+      <th>gender</th>
+      <th>homeworld</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>70</th>
+      <td>Jocasta Nu</td>
+      <td>167.0</td>
+      <td>NaN</td>
+      <td>white</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>&lt;NA&gt;</td>
+      <td>female</td>
+      <td>Coruscant</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Ayla Secura</td>
+      <td>178.0</td>
+      <td>55.0</td>
+      <td>none</td>
+      <td>blue</td>
+      <td>hazel</td>
+      <td>48BBY</td>
+      <td>female</td>
+      <td>Ryloth</td>
+      <td>Twi'lek</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Darth Vader</td>
+      <td>202.0</td>
+      <td>136.0</td>
+      <td>none</td>
+      <td>white</td>
+      <td>yellow</td>
+      <td>41.9BBY</td>
+      <td>male</td>
+      <td>Tatooine</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>IG-88</td>
+      <td>200.0</td>
+      <td>140.0</td>
+      <td>none</td>
+      <td>metal</td>
+      <td>red</td>
+      <td>15BBY</td>
+      <td>none</td>
+      <td>NaN</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Saesee Tiin</td>
+      <td>188.0</td>
+      <td>NaN</td>
+      <td>none</td>
+      <td>pale</td>
+      <td>orange</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>Iktotch</td>
+      <td>Iktotchi</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="rename-with-rename">
+<h2><span class="section-number">1.7. </span>Rename with <code class="docutils literal notranslate"><span class="pre">.rename</span></code><a class="headerlink" href="#rename-with-rename" title="Permalink to this headline">¶</a></h2>
+<p>You can rename all columns by passing a function, for instance <code class="docutils literal notranslate"><span class="pre">df.rename(columns=str.lower)</span></code> to put all columns in lower case. Alternatively, use a dictionary to say which columns should be mapped to what:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;homeworld&#39;</span><span class="p">:</span> <span class="s1">&#39;home_world&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+      <th>gender</th>
+      <th>home_world</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Luke Skywalker</td>
+      <td>172.0</td>
+      <td>77.0</td>
+      <td>blond</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>19BBY</td>
+      <td>male</td>
+      <td>Tatooine</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C-3PO</td>
+      <td>167.0</td>
+      <td>75.0</td>
+      <td>NaN</td>
+      <td>gold</td>
+      <td>yellow</td>
+      <td>112BBY</td>
+      <td>NaN</td>
+      <td>Tatooine</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>R2-D2</td>
+      <td>96.0</td>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>white, blue</td>
+      <td>red</td>
+      <td>33BBY</td>
+      <td>NaN</td>
+      <td>Naboo</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>BB8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>none</td>
+      <td>none</td>
+      <td>black</td>
+      <td>&lt;NA&gt;</td>
+      <td>none</td>
+      <td>NaN</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Captain Phasma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Padmé Amidala</td>
+      <td>165.0</td>
+      <td>45.0</td>
+      <td>brown</td>
+      <td>light</td>
+      <td>brown</td>
+      <td>46BBY</td>
+      <td>female</td>
+      <td>Naboo</td>
+      <td>Human</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 10 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="add-new-columns-with-assign-or-assignment">
+<h2><span class="section-number">1.8. </span>Add new columns with <code class="docutils literal notranslate"><span class="pre">.assign</span></code> or assignment<a class="headerlink" href="#add-new-columns-with-assign-or-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Very often you will want to create new columns based on existing columns.</p>
+<p><img alt="" src="https://pandas.pydata.org/docs/_images/05_newcolumn_1.svg" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">.assign</span></code> is a function that applies to a dataframe and returns a copy of that dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">height_m</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+      <th>gender</th>
+      <th>homeworld</th>
+      <th>species</th>
+      <th>height_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Luke Skywalker</td>
+      <td>172.0</td>
+      <td>77.0</td>
+      <td>blond</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>19BBY</td>
+      <td>male</td>
+      <td>Tatooine</td>
+      <td>Human</td>
+      <td>1.72</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C-3PO</td>
+      <td>167.0</td>
+      <td>75.0</td>
+      <td>NaN</td>
+      <td>gold</td>
+      <td>yellow</td>
+      <td>112BBY</td>
+      <td>NaN</td>
+      <td>Tatooine</td>
+      <td>Droid</td>
+      <td>1.67</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>R2-D2</td>
+      <td>96.0</td>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>white, blue</td>
+      <td>red</td>
+      <td>33BBY</td>
+      <td>NaN</td>
+      <td>Naboo</td>
+      <td>Droid</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>BB8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>none</td>
+      <td>none</td>
+      <td>black</td>
+      <td>&lt;NA&gt;</td>
+      <td>none</td>
+      <td>NaN</td>
+      <td>Droid</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Captain Phasma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>&lt;NA&gt;</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Padmé Amidala</td>
+      <td>165.0</td>
+      <td>45.0</td>
+      <td>brown</td>
+      <td>light</td>
+      <td>brown</td>
+      <td>46BBY</td>
+      <td>female</td>
+      <td>Naboo</td>
+      <td>Human</td>
+      <td>1.65</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 11 columns</p>
+</div></div></div>
+</div>
+<p>This was added to the end; ideally, we’d like it next to the height column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">height_m</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+   <span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>birth_year</th>
+      <th>eye_color</th>
+      <th>gender</th>
+      <th>hair_color</th>
+      <th>height</th>
+      <th>height_m</th>
+      <th>homeworld</th>
+      <th>mass</th>
+      <th>name</th>
+      <th>skin_color</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>19BBY</td>
+      <td>blue</td>
+      <td>male</td>
+      <td>blond</td>
+      <td>172.0</td>
+      <td>1.72</td>
+      <td>Tatooine</td>
+      <td>77.0</td>
+      <td>Luke Skywalker</td>
+      <td>fair</td>
+      <td>Human</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>112BBY</td>
+      <td>yellow</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>167.0</td>
+      <td>1.67</td>
+      <td>Tatooine</td>
+      <td>75.0</td>
+      <td>C-3PO</td>
+      <td>gold</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>33BBY</td>
+      <td>red</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>96.0</td>
+      <td>0.96</td>
+      <td>Naboo</td>
+      <td>32.0</td>
+      <td>R2-D2</td>
+      <td>white, blue</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>&lt;NA&gt;</td>
+      <td>black</td>
+      <td>none</td>
+      <td>none</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>BB8</td>
+      <td>none</td>
+      <td>Droid</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>&lt;NA&gt;</td>
+      <td>NaN</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Captain Phasma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>46BBY</td>
+      <td>brown</td>
+      <td>female</td>
+      <td>brown</td>
+      <td>165.0</td>
+      <td>1.65</td>
+      <td>Naboo</td>
+      <td>45.0</td>
+      <td>Padmé Amidala</td>
+      <td>light</td>
+      <td>Human</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 11 columns</p>
+</div></div></div>
+</div>
+<p>To overwrite existing columns just use <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">=</span> <span class="pre">df['height']/100</span></code> in the assign function. We can also assign using a series of statements instead of chaining them together using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;height_m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="summarise-numerical-values-with-describe">
+<h2><span class="section-number">1.9. </span>Summarise numerical values with <code class="docutils literal notranslate"><span class="pre">.describe()</span></code><a class="headerlink" href="#summarise-numerical-values-with-describe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>height</th>
+      <th>mass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>81.000000</td>
+      <td>59.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>174.358025</td>
+      <td>97.311864</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>34.770429</td>
+      <td>169.457163</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>180.000000</td>
+      <td>79.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>191.000000</td>
+      <td>84.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>264.000000</td>
+      <td>1358.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="group-variables-values-with-groupby">
+<h2><span class="section-number">1.10. </span>Group variables values with <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code><a class="headerlink" href="#group-variables-values-with-groupby" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)[[</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;mass&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>height</th>
+      <th>mass</th>
+    </tr>
+    <tr>
+      <th>species</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aleena</th>
+      <td>79.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Besalisk</th>
+      <td>198.0</td>
+      <td>102.0</td>
+    </tr>
+    <tr>
+      <th>Cerean</th>
+      <td>198.0</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Xexto</th>
+      <td>122.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Yoda's species</th>
+      <td>66.0</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>Zabrak</th>
+      <td>173.0</td>
+      <td>80.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>37 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="add-transformed-columns-using-transform">
+<h2><span class="section-number">1.11. </span>Add transformed columns using <code class="docutils literal notranslate"><span class="pre">.transform()</span></code><a class="headerlink" href="#add-transformed-columns-using-transform" title="Permalink to this headline">¶</a></h2>
+<p>Quite often, it’s useful to put a column into a dataframe that is the result of an intermediate groupby and aggregation. For example, subtracting the group mean or normalisation. Transform does this and returns the column with the same shape as the original dataframe.</p>
+<p>Below is an example of transform being used to demean a variable according to the mean by species. Note that we use <code class="docutils literal notranslate"><span class="pre">pd.notna</span></code> to filter out missing species values (otherwise this would result in an error, which is actually <em>helpful</em> behaviour) and we are using lambda functions. Lambda functions are a quick way of writing functions, e.g. <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x+1</span></code> defines a function that adds one to x.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])]</span>
+ <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">height_demean_species</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])]</span>
+                                 <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span>
+                                 <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>mass</th>
+      <th>hair_color</th>
+      <th>skin_color</th>
+      <th>eye_color</th>
+      <th>birth_year</th>
+      <th>gender</th>
+      <th>homeworld</th>
+      <th>species</th>
+      <th>height_demean_species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Luke Skywalker</td>
+      <td>172.0</td>
+      <td>77.0</td>
+      <td>blond</td>
+      <td>fair</td>
+      <td>blue</td>
+      <td>19BBY</td>
+      <td>male</td>
+      <td>Tatooine</td>
+      <td>Human</td>
+      <td>-5.781818</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C-3PO</td>
+      <td>167.0</td>
+      <td>75.0</td>
+      <td>NaN</td>
+      <td>gold</td>
+      <td>yellow</td>
+      <td>112BBY</td>
+      <td>NaN</td>
+      <td>Tatooine</td>
+      <td>Droid</td>
+      <td>5.250000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>R2-D2</td>
+      <td>96.0</td>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>white, blue</td>
+      <td>red</td>
+      <td>33BBY</td>
+      <td>NaN</td>
+      <td>Naboo</td>
+      <td>Droid</td>
+      <td>-37.750000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Poe Dameron</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>brown</td>
+      <td>light</td>
+      <td>brown</td>
+      <td>&lt;NA&gt;</td>
+      <td>male</td>
+      <td>NaN</td>
+      <td>Human</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>BB8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>none</td>
+      <td>none</td>
+      <td>black</td>
+      <td>&lt;NA&gt;</td>
+      <td>none</td>
+      <td>NaN</td>
+      <td>Droid</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Padmé Amidala</td>
+      <td>165.0</td>
+      <td>45.0</td>
+      <td>brown</td>
+      <td>light</td>
+      <td>brown</td>
+      <td>46BBY</td>
+      <td>female</td>
+      <td>Naboo</td>
+      <td>Human</td>
+      <td>-37.781818</td>
+    </tr>
+  </tbody>
+</table>
+<p>82 rows × 11 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="make-quick-charts-with-plot">
+<h2><span class="section-number">1.12. </span>Make quick charts with <code class="docutils literal notranslate"><span class="pre">.plot.*</span></code><a class="headerlink" href="#make-quick-charts-with-plot" title="Permalink to this headline">¶</a></h2>
+<p>Including scatter, area, bar, box, density, hexbin, histogram, kde, and line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;mass&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data-analysis-quickstart_29_0.png" src="_images/data-analysis-quickstart_29_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;species&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data-analysis-quickstart_30_0.png" src="_images/data-analysis-quickstart_30_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data-analysis-quickstart_31_0.png" src="_images/data-analysis-quickstart_31_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "codeforecon"
+        },
+        kernelOptions: {
+            kernelName: "codeforecon",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'codeforecon'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="best-practice-coding.html" title="previous page"><span class="section-number">3. </span>Best practice in coding</a>
+    <a class='right-next' id="next-link" href="introduction-to-data-analysis.html" title="next page"><span class="section-number">2. </span>Introduction to Data Analysis</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
