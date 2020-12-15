@@ -125,7 +125,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="introduction-to-data-analysis.html">
-   2. Intro to Data Analysis
+   2. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reading-and-writing.html">
+   3. Reading and writing data
   </a>
  </li>
 </ul>
@@ -896,9 +901,6 @@ The name in position 3 is Babbage
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Ada, and welcome!
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>One powerful feature of functions is that we can define defaults for the input arguments. Let’s see that in action by defining a default value for <code class="docutils literal notranslate"><span class="pre">name</span></code>, along with multiple outputs–a hello message and a score.</p>
@@ -1256,7 +1258,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-12-14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-12-15
 </pre></div>
 </div>
 </div>
@@ -1281,6 +1283,29 @@ Function name: islower, value is:
 True
 Function name: isupper, value is:
 False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Functions can be defined recursively. For instance, the Fibonacci sequence is defined such that <span class="math notranslate nohighlight">\( a_n = a_{n-1} + a_{n-2} \)</span> for <span class="math notranslate nohighlight">\( n&gt;1 \)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter n&gt;0&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="p">[</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 </pre></div>
 </div>
 </div>

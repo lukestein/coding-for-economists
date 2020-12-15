@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Best practice in coding" href="best-practice-coding.html" />
+    <link rel="next" title="3. Reading and writing data" href="reading-and-writing.html" />
     <link rel="prev" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -126,6 +126,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    2. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reading-and-writing.html">
+   3. Reading and writing data
   </a>
  </li>
 </ul>
@@ -330,53 +335,53 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-and-writing-data">
-   2.11. Reading and writing data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reshaping-data">
-   2.12. Reshaping data
+   2.11. Reshaping data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pivoting-data-from-tidy-to-err-untidy">
-     2.12.1. Pivoting data from tidy to, err, untidy
+     2.11.1. Pivoting data from tidy to, err, untidy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#melt">
-     2.12.2. Melt
+     2.11.2. Melt
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#stack-and-unstack">
-     2.12.3. Stack and unstack
+     2.11.3. Stack and unstack
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#get-dummies">
-     2.12.4. Get dummies
+     2.11.4. Get dummies
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#combining-data">
-   2.13. Combining data
+   2.12. Combining data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concatenate">
-     2.13.1. Concatenate
+     2.12.1. Concatenate
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#merge">
-     2.13.2. Merge
+     2.12.2. Merge
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   2.13. Review
+  </a>
  </li>
 </ul>
 
@@ -395,7 +400,7 @@
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The previous chapter was just a quick tour of what can be done with a single tabular dataset (a ‘dataframe’). In this chapter, we’ll go deeper into working with data.</p>
 <p>The ability to extract, clean, and analyse data is one of the core skills any economist needs. Fortunately, the (open source) tools that are available for data analysis have improved enormously in recent years, and working with them can be a delight–even the most badly formatted data can be beaten into shape.</p>
-<p>In this chapter, you’ll get really good introduction to the <a class="reference external" href="https://pandas.pydata.org/"><strong>pandas</strong></a> package, the core data manipulation library in Python. The name is derived from ‘panel data’ but it’s suited to any tabular data, and can be used to work with more complex data structures too.</p>
+<p>In this chapter, you’ll get really good introduction to the <a class="reference external" href="https://pandas.pydata.org/"><strong>pandas</strong></a> package, the core data manipulation library in Python. The name is derived from ‘panel data’ but it’s suited to any tabular data, and can be used to work with more complex data structures too. We <em>won’t</em> cover reading in or writing data here; see the next chapter for that.</p>
 <p>This chapter is hugely indebted to the fantastic <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas. Remember, if you get stuck with pandas, there is brilliant <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html">documentation</a> and a fantastic set of <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/index.html">introductory tutorials</a> on their website. These notes are heavily indebted to those introductory tutorials.</p>
 <p>This chapter uses the <strong>pandas</strong>, <strong>seaborn</strong>, and <strong>numpy</strong> packages. If you’re running this code, you may need to install these packages, which you can do using either <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on your computer’s command line. (If you’re not sure what a command line or terminal is, take a quick look at the basics of coding chapter.)</p>
 <div class="section" id="using-tidy-data">
@@ -1621,6 +1626,9 @@ B  3  1  1
 C  0  1  3
 D  4  4  1
 E  4  0  2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -3240,20 +3248,11 @@ Freq: M, Name: diff_values, dtype: float64
 </div></div></div>
 </div>
 </div>
-<div class="section" id="reading-and-writing-data">
-<h2><span class="section-number">2.11. </span>Reading and writing data<a class="headerlink" href="#reading-and-writing-data" title="Permalink to this headline">¶</a></h2>
-<p><img alt="From the pandas documentation" src="https://pandas.pydata.org/pandas-docs/stable/_images/02_io_readwrite1.svg" /></p>
-<p>There are a huge range of input and output formats available in <strong>pandas</strong>: Stata (.dta), Excel (.xls, .xlsx), csv (tab or comma or whatever, use the <code class="docutils literal notranslate"><span class="pre">sep=</span></code> keyword), big data formats (HDF5, parquet), JSON, SAS, SPSS, SQL, and more; there’s a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">full list</a> of formats available in the documentation. The syntax is usually very similar and of the form <code class="docutils literal notranslate"><span class="pre">pd.read_</span></code> and then the format e.g. <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_stata('path/to/statafile.dta')</span></code> for Stata.</p>
-<p>You may wonder what file format to use. Note that data formats differ in whether they are text based (csv, JSON) or binary (encoded and compressed, like Python’s pickle format). The former tend to be more easy to use with a range of tools, while the latter are usually faster to read/write and take up less space on disk.</p>
-<p>There’s a lot to be said for plain old csv because it’s interoperable between so many different software tools. Its only trouble is that it’s not very efficiency with space, and it’s not ‘intelligent’ about column datatypes. If you want a format for intermediate data within a project, I tend to recommend parquet, which scales well to big data (it is very efficient with disk space) and has excellent read and write speeds. Feather is interoperable between Python and R and may also be a good choice. Depending on the structure of your data, you may find JSON a good option too.</p>
-<p>If you’re interested in how effective the different data formats are, there blog posts that address this question <a class="reference external" href="https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d">here</a> and <a class="reference external" href="https://ursalabs.org/blog/2019-10-columnar-perf/">here</a>.</p>
-<p>It’s best <em>not</em> to use formats associated with proprietary software, especially if the standard may change over time (Stata files change with the version of Stata used!!) or if opening the data in that tool might change it (hello Excel). It’s also good practice <em>not</em> to use a data storage format that cannot easily be opened by other tools. For this reason, I don’t recommend Python’s pickle format or R’s RDA format.</p>
-</div>
 <div class="section" id="reshaping-data">
-<h2><span class="section-number">2.12. </span>Reshaping data<a class="headerlink" href="#reshaping-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.11. </span>Reshaping data<a class="headerlink" href="#reshaping-data" title="Permalink to this headline">¶</a></h2>
 <p>The main options for reshaping data are <code class="docutils literal notranslate"><span class="pre">pivot</span></code>, <code class="docutils literal notranslate"><span class="pre">melt</span></code>, <code class="docutils literal notranslate"><span class="pre">stack</span></code>, <code class="docutils literal notranslate"><span class="pre">unstack</span></code>, <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code>, <code class="docutils literal notranslate"><span class="pre">get_dummies</span></code>, <code class="docutils literal notranslate"><span class="pre">cross_tab</span></code>, and <code class="docutils literal notranslate"><span class="pre">explode</span></code>. We’ll look at some of these here.</p>
 <div class="section" id="pivoting-data-from-tidy-to-err-untidy">
-<h3><span class="section-number">2.12.1. </span>Pivoting data from tidy to, err, untidy<a class="headerlink" href="#pivoting-data-from-tidy-to-err-untidy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.11.1. </span>Pivoting data from tidy to, err, untidy<a class="headerlink" href="#pivoting-data-from-tidy-to-err-untidy" title="Permalink to this headline">¶</a></h3>
 <p>At the start of this chapter, I said you should use tidy data–one row per observation, one column per variable–whenever you can. But there are times when you will want to take your lovingly prepared tidy data and pivot it into a wider format. <code class="docutils literal notranslate"><span class="pre">pivot</span></code> and <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> help you to do that.</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/reshaping_pivot.png" /></p>
 <p>This can be especially useful for time series data, where operations like <code class="docutils literal notranslate"><span class="pre">shift</span></code> or <code class="docutils literal notranslate"><span class="pre">diff</span></code> are typically applied assuming that an entry in one row follows (in time) from the one above. Here’s an example:</p>
@@ -3419,7 +3418,7 @@ Freq: M, Name: diff_values, dtype: float64
 </div>
 </div>
 <div class="section" id="melt">
-<h3><span class="section-number">2.12.2. </span>Melt<a class="headerlink" href="#melt" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.11.2. </span>Melt<a class="headerlink" href="#melt" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">melt</span></code> can help you go from untidy to tidy data (from wide data to long data), and is a <em>really</em> good one to remember. Of course, I have to look at the documentation every single time myself, but I’m sure you’ll do better.</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/reshaping_melt.png" /></p>
 <p>Here’s an example of it in action:</p>
@@ -3663,7 +3662,7 @@ Freq: M, Name: diff_values, dtype: float64
 </div>
 </div>
 <div class="section" id="stack-and-unstack">
-<h3><span class="section-number">2.12.3. </span>Stack and unstack<a class="headerlink" href="#stack-and-unstack" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.11.3. </span>Stack and unstack<a class="headerlink" href="#stack-and-unstack" title="Permalink to this headline">¶</a></h3>
 <p>Stack, <code class="docutils literal notranslate"><span class="pre">stack()</span></code> is a shortcut for taking a single type of wide data variable from columns and turning it into a long form dataset, but with an extra index.</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/reshaping_stack.png" /></p>
 <p>Unstack, <code class="docutils literal notranslate"><span class="pre">unstack()</span></code> unsurprisingly does the same operation, but in reverse.</p>
@@ -3871,7 +3870,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="get-dummies">
-<h3><span class="section-number">2.12.4. </span>Get dummies<a class="headerlink" href="#get-dummies" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.11.4. </span>Get dummies<a class="headerlink" href="#get-dummies" title="Permalink to this headline">¶</a></h3>
 <p>This is a really useful reshape command for when you want (explicit) dummies in your dataframe. When running simple regressions, you can achieve the same effect by declaring the column only be included as a fixed effect, but there are some machine learning packages where converting to dummies may be easier.</p>
 <p>Here’s an example:</p>
 <div class="cell docutils container">
@@ -3949,10 +3948,10 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="combining-data">
-<h2><span class="section-number">2.13. </span>Combining data<a class="headerlink" href="#combining-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12. </span>Combining data<a class="headerlink" href="#combining-data" title="Permalink to this headline">¶</a></h2>
 <p><strong>pandas</strong> has a really rich set of options for combining one or more dataframes. The two most important are concatenate and merge.</p>
 <div class="section" id="concatenate">
-<h3><span class="section-number">2.13.1. </span>Concatenate<a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.12.1. </span>Concatenate<a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h3>
 <p>If you have two or more dataframes with the same index or the same columns, you can glue them together into a single dataframe using <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code>.</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/08_concat_row1.svg" /></p>
 <p>For the same columns, pass <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> to glue the index together; for the same index, pass <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to glue the columns together. The concatenate function will typically be used on a list of dataframes.</p>
@@ -4036,7 +4035,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="merge">
-<h3><span class="section-number">2.13.2. </span>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.12.2. </span>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
 <p>There are so many options for merging dataframes using <code class="docutils literal notranslate"><span class="pre">pd.merge(left,</span> <span class="pre">right,</span> <span class="pre">on=...,</span> <span class="pre">how=...</span></code> that we won’t be able to cover them all here. The most important features are: the two dataframes to be merged, what variables (aka keys) to merge on (and these can be indexes) via <code class="docutils literal notranslate"><span class="pre">on=</span></code>, and <em>how</em> to do the merge (eg left, right, outer, inner) via <code class="docutils literal notranslate"><span class="pre">how=</span></code>. This diagram shows an example of a merge using keys from the left-hand dataframe:</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/08_merge_left.svg" /></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">how=</span></code> keyword works in the following ways:</p>
@@ -4302,6 +4301,20 @@ dtype: float64
 <p>For more on the options, see the <strong>pandas</strong> <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging">merging documentation</a>.</p>
 </div>
 </div>
+<div class="section" id="review">
+<h2><span class="section-number">2.13. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>If you know:</p>
+<ul class="simple">
+<li><p>[x] what tidy data are;</p></li>
+<li><p>[x] how to create series and dataframes with different datatypes;</p></li>
+<li><p>[x] how to access values in series and dataframes;</p></li>
+<li><p>[x] how to perform operations on columns;</p></li>
+<li><p>[x] how to chain methods;</p></li>
+<li><p>[x] how to reshape data; and</p></li>
+<li><p>[x] how to combine different dataframes</p></li>
+</ul>
+<p>then you are well on your way to becoming a data analysis master!</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -4333,7 +4346,7 @@ dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="data-analysis-quickstart.html" title="previous page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
-    <a class='right-next' id="next-link" href="best-practice-coding.html" title="next page"><span class="section-number">1. </span>Best practice in coding</a>
+    <a class='right-next' id="next-link" href="reading-and-writing.html" title="next page"><span class="section-number">3. </span>Reading and writing data</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
