@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Coming from Matlab &#8212; Coding for Economists</title>
+    <title>Coming from Matlab &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="1. Coming from Stata" href="coming-from-stata.html" />
+    <link rel="prev" title="Coming from Stata" href="coming-from-stata.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -110,15 +110,10 @@
    2. Basics of coding
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="best-practice-coding.html">
-   3. Best practice in coding
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Data Science
+  Data
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -129,24 +124,36 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="introduction-to-data-analysis.html">
-   2. Introduction to Data Analysis
+   2. Intro to Data Analysis
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Coming from Stata and Matlab
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best practice in coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-stata.html">
-   1. Coming from Stata
+   Coming from Stata
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Coming from Matlab
+   Coming from Matlab
   </a>
  </li>
 </ul>
@@ -257,7 +264,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matlab-python">
-   2.1. Matlab &lt;==&gt; Python
+   Matlab &lt;==&gt; Python
   </a>
  </li>
 </ul>
@@ -272,14 +279,14 @@
               <div>
                 
   <div class="section" id="coming-from-matlab">
-<h1><span class="section-number">2. </span>Coming from Matlab<a class="headerlink" href="#coming-from-matlab" title="Permalink to this headline">¶</a></h1>
+<h1>Coming from Matlab<a class="headerlink" href="#coming-from-matlab" title="Permalink to this headline">¶</a></h1>
 <p>This chapter is indebted to the excellent <a class="reference external" href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">numpy</a> documentation.</p>
 <p>Matlab is very much built around matrix operations. The biggest difference between Python and Matlab is that Python is designed to do many things that are <em>not</em> matrix manipulation. What this means in practice is that sometimes the notation to do this or that operation in Python (or any other general purpose programming language) is less concise than in Matlab. There is greater competition for each command in Python because it does many more things. However, Python has really first class support for matrices (and tensors, if that’s your thing). In this chapter, we’ll look at some of the common matrix manipulation commands you might use in Matlab and Python.</p>
 <p>In MATLAB, the basic data type, even for scalars, is a multidimensional array. Array assignments in MATLAB are stored as 2D arrays of double precision floating point numbers, unless you specify the number of dimensions and type. Operations on the 2D instances of these arrays are modeled on matrix operations in linear algebra. When doing matrix manipulation in Python (using <strong>numpy</strong> arrays), the basic type will be a multidimensional array. In Python, multiplying 2D arrays with <code class="docutils literal notranslate"><span class="pre">*</span></code> is not matrix multiplication–it’s element-by-element multiplication. (In Python 3.5+, the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator can be used for conventional matrix multiplication.)</p>
 <p>MATLAB numbers indices from 1; with <code class="docutils literal notranslate"><span class="pre">a(1)</span></code> the first element. Like C++, Python is numbered from zero, with, eg, <code class="docutils literal notranslate"><span class="pre">a[0]</span></code> as the first element.</p>
 <p>Another big difference is that Python and its matrix packages are free and open source.</p>
 <div class="section" id="matlab-python">
-<h2><span class="section-number">2.1. </span>Matlab &lt;==&gt; Python<a class="headerlink" href="#matlab-python" title="Permalink to this headline">¶</a></h2>
+<h2>Matlab &lt;==&gt; Python<a class="headerlink" href="#matlab-python" title="Permalink to this headline">¶</a></h2>
 <p>What follows is a giant table of translations between Matlab code and Python’s <strong>numpy</strong> and <a class="reference external" href="https://www.scipy.org/"><strong>scipy</strong></a> packages, which provide a good core set of matrix manipulations. In what follows, we’ll assume that you’ve imported these two packages using</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
@@ -473,7 +480,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="coming-from-stata.html" title="previous page"><span class="section-number">1. </span>Coming from Stata</a>
+    <a class='left-prev' id="prev-link" href="coming-from-stata.html" title="previous page">Coming from Stata</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

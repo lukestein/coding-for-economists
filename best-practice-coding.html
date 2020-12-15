@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Best practice in coding &#8212; Coding for Economists</title>
+    <title>1. Best practice in coding &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
-    <link rel="prev" title="2. Basics of coding" href="basics-of-coding.html" />
+    <link rel="next" title="Coming from Stata" href="coming-from-stata.html" />
+    <link rel="prev" title="2. Intro to Data Analysis" href="introduction-to-data-analysis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,7 +100,7 @@
   Basics
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="preliminaries.html">
    1. Preliminaries
@@ -111,15 +111,10 @@
    2. Basics of coding
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Best practice in coding
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Data Science
+  Data
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -130,24 +125,36 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="introduction-to-data-analysis.html">
-   2. Introduction to Data Analysis
+   2. Intro to Data Analysis
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Coming from Stata and Matlab
+  Best practice
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Best practice in coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-stata.html">
-   1. Coming from Stata
+   Coming from Stata
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
-   2. Coming from Matlab
+   Coming from Matlab
   </a>
  </li>
 </ul>
@@ -258,62 +265,62 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#code-in-style">
-   3.1. Code in style
+   1.1. Code in style
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#do-not-repeat-yourself-dry">
-   3.2. Do not repeat yourself (DRY)
+   1.2. Do not repeat yourself (DRY)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#naming-conventions">
-   3.3. Naming conventions
+   1.3. Naming conventions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#make-it-modular">
-   3.4. Make it modular
+   1.4. Make it modular
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#code-comments">
-   3.5. Code comments
+   1.5. Code comments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#code-review">
-   3.6. Code review
+   1.6. Code review
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#use-interoperable-file-formats">
-   3.7. Use interoperable file formats
+   1.7. Use interoperable file formats
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#use-relative-filepaths">
-   3.8. Use relative filepaths
+   1.8. Use relative filepaths
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#don-t-prematurely-optimise-for-speed">
-   3.9. Don’t prematurely optimise for speed
+   1.9. Don’t prematurely optimise for speed
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rubber-duck-your-problems">
-   3.10. Rubber duck your problems
+   1.10. Rubber duck your problems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-zen-of-python">
-   3.11. The Zen of Python
+   1.11. The Zen of Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   3.12. Review
+   1.12. Review
   </a>
  </li>
 </ul>
@@ -328,7 +335,7 @@
               <div>
                 
   <div class="section" id="best-practice-in-coding">
-<h1><span class="section-number">3. </span>Best practice in coding<a class="headerlink" href="#best-practice-in-coding" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Best practice in coding<a class="headerlink" href="#best-practice-in-coding" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll learn about best practices for coding. As you code, you’ll be tempted to ignore these (that’s normal; we all are). But the truth is that they will <em>save</em> time in the long run, and future you will thank past you for sticking to them.</p>
 <p>The validity of your research depends, to a frightening degree, on the quality of your code. There are many ways to write code and, over the years, software developers have worked out best practices that help to make writing, using, debugging, and reading code more fun, and to make the end product higher quality. (There’s nothing worse than wading through someone else’s terrible code.)</p>
 <p><img alt="Code quality 2" src="https://imgs.xkcd.com/comics/code_quality_2.png" /></p>
@@ -336,7 +343,7 @@
 <p>Fortunately there’s lot of great advice, and even tools, to help you do this.</p>
 <p>(Reproducibility is also an important part of coding best practice, but we’ll talk about that in a later chapter. Likewise, I won’t talk about a more advanced best practice, testing, here.)</p>
 <div class="section" id="code-in-style">
-<h2><span class="section-number">3.1. </span>Code in style<a class="headerlink" href="#code-in-style" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Code in style<a class="headerlink" href="#code-in-style" title="Permalink to this headline">¶</a></h2>
 <p>The first thing to think about is code style, ie how you write equivalent valid code. Python has a whole set of conventions about good style called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">‘PEP8’</a>, which it’s worth taking a quick look at. It includes advice like indentation should always be 4 spaces per level and to surround top-level function and class definitions with two blank lines.</p>
 <p>Learning all of these would be tedious beyond belief. The good news is that a combination of packages and Visual Studio Code will do almost all of them for you!</p>
 <p>Visual Studio Code can use a so-called ‘linter’ package to highlight any lines of your code that don’t comply with PEP8. I use <a class="reference external" href="https://pypi.org/project/pycodestyle/"><strong>pycodestyle</strong></a>. Once you’ve installed it and set it up in Visual Studio Code (Command Palette -&gt; Python: Set Linter) you select some of your code in a script and hit Command+K, Command+F on Mac (Ctrl+K, Ctrl+F otherwise) and pycodestyle will automatically fix what it can.</p>
@@ -368,33 +375,33 @@
 <p><img alt="Code quality" src="https://imgs.xkcd.com/comics/code_quality.png" /></p>
 </div>
 <div class="section" id="do-not-repeat-yourself-dry">
-<h2><span class="section-number">3.2. </span>Do not repeat yourself (DRY)<a class="headerlink" href="#do-not-repeat-yourself-dry" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Do not repeat yourself (DRY)<a class="headerlink" href="#do-not-repeat-yourself-dry" title="Permalink to this headline">¶</a></h2>
 <p>The DRY principle is ‘Every piece of knowledge or logic must have a single, unambiguous representation within a system.’ Divide your code into re-usable pieces that you can call when and where you want. Don’t write lengthy methods, but divide logic up into clearly differentiated chunks.</p>
 <p>This saves having to repeat code, having no idea whether it’s this or that version of the same function doing the work, and will help your debugging efforts no end.</p>
 <p>Some practical ways to apply DRY in practice are to use functions, to put functions or code that needs to be executed multiple times by multiple different scripts into another script (eg called <code class="docutils literal notranslate"><span class="pre">utilities.py</span></code>) and then import it, and to think carefully if another way of writing your code would be more concise (yet still readable).</p>
 </div>
 <div class="section" id="naming-conventions">
-<h2><span class="section-number">3.3. </span>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
 <p>In Python, the naming convention for almost all objects is lower case separated by underscores, e.g. ‘this_is_a_script.py’. This style of naming is also known as snake case. There are different naming conventions though–<a class="reference external" href="https://twitter.com/allison_horst">Allison Horst</a> made this fantastic cartoon of the different conventions that are in use.</p>
 <p><img alt="Different naming conventions" src="http://aeturrell.github.io/home/images/in_that_case.jpeg" /></p>
 <p>But good naming isn’t just about following the conventions, it’s also about giving objects names that are clear and useful. Instead of calling a variable that measures incomes <code class="docutils literal notranslate"><span class="pre">variable_one</span></code>, call it <code class="docutils literal notranslate"><span class="pre">income_measure</span></code>. Instead of calling a function that inverts a matrix <code class="docutils literal notranslate"><span class="pre">matrix_stuff</span></code>, call it <code class="docutils literal notranslate"><span class="pre">matrix_invert</span></code>. The better named your variables, the clearer your code will be–and the fewer comments you will need to write!</p>
 </div>
 <div class="section" id="make-it-modular">
-<h2><span class="section-number">3.4. </span>Make it modular<a class="headerlink" href="#make-it-modular" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Make it modular<a class="headerlink" href="#make-it-modular" title="Permalink to this headline">¶</a></h2>
 <p>Do not have a single file that does everything. If you split your code into separate, independent modules it will be easier to read, debug, test, and use. You can check the basics of coding chapter to see how to create and import functions from other scripts. But even within a script, you can still make your code modular by defining functions that have clear inputs and outputs.</p>
 <p>A good rule of thumb is that if a code that achieves one end goes longer than about 30 lines, it should probably go into a function. Scripts longer than about 500 lines are ripe for splitting up too.</p>
 </div>
 <div class="section" id="code-comments">
-<h2><span class="section-number">3.5. </span>Code comments<a class="headerlink" href="#code-comments" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>Code comments<a class="headerlink" href="#code-comments" title="Permalink to this headline">¶</a></h2>
 <p>Code comments, extra information that is not executed when the code is run, can be added by a preceding hash character <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">comment</span></code>. Use code comments to provide extra contextual information that <em>isn’t</em> conveyed by function and variable names.</p>
 <p>Actually, well-written code needs <em>fewer</em> comments because it’s more evidence what’s going on. And it’s tempting not to update comments even when code changes. So do comment, but see if you can make the code tell its own story first.</p>
 </div>
 <div class="section" id="code-review">
-<h2><span class="section-number">3.6. </span>Code review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>Code review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h2>
 <p>Perform code reviews: give what you’ve done to a colleague and ask them to go through it line-by-line to check it works as intended. If they do this properly and don’t find any mistakes or issues then I’d be very surprised. Return the favour to magically become a better coder yourself.</p>
 </div>
 <div class="section" id="use-interoperable-file-formats">
-<h2><span class="section-number">3.7. </span>Use interoperable file formats<a class="headerlink" href="#use-interoperable-file-formats" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>Use interoperable file formats<a class="headerlink" href="#use-interoperable-file-formats" title="Permalink to this headline">¶</a></h2>
 <p>We’ll talk much more about data in an upcoming chapter. For now, some basic pointers for the most common form of data: tabular data that’s arranged in columns and rows.</p>
 <p>First: <strong>do not</strong> store your data in Excel file formats. Ever. First, it’s not an open format, it’s proprietary, even if you can open it with many open source tools. Second, more importantly, Excel can do bad things like <a class="reference external" href="http://www.win-vector.com/blog/2014/11/excel-spreadsheets-are-hard-to-get-right/">changing the underlying values in your dataset</a> (dates and booleans), and it tempts other users to start slotting Excel code around the data. This is bad - best practice is to <strong>separate</strong> code and data. Code hidden in Excel cells is not very transparent or auditable.</p>
 <p><img alt="jpg" src="https://pbs.twimg.com/media/D8z-M_dVUAA6NOh?format=jpg&amp;name=medium" /></p>
@@ -405,7 +412,7 @@
 <p>And if you’re working with big data, I <em>strongly</em> recommend the parquet file format. In most programming languages, it’s <a class="reference external" href="https://ursalabs.org/blog/2019-10-columnar-perf/">blazing fast</a> for input/output and packs down to a very efficient size. For example, a file saved in parquet might be 10 times smaller than the same .dta file; in tests, a 114 Mb parquet file was a whopping 4.68 GB in R’s RDS format. If you’re using cloud or have a small laptop, these space-savings add up. Better yet, parquet is available across a wide range of tools and languages including Python, R, Ruby, C++, Java, and Go. (Worth saying that parquet won’t always be the right choice, but it’s a great default for big data.)</p>
 </div>
 <div class="section" id="use-relative-filepaths">
-<h2><span class="section-number">3.8. </span>Use relative filepaths<a class="headerlink" href="#use-relative-filepaths" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.8. </span>Use relative filepaths<a class="headerlink" href="#use-relative-filepaths" title="Permalink to this headline">¶</a></h2>
 <p>A path, or filepath, is a slash-separated list of directory names followed by either a directory name or a file name. You’ll use them to read data into code, for example using <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv('path/to/data.csv')</span></code>. A directory is the same as a folder. On Unix based systems (Mac and Linux), these paths use forward slashes:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/Users/yourname/Documents/projects/file.csv
 </pre></div>
@@ -433,16 +440,16 @@
 </div>
 </div>
 <div class="section" id="don-t-prematurely-optimise-for-speed">
-<h2><span class="section-number">3.9. </span>Don’t prematurely optimise for speed<a class="headerlink" href="#don-t-prematurely-optimise-for-speed" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.9. </span>Don’t prematurely optimise for speed<a class="headerlink" href="#don-t-prematurely-optimise-for-speed" title="Permalink to this headline">¶</a></h2>
 <p>Make code correct and readable first, and fast second. You can waste a lot of time optimising only to find that either the bottleneck is not where you thought it was, or that you change your mind about what process needs to be done.</p>
 </div>
 <div class="section" id="rubber-duck-your-problems">
-<h2><span class="section-number">3.10. </span>Rubber duck your problems<a class="headerlink" href="#rubber-duck-your-problems" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.10. </span>Rubber duck your problems<a class="headerlink" href="#rubber-duck-your-problems" title="Permalink to this headline">¶</a></h2>
 <p>Rubber duck debugging is a method of fixing code that isn’t working as intended by, err, talking to a rubber duck. Something about describing your problem out loud and in detail can suddenly illuminate the issue to you and your plastic waterfowl friend.</p>
 <p><img alt="jpg" src="https://gitduck.com/blog/content/images/2019/10/IMG_7540.jpeg" /></p>
 </div>
 <div class="section" id="the-zen-of-python">
-<h2><span class="section-number">3.11. </span>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.11. </span>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
 <p>For a more poetic take on how to code, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> in your Python session.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,7 +486,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <p>Finally, it’s always good to start by choosing clarity over optimisation. Computation is cheap, brain time is not. If you really need to optimise, do it later when you’ve figured out where it will count.</p>
 </div>
 <div class="section" id="review">
-<h2><span class="section-number">3.12. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.12. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -511,8 +518,8 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="basics-of-coding.html" title="previous page"><span class="section-number">2. </span>Basics of coding</a>
-    <a class='right-next' id="next-link" href="data-analysis-quickstart.html" title="next page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
+    <a class='left-prev' id="prev-link" href="introduction-to-data-analysis.html" title="previous page"><span class="section-number">2. </span>Intro to Data Analysis</a>
+    <a class='right-next' id="next-link" href="coming-from-stata.html" title="next page">Coming from Stata</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Coming from Stata &#8212; Coding for Economists</title>
+    <title>Coming from Stata &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Coming from Matlab" href="coming-from-matlab.html" />
-    <link rel="prev" title="2. Introduction to Data Analysis" href="introduction-to-data-analysis.html" />
+    <link rel="next" title="Coming from Matlab" href="coming-from-matlab.html" />
+    <link rel="prev" title="1. Best practice in coding" href="best-practice-coding.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -111,15 +111,10 @@
    2. Basics of coding
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="best-practice-coding.html">
-   3. Best practice in coding
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Data Science
+  Data
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -130,24 +125,36 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="introduction-to-data-analysis.html">
-   2. Introduction to Data Analysis
+   2. Intro to Data Analysis
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Coming from Stata and Matlab
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best practice in coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Coming from Stata
+   Coming from Stata
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
-   2. Coming from Matlab
+   Coming from Matlab
   </a>
  </li>
 </ul>
@@ -258,7 +265,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stata-python">
-   1.1. Stata &lt;==&gt; Python
+   Stata &lt;==&gt; Python
   </a>
  </li>
 </ul>
@@ -273,14 +280,14 @@
               <div>
                 
   <div class="section" id="coming-from-stata">
-<h1><span class="section-number">1. </span>Coming from Stata<a class="headerlink" href="#coming-from-stata" title="Permalink to this headline">¶</a></h1>
+<h1>Coming from Stata<a class="headerlink" href="#coming-from-stata" title="Permalink to this headline">¶</a></h1>
 <p>This chapter has benefitted enormously from <a class="reference external" href="http://www.danielmsullivan.com/pages/tutorial_stata_to_python.html">Daniel M. Sullivan’s</a> excellent notes.</p>
 <p>The biggest difference between Python and Stata is that Python is a fully-fledged programming language, which means it can do <em>lots</em> of things, while Stata is really just for data analysis. What this means in practice is that sometimes the notation to do this or that operation in Python (or any other general purpose programming language) is less concise than in Stata. There is greater competition for each command in Python because it does many more things.</p>
 <p>Another difference is that, in Stata, there is one dataset in memory that is represented as matrix where each column is a “variable” with a unique name. In Python, variables can be anything, even functions! But most data analysis in Python is done using dataframes, which are objects that are somewhat similar to a single dataset in Stata. In Python, you can have as many DataFrames as you like in action at once. This causes the first major notational differences; in Python, you need to specify <em>which</em> dataframe you want to perform an operation on, in addition to which column (or row, or entry).</p>
 <p>Finally, Python and its data analysis packages are free.</p>
 <p>Regardless of Python not being a programming language solely dedicated to data analysis, it really does have first class support for data analysis via its <strong>pandas</strong> package.</p>
 <div class="section" id="stata-python">
-<h2><span class="section-number">1.1. </span>Stata &lt;==&gt; Python<a class="headerlink" href="#stata-python" title="Permalink to this headline">¶</a></h2>
+<h2>Stata &lt;==&gt; Python<a class="headerlink" href="#stata-python" title="Permalink to this headline">¶</a></h2>
 <p>What follows is a giant table of translations between Stata code and Python’s <a class="reference external" href="https://pandas.pydata.org/"><strong>pandas</strong></a>(panel-data-analysis) package. The econometrics examples below use Daniel M Sullivan’s <a class="reference external" href="https://www.danielmsullivan.com/econtools/metrics.html"><strong>econtools</strong></a> package, but you could also use <a class="reference external" href="https://www.statsmodels.org/"><strong>statsmodels</strong></a>. Bear in mind, it’s certainly not meant to be exhaustive but it should give you a flavour of the syntax differences and, in some cases, I’ve pointed out where to find further information.</p>
 <p>Following, Daniel’s treatment, the Stata-to-Python translations assume that, in Python, you have a <strong>pandas</strong> DataFrame called <code class="docutils literal notranslate"><span class="pre">df</span></code>. We will use placeholders like <code class="docutils literal notranslate"><span class="pre">varname</span></code> for Stata variables and <code class="docutils literal notranslate"><span class="pre">df['varname']</span></code> for the Python equivalent. Remember that you need to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code> before running any of the examples that use <code class="docutils literal notranslate"><span class="pre">pd</span></code>. For the econometrics examples, you will need <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">econtools.metrics</span> <span class="pre">as</span> <span class="pre">mt</span></code>.</p>
 <table class="colwidths-auto table">
@@ -461,8 +468,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="introduction-to-data-analysis.html" title="previous page"><span class="section-number">2. </span>Introduction to Data Analysis</a>
-    <a class='right-next' id="next-link" href="coming-from-matlab.html" title="next page"><span class="section-number">2. </span>Coming from Matlab</a>
+    <a class='left-prev' id="prev-link" href="best-practice-coding.html" title="previous page"><span class="section-number">1. </span>Best practice in coding</a>
+    <a class='right-next' id="next-link" href="coming-from-matlab.html" title="next page">Coming from Matlab</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

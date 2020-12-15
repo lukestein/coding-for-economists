@@ -57,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Introduction to Data Analysis" href="introduction-to-data-analysis.html" />
-    <link rel="prev" title="3. Best practice in coding" href="best-practice-coding.html" />
+    <link rel="next" title="2. Data Analysis" href="introduction-to-data-analysis.html" />
+    <link rel="prev" title="2. Basics of coding" href="basics-of-coding.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -111,15 +111,10 @@
    2. Basics of coding
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="best-practice-coding.html">
-   3. Best practice in coding
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Data Science
+  Data
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -130,24 +125,36 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="introduction-to-data-analysis.html">
-   2. Introduction to Data Analysis
+   2. Data Analysis
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Coming from Stata and Matlab
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best practice in coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-stata.html">
-   1. Coming from Stata
+   Coming from Stata
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
-   2. Coming from Matlab
+   Coming from Matlab
   </a>
  </li>
 </ul>
@@ -394,13 +401,9 @@
 <h1><span class="section-number">1. </span>Data Analysis Quickstart<a class="headerlink" href="#data-analysis-quickstart" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Here we’ll do a whistlestop tour of what’s possible when using code to execute data analysis on a single dataframe using the Star Wars’ characters dataset as an example. For a more thorough introduction to data analysis, see the next chapter.</p>
-<p>This chapter will use the <strong>pandas</strong> package; if you don’t already have it installed you may need to run</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install pandas
-conda install pyarrow
-</pre></div>
-</div>
-<p>on your computer’s command line.</p>
+<p>Here we’ll do a whistlestop tour of data analysis on a <em>single</em> dataframe using the Star Wars’ characters dataset as an example. For a more thorough grounding in using data, see the next chapter.</p>
+<p>This chapter uses the <strong>pandas</strong>, <strong>pyarrow</strong>, and <strong>numpy</strong> packages. If you’re running this code, you may need to install these packages, which you can do using either <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on your computer’s command line. (If you’re not sure what a command line or terminal is, take a quick look at the basics-of-coding chapter.)</p>
+<p>This chapter is hugely indebted to the fantastic <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a>, and both the <strong>pandas</strong> <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html">documentation</a> and amazing <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/index.html">introductory tutorials</a>.</p>
 </div>
 <div class="section" id="loading-data-and-checking-datatypes">
 <h2><span class="section-number">1.2. </span>Loading data and checking datatypes<a class="headerlink" href="#loading-data-and-checking-datatypes" title="Permalink to this headline">¶</a></h2>
@@ -418,7 +421,7 @@ conda install pyarrow
 
 
 <span class="c1"># Read in data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;starwars.feather&#39;</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;starwars.pickle&#39;</span><span class="p">))</span>
 <span class="c1"># Check info about dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
@@ -427,21 +430,19 @@ conda install pyarrow
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 87 entries, 0 to 86
-Data columns (total 10 columns):
+Data columns (total 8 columns):
  #   Column      Non-Null Count  Dtype   
 ---  ------      --------------  -----   
  0   name        87 non-null     string  
  1   height      81 non-null     float64 
  2   mass        59 non-null     float64 
  3   hair_color  81 non-null     category
- 4   skin_color  85 non-null     category
- 5   eye_color   84 non-null     category
- 6   birth_year  43 non-null     string  
- 7   gender      84 non-null     category
- 8   homeworld   77 non-null     category
- 9   species     82 non-null     category
-dtypes: category(6), float64(2), string(2)
-memory usage: 9.3 KB
+ 4   eye_color   84 non-null     category
+ 5   gender      84 non-null     category
+ 6   homeworld   77 non-null     category
+ 7   species     82 non-null     category
+dtypes: category(5), float64(2), string(1)
+memory usage: 3.5 KB
 </pre></div>
 </div>
 </div>
@@ -477,9 +478,7 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
       <th>gender</th>
       <th>homeworld</th>
       <th>species</th>
@@ -492,9 +491,7 @@ memory usage: 9.3 KB
       <td>172.0</td>
       <td>77.0</td>
       <td>blond</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>19BBY</td>
       <td>male</td>
       <td>Tatooine</td>
       <td>Human</td>
@@ -505,9 +502,7 @@ memory usage: 9.3 KB
       <td>167.0</td>
       <td>75.0</td>
       <td>NaN</td>
-      <td>gold</td>
       <td>yellow</td>
-      <td>112BBY</td>
       <td>NaN</td>
       <td>Tatooine</td>
       <td>Droid</td>
@@ -518,9 +513,7 @@ memory usage: 9.3 KB
       <td>96.0</td>
       <td>32.0</td>
       <td>NaN</td>
-      <td>white, blue</td>
       <td>red</td>
-      <td>33BBY</td>
       <td>NaN</td>
       <td>Naboo</td>
       <td>Droid</td>
@@ -531,9 +524,7 @@ memory usage: 9.3 KB
       <td>202.0</td>
       <td>136.0</td>
       <td>none</td>
-      <td>white</td>
       <td>yellow</td>
-      <td>41.9BBY</td>
       <td>male</td>
       <td>Tatooine</td>
       <td>Human</td>
@@ -544,9 +535,7 @@ memory usage: 9.3 KB
       <td>150.0</td>
       <td>49.0</td>
       <td>brown</td>
-      <td>light</td>
       <td>brown</td>
-      <td>19BBY</td>
       <td>female</td>
       <td>Alderaan</td>
       <td>Human</td>
@@ -562,7 +551,7 @@ memory usage: 9.3 KB
 <p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> stands for location. By passing conditions to <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, you are able to select and work with a subset of rows in a dataframe. The second argument passes columns of interest (use <code class="docutils literal notranslate"><span class="pre">:</span></code> for all columns).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;skin_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;light&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;eye_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;brown&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;species&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hair_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;brown&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;eye_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;blue&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;species&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -591,18 +580,18 @@ memory usage: 9.3 KB
   </thead>
   <tbody>
     <tr>
-      <th>4</th>
-      <td>Leia Organa</td>
+      <th>6</th>
+      <td>Beru Whitesun lars</td>
       <td>Human</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>Biggs Darklighter</td>
-      <td>Human</td>
+      <th>12</th>
+      <td>Chewbacca</td>
+      <td>Wookiee</td>
     </tr>
     <tr>
-      <th>57</th>
-      <td>Cordé</td>
+      <th>17</th>
+      <td>Jek Tono Porkins</td>
       <td>Human</td>
     </tr>
     <tr>
@@ -611,19 +600,19 @@ memory usage: 9.3 KB
       <td>...</td>
     </tr>
     <tr>
-      <th>78</th>
-      <td>Raymus Antilles</td>
+      <th>36</th>
+      <td>Ric Olié</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Cliegg Lars</td>
       <td>Human</td>
     </tr>
     <tr>
-      <th>83</th>
-      <td>Poe Dameron</td>
-      <td>Human</td>
-    </tr>
-    <tr>
-      <th>86</th>
-      <td>Padmé Amidala</td>
-      <td>Human</td>
+      <th>77</th>
+      <td>Tarfful</td>
+      <td>Wookiee</td>
     </tr>
   </tbody>
 </table>
@@ -663,9 +652,7 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
       <th>gender</th>
       <th>homeworld</th>
       <th>species</th>
@@ -678,9 +665,7 @@ memory usage: 9.3 KB
       <td>66.0</td>
       <td>17.0</td>
       <td>white</td>
-      <td>green</td>
       <td>brown</td>
-      <td>896BBY</td>
       <td>male</td>
       <td>NaN</td>
       <td>Yoda's species</td>
@@ -691,9 +676,7 @@ memory usage: 9.3 KB
       <td>79.0</td>
       <td>15.0</td>
       <td>none</td>
-      <td>grey, blue</td>
       <td>NaN</td>
-      <td>&lt;NA&gt;</td>
       <td>male</td>
       <td>Aleen Minor</td>
       <td>Aleena</td>
@@ -705,16 +688,12 @@ memory usage: 9.3 KB
       <td>20.0</td>
       <td>brown</td>
       <td>brown</td>
-      <td>brown</td>
-      <td>8BBY</td>
       <td>male</td>
       <td>Endor</td>
       <td>Ewok</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -730,9 +709,7 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>brown</td>
-      <td>light</td>
       <td>brown</td>
-      <td>&lt;NA&gt;</td>
       <td>male</td>
       <td>NaN</td>
       <td>Human</td>
@@ -743,9 +720,7 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>none</td>
-      <td>none</td>
       <td>black</td>
-      <td>&lt;NA&gt;</td>
       <td>none</td>
       <td>NaN</td>
       <td>Droid</td>
@@ -757,25 +732,23 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
       <td>female</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>87 rows × 10 columns</p>
+<p>87 rows × 8 columns</p>
 </div></div></div>
 </div>
 </div>
 <div class="section" id="choose-multiple-rows-or-columns-using-slices">
 <h2><span class="section-number">1.5. </span>Choose multiple rows or columns using slices<a class="headerlink" href="#choose-multiple-rows-or-columns-using-slices" title="Permalink to this headline">¶</a></h2>
 <p>Slices can be passed by name using <code class="docutils literal notranslate"><span class="pre">.loc[startrow:stoprow:step,</span> <span class="pre">startcolumn:stopcolumn:step]</span></code> or by position using <code class="docutils literal notranslate"><span class="pre">.iloc[start:stop:step,</span> <span class="pre">start:stop:step]</span></code>.</p>
-<p>Choosing every 10th row, and the columns between ‘name’ and ‘birth_year’:</p>
+<p>Choosing every 10th row, and the columns between ‘name’ and ‘gender’:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;birth_year&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -802,9 +775,8 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
+      <th>gender</th>
     </tr>
   </thead>
   <tbody>
@@ -814,9 +786,8 @@ memory usage: 9.3 KB
       <td>172.0</td>
       <td>77.0</td>
       <td>blond</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>19BBY</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>10</th>
@@ -824,9 +795,8 @@ memory usage: 9.3 KB
       <td>188.0</td>
       <td>84.0</td>
       <td>blond</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>41.9BBY</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>20</th>
@@ -834,13 +804,11 @@ memory usage: 9.3 KB
       <td>183.0</td>
       <td>78.2</td>
       <td>black</td>
-      <td>fair</td>
       <td>brown</td>
-      <td>31.5BBY</td>
+      <td>male</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -854,9 +822,8 @@ memory usage: 9.3 KB
       <td>170.0</td>
       <td>56.2</td>
       <td>black</td>
-      <td>yellow</td>
       <td>blue</td>
-      <td>58BBY</td>
+      <td>female</td>
     </tr>
     <tr>
       <th>70</th>
@@ -864,9 +831,8 @@ memory usage: 9.3 KB
       <td>167.0</td>
       <td>NaN</td>
       <td>white</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>&lt;NA&gt;</td>
+      <td>female</td>
     </tr>
     <tr>
       <th>80</th>
@@ -874,13 +840,12 @@ memory usage: 9.3 KB
       <td>206.0</td>
       <td>80.0</td>
       <td>none</td>
-      <td>grey</td>
       <td>black</td>
-      <td>&lt;NA&gt;</td>
+      <td>male</td>
     </tr>
   </tbody>
 </table>
-<p>9 rows × 7 columns</p>
+<p>9 rows × 6 columns</p>
 </div></div></div>
 </div>
 <p>Choosing the first 5 rows and the last 2 columns by position:</p>
@@ -977,9 +942,7 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
       <th>gender</th>
       <th>homeworld</th>
       <th>species</th>
@@ -992,9 +955,7 @@ memory usage: 9.3 KB
       <td>167.0</td>
       <td>NaN</td>
       <td>white</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>&lt;NA&gt;</td>
       <td>female</td>
       <td>Coruscant</td>
       <td>Human</td>
@@ -1005,9 +966,7 @@ memory usage: 9.3 KB
       <td>178.0</td>
       <td>55.0</td>
       <td>none</td>
-      <td>blue</td>
       <td>hazel</td>
-      <td>48BBY</td>
       <td>female</td>
       <td>Ryloth</td>
       <td>Twi'lek</td>
@@ -1018,9 +977,7 @@ memory usage: 9.3 KB
       <td>202.0</td>
       <td>136.0</td>
       <td>none</td>
-      <td>white</td>
       <td>yellow</td>
-      <td>41.9BBY</td>
       <td>male</td>
       <td>Tatooine</td>
       <td>Human</td>
@@ -1031,9 +988,7 @@ memory usage: 9.3 KB
       <td>200.0</td>
       <td>140.0</td>
       <td>none</td>
-      <td>metal</td>
       <td>red</td>
-      <td>15BBY</td>
       <td>none</td>
       <td>NaN</td>
       <td>Droid</td>
@@ -1044,9 +999,7 @@ memory usage: 9.3 KB
       <td>188.0</td>
       <td>NaN</td>
       <td>none</td>
-      <td>pale</td>
       <td>orange</td>
-      <td>&lt;NA&gt;</td>
       <td>male</td>
       <td>Iktotch</td>
       <td>Iktotchi</td>
@@ -1088,9 +1041,7 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
       <th>gender</th>
       <th>home_world</th>
       <th>species</th>
@@ -1103,9 +1054,7 @@ memory usage: 9.3 KB
       <td>172.0</td>
       <td>77.0</td>
       <td>blond</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>19BBY</td>
       <td>male</td>
       <td>Tatooine</td>
       <td>Human</td>
@@ -1116,9 +1065,7 @@ memory usage: 9.3 KB
       <td>167.0</td>
       <td>75.0</td>
       <td>NaN</td>
-      <td>gold</td>
       <td>yellow</td>
-      <td>112BBY</td>
       <td>NaN</td>
       <td>Tatooine</td>
       <td>Droid</td>
@@ -1129,17 +1076,13 @@ memory usage: 9.3 KB
       <td>96.0</td>
       <td>32.0</td>
       <td>NaN</td>
-      <td>white, blue</td>
       <td>red</td>
-      <td>33BBY</td>
       <td>NaN</td>
       <td>Naboo</td>
       <td>Droid</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1155,9 +1098,7 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>none</td>
-      <td>none</td>
       <td>black</td>
-      <td>&lt;NA&gt;</td>
       <td>none</td>
       <td>NaN</td>
       <td>Droid</td>
@@ -1169,8 +1110,6 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
       <td>female</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1181,16 +1120,14 @@ memory usage: 9.3 KB
       <td>165.0</td>
       <td>45.0</td>
       <td>brown</td>
-      <td>light</td>
       <td>brown</td>
-      <td>46BBY</td>
       <td>female</td>
       <td>Naboo</td>
       <td>Human</td>
     </tr>
   </tbody>
 </table>
-<p>87 rows × 10 columns</p>
+<p>87 rows × 8 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -1228,9 +1165,7 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
       <th>gender</th>
       <th>homeworld</th>
       <th>species</th>
@@ -1244,9 +1179,7 @@ memory usage: 9.3 KB
       <td>172.0</td>
       <td>77.0</td>
       <td>blond</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>19BBY</td>
       <td>male</td>
       <td>Tatooine</td>
       <td>Human</td>
@@ -1258,9 +1191,7 @@ memory usage: 9.3 KB
       <td>167.0</td>
       <td>75.0</td>
       <td>NaN</td>
-      <td>gold</td>
       <td>yellow</td>
-      <td>112BBY</td>
       <td>NaN</td>
       <td>Tatooine</td>
       <td>Droid</td>
@@ -1272,9 +1203,7 @@ memory usage: 9.3 KB
       <td>96.0</td>
       <td>32.0</td>
       <td>NaN</td>
-      <td>white, blue</td>
       <td>red</td>
-      <td>33BBY</td>
       <td>NaN</td>
       <td>Naboo</td>
       <td>Droid</td>
@@ -1291,8 +1220,6 @@ memory usage: 9.3 KB
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>84</th>
@@ -1300,9 +1227,7 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>none</td>
-      <td>none</td>
       <td>black</td>
-      <td>&lt;NA&gt;</td>
       <td>none</td>
       <td>NaN</td>
       <td>Droid</td>
@@ -1315,8 +1240,6 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>&lt;NA&gt;</td>
       <td>female</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1328,9 +1251,7 @@ memory usage: 9.3 KB
       <td>165.0</td>
       <td>45.0</td>
       <td>brown</td>
-      <td>light</td>
       <td>brown</td>
-      <td>46BBY</td>
       <td>female</td>
       <td>Naboo</td>
       <td>Human</td>
@@ -1338,7 +1259,7 @@ memory usage: 9.3 KB
     </tr>
   </tbody>
 </table>
-<p>87 rows × 11 columns</p>
+<p>87 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>This was added to the end; ideally, we’d like it next to the height column:</p>
@@ -1368,7 +1289,6 @@ memory usage: 9.3 KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>birth_year</th>
       <th>eye_color</th>
       <th>gender</th>
       <th>hair_color</th>
@@ -1377,14 +1297,12 @@ memory usage: 9.3 KB
       <th>homeworld</th>
       <th>mass</th>
       <th>name</th>
-      <th>skin_color</th>
       <th>species</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>19BBY</td>
       <td>blue</td>
       <td>male</td>
       <td>blond</td>
@@ -1393,12 +1311,10 @@ memory usage: 9.3 KB
       <td>Tatooine</td>
       <td>77.0</td>
       <td>Luke Skywalker</td>
-      <td>fair</td>
       <td>Human</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>112BBY</td>
       <td>yellow</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1407,12 +1323,10 @@ memory usage: 9.3 KB
       <td>Tatooine</td>
       <td>75.0</td>
       <td>C-3PO</td>
-      <td>gold</td>
       <td>Droid</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>33BBY</td>
       <td>red</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1421,7 +1335,6 @@ memory usage: 9.3 KB
       <td>Naboo</td>
       <td>32.0</td>
       <td>R2-D2</td>
-      <td>white, blue</td>
       <td>Droid</td>
     </tr>
     <tr>
@@ -1435,12 +1348,9 @@ memory usage: 9.3 KB
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>84</th>
-      <td>&lt;NA&gt;</td>
       <td>black</td>
       <td>none</td>
       <td>none</td>
@@ -1449,12 +1359,10 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>BB8</td>
-      <td>none</td>
       <td>Droid</td>
     </tr>
     <tr>
       <th>85</th>
-      <td>&lt;NA&gt;</td>
       <td>NaN</td>
       <td>female</td>
       <td>NaN</td>
@@ -1464,11 +1372,9 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>Captain Phasma</td>
       <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>86</th>
-      <td>46BBY</td>
       <td>brown</td>
       <td>female</td>
       <td>brown</td>
@@ -1477,12 +1383,11 @@ memory usage: 9.3 KB
       <td>Naboo</td>
       <td>45.0</td>
       <td>Padmé Amidala</td>
-      <td>light</td>
       <td>Human</td>
     </tr>
   </tbody>
 </table>
-<p>87 rows × 11 columns</p>
+<p>87 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>To overwrite existing columns just use <code class="docutils literal notranslate"><span class="pre">height</span> <span class="pre">=</span> <span class="pre">df['height']/100</span></code> in the assign function. We can also assign using a series of statements instead of chaining them together using</p>
@@ -1679,9 +1584,7 @@ memory usage: 9.3 KB
       <th>height</th>
       <th>mass</th>
       <th>hair_color</th>
-      <th>skin_color</th>
       <th>eye_color</th>
-      <th>birth_year</th>
       <th>gender</th>
       <th>homeworld</th>
       <th>species</th>
@@ -1695,9 +1598,7 @@ memory usage: 9.3 KB
       <td>172.0</td>
       <td>77.0</td>
       <td>blond</td>
-      <td>fair</td>
       <td>blue</td>
-      <td>19BBY</td>
       <td>male</td>
       <td>Tatooine</td>
       <td>Human</td>
@@ -1709,9 +1610,7 @@ memory usage: 9.3 KB
       <td>167.0</td>
       <td>75.0</td>
       <td>NaN</td>
-      <td>gold</td>
       <td>yellow</td>
-      <td>112BBY</td>
       <td>NaN</td>
       <td>Tatooine</td>
       <td>Droid</td>
@@ -1723,9 +1622,7 @@ memory usage: 9.3 KB
       <td>96.0</td>
       <td>32.0</td>
       <td>NaN</td>
-      <td>white, blue</td>
       <td>red</td>
-      <td>33BBY</td>
       <td>NaN</td>
       <td>Naboo</td>
       <td>Droid</td>
@@ -1742,8 +1639,6 @@ memory usage: 9.3 KB
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>83</th>
@@ -1751,9 +1646,7 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>brown</td>
-      <td>light</td>
       <td>brown</td>
-      <td>&lt;NA&gt;</td>
       <td>male</td>
       <td>NaN</td>
       <td>Human</td>
@@ -1765,9 +1658,7 @@ memory usage: 9.3 KB
       <td>NaN</td>
       <td>NaN</td>
       <td>none</td>
-      <td>none</td>
       <td>black</td>
-      <td>&lt;NA&gt;</td>
       <td>none</td>
       <td>NaN</td>
       <td>Droid</td>
@@ -1779,9 +1670,7 @@ memory usage: 9.3 KB
       <td>165.0</td>
       <td>45.0</td>
       <td>brown</td>
-      <td>light</td>
       <td>brown</td>
-      <td>46BBY</td>
       <td>female</td>
       <td>Naboo</td>
       <td>Human</td>
@@ -1789,7 +1678,7 @@ memory usage: 9.3 KB
     </tr>
   </tbody>
 </table>
-<p>82 rows × 11 columns</p>
+<p>82 rows × 9 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -1857,8 +1746,8 @@ memory usage: 9.3 KB
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="best-practice-coding.html" title="previous page"><span class="section-number">3. </span>Best practice in coding</a>
-    <a class='right-next' id="next-link" href="introduction-to-data-analysis.html" title="next page"><span class="section-number">2. </span>Introduction to Data Analysis</a>
+    <a class='left-prev' id="prev-link" href="basics-of-coding.html" title="previous page"><span class="section-number">2. </span>Basics of coding</a>
+    <a class='right-next' id="next-link" href="introduction-to-data-analysis.html" title="next page"><span class="section-number">2. </span>Data Analysis</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
