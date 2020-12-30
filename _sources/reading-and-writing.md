@@ -13,7 +13,7 @@ kernelspec:
   name: codeforecon
 ---
 
-# Reading and writing data
+# Reading and Writing Data
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
@@ -64,6 +64,8 @@ df = pd.read_csv(os.path.join('path', 'to', 'data.csv'))
 
 This code assumes that python is being executed in a directory that has a subdirectory 'path', which has a subdirectory 'to', inside which is 'data.csv'. Why are we using `os.path.join(...)` instead of just passing `pd.read_csv('path/to/data.csv'))`? The answer is that paths are not all alike; they're different on Linux/Mac and Windows. By saying `os.path.join` we tell Python to figure out how to create a path from the folder names.
 
+TODO: Change this to use pathlib. There are introductory videos to pathlib and its use available [here](https://calmcode.io/pathlib/do-not-hardcode.html).
+
 ### Reading data from lots of files
 
 Quite often, you have a case where you need to read in data from many files at once. There are two tools that will help with this: glob and concatenate.
@@ -84,15 +86,17 @@ Okay, so you have a big list of file paths: now what!? Assuming that the files h
 df = pd.concat([pd.read_csv(x) for x in list_of_files], axis=0)
 ```
 
-### Working with complex Excel data
+## Reading data from the web
 
-## Reading data from the internet and APIs
+### Files from the internet
 
 As you will have seen in some of the examples in this book, it's easy to read data from the internet once you have the url and file type. Here, for instance, is an example that reads in the 'storms' dataset:
 
 ```{code-cell} ipython3
 pd.read_csv('https://vincentarelbundock.github.io/Rdatasets/csv/dplyr/storms.csv')
 ```
+
+### APIs
 
 Using an API (application programming interface) is another way to draw down information from the interweb. Their just a way for one tool, say Python, to speak to another tool, say a server, and usefully exchange information. The classic use case would be to post a request for data that fits a certain query via an API and to get a download of that data back in return. (You should always preferentially use an API over webscraping a site.)
 
@@ -126,7 +130,9 @@ df = (pd.DataFrame(pd.json_normalize(json_data['months']))
 df['value'].plot(title=title, ylim=(0, df['value'].max()*1.2), lw=3.);
 ```
 
-### An easier way to interact with (some) APIs
+We've talked about *reading* APIs. You can also create your own to serve up data, models, whatever you like! This is an advanced topic and we won't cover it; but if you do need to, the simplest way is to use [Fast API](https://fastapi.tiangolo.com/). You can find some short video tutorials for Fast API [here](https://calmcode.io/fastapi/hello-world.html).
+
+#### An easier way to interact with (some) APIs
 
 Although it didn't take much code to get the ONS data, it would be even better if it was just a single line, wouldn't it? Fortunately there are some packages out there that make this easy, but it does depend on the API (and APIs come and go over time).
 
@@ -140,23 +146,24 @@ By far the most comprehensive library for accessing extra APIs is [**pandas-data
 
 and more.
 
-Let's see an example using FRED (the Federal Reserve Bank of St. Louis' economic data library). Again, let's look at job vacancies: in this case the total for the UK:
+Let's see an example using FRED (the Federal Reserve Bank of St. Louis' economic data library). This time, let's look at the UK unemployment rate:
 
 ```{code-cell} ipython3
 import pandas_datareader.data as web
 
-series_name = 'LMJVTTUVGBM647S'
-title = 'UK vacancies (thousands)'
+df_u = web.DataReader('LRHUTTTTGBM156S', 'fred')
 
-# The first line retrieves the data:
-df_v = (web.DataReader(series_name, 'fred')
-        .rename(columns={series_name: title})
-        .divide(1e3))
-
-df_v.plot(title=title, legend=False, ylim=(0, df_v[title].max()*1.2), lw=3.);
+df_u.plot(title='UK unemployment (percent)',
+          legend=False,
+          ylim=(2, 6),
+          lw=3.);
 ```
 
 ## Writing data to file
+
+The syntax for writing to a file is also very consistent, taking the form `df.to_*` where `*` might be `csv`, `stata`, or a number of output formats (you can even output to your computer's clipboard!).
+
+In general, you *do* need to specify the file extension though, i.e. when saving data you should specify `df.to_csv('dataout.csv')` rather than `df.to_csv('dataout')`. As with reading in, there are plenty of options for how to output data, and you can find more on outputs in the **pandas** [documentation](https://pandas.pydata.org/docs/user_guide/io.html).
 
 ### Formats
 
@@ -168,7 +175,44 @@ If you're interested in how effective the different data formats are, there blog
 
 It's best *not* to use formats associated with proprietary software, especially if the standard may change over time (Stata files change with the version of Stata used!!) or if opening the data in that tool might change it (hello Excel). It's also good practice *not* to use a data storage format that cannot easily be opened by other tools. For this reason, I don't generally recommend Python's pickle format or R's RDA format (though of course it's fine if your data is completely internal to your project and you're only using one language).
 
+## Reading and writing text, tex, md, and other text-editor friendly file formats
 
+It's frequently the case that you'll want to write an individual table, chunk of text, or other content that can be opened with a text editor to file. **pandas** has some convenience functions for this (there was a short example in the data analysis quickstart). Let's say we had a table:
+
+```{code-cell} ipython3
+df = pd.read_csv('https://vincentarelbundock.github.io/Rdatasets/csv/dplyr/storms.csv')
+table = (df.groupby(['month'])
+           .agg({'wind': 'mean',
+                 'pressure': 'mean'}))
+table
+```
+
+Our options for export of the `table` variable (which has datatype `pandas.core.frame.DataFrame`) are varied. For instance, we could use
+
+```python
+table.to_latex(caption='A Table', label='tab:descriptive')
+```
+
+to create data suitable for putting in a .tex file, `table.to_string()` to get plain text, and `table.to_markdown()` for md content. There's even a `table.to_html()`!
+
+Each of these export options accepts a filepath to write to, eg one can write `table.to_latex(os.path.join('path', 'to', 'file.md'))`.
+
+```{note}
+`.to_markdown()` has a dependency on another package, [**tabulate**](https://github.com/astanin/python-tabulate), which is for pretty-printing tables in Python and on the command line. You can install it using `pip install tabulate`.
+```
+
+If you have a string, bit of tex, or chunk of markdown that isn't coming directly from **pandas**, you can use base Python to write it to a file. Let's say we wanted to take some text,
+
+```python
+text = 'The greatest improvement in the productive powers of labour, and the greater part of the skill, dexterity, and judgment with which it is anywhere directed, or applied, seem to have been the effects of the division of labour.'
+```
+
+and write it to file. The command would be
+
+```python
+open('file.txt', 'w').write(text)
+```
 
 ## Review
 
+If you know how to read in data and text from file(s), the internet, and APIs, and write out to file too, then you've mastered the content of this chapter!

@@ -130,7 +130,19 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and writing data
+   3. Reading and Writing Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-vis.html">
+   1. Data Visualisation
   </a>
  </li>
 </ul>
@@ -148,6 +160,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Mathematical Coding for Economics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mathematical-coding.html">
+   1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Coming from ...
  </span>
 </p>
@@ -160,6 +184,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="further-resources.html">
+   Further resources
   </a>
  </li>
 </ul>
@@ -331,18 +367,23 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lambda-functions">
+   2.12. Lambda functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#splat-and-splatty-splat">
-   2.12. Splat and splatty-splat
+   2.13. Splat and splatty-splat
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous-fun">
-   2.13. Miscellaneous fun
+   2.14. Miscellaneous fun
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   2.14. Review
+   2.15. Review
   </a>
  </li>
 </ul>
@@ -880,7 +921,7 @@ The name in position 3 is Babbage
 </div>
 </div>
 </div>
-<p>This gives a nested structure that (in this case) iterates over <code class="docutils literal notranslate"><span class="pre">first_names</span></code> first, and then <code class="docutils literal notranslate"><span class="pre">last_names</span></code>.</p>
+<p>This gives a nested structure that (in this case) iterates over <code class="docutils literal notranslate"><span class="pre">first_names</span></code> first, and then <code class="docutils literal notranslate"><span class="pre">last_names</span></code>. If you’d like to learn more about list comprehensions, check out these <a class="reference external" href="https://calmcode.io/comprehensions/introduction.html">short video tutorials</a>.</p>
 </div>
 <div class="section" id="functions">
 <h2><span class="section-number">2.9. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
@@ -1108,8 +1149,63 @@ Inverse:
 <p>It will return <code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">has</span> <span class="pre">run</span></code> because, by executing the script alone, we are asking for anything in the <code class="docutils literal notranslate"><span class="pre">main</span></code> block defined at the end of the file to be run. But we can still import anything from utilities into other scripts as before–and in this case it is not the main script, but an import, and so the <code class="docutils literal notranslate"><span class="pre">main</span></code> block will <em>not</em> be executed.</p>
 </div>
 </div>
+<div class="section" id="lambda-functions">
+<h2><span class="section-number">2.12. </span>Lambda functions<a class="headerlink" href="#lambda-functions" title="Permalink to this headline">¶</a></h2>
+<p>Lambda functions are a very old idea in programming, and part of the functional programming paradigm. Coding languages tend to be more object-oriented or functional, though high-level languages often mix both. For example, R leans slightly more toward being a functional language, while Python is slightly more object oriented. However, Python does have lambda functions, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plus_one</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">plus_one</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a one-liner function that has a name it’s actually better practice here to use <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">plus_one(x):</span> <span class="pre">return</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>, so you shouldn’t see this form of lambda function too much in the wild. However, you are likely to see lambda functions being used with dataframes and other objects. For example, if you had a dataframe with a column of string called ‘strings’ that you want to lower the case of and replace one phrase with another, you could use lambda functions to do that (there are better ways of doing this but this is useful as a simple example):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;hello my blah is Ada&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;hElLo mY blah IS Adam&#39;</span><span class="p">]],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;strings&#39;</span><span class="p">],</span>
+                  <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;strings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;blah&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Hello My Blah Is Ada
+1    Hello My Blah Is Adam
+Name: strings, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>More complex lambda functions can be constructed, eg <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z:</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">z</span></code>. One of the best use cases of lambdas is when you <em>don’t</em> want to go to the trouble of declaring a function. For example, let’s say you want to compose a series of functions and you want to specify those functions in a list, one after the other. Using functions alone, you’d have to define a new function for each operation. With lambdas, it would look like this (again, there are easier ways to do this operation, but we’ll use simple functions to demonstrate the principle):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+16
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that people often use <code class="docutils literal notranslate"><span class="pre">x</span></code> by convention, but there’s nothing to stop you writing <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">horses:</span> <span class="pre">horses**2</span></code> (except the looks your co-authors will give you). If you want to learn more about lambda functions, check out these <a class="reference external" href="https://calmcode.io/lambda/introduction.html">short video tutorials</a>.</p>
+</div>
 <div class="section" id="splat-and-splatty-splat">
-<h2><span class="section-number">2.12. </span>Splat and splatty-splat<a class="headerlink" href="#splat-and-splatty-splat" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.13. </span>Splat and splatty-splat<a class="headerlink" href="#splat-and-splatty-splat" title="Permalink to this headline">¶</a></h2>
 <p>You read those right, yes. These are also known as unpacking operators for, respectively, arguments and dictionaries. For instance, if I have a function that takes two arguments I can send variables to it in different ways:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1131,7 +1227,7 @@ Inverse:
 </div>
 </div>
 </div>
-<p>The splat operator, <code class="docutils literal notranslate"><span class="pre">*</span></code>, unpacks the variable <code class="docutils literal notranslate"><span class="pre">func_args</span></code> into two different function arguments. Splatty-splat unpacks dictionaries into keyword arguments:</p>
+<p>The splat operator, <code class="docutils literal notranslate"><span class="pre">*</span></code>, unpacks the variable <code class="docutils literal notranslate"><span class="pre">func_args</span></code> into two different function arguments. Splatty-splat unpacks dictionaries into keyword arguments (aka kwargs):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_with_kwargs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
@@ -1175,9 +1271,10 @@ Inverse:
 </div>
 </div>
 </div>
+<p>To learn more about args and kwargs, check out these <a class="reference external" href="https://calmcode.io/args-kwargs/introduction.html">short video tutorials</a>.</p>
 </div>
 <div class="section" id="miscellaneous-fun">
-<h2><span class="section-number">2.13. </span>Miscellaneous fun<a class="headerlink" href="#miscellaneous-fun" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.14. </span>Miscellaneous fun<a class="headerlink" href="#miscellaneous-fun" title="Permalink to this headline">¶</a></h2>
 <p>Here are some other bits of basic coding that might be useful. They really show why Python is such a delightful language.</p>
 <p>You can use unicode characters for variables</p>
 <div class="cell docutils container">
@@ -1258,7 +1355,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-12-15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-12-30
 </pre></div>
 </div>
 </div>
@@ -1313,7 +1410,7 @@ False
 <p>This is just a taster of what can be done using ‘batteries included’ base Python; for more see the Advanced Coding Chapter.</p>
 </div>
 <div class="section" id="review">
-<h2><span class="section-number">2.14. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.15. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>If you now understand a bit about what objects, types, operators, conditional statements, loops, functions, and imports are, and <em>how</em> to use them, you are well on your way to becoming a coder. What you’ve seen in this chapter are the building blocks and you need to know a bit about them. But bricks by themselves do not a house make. In subsequent chapters, we’ll see how to combine the elements here to do productive analysis in economics.</p>
 </div>
 </div>

@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Reading and writing data" href="reading-and-writing.html" />
+    <link rel="next" title="3. Reading and Writing Data" href="reading-and-writing.html" />
     <link rel="prev" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -130,7 +130,19 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and writing data
+   3. Reading and Writing Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-vis.html">
+   1. Data Visualisation
   </a>
  </li>
 </ul>
@@ -148,6 +160,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Mathematical Coding for Economics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mathematical-coding.html">
+   1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Coming from ...
  </span>
 </p>
@@ -160,6 +184,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="further-resources.html">
+   Further resources
   </a>
  </li>
 </ul>
@@ -323,6 +359,28 @@
   <a class="reference internal nav-link" href="#filter-transform-apply-and-assign">
    2.8. Filter, transform, apply, and assign
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filter">
+     2.8.1. Filter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform">
+     2.8.2. Transform
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply">
+     2.8.3. Apply
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assign">
+     2.8.4. Assign
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#time-series-resampling-and-rolling-windows">
@@ -1628,9 +1686,6 @@ D  4  4  1
 E  4  0  2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -2112,6 +2167,8 @@ dtype: int64
 </div>
 <div class="section" id="filter-transform-apply-and-assign">
 <h2><span class="section-number">2.8. </span>Filter, transform, apply, and assign<a class="headerlink" href="#filter-transform-apply-and-assign" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="filter">
+<h3><span class="section-number">2.8.1. </span>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
 <p>Filtering does exactly what it sounds like, but it can make use of group-by commands. In the example below, all but one species is filtered out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2211,6 +2268,10 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="transform">
+<h3><span class="section-number">2.8.2. </span>Transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h3>
+<p>Transforms return a transformed version of the data that has the same shape as the input. This is useful when creating new columns that depend on some grouped data, for instance creating group-wise means. Here’s an example using the datetime group to subtract a yearly mean. First let’s create some synthetic data with some data, a datetime index, and some groups:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2000&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span>
@@ -2310,7 +2371,6 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<p>Transforms return a transformed version of the data that has the same shape as the input. This is useful when creating new columns that depend on some grouped data, for instance creating group-wise means. Here’s an example using the datetime group to subtract a yearly mean. First let’s create some synthetic data with some data, a datetime index, and some groups:</p>
 <p>Now we take the yearly means by type. <code class="docutils literal notranslate"><span class="pre">pd.Grouper(freq='A')</span></code> is an instruction to take the <code class="docutils literal notranslate"><span class="pre">A</span></code>nnual mean using the given datetime index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2434,6 +2494,9 @@ dtype: int64
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="apply">
+<h3><span class="section-number">2.8.3. </span>Apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h3>
 <p>Both regular functions and lambda functions can be used with the more general apply method, which takes a function and applies it to a given axis (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code> for index, <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> for columns):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2553,6 +2616,10 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+<p>Of course, the much easier way to do this very common operation is <code class="docutils literal notranslate"><span class="pre">df['val1_times_val2']</span> <span class="pre">=</span> <span class="pre">df['values1']*df['values2']</span></code>, but there are times when you need to run more complex functions element-wise and, for those, <code class="docutils literal notranslate"><span class="pre">apply</span></code> is really useful.</p>
+</div>
+<div class="section" id="assign">
+<h3><span class="section-number">2.8.4. </span>Assign<a class="headerlink" href="#assign" title="Permalink to this headline">¶</a></h3>
 <p>Assign is a method that allows you to return a new object with all the original columns in addition to new ones. Existing columns that are re-assigned will be overwritten. This is <em>really</em> useful when you want to perform a bunch of operations together in a concise way and keep the original columns. For instance, to demean the ‘values1’ column by year-type and to recompute the ‘val1_times_val2’ column using the newly demeaned ‘values1’ column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2672,6 +2739,7 @@ dtype: int64
   </tbody>
 </table>
 </div></div></div>
+</div>
 </div>
 </div>
 <div class="section" id="time-series-resampling-and-rolling-windows">
@@ -2913,7 +2981,7 @@ Freq: M, Name: diff_values, dtype: float64
 </div>
 <div class="section" id="method-chaining">
 <h2><span class="section-number">2.10. </span>Method chaining<a class="headerlink" href="#method-chaining" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes, rather than splitting operations out into multiple lines, it can be more concise and clear to chain methods together. A typical time you might do this is when reading in a dataset and perfoming all of the initial cleaning. Tom Augsperger has a <a class="reference external" href="https://tomaugspurger.github.io/method-chaining">great tutorial</a> on this, which I’ve reproduced parts of here.</p>
+<p>Sometimes, rather than splitting operations out into multiple lines, it can be more concise and clear to chain methods together. A typical time you might do this is when reading in a dataset and perfoming all of the initial cleaning. Tom Augsperger has a <a class="reference external" href="https://tomaugspurger.github.io/method-chaining">great tutorial</a> on this, which I’ve reproduced parts of here. For more info on the <code class="docutils literal notranslate"><span class="pre">pipe</span></code> function used below, check out these short <a class="reference external" href="https://calmcode.io/pandas-pipe/introduction.html">video tutorials</a>.</p>
 <p>To chain methods together, both the input and output must be a pandas dataframe. Many functions already do input and output these, for example the <code class="docutils literal notranslate"><span class="pre">df.rename(columns={'old_col':</span> <span class="pre">'new_col'})</span></code> takes in <code class="docutils literal notranslate"><span class="pre">df</span></code> and outputs a dataframe with one column name changed.</p>
 <p>But occassionally, we’ll want to use a function that we’ve defined (rather than an already existing one). For that, we need the <code class="docutils literal notranslate"><span class="pre">pipe</span></code> method; it ‘pipes’ the result of one operation to the next operation. When objects are being passed through multiple functions, this can be much clearer. Compare, for example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">g_arg</span><span class="o">=</span><span class="n">a</span><span class="p">),</span> <span class="n">f_arg</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
@@ -2926,7 +2994,7 @@ Freq: M, Name: diff_values, dtype: float64
 <span class="p">)</span>  
 </pre></div>
 </div>
-<p>Let’s see a method chain in action on a real dataset so you get a feel for it. We’ll use 1,000 rows of flight data from BTS (a popular online dataset for demos of data cleaning!). TODO use github path.</p>
+<p>Let’s see a method chain in action on a real dataset so you get a feel for it. We’ll use 1,000 rows of flight data from BTS (a popular online dataset for demos of data cleaning!). TODO use github path. (For further info on method chaining in Python, <a class="reference external" href="https://calmcode.io/method-chains/introduction.html">see these videos</a>–but be aware they assume advanced knowledge of the language.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;flights1kBTS.csv&#39;</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -3065,7 +3133,7 @@ Freq: M, Name: diff_values, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>We’ll try and do a number of operations in one go: putting column titles in lower case, discarding useless columns, creating precise depature and arrival times, turning some of the variables into categoricals, creating a demeaned delay time, and creating a new categorical column for distances according to quantiles that will be called ‘near’, ‘less near’, ‘far’, and ‘furthest’.</p>
+<p>We’ll try and do a number of operations in one go: putting column titles in lower case, discarding useless columns, creating precise depature and arrival times, turning some of the variables into categoricals, creating a demeaned delay time, and creating a new categorical column for distances according to quantiles that will be called ‘near’, ‘less near’, ‘far’, and ‘furthest’. Some of these operations require a separate function, so we first define those. When we do the cleaning, we’ll pipe our dataframe to those functions (optionally passing any arguments).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">extract_city_name</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -4346,7 +4414,7 @@ dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="data-analysis-quickstart.html" title="previous page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
-    <a class='right-next' id="next-link" href="reading-and-writing.html" title="next page"><span class="section-number">3. </span>Reading and writing data</a>
+    <a class='right-next' id="next-link" href="reading-and-writing.html" title="next page"><span class="section-number">3. </span>Reading and Writing Data</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

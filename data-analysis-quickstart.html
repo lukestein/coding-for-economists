@@ -130,7 +130,19 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and writing data
+   3. Reading and Writing Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-vis.html">
+   1. Data Visualisation
   </a>
  </li>
 </ul>
@@ -148,6 +160,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Mathematical Coding for Economics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mathematical-coding.html">
+   1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Coming from ...
  </span>
 </p>
@@ -160,6 +184,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="further-resources.html">
+   Further resources
   </a>
  </li>
 </ul>
@@ -387,6 +423,16 @@
    <code class="docutils literal notranslate">
     <span class="pre">
      .plot.*
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#export-results-and-descriptive-statistics-to-latex-with-to-latex">
+   1.13. Export results and descriptive statistics to latex with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     to_latex
     </span>
    </code>
   </a>
@@ -1720,6 +1766,80 @@ memory usage: 3.5 KB
 <img alt="_images/data-analysis-quickstart_31_0.png" src="_images/data-analysis-quickstart_31_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="export-results-and-descriptive-statistics-to-latex-with-to-latex">
+<h2><span class="section-number">1.13. </span>Export results and descriptive statistics to latex with <code class="docutils literal notranslate"><span class="pre">to_latex</span></code><a class="headerlink" href="#export-results-and-descriptive-statistics-to-latex-with-to-latex" title="Permalink to this headline">¶</a></h2>
+<p>You’ll often want to export your results to a latex file for inclusion in a paper, presentation, or poster. Let’s say we had some descriptive statistics on a dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;mass&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">])</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mass</th>
+      <th>height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>97.311864</td>
+      <td>174.358025</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>169.457163</td>
+      <td>34.770429</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="n">caption</span><span class="o">=</span><span class="s1">&#39;A Table&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;tab:descriptive&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\begin{table}
+\centering
+\caption{A Table}
+\label{tab:descriptive}
+\begin{tabular}{lrr}
+\toprule
+{} &amp;        mass &amp;      height \\
+\midrule
+mean &amp;   97.311864 &amp;  174.358025 \\
+std  &amp;  169.457163 &amp;   34.770429 \\
+\bottomrule
+\end{tabular}
+\end{table}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Writing to the terminal isn’t that useful for getting your paper done! To export to a file, use <code class="docutils literal notranslate"><span class="pre">table.to_latex('file.tex',</span> <span class="pre">...)</span></code>.</p>
 </div>
 </div>
 
