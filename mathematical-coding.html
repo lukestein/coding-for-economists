@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Intro to Mathematics with Code &#8212; Coding for Economists</title>
+    <title>Intro to Mathematics with Code &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -142,7 +142,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="data-vis.html">
-   1. Data Visualisation
+   1. Intro to data vis.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common-plots.html">
+   2. Common plots
   </a>
  </li>
 </ul>
@@ -160,13 +165,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Mathematical Coding for Economics
+  Maths with Code
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Intro to Mathematics with Code
+   Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -306,86 +311,86 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#symbolic-mathematics">
-   1.1. Symbolic mathematics
+   Symbolic mathematics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#symbolic-mathematics-for-economics">
-     1.1.1. Symbolic mathematics for economics
+     Symbolic mathematics for economics
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#series-expansion">
-       1.1.1.1. Series expansion
+       Series expansion
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#symbolic-linear-algebra">
-       1.1.1.2. Symbolic linear algebra
+       Symbolic linear algebra
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#lagrangians">
-       1.1.1.3. Lagrangians
+       Lagrangians
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exporting-to-latex">
-       1.1.1.4. Exporting to latex
+       Exporting to latex
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#why-coding-symbolic-mathematics-is-useful">
-     1.1.2. Why coding symbolic mathematics is useful
+     Why coding symbolic mathematics is useful
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numerical-mathematics">
-   1.2. Numerical Mathematics
+   Numerical Mathematics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numeric-linear-algebra">
-     1.2.1. Numeric linear algebra
+     Numeric linear algebra
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#solving-systems-of-linear-equations">
-       1.2.1.1. Solving systems of linear equations
+       Solving systems of linear equations
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpolation">
-     1.2.2. Interpolation
+     Interpolation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#optimisation">
-     1.2.3. Optimisation
+     Optimisation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numerical-integration">
-     1.2.4. Numerical Integration
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-theory">
-     1.2.5. Set theory
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#distribution-functions">
-     1.2.6. Distribution functions
+     Numerical Integration
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-theory">
+   Set theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   Review
+  </a>
  </li>
 </ul>
 
@@ -399,11 +404,11 @@
               <div>
                 
   <div class="section" id="intro-to-mathematics-with-code">
-<h1><span class="section-number">1. </span>Intro to Mathematics with Code<a class="headerlink" href="#intro-to-mathematics-with-code" title="Permalink to this headline">¶</a></h1>
+<h1>Intro to Mathematics with Code<a class="headerlink" href="#intro-to-mathematics-with-code" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll learn about doing mathematics with code, including solving equations symbollicaly, …</p>
 <p>This chapter uses the <strong>numpy</strong>, <strong>scipy</strong>, and <strong>sympy</strong> packages. If you’re running this code, you may need to install these packages using, for example, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on your computer’s command line. (If you’re not sure what a command line or terminal is, take a quick look at the basics of coding chapter.)</p>
 <div class="section" id="symbolic-mathematics">
-<h2><span class="section-number">1.1. </span>Symbolic mathematics<a class="headerlink" href="#symbolic-mathematics" title="Permalink to this headline">¶</a></h2>
+<h2>Symbolic mathematics<a class="headerlink" href="#symbolic-mathematics" title="Permalink to this headline">¶</a></h2>
 <p>When using computers to do mathematics, we’re most often performing numerical computations such as <span class="math notranslate nohighlight">\(\sqrt{8} = \)</span><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">5.656854249492381</span></code></span>. Although we have the answer, it’s only useful for the one special case. Symbolic mathematics allows us to use coding to solve equations in the general case, which can often be more illuminating. As an example, if we evaluate this in symbolic mathematics we get <span class="math notranslate nohighlight">\(\sqrt{8} = \)</span><span class="pasted-inline"><span class="output text_latex math notranslate nohighlight">\(\displaystyle 2 \sqrt{2}\)</span></span>.</p>
 <p>The Python package for symbolic mathemtics is <a class="reference external" href="https://www.sympy.org/en/index.html"><strong>sympy</strong></a>, which provides some features of a computer algebra system.</p>
 <p>To define <em>symbolic</em> variables, we use sympy’s symbols function. For ease, we’ll import the entire sympy library into the namespace by using <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sympy</span> <span class="pre">import</span> <span class="pre">*</span></code>.</p>
@@ -521,10 +526,10 @@
 </div>
 <p>I snuck in a simplify here too!</p>
 <div class="section" id="symbolic-mathematics-for-economics">
-<h3><span class="section-number">1.1.1. </span>Symbolic mathematics for economics<a class="headerlink" href="#symbolic-mathematics-for-economics" title="Permalink to this headline">¶</a></h3>
+<h3>Symbolic mathematics for economics<a class="headerlink" href="#symbolic-mathematics-for-economics" title="Permalink to this headline">¶</a></h3>
 <p>The library does a lot, so let’s focus on a few features that are likely to be useful for economics in particular.</p>
 <div class="section" id="series-expansion">
-<h4><span class="section-number">1.1.1.1. </span>Series expansion<a class="headerlink" href="#series-expansion" title="Permalink to this headline">¶</a></h4>
+<h4>Series expansion<a class="headerlink" href="#series-expansion" title="Permalink to this headline">¶</a></h4>
 <p>The first is performing <strong>Taylor series expansions</strong>. These come up all the time in macroeconomic modelling, where models are frequently log-linearised. Let’s see an example of a couple of expansions together:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,7 +547,7 @@
 <p>This is a 3rd order expansion around <span class="math notranslate nohighlight">\(\alpha=0\)</span>.</p>
 </div>
 <div class="section" id="symbolic-linear-algebra">
-<h4><span class="section-number">1.1.1.2. </span>Symbolic linear algebra<a class="headerlink" href="#symbolic-linear-algebra" title="Permalink to this headline">¶</a></h4>
+<h4>Symbolic linear algebra<a class="headerlink" href="#symbolic-linear-algebra" title="Permalink to this headline">¶</a></h4>
 <p>The support for <strong>matrices</strong> can also come in handy for economic applications. Here’s a matrix,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -583,7 +588,7 @@
 </div>
 </div>
 <div class="section" id="lagrangians">
-<h4><span class="section-number">1.1.1.3. </span>Lagrangians<a class="headerlink" href="#lagrangians" title="Permalink to this headline">¶</a></h4>
+<h4>Lagrangians<a class="headerlink" href="#lagrangians" title="Permalink to this headline">¶</a></h4>
 <p>Function optimisation using Lagrangians is about as prevalent in economics as any bit of maths: let’s see how it’s done symbolically.</p>
 <p>We’re going to find the minimum over x, y of the function <span class="math notranslate nohighlight">\(f(x,y)\)</span>, subject to <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>, where <span class="math notranslate nohighlight">\(f(x,y) = 4xy - 2x^2 + y^2\)</span> and <span class="math notranslate nohighlight">\(g(x,y) = 3x+y-5\)</span>.</p>
 <p>First we need to specify the problem, and the Lagrangian for it, in code</p>
@@ -641,7 +646,7 @@
 </div>
 </div>
 <div class="section" id="exporting-to-latex">
-<h4><span class="section-number">1.1.1.4. </span>Exporting to latex<a class="headerlink" href="#exporting-to-latex" title="Permalink to this headline">¶</a></h4>
+<h4>Exporting to latex<a class="headerlink" href="#exporting-to-latex" title="Permalink to this headline">¶</a></h4>
 <p>To turn any equation, for example <code class="docutils literal notranslate"><span class="pre">diff(sin(x)*exp(x),</span> <span class="pre">x)</span></code>, into latex and export it to a file that can be included in a paper, use</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eqn_to_export</span> <span class="o">=</span> <span class="n">latex</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;equation&#39;</span><span class="p">)</span>
 <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;latex_equation.tex&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">eqn_to_export</span><span class="p">)</span>
@@ -651,7 +656,7 @@
 </div>
 </div>
 <div class="section" id="why-coding-symbolic-mathematics-is-useful">
-<h3><span class="section-number">1.1.2. </span>Why coding symbolic mathematics is useful<a class="headerlink" href="#why-coding-symbolic-mathematics-is-useful" title="Permalink to this headline">¶</a></h3>
+<h3>Why coding symbolic mathematics is useful<a class="headerlink" href="#why-coding-symbolic-mathematics-is-useful" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Accuracy–using a computer to solve the equations means you’re less likely to make a mistake. At the very least, it’s a useful check on your by-hand working.</p></li>
 <li><p>Consistency–by making your code export the equations you’re solving to your write-up, you can ensure that the equations are consistent across both <em>and</em> you only have to type them once.</p></li>
@@ -659,7 +664,7 @@
 </div>
 </div>
 <div class="section" id="numerical-mathematics">
-<h2><span class="section-number">1.2. </span>Numerical Mathematics<a class="headerlink" href="#numerical-mathematics" title="Permalink to this headline">¶</a></h2>
+<h2>Numerical Mathematics<a class="headerlink" href="#numerical-mathematics" title="Permalink to this headline">¶</a></h2>
 <p>For much of the time, you’ll be dealing with numbers rather than symbols. The workhorses of numerical mathematics are the two packages <strong>numpy</strong> and <strong>scipy</strong>. Both have excellent documentation, where you can find out more. In this section, we’ll look at how to use them in some standard mathematical operations that arise in economics.</p>
 <p>The most basic object is an array, which can be defined as follows:</p>
 <div class="cell docutils container">
@@ -687,7 +692,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>292 µs ± 107 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>208 µs ± 983 ns per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -701,7 +706,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>874 ns ± 39.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>832 ns ± 17.5 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -885,7 +890,7 @@
 </div>
 </div>
 <div class="section" id="numeric-linear-algebra">
-<h3><span class="section-number">1.2.1. </span>Numeric linear algebra<a class="headerlink" href="#numeric-linear-algebra" title="Permalink to this headline">¶</a></h3>
+<h3>Numeric linear algebra<a class="headerlink" href="#numeric-linear-algebra" title="Permalink to this headline">¶</a></h3>
 <p>The transpose of an array <code class="docutils literal notranslate"><span class="pre">x</span></code> is given by <code class="docutils literal notranslate"><span class="pre">x.T</span></code>.</p>
 <p>Matrix multiplation is performed using the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator. Here we perform <span class="math notranslate nohighlight">\( M_{il} = \sum_{k} x_{ik} * (x^T)_{kl}\)</span>, where <span class="math notranslate nohighlight">\(x^T\)</span> is the transpose of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <div class="cell docutils container">
@@ -907,7 +912,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -922,12 +928,12 @@
 <p>Computing the trace:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
 </pre></div>
 </div>
 </div>
@@ -963,7 +969,7 @@
 </div>
 </div>
 <div class="section" id="solving-systems-of-linear-equations">
-<h4><span class="section-number">1.2.1.1. </span>Solving systems of linear equations<a class="headerlink" href="#solving-systems-of-linear-equations" title="Permalink to this headline">¶</a></h4>
+<h4>Solving systems of linear equations<a class="headerlink" href="#solving-systems-of-linear-equations" title="Permalink to this headline">¶</a></h4>
 <p>Say we have a system of equations, <span class="math notranslate nohighlight">\(4x + 3y + 2z = 25\)</span>,
 <span class="math notranslate nohighlight">\(-2x + 2y + 3z = -10\)</span>, and <span class="math notranslate nohighlight">\(3x -5y + 2z = -4\)</span>. We can solve these three equations for the three unknowns, x, y, and z, using the <code class="docutils literal notranslate"><span class="pre">solve</span></code> method. First, remember that this equation can be written in matrix form as</p>
 <div class="math notranslate nohighlight">
@@ -1009,7 +1015,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 </div>
 <div class="section" id="interpolation">
-<h3><span class="section-number">1.2.2. </span>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h3>
+<h3>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h3>
 <p>This section draws on the <strong>scipy</strong> documentation. There are built-in <strong>pandas</strong> methods for interpolation in dataframes, but <strong>scipy</strong> also has a range of functions for this including for univariate data <code class="docutils literal notranslate"><span class="pre">interp1d</span></code>, multidimensional interpolation on a grid <code class="docutils literal notranslate"><span class="pre">interpn</span></code>, <code class="docutils literal notranslate"><span class="pre">griddata</span></code> for unstructured data. Let’s see a simple example with interpolation between a regular grid of integers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1073,7 +1079,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 </div>
 <div class="section" id="optimisation">
-<h3><span class="section-number">1.2.3. </span>Optimisation<a class="headerlink" href="#optimisation" title="Permalink to this headline">¶</a></h3>
+<h3>Optimisation<a class="headerlink" href="#optimisation" title="Permalink to this headline">¶</a></h3>
 <p><strong>scipy</strong> has functions for minimising scalar functions, minimising multivariate functions with complex surfaces, and root-finding. Let’s see an example of finding the minimum of a scalar function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1125,7 +1131,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 <p>In both of these cases, be warned that multiple roots and multiple minima can be hard to detect, and you may need to carefully specify the bounds or the starting positions in order to find the root you’re looking for. Also, both of these methods can accept the Jacobian of the function you’re working with as an argument, which is likely to improve performance with some solvers.</p>
 </div>
 <div class="section" id="numerical-integration">
-<h3><span class="section-number">1.2.4. </span>Numerical Integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h3>
+<h3>Numerical Integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h3>
 <p><strong>scipy</strong> provides routines to numerically evaluate integrals in <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>, which you can find the documentation for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">here</a>. Let’s see an example using the ‘vanilla’ integration method, <code class="docutils literal notranslate"><span class="pre">quad</span></code>, to solve a known function between given (numerical) limits:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1164,14 +1170,108 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 <p>Even with just 10 evenly spaced points, the composite Simpson’s rule integration given by <code class="docutils literal notranslate"><span class="pre">simps</span></code> is able to accurately find the answer as <span class="math notranslate nohighlight">\(\left( x^2/2\right) |_{0}^{9}\)</span>.</p>
 </div>
+</div>
 <div class="section" id="set-theory">
-<h3><span class="section-number">1.2.5. </span>Set theory<a class="headerlink" href="#set-theory" title="Permalink to this headline">¶</a></h3>
-<p>See https://www.kevinsheppard.com/files/teaching/python/notes/python_introduction_2020.pdf 5.5</p>
+<h2>Set theory<a class="headerlink" href="#set-theory" title="Permalink to this headline">¶</a></h2>
+<p>Set theory is a surprisingly useful tool in research (and invaluable in spatial analysis). Here are some really useful bits of set theory inspired by examples in <span class="bibtex" id="id1">[sheppard2012introduction]</span>.</p>
+<p>Sets are first class citizens in Python in the same way that lists are. We can define and view a set like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;Ada Lovelace&#39;</span><span class="p">,</span> <span class="s1">&#39;Sadie Alexander&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Charles Babbage&#39;</span><span class="p">,</span> <span class="s1">&#39;Ada Lovelace&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Adam Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Sadie Alexander&#39;</span><span class="p">])</span>
+<span class="n">x</span>
+</pre></div>
 </div>
-<div class="section" id="distribution-functions">
-<h3><span class="section-number">1.2.6. </span>Distribution functions<a class="headerlink" href="#distribution-functions" title="Permalink to this headline">¶</a></h3>
-<p>TODO – maybe in econometrics.</p>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Ada Lovelace&#39;, &#39;Adam Smith&#39;, &#39;Charles Babbage&#39;, &#39;Sadie Alexander&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that a couple of entries appeared twice in the list but only once in the set: that’s because a set contains only unique elements. Let’s define a second set in order to demonstrate some of the operations we can perform on sets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;Grace Hopper&#39;</span><span class="p">,</span> <span class="s1">&#39;Jean Bartik&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Janet Yellen&#39;</span><span class="p">,</span> <span class="s1">&#39;Joan Robinson&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Adam Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Ada Lovelace&#39;</span><span class="p">])</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Ada Lovelace&#39;,
+ &#39;Adam Smith&#39;,
+ &#39;Grace Hopper&#39;,
+ &#39;Janet Yellen&#39;,
+ &#39;Jean Bartik&#39;,
+ &#39;Joan Robinson&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have two sets we can look at to demonstrate some of the basic functions you can call on the set object type. <code class="docutils literal notranslate"><span class="pre">x.intersection(y)</span></code> gives, in this example, <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">{'Ada</span> <span class="pre">Lovelace',</span> <span class="pre">'Adam</span> <span class="pre">Smith'}</span></code></span>, <code class="docutils literal notranslate"><span class="pre">x.difference(y)</span></code> gives <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">{'Charles</span> <span class="pre">Babbage',</span> <span class="pre">'Sadie</span> <span class="pre">Alexander'}</span></code></span>, and <code class="docutils literal notranslate"><span class="pre">x.union(y)</span></code> gives <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">{'Ada</span> <span class="pre">Lovelace',</span>
+ <span class="pre">'Adam</span> <span class="pre">Smith',</span>
+ <span class="pre">'Charles</span> <span class="pre">Babbage',</span>
+ <span class="pre">'Grace</span> <span class="pre">Hopper',</span>
+ <span class="pre">'Janet</span> <span class="pre">Yellen',</span>
+ <span class="pre">'Jean</span> <span class="pre">Bartik',</span>
+ <span class="pre">'Joan</span> <span class="pre">Robinson',</span>
+ <span class="pre">'Sadie</span> <span class="pre">Alexander'}</span></code></span>.</p>
+<p><strong>numpy</strong> also has functions that use set theory. <code class="docutils literal notranslate"><span class="pre">np.unique</span></code> returns only the unique entries of an input array or list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="s1">&#39;Lovelace&#39;</span><span class="p">,</span> <span class="s1">&#39;Hopper&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;Hopper&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">45</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;27&#39;, &#39;45&#39;, &#39;Alexander&#39;, &#39;Hopper&#39;, &#39;Lovelace&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also ask which of a second set is a repeat of a first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False,  True,  True,  True,  True,
+        True])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we have the numpy equivalents of intersection, <code class="docutils literal notranslate"><span class="pre">np.intersect1d(x,</span> <span class="pre">y)</span></code>, difference, <code class="docutils literal notranslate"><span class="pre">np.setdiff1d(x,</span> <span class="pre">y)</span></code>, and union, <code class="docutils literal notranslate"><span class="pre">np.union1d(x,</span> <span class="pre">y)</span></code>. Additionally, there is the exclusive-or (that I like to call ‘xor’). This effectively returns the two arrays with their union removed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 4, 5, 7])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you should have:</p>
+<ul class="simple">
+<li><p>[x] seen how to use symbolic algebra with code, including Lagrangrians and linear algebra;</p></li>
+<li><p>[x] seen how to code numerical mathematics, including linear algebra and optimisation; and</p></li>
+<li><p>[x] found out about using set theory via the <code class="docutils literal notranslate"><span class="pre">set</span></code> object type and set-oriented functions.</p></li>
+</ul>
 </div>
 </div>
 

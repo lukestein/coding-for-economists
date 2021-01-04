@@ -17,18 +17,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-x = np.arange(10)
-y = np.arange(5, 10)
-in1d(x, y)
+from plotnine import geom_density
+from plotnine.data import mpg
+(
+    ggplot(mpg, aes(x='cty', color='drv', fill='drv'))
+    + geom_density(
+        aes(y=after_stat('count')),
+        alpha=0.1
+    )
+)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-52-55f89358c1e4>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0mx[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marange[0m[0;34m([0m[0;36m10[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      2[0m [0my[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marange[0m[0;34m([0m[0;36m5[0m[0;34m,[0m [0;36m10[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 3[0;31m [0min1d[0m[0;34m([0m[0mx[0m[0;34m,[0m [0my[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mNameError[0m: name 'in1d' is not defined
-NameError: name 'in1d' is not defined
+[0;32m<ipython-input-31-5aec4163f194>[0m in [0;36m<module>[0;34m[0m
+[1;32m      4[0m     [0mggplot[0m[0;34m([0m[0mmpg[0m[0;34m,[0m [0maes[0m[0;34m([0m[0mx[0m[0;34m=[0m[0;34m'cty'[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0;34m'drv'[0m[0;34m,[0m [0mfill[0m[0;34m=[0m[0;34m'drv'[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     + geom_density(
+[0;32m----> 6[0;31m         [0maes[0m[0;34m([0m[0my[0m[0;34m=[0m[0mafter_stat[0m[0;34m([0m[0;34m'count'[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      7[0m         [0malpha[0m[0;34m=[0m[0;36m0.1[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      8[0m     )
+
+[0;31mNameError[0m: name 'after_stat' is not defined
+NameError: name 'after_stat' is not defined
 

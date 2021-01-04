@@ -142,7 +142,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="data-vis.html">
-   1. Data Visualisation
+   1. Intro to data vis.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common-plots.html">
+   2. Common plots
   </a>
  </li>
 </ul>
@@ -160,13 +165,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Mathematical Coding for Economics
+  Maths with Code
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="mathematical-coding.html">
-   1. Intro to Mathematics with Code
+   Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -633,7 +638,9 @@ one more entry
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>String has length:
-10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 List of numbers has length:
 19
 </pre></div>
@@ -651,6 +658,9 @@ List of numbers has length:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is a variable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -971,9 +981,7 @@ The name in position 3 is Babbage
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello student&#39;, 4.8)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello Ada&#39;, 4.8)
+(&#39;Hello Ada&#39;, 4.8)
 </pre></div>
 </div>
 </div>
@@ -1172,13 +1180,13 @@ Inverse:
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;hello my blah is Ada&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;hElLo mY blah IS Adam&#39;</span><span class="p">]],</span>
                   <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;strings&#39;</span><span class="p">],</span>
                   <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;strings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;blah&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;strings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Blah&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Hello My Blah Is Ada
-1    Hello My Blah Is Adam
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Hello My Name Is Ada
+1    Hello My Name Is Adam
 Name: strings, dtype: object
 </pre></div>
 </div>
@@ -1355,7 +1363,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-12-30
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-04
 </pre></div>
 </div>
 </div>

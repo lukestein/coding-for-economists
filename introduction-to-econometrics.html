@@ -140,7 +140,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="data-vis.html">
-   1. Data Visualisation
+   1. Intro to data vis.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common-plots.html">
+   2. Common plots
   </a>
  </li>
 </ul>
@@ -158,13 +163,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Mathematical Coding for Economics
+  Maths with Code
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="mathematical-coding.html">
-   1. Intro to Mathematics with Code
+   Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -332,8 +337,8 @@
 <p>There are usually two ways to run regressions in code: specifying a formula in text eg <code class="docutils literal notranslate"><span class="pre">reg('y</span> <span class="pre">~</span> <span class="pre">x',</span> <span class="pre">data=df)</span></code>, or specifying columns of a dataframe eg <code class="docutils literal notranslate"><span class="pre">reg(df['y'],</span> <span class="pre">df['x'])</span></code>. To add to the confusion, the conventions in economics and in machine learning are the opposite way around in terms of which comes first, the dependent (endogenous) variable or the independent (exogenous) variable. In machine learning, the basic regression might look more like <code class="docutils literal notranslate"><span class="pre">reg.fit(X,</span> <span class="pre">y)</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a matrix (usually a <strong>numpy</strong> array) and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a vector (ditto). I state these things now to avoid confusion in a later chapter on machine learning! For much of this chapter, we’ll assume that you’re using a <strong>pandas</strong> dataframe rather than <strong>numpy</strong> arrays because that’s a typical econometrics workflow.</p>
 <p>Let’s start with the absolute basic statistics then: how do we find the mean, standard deviation, covariance matrix, and so on?</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="97c998a6-87fc-40c0-b5b2-83ad3be895ee" name="9673fad6-71ee-48c2-8ba2-6c7d8b9cd0fd" type="radio">
-</input><label class="tabbed-label" for="97c998a6-87fc-40c0-b5b2-83ad3be895ee">
+<input checked="checked" id="99db287e-5e13-4fb6-b8f8-c35a22dec13a" name="e5c1181f-0452-44a1-abb6-518fc77f3e9b" type="radio">
+</input><label class="tabbed-label" for="99db287e-5e13-4fb6-b8f8-c35a22dec13a">
 Matplotlib</label><div class="tabbed-content docutils">
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
@@ -356,16 +361,16 @@ Matplotlib</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="12b98578-0a26-4aac-aad5-cff3517ecb0a" name="9673fad6-71ee-48c2-8ba2-6c7d8b9cd0fd" type="radio">
-</input><label class="tabbed-label" for="12b98578-0a26-4aac-aad5-cff3517ecb0a">
+<input id="ebe95864-d578-44b0-bb72-084f493a859a" name="e5c1181f-0452-44a1-abb6-518fc77f3e9b" type="radio">
+</input><label class="tabbed-label" for="ebe95864-d578-44b0-bb72-084f493a859a">
 seaborn</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>some text</p>
 </div>
-<input id="487ed5f4-b25a-405f-85b3-7d9a31e14968" name="9673fad6-71ee-48c2-8ba2-6c7d8b9cd0fd" type="radio">
-</input><label class="tabbed-label" for="487ed5f4-b25a-405f-85b3-7d9a31e14968">
+<input id="f5946846-bcbd-446d-ba1b-f258fc0d15d1" name="e5c1181f-0452-44a1-abb6-518fc77f3e9b" type="radio">
+</input><label class="tabbed-label" for="f5946846-bcbd-446d-ba1b-f258fc0d15d1">
 plotnine</label><div class="tabbed-content docutils">
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
