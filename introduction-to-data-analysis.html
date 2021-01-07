@@ -55,6 +55,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/introduction-to-data-analysis.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Reading and Writing Data" href="reading-and-writing.html" />
@@ -63,6 +64,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/introduction-to-data-analysis.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Data Analysis" />
+<meta property="og:description" content="Data Analysis  Introduction  The previous chapter was just a quick tour of what can be done with a single tabular dataset (a ‘dataframe’). In this chapter, we’l" />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -142,12 +152,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="data-vis.html">
-   1. Intro to data vis.
+   1. Intro to Data Visualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="common-plots.html">
-   2. Common plots
+   2. Common Plots
   </a>
  </li>
 </ul>
@@ -165,7 +175,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Maths with Code
+  Mathematics with Code
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -198,11 +208,6 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="further-resources.html">
-   Further resources
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
    Bibliography
@@ -447,8 +452,28 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives-to-pandas">
+   2.13. Alternatives to
+   <strong>
+    pandas
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plydata">
+     2.13.1. Plydata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datatable">
+     2.13.2. Datatable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   2.13. Review
+   2.14. Review
   </a>
  </li>
 </ul>
@@ -4379,8 +4404,21 @@ dtype: float64
 <p>For more on the options, see the <strong>pandas</strong> <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging">merging documentation</a>.</p>
 </div>
 </div>
+<div class="section" id="alternatives-to-pandas">
+<h2><span class="section-number">2.13. </span>Alternatives to <strong>pandas</strong><a class="headerlink" href="#alternatives-to-pandas" title="Permalink to this headline">¶</a></h2>
+<p><strong>pandas</strong> isn’t the only game in town, not by a long way–though it’s by far the best supported and the most fully featured. But it’s always good to have options (Or, put another way, options have value!) Two alternatives to pandas are <strong>Data.Table</strong> and <strong>plydata</strong>.</p>
+<div class="section" id="plydata">
+<h3><span class="section-number">2.13.1. </span>Plydata<a class="headerlink" href="#plydata" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://plydata.readthedocs.io/en/stable/index.html">Plydata</a> follows, more or less, the syntax of the <strong>dplyr</strong> package in the R statistical language (the package is a really important part of the data ecosystem in R). It’s built around method chaining and everything being in a tidy format, which has pros and cons. Largely, the benefits are in readability and a smaller number of commands to cover the ground that you need to. The downsides are that it plays best with tidy data and when chained methods go wrong it can be more difficult to find out what the issue is.</p>
+<p>Let’s see plydata in action.</p>
+</div>
+<div class="section" id="datatable">
+<h3><span class="section-number">2.13.2. </span>Datatable<a class="headerlink" href="#datatable" title="Permalink to this headline">¶</a></h3>
+<p>https://datatable.readthedocs.io/en/latest/</p>
+</div>
+</div>
 <div class="section" id="review">
-<h2><span class="section-number">2.13. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.14. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>If you know:</p>
 <ul class="simple">
 <li><p>[x] what tidy data are;</p></li>
@@ -4434,6 +4472,12 @@ dtype: float64
           By Arthur Turrell<br/>
         
             &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <div>
+This book is licensed under an MIT license.
+</div>
+
+          </div>
       </p>
     </div>
   </footer>
@@ -4447,6 +4491,16 @@ dtype: float64
   <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-78726233-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
     
   </body>
 </html>

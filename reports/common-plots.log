@@ -17,18 +17,31 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-alt.Chart(cars).mark_circle(size=60).encode(
-    x='Horsepower',
-    y=alt.Y('Miles_per_Gallon', axis=alt.Axis(title='dollar amount'))
-    color='Origin',
-    tooltip=['Name', 'Origin', 'Horsepower', 'Miles_per_Gallon']
-).interactive()
+labels = barley['site'].unique()
+y = np.arange(len(labels))  # the label locations
+width = 0.35  # the width (or height) of the bars
+
+fig, ax = plt.subplots()
+ax.barh(y, barley.loc[barley['year'] == 1931, 'yield'], width, label='1931')
+ax.barh(y, barley.loc[barley['year'] == 1932, 'yield'], width, label='1932', left=barley.loc[barley['year'] == 1931, 'yield'])
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_xlabel('Yield')
+ax.set_yticks(x)
+ax.set_yticklabels(labels)
+ax.legend(frameon=False)
+plt.show()
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-6-c529d67aa82a>"[0;36m, line [0;32m4[0m
-[0;31m    color='Origin',[0m
-[0m    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-26-0523b6e46691>[0m in [0;36m<module>[0;34m[0m
+[1;32m      9[0m [0;31m# Add some text for labels, title and custom x-axis tick labels, etc.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     10[0m [0max[0m[0;34m.[0m[0mset_xlabel[0m[0;34m([0m[0;34m'Yield'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 11[0;31m [0max[0m[0;34m.[0m[0mset_yticks[0m[0;34m([0m[0mx[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     12[0m [0max[0m[0;34m.[0m[0mset_yticklabels[0m[0;34m([0m[0mlabels[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     13[0m [0max[0m[0;34m.[0m[0mlegend[0m[0;34m([0m[0mframeon[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (<ipython-input-6-c529d67aa82a>, line 4)
+[0;31mNameError[0m: name 'x' is not defined
+NameError: name 'x' is not defined
 

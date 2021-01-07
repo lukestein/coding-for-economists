@@ -55,6 +55,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/preliminaries.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Basics of coding" href="basics-of-coding.html" />
@@ -63,6 +64,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/preliminaries.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Preliminaries" />
+<meta property="og:description" content="Preliminaries  In this chapter, you’ll find out how to install and setup everything you need to get coding.  Notation  Greek letters, like \beta, are the truth." />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -142,12 +152,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="data-vis.html">
-   1. Intro to data vis.
+   1. Intro to Data Visualisation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="common-plots.html">
-   2. Common plots
+   2. Common Plots
   </a>
  </li>
 </ul>
@@ -165,7 +175,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Maths with Code
+  Mathematics with Code
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -198,11 +208,6 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="further-resources.html">
-   Further resources
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
    Bibliography
@@ -390,6 +395,8 @@
 <div class="section" id="installing-python">
 <h3><span class="section-number">1.2.2. </span>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h3>
 <p>Download the individual edition of the <a class="reference external" href="https://www.anaconda.com/">Anaconda distribution</a> of Python for your operating system and install it (currently found under Products -&gt; Individual Edition). This will provide you with a Python installation and a host of the most useful libraries.</p>
+<p>Anaconda will ask whether you want to add Anaconda to your PATH environment variable. Your PATH variable is a list of where programmes are located on your computer that <em>other</em> programmes can see. By adding Anaconda to your PATH, you will be able to more easily launch applications that make use of Python.</p>
+<p>You can confirm that you’ve set up Anaconda correctly by following the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/verify-install/">verify installation instructions</a> on the Anaconda website.</p>
 </div>
 <div class="section" id="installing-an-integrated-development-environment-ide">
 <h3><span class="section-number">1.2.3. </span>Installing an integrated development environment (IDE)<a class="headerlink" href="#installing-an-integrated-development-environment-ide" title="Permalink to this headline">¶</a></h3>
@@ -404,7 +411,8 @@
 <li><p>automatic code checking for basic errors</p></li>
 </ul>
 <p>People have strong feelings about which IDE they prefer. I strongly recommmend <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, a free and open source IDE from Microsoft that is available on all major operating systems. Just like Python itself, Visual Studio can be extended with packages, and it is those packages, called extensions in this case, that make it so useful.</p>
-<p>Download and install Visual Studio Code and then navigate to the ‘extensions’ tab on the left hand side. You’ll need to install the following extensions, which you can search for by using the text box:</p>
+<p>Download and install Visual Studio Code. If you need some help, see this <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">very short tutorial</a> on setting it up from Microsoft (ignore the bits about debugging and installing packages).</p>
+<p>Once you have Visual Studio Code installed and opened, navigate to the ‘extensions’ tab on the left hand side navigation bar. You’ll need to install the following extensions, which you can search for by using the text box:</p>
 <ul class="simple">
 <li><p>Python</p></li>
 <li><p>Pylance</p></li>
@@ -552,6 +560,12 @@
           By Arthur Turrell<br/>
         
             &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <div>
+This book is licensed under an MIT license.
+</div>
+
+          </div>
       </p>
     </div>
   </footer>
@@ -565,6 +579,16 @@
   <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-78726233-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
     
   </body>
 </html>
