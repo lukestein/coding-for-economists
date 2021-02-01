@@ -17,31 +17,42 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-labels = barley['site'].unique()
-y = np.arange(len(labels))  # the label locations
-width = 0.35  # the width (or height) of the bars
+from mizani.breaks import date_breaks
+from mizani.formatters import date_format
 
-fig, ax = plt.subplots()
-ax.barh(y, barley.loc[barley['year'] == 1931, 'yield'], width, label='1931')
-ax.barh(y, barley.loc[barley['year'] == 1932, 'yield'], width, label='1932', left=barley.loc[barley['year'] == 1931, 'yield'])
-
-# Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_xlabel('Yield')
-ax.set_yticks(x)
-ax.set_yticklabels(labels)
-ax.legend(frameon=False)
-plt.show()
+g = (ggplot(df, aes(x='Name', y='Date', group='Name')) +
+     geom_line(size=10, color='green') + coord_flip() +
+     geom_text(df[df.variable=='Born'], aes(x='Name', y='Date', label='Name'),
+               nudge_y=6500, color='white') +
+     scale_y_date(breaks=date_breaks('20 years'), labels=date_format('%Y')) +
+     theme(axis_text_y=element_blank())
+    )
+g
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-26-0523b6e46691>[0m in [0;36m<module>[0;34m[0m
-[1;32m      9[0m [0;31m# Add some text for labels, title and custom x-axis tick labels, etc.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     10[0m [0max[0m[0;34m.[0m[0mset_xlabel[0m[0;34m([0m[0;34m'Yield'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 11[0;31m [0max[0m[0;34m.[0m[0mset_yticks[0m[0;34m([0m[0mx[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     12[0m [0max[0m[0;34m.[0m[0mset_yticklabels[0m[0;34m([0m[0mlabels[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     13[0m [0max[0m[0;34m.[0m[0mlegend[0m[0;34m([0m[0mframeon[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m<ipython-input-97-033e90cf3a97>[0m in [0;36m<module>[0;34m[0m
+[1;32m      4[0m g = (ggplot(df, aes(x='Name', y='Date', group='Name')) +
+[1;32m      5[0m      [0mgeom_line[0m[0;34m([0m[0msize[0m[0;34m=[0m[0;36m10[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0;34m'green'[0m[0;34m)[0m [0;34m+[0m [0mcoord_flip[0m[0;34m([0m[0;34m)[0m [0;34m+[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m      geom_text(df[df.variable=='Born'], aes(x='Name', y='Date', label='Name'),
+[0m[1;32m      7[0m                nudge_y=6500, color='white') +
+[1;32m      8[0m      [0mscale_y_date[0m[0;34m([0m[0mbreaks[0m[0;34m=[0m[0mdate_breaks[0m[0;34m([0m[0;34m'20 years'[0m[0;34m)[0m[0;34m,[0m [0mlabels[0m[0;34m=[0m[0mdate_format[0m[0;34m([0m[0;34m'%Y'[0m[0;34m)[0m[0;34m)[0m [0;34m+[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'x' is not defined
-NameError: name 'x' is not defined
+[0;32m~/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom_text.py[0m in [0;36m__init__[0;34m(self, mapping, data, **kwargs)[0m
+[1;32m    104[0m [0;34m[0m[0m
+[1;32m    105[0m         [0;31m# Accomodate the old names[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 106[0;31m         [0;32mif[0m [0mmapping[0m [0;32mand[0m [0;34m'hjust'[0m [0;32min[0m [0mmapping[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    107[0m             [0mmapping[0m[0;34m[[0m[0;34m'ha'[0m[0;34m][0m [0;34m=[0m [0mmapping[0m[0;34m.[0m[0mpop[0m[0;34m([0m[0;34m'hjust'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    108[0m [0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/pandas/core/generic.py[0m in [0;36m__nonzero__[0;34m(self)[0m
+[1;32m   1437[0m     [0;34m@[0m[0mfinal[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1438[0m     [0;32mdef[0m [0m__nonzero__[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1439[0;31m         raise ValueError(
+[0m[1;32m   1440[0m             [0;34mf"The truth value of a {type(self).__name__} is ambiguous. "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1441[0m             [0;34m"Use a.empty, a.bool(), a.item(), a.any() or a.all()."[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
 

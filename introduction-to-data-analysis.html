@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Data Analysis &#8212; Coding for Economists</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -34,13 +34,12 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -58,7 +57,7 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/introduction-to-data-analysis.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Reading and Writing Data" href="reading-and-writing.html" />
+    <link rel="next" title="3. Reading and Writing Files" href="reading-and-writing.html" />
     <link rel="prev" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -118,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="basics-of-coding.html">
-   2. Basics of coding
+   2. Basics of Coding
   </a>
  </li>
 </ul>
@@ -140,7 +139,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and Writing Data
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
   </a>
  </li>
 </ul>
@@ -169,7 +173,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="best-practice-coding.html">
-   1. Best practice in coding
+   1. Best Practice in Coding
   </a>
  </li>
 </ul>
@@ -187,6 +191,23 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   2. Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Coming from ...
  </span>
 </p>
@@ -199,6 +220,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
   </a>
  </li>
 </ul>
@@ -337,6 +363,13 @@
   <a class="reference internal nav-link" href="#dataframes-and-series">
    2.2. Dataframes and series
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#values-columns-and-index">
+     2.2.1. Values, columns, and index
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datatypes">
@@ -406,6 +439,13 @@
   <a class="reference internal nav-link" href="#method-chaining">
    2.10. Method chaining
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyjanitor-and-more-extensive-method-chaining">
+     2.10.1. Pyjanitor and more extensive method chaining
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reshaping-data">
@@ -452,8 +492,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#alternatives-to-pandas">
-   2.13. Alternatives to
+  <a class="reference internal nav-link" href="#advanced-alternatives-to-pandas">
+   2.13. (Advanced) alternatives to
    <strong>
     pandas
    </strong>
@@ -502,6 +542,7 @@
 <p><img alt="" src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" /></p>
 <p>Tidy data aren’t going to be appropriate <em>every</em> time and in every case, but they’re a really, really good default for tabular data. Once you use it as your default, it’s easier to think about how to perform subsequent operations. Some plotting libraries, such as <strong>seaborn</strong>, take that youre data are in tidy format as a given. And many operations that you can perform on dataframes (the objects that hold tabular data within many programming languages) are easier when you have tidy data. If you’re are writing out data to file to share, putting it in tidy format is a really good idea.</p>
 <p>Of course, <em>getting</em> your messy dataset into a tidy format may take a bit of work… but we’re about to enter the exciting world of coding for data analysis and the tools you’ll see in the rest of this chapter will help you to ‘wrangle’ even the most messy of datasets.</p>
+<p>Having said that tidy data are great, and they are, one of standard data library <strong>pandas</strong>’ advantages relative to other data analysis libraries is that it isn’t <em>too</em> tied to tidy data and can navigate awkward non-tidy data manipulation tasks happily too.</p>
 </div>
 </div>
 <div class="section" id="dataframes-and-series">
@@ -871,6 +912,335 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+<div class="section" id="values-columns-and-index">
+<h3><span class="section-number">2.2.1. </span>Values, columns, and index<a class="headerlink" href="#values-columns-and-index" title="Permalink to this headline">¶</a></h3>
+<p>You’ll have seen that there are three different things that make up a dataframe: the values that are in the cells, the column names, and the index. The column and index can take on values that are the same as the values in a dataframe do; string, int, float, datetime, and more. It’s pretty obvious what role the columns play: they keep track of the name of different sets of values. But for people who may have seen other dataframe-like libraries, the role played by the index may be less familiar. The easiest way to think about a <strong>pandas</strong> index is that it does for row values what the columns do for columnar values: it’s a way of keeping track of what individual roles are and it <em>doesn’t</em> get used for calculations (just as summing a column ignores the name of the row).</p>
+<p>Here’s an example to show this. Let’s first create a simple dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;col0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;col1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;col2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                        <span class="s1">&#39;col3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="s1">&#39;col4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">]},</span>
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;row&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col0</th>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+      <th>col4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>row0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>a</td>
+      <td>alpha</td>
+    </tr>
+    <tr>
+      <th>row1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>b</td>
+      <td>gamma</td>
+    </tr>
+    <tr>
+      <th>row2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>b</td>
+      <td>gamma</td>
+    </tr>
+    <tr>
+      <th>row3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>a</td>
+      <td>gamma</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we add one to the integer columns in the dataframe, this is what we get (note we’re not saving the result):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;col0&#39;</span><span class="p">,</span> <span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col0</th>
+      <th>col1</th>
+      <th>col2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>row0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>row1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>row2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>row3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now let’s use <code class="docutils literal notranslate"><span class="pre">col0</span></code> as our index instead of the original labels we created and add one to the remaining numeric columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;col0&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+      <th>col4</th>
+    </tr>
+    <tr>
+      <th>col0</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>a</td>
+      <td>alpha</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>b</td>
+      <td>gamma</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>b</td>
+      <td>gamma</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>a</td>
+      <td>gamma</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What was a column name has become an index name (which you can change with <code class="docutils literal notranslate"><span class="pre">df.index.name='newname'</span></code>) and, when we do add one, it isn’t applied to the index. Even though their datatype is <code class="docutils literal notranslate"><span class="pre">int</span></code>, for integer, the index entries are now acting as a label for each row–not as values in the dataframe.</p>
+<p>An index can be useful for keeping track of what’s going on, and it’s particularly convenient for some datetime operations.</p>
+<p>Whenever you use <code class="docutils literal notranslate"><span class="pre">groupby</span></code> (and some other operations), the columns you use to perform the operation are set as the index of the returned dataframe (you can have multiple index columns). To get back those back to being columns, use the <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;col3&#39;</span><span class="p">,</span> <span class="s1">&#39;col4&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>col1</th>
+      <th>col2</th>
+    </tr>
+    <tr>
+      <th>col3</th>
+      <th>col4</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">a</th>
+      <th>alpha</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>gamma</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <th>gamma</th>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;col3&#39;</span><span class="p">,</span> <span class="s1">&#39;col4&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col3</th>
+      <th>col4</th>
+      <th>col1</th>
+      <th>col2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>alpha</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a</td>
+      <td>gamma</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>b</td>
+      <td>gamma</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
 </div>
 <div class="section" id="datatypes">
 <h2><span class="section-number">2.3. </span>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">¶</a></h2>
@@ -936,7 +1306,7 @@ Data columns (total 6 columns):
  4   integer_col   2 non-null      int64         
  5   bool_col      2 non-null      bool          
 dtypes: bool(1), category(1), datetime64[ns](1), float64(1), int64(1), string(1)
-memory usage: 292.0 bytes
+memory usage: 320.0 bytes
 </pre></div>
 </div>
 </div>
@@ -969,7 +1339,7 @@ Data columns (total 6 columns):
  4   4       2 non-null      int64         
  5   5       2 non-null      bool          
 dtypes: bool(1), category(1), datetime64[ns](1), float64(1), int64(1), string(1)
-memory usage: 292.0 bytes
+memory usage: 320.0 bytes
 </pre></div>
 </div>
 </div>
@@ -3220,6 +3590,10 @@ Freq: M, Name: diff_values, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-45-5266f9440ca5&gt;:19: FutureWarning: The default value of regex will change from True to False in a future version.
+  timepart = (col.astype(str)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3349,6 +3723,22 @@ Freq: M, Name: diff_values, dtype: float64
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="section" id="pyjanitor-and-more-extensive-method-chaining">
+<h3><span class="section-number">2.10.1. </span>Pyjanitor and more extensive method chaining<a class="headerlink" href="#pyjanitor-and-more-extensive-method-chaining" title="Permalink to this headline">¶</a></h3>
+<p>Although there’s enough support for functional style method chaining to get by, you might find that doing this or that operation isn’t always as efficient or as concise as you’d like. Let’s look at two examples where this bites and what a wonderful little extension to <strong>pandas</strong> called <a class="reference external" href="https://ericmjl.github.io/pyjanitor/index.html"><strong>Pyjanitor</strong></a> does about it.</p>
+<p>First, you’ll have seen that the syntax for assigning a new column as part of a method chain is relatively fussy, using as it does the <code class="docutils literal notranslate"><span class="pre">new_column=lambda</span> <span class="pre">x:</span> <span class="pre">func(x['old_column])</span></code> syntax. If you already have a dataframe named <code class="docutils literal notranslate"><span class="pre">df</span></code>, <strong>pyjanitor</strong> gives you the option to create new columns like so (using an example from the documentation):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">add_columns</span><span class="p">(</span>
+        <span class="n">prop_late_departures</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">num_departing_late</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">total_num_trips</span><span class="p">,</span>
+        <span class="n">prop_late_arrivals</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">num_arriving_late</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">total_num_trips</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>What’s great about this is not only that it’s cleaner to read, but that all you need do to get the functionality is to import the pyjanitor library and the extra functions will appear magically as options to use on the usual pandas dataframes.</p>
+<p>Pyjanitor isn’t just about method chaining–it does a lot of other things too, like introducing a bunch of convenience commands with easily understandable verbs behind them. (Though do note it has a hefty download size.)</p>
 </div>
 </div>
 <div class="section" id="reshaping-data">
@@ -4404,17 +4794,292 @@ dtype: float64
 <p>For more on the options, see the <strong>pandas</strong> <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/merging.html#database-style-dataframe-or-named-series-joining-merging">merging documentation</a>.</p>
 </div>
 </div>
-<div class="section" id="alternatives-to-pandas">
-<h2><span class="section-number">2.13. </span>Alternatives to <strong>pandas</strong><a class="headerlink" href="#alternatives-to-pandas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="advanced-alternatives-to-pandas">
+<h2><span class="section-number">2.13. </span>(Advanced) alternatives to <strong>pandas</strong><a class="headerlink" href="#advanced-alternatives-to-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Feel free to skip this section if you’re just interested in getting going as quickly as possible.</p>
 <p><strong>pandas</strong> isn’t the only game in town, not by a long way–though it’s by far the best supported and the most fully featured. But it’s always good to have options (Or, put another way, options have value!) Two alternatives to pandas are <strong>Data.Table</strong> and <strong>plydata</strong>.</p>
 <div class="section" id="plydata">
 <h3><span class="section-number">2.13.1. </span>Plydata<a class="headerlink" href="#plydata" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://plydata.readthedocs.io/en/stable/index.html">Plydata</a> follows, more or less, the syntax of the <strong>dplyr</strong> package in the R statistical language (the package is a really important part of the data ecosystem in R). It’s built around method chaining and everything being in a tidy format, which has pros and cons. Largely, the benefits are in readability and a smaller number of commands to cover the ground that you need to. The downsides are that it plays best with tidy data and when chained methods go wrong it can be more difficult to find out what the issue is.</p>
-<p>Let’s see plydata in action.</p>
+<p><a class="reference external" href="https://plydata.readthedocs.io/en/stable/index.html">Plydata</a> follows, more or less, the syntax of the <strong>dplyr</strong> package in the R statistical language (the package is a really important part of the data ecosystem in R). It’s built around method chaining and everything being in a tidy format, which has pros and cons. Largely, the benefits are in readability and a smaller number of commands to cover the ground that you need to. The downsides are that it plays best with tidy data and when chained methods go wrong it can be more difficult to find out what the issue is. This package is quite new but it’s one to watch for the future.</p>
 </div>
 <div class="section" id="datatable">
 <h3><span class="section-number">2.13.2. </span>Datatable<a class="headerlink" href="#datatable" title="Permalink to this headline">¶</a></h3>
-<p>https://datatable.readthedocs.io/en/latest/</p>
+<p><a class="reference external" href="https://datatable.readthedocs.io/en/latest/"><strong>datatable</strong></a> is another dataframe based way to do analysis, and it has quite a different syntax again for data manipulation again. I am indebted to the very well-written datatable documentation for this explanation.</p>
+<p>In datatable, almost all operations are achieved via so-called ‘square-bracket notation’. Operations with a (data) Frame are almost all expressed in the form</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">DT</span></code> is a datatable dataframe, <code class="docutils literal notranslate"><span class="pre">i</span></code> is the row selector, <code class="docutils literal notranslate"><span class="pre">j</span></code> is the column selector, and <code class="docutils literal notranslate"><span class="pre">...</span></code> is a space that could be filled by other commands (potentially several). However, <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> aren’t just positional, as they might be in a <strong>numpy</strong> array or a list, they do a lot more than that.</p>
+<p>Datatable allows <code class="docutils literal notranslate"><span class="pre">i</span></code> to be anything that can conceivably be interpreted as a row selector: an integer to select a row, a slice, a range, a list of integers, a list of slices, an expression, a boolean-valued Frame, an integer-valued Frame, an integer <strong>numpy</strong> array, a generator, and more.</p>
+<p>Likewise, <code class="docutils literal notranslate"><span class="pre">j</span></code> is also really versatile. It can be used to select a column by name or position, but it will also accept a list of columns, a slice, a list of booleans indicating which columns to pick, an expression, a list of expressions, and a dictionary of expressions. The j expression can even be a python type (such as int or dt.float32), selecting all columns matching that type!</p>
+<p>To change an entry (entries), you can use <code class="docutils literal notranslate"><span class="pre">DT[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">new_value</span></code>, and to remove it (or them), it’s <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">DT[i,</span> <span class="pre">j]</span></code>.</p>
+<p>It’s probably going to be easiest to see some examples, so let’s do a quick run through of some functions with the storms dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datatable</span> <span class="kn">import</span> <span class="n">dt</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">join</span><span class="p">,</span> <span class="n">sort</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">ifelse</span>
+<span class="n">DT</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">fread</span><span class="p">(</span><span class="s1">&#39;https://vincentarelbundock.github.io/Rdatasets/csv/dplyr/storms.csv&#39;</span><span class="p">)</span>
+
+<span class="n">DT</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type='text/css'>
+.datatable table.frame { margin-bottom: 0; }
+.datatable table.frame thead { border-bottom: none; }
+.datatable table.frame tr.coltypes td {  color: #FFFFFF;  line-height: 6px;  padding: 0 0.5em;}
+.datatable .bool    { background: #DDDD99; }
+.datatable .object  { background: #565656; }
+.datatable .int     { background: #5D9E5D; }
+.datatable .float   { background: #4040CC; }
+.datatable .str     { background: #CC4040; }
+.datatable .row_index {  background: var(--jp-border-color3);  border-right: 1px solid var(--jp-border-color0);  color: var(--jp-ui-font-color3);  font-size: 9px;}
+.datatable .frame tr.coltypes .row_index {  background: var(--jp-border-color0);}
+.datatable th:nth-child(2) { padding-left: 12px; }
+.datatable .hellipsis {  color: var(--jp-cell-editor-border-color);}
+.datatable .vellipsis {  background: var(--jp-layout-color0);  color: var(--jp-cell-editor-border-color);}
+.datatable .na {  color: var(--jp-cell-editor-border-color);  font-size: 80%;}
+.datatable .footer { font-size: 9px; }
+.datatable .frame_dimensions {  background: var(--jp-border-color3);  border-top: 1px solid var(--jp-border-color0);  color: var(--jp-ui-font-color3);  display: inline-block;  opacity: 0.6;  padding: 1px 10px 1px 5px;}
+</style>
+</div><div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>C0</th><th>name</th><th>year</th><th>month</th><th>day</th><th>hour</th><th>lat</th><th>long</th><th>status</th><th>category</th><th>wind</th><th>pressure</th><th>ts_diameter</th><th>hu_diameter</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>1</td><td>Amy</td><td>1975</td><td>6</td><td>27</td><td>0</td><td>27.5</td><td>&minus;79</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>1</td><td>2</td><td>Amy</td><td>1975</td><td>6</td><td>27</td><td>6</td><td>28.5</td><td>&minus;79</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>2</td><td>3</td><td>Amy</td><td>1975</td><td>6</td><td>27</td><td>12</td><td>29.5</td><td>&minus;79</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>3</td><td>4</td><td>Amy</td><td>1975</td><td>6</td><td>27</td><td>18</td><td>30.5</td><td>&minus;79</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>4</td><td>5</td><td>Amy</td><td>1975</td><td>6</td><td>28</td><td>0</td><td>31.5</td><td>&minus;78.8</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1012</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>5 rows &times; 14 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>Yes, that’s right, you’re seeing columns colour coded by data type! Otherwise, what you can see here is that the syntax so far looks quite similar but don’t worry because it’s about to get weird.</p>
+<p>The square brackets accept expressions, i.e. functions. This is achieved through a special import, simply denoted <code class="docutils literal notranslate"><span class="pre">f</span></code>, that says do this thing to the current datatable. For example, to filter by a certain value in the ‘status’ column (to avoid overloading with data, I’ll just use head to show the first few rows):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">status</span><span class="o">==</span><span class="s1">&#39;tropical storm&#39;</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>C0</th><th>name</th><th>year</th><th>month</th><th>day</th><th>hour</th><th>lat</th><th>long</th><th>status</th><th>category</th><th>wind</th><th>pressure</th><th>ts_diameter</th><th>hu_diameter</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>9</td><td>Amy</td><td>1975</td><td>6</td><td>29</td><td>0</td><td>34.4</td><td>&minus;75.8</td><td>tropical storm</td><td>0</td><td>35</td><td>1004</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>1</td><td>10</td><td>Amy</td><td>1975</td><td>6</td><td>29</td><td>6</td><td>34</td><td>&minus;74.8</td><td>tropical storm</td><td>0</td><td>40</td><td>1002</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>2</td><td>11</td><td>Amy</td><td>1975</td><td>6</td><td>29</td><td>12</td><td>33.8</td><td>&minus;73.8</td><td>tropical storm</td><td>0</td><td>45</td><td>1000</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>3</td><td>12</td><td>Amy</td><td>1975</td><td>6</td><td>29</td><td>18</td><td>33.8</td><td>&minus;72.8</td><td>tropical storm</td><td>0</td><td>50</td><td>998</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 14 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>Let’s get rid of some columns we’re not using right now</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">DT</span><span class="p">[:,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="s1">&#39;long&#39;</span><span class="p">]</span>
+<span class="n">DT</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>C0</th><th>name</th><th>status</th><th>category</th><th>wind</th><th>pressure</th><th>ts_diameter</th><th>hu_diameter</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>1</td><td>Amy</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>1</td><td>2</td><td>Amy</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>2</td><td>3</td><td>Amy</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+    <tr><td class='row_index'>3</td><td>4</td><td>Amy</td><td>tropical depression</td><td>&minus;1</td><td>25</td><td>1013</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 8 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>Now, to select only those columns that are strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[:,</span> <span class="nb">str</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>name</th><th>status</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>Amy</td><td>tropical depression</td></tr>
+    <tr><td class='row_index'>1</td><td>Amy</td><td>tropical depression</td></tr>
+    <tr><td class='row_index'>2</td><td>Amy</td><td>tropical depression</td></tr>
+    <tr><td class='row_index'>3</td><td>Amy</td><td>tropical depression</td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 2 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>Or to select only those columns that contain ‘diameter’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[:,</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DT</span><span class="o">.</span><span class="n">names</span> <span class="k">if</span> <span class="s1">&#39;diameter&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]]</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>ts_diameter</th><th>hu_diameter</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>161.109</td><td>23.0156</td></tr>
+    <tr><td class='row_index'>1</td><td>207.14</td><td>23.0156</td></tr>
+    <tr><td class='row_index'>2</td><td>345.234</td><td>34.5234</td></tr>
+    <tr><td class='row_index'>3</td><td>379.757</td><td>46.0312</td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 2 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>To create a new column based on an existing one and just look at the last few columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[:,</span> <span class="n">update</span><span class="p">(</span><span class="n">atmospheres</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">pressure</span><span class="o">/</span><span class="mf">1013.</span><span class="p">)]</span>
+<span class="n">DT</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>pressure</th><th>ts_diameter</th><th>hu_diameter</th><th>atmospheres</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>990</td><td>161.109</td><td>23.0156</td><td>0.977295</td></tr>
+    <tr><td class='row_index'>1</td><td>985</td><td>207.14</td><td>23.0156</td><td>0.972359</td></tr>
+    <tr><td class='row_index'>2</td><td>980</td><td>345.234</td><td>34.5234</td><td>0.967423</td></tr>
+    <tr><td class='row_index'>3</td><td>980</td><td>379.757</td><td>46.0312</td><td>0.967423</td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 4 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>To sort all values by multiple columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">sort</span><span class="p">(</span><span class="s1">&#39;wind&#39;</span><span class="p">,</span> <span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>C0</th><th>name</th><th>status</th><th>category</th><th>wind</th><th>pressure</th><th>ts_diameter</th><th>hu_diameter</th><th>atmospheres</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>1844</td><td>Gilbert</td><td>hurricane</td><td>5</td><td>160</td><td>888</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.876604</td></tr>
+    <tr><td class='row_index'>1</td><td>7266</td><td>Wilma</td><td>hurricane</td><td>5</td><td>160</td><td>882</td><td>304.957</td><td>74.8007</td><td>0.870681</td></tr>
+    <tr><td class='row_index'>2</td><td>4802</td><td>Mitch</td><td>hurricane</td><td>5</td><td>155</td><td>910</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.898322</td></tr>
+    <tr><td class='row_index'>3</td><td>4801</td><td>Mitch</td><td>hurricane</td><td>5</td><td>155</td><td>905</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.893386</td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 9 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>And to perform group-by operations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[:,</span> <span class="n">dt</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">wind</span><span class="p">),</span> <span class="n">by</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>status</th><th>wind</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>hurricane</td><td>85.9689</td></tr>
+    <tr><td class='row_index'>1</td><td>tropical depression</td><td>27.2692</td></tr>
+    <tr><td class='row_index'>2</td><td>tropical storm</td><td>45.8059</td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>3 rows &times; 2 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
+<p>And, finally, one that I always find of great practical use–the within-group transform, with the new column going back into the original data(frame/table). In <strong>pandas</strong>, this is achieved by <code class="docutils literal notranslate"><span class="pre">transform</span></code>, here we use <code class="docutils literal notranslate"><span class="pre">extend</span></code>. Let’s demonstrate by showing the maximum wind speed by status group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[:,</span> <span class="n">f</span><span class="p">[:]</span><span class="o">.</span><span class="n">extend</span><span class="p">({</span><span class="s2">&quot;max_wind&quot;</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">wind</span><span class="p">)}),</span> <span class="n">by</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div class='datatable'>
+  <table class='frame'>
+  <thead>
+    <tr class='colnames'><td class='row_index'></td><th>status</th><th>C0</th><th>name</th><th>category</th><th>wind</th><th>pressure</th><th>ts_diameter</th><th>hu_diameter</th><th>atmospheres</th><th>max_wind</th></tr>
+    <tr class='coltypes'><td class='row_index'></td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='str' title='str32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='float' title='float64'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td><td class='int' title='int32'>&#x25AA;&#x25AA;&#x25AA;&#x25AA;</td></tr>
+  </thead>
+  <tbody>
+    <tr><td class='row_index'>0</td><td>hurricane</td><td>53</td><td>Caroline</td><td>1</td><td>65</td><td>990</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.977295</td><td>65</td></tr>
+    <tr><td class='row_index'>1</td><td>hurricane</td><td>54</td><td>Caroline</td><td>1</td><td>65</td><td>990</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.977295</td><td>65</td></tr>
+    <tr><td class='row_index'>2</td><td>hurricane</td><td>55</td><td>Caroline</td><td>1</td><td>65</td><td>989</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.976308</td><td>65</td></tr>
+    <tr><td class='row_index'>3</td><td>hurricane</td><td>56</td><td>Caroline</td><td>1</td><td>70</td><td>987</td><td><span class=na>NA</span></td><td><span class=na>NA</span></td><td>0.974334</td><td>65</td></tr>
+  </tbody>
+  </table>
+  <div class='footer'>
+    <div class='frame_dimensions'>4 rows &times; 10 columns</div>
+  </div>
+</div>
+</div></div>
+</div>
 </div>
 </div>
 <div class="section" id="review">
@@ -4426,8 +5091,9 @@ dtype: float64
 <li><p>[x] how to access values in series and dataframes;</p></li>
 <li><p>[x] how to perform operations on columns;</p></li>
 <li><p>[x] how to chain methods;</p></li>
-<li><p>[x] how to reshape data; and</p></li>
-<li><p>[x] how to combine different dataframes</p></li>
+<li><p>[x] how to reshape data;</p></li>
+<li><p>[x] how to combine different dataframes; and</p></li>
+<li><p>[x] what some alternatives to <strong>pandas</strong> are</p></li>
 </ul>
 <p>then you are well on your way to becoming a data analysis master!</p>
 </div>
@@ -4462,7 +5128,7 @@ dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="data-analysis-quickstart.html" title="previous page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
-    <a class='right-next' id="next-link" href="reading-and-writing.html" title="next page"><span class="section-number">3. </span>Reading and Writing Data</a>
+    <a class='right-next' id="next-link" href="reading-and-writing.html" title="next page"><span class="section-number">3. </span>Reading and Writing Files</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -4488,7 +5154,7 @@ This book is licensed under an MIT license.
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

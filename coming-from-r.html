@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coming from R &#8212; Coding for Economists</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -34,13 +34,12 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -58,6 +57,8 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/coming-from-r.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="zreferences.html" />
+    <link rel="prev" title="Coming from Matlab" href="coming-from-matlab.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -67,7 +68,7 @@
 <meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/coming-from-r.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Coming from R" />
-<meta property="og:description" content="Coming from R  If you’re coming from R, then you’re probably already somewhat familiar with integrated developer environments and coding, and most of what you’l" />
+<meta property="og:description" content="Coming from R  If you’re coming from R, then you’re probably already familiar with coding and with integrated developer environments. Overall, Python and R are " />
 <meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -116,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="basics-of-coding.html">
-   2. Basics of coding
+   2. Basics of Coding
   </a>
  </li>
 </ul>
@@ -138,7 +139,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and Writing Data
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
   </a>
  </li>
 </ul>
@@ -167,7 +173,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="best-practice-coding.html">
-   1. Best practice in coding
+   1. Best Practice in Coding
   </a>
  </li>
 </ul>
@@ -185,10 +191,27 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Coming from ...
+  Econometrics
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   2. Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-stata.html">
    Coming from Stata
@@ -197,6 +220,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Coming from R
   </a>
  </li>
 </ul>
@@ -323,6 +351,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#need-a-specific-library-that-s-in-r-but-not-in-python">
+   Need a specific library that’s in R but not in Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#r-python">
    R &lt;==&gt; Python
   </a>
@@ -342,6 +375,11 @@
      Object types
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-important-differences">
+     Other important differences
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -357,21 +395,42 @@
                 
   <div class="section" id="coming-from-r">
 <h1>Coming from R<a class="headerlink" href="#coming-from-r" title="Permalink to this headline">¶</a></h1>
-<p>If you’re coming from R, then you’re probably already somewhat familiar with integrated developer environments and coding, and most of what you’ll want to know about are the differences in tools.</p>
-<p>There are, however, some fundamental differences between the two languages. The biggest difference between Python and R is that Python is a general purpose programming language, while R began as a statistical language. But you won’t notice that much difference unless you’re doing something on a production scale or writing a package. Despite being a general language, Python has really fantastic class support for statistics so you needn’t worry about losing any functionality relative to R and, in the special case where you need that one stats package that’s only written in R, you can use R directly from Python. A second difference is that Python is more object-oriented while R is more functional. These are two different programming paradigms. Actually, both languages do a bit of both and you’re unlikely to notice any difference unless and until you’re writing your own packages (and even then quite complicated packages!). Actually, the biggest practical difference I have found is that Python has more of a flavour of the bazaar–lots of people, and you can find everything under the Sun, but it can be a <em>little bit</em> chaotic–while R has the feel of a curated garden–there is a chief gardener (RStudio) tending a smaller number of more beautiful things, but the garden is quieter and has boundaries.</p>
-<p>Personally, I tend to use Python because I find that its commands are readable and often in clear, plain English, it has a huge ecosystem of packages and users, it scales well to bigger problems, and it is also valuable outside of economics and data science. Sometimes people wonder whether they should learn Python or R. For economics, you really can learn either; they are similar enough to be useful for each other. Python has more generalisability and a significantly larger number of people using it. R has more specificity; it is dominant in some sub-fields. But you can very happily use either to get along in economics. Indeed, almost all of the code examples in this book could also be done in R.</p>
-<p>A gotcha to be aware of: R is among the small number of languages where arrays etc. are indexed from 1. Like C++, Python is numbered from zero, with, eg, <code class="docutils literal notranslate"><span class="pre">a[0]</span></code> as the first element.</p>
+<p>If you’re coming from R, then you’re probably already familiar with coding and with integrated developer environments. Overall, Python and R are more similar than they are different, especially when it comes to economics and data science.</p>
+<p>There are, however, some fundamental differences between the two languages. The biggest difference between Python and R is that Python is a general purpose programming language, while R began as a statistical language. But you won’t really notice this unless you’re writing something that looks more like production-grade software. (And, despite being a general language, Python has really fantastic support for statistics.) A second difference is that Python is more object-oriented while R is more functional. These are two different programming paradigms. Actually, both languages do a bit of both and, again, you’re unlikely to notice any difference most of the time.</p>
+<p>Actually, the biggest practical difference I have found in an economics and data science context is that Python has more of a flavour of the bazaar–there are lots of people, and you can find everything under the Sun, but it can be a <em>little bit</em> chaotic–while R has the feel of a curated garden–there is a chief gardener (RStudio) tending a smaller number of more beautiful things, but the garden has boundaries.</p>
+<p>There’s a list of differences at the end of this chapter, but a couple of important gotchas to be aware of up front: first, R uses vectors, arrays, etc., that are indexed from 1. Like C++, Python is numbered from zero, with, eg, <code class="docutils literal notranslate"><span class="pre">a[0]</span></code> as the first element. Second, <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> is the preferred assignment operator in R but in Python it’s <code class="docutils literal notranslate"><span class="pre">=</span></code> (and <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> isn’t used). In fact, in R <code class="docutils literal notranslate"><span class="pre">a&lt;-5</span></code> assigns <code class="docutils literal notranslate"><span class="pre">a</span></code> the value <code class="docutils literal notranslate"><span class="pre">5</span></code>, while <code class="docutils literal notranslate"><span class="pre">a&lt;-5</span></code> in Python would return <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> based on whether <code class="docutils literal notranslate"><span class="pre">a</span></code> was less than <code class="docutils literal notranslate"><span class="pre">-5</span></code> or not!</p>
 <div class="section" id="tools-similar-to-those-found-in-an-r-workflow">
 <h2>Tools similar to those found in an R workflow<a class="headerlink" href="#tools-similar-to-those-found-in-an-r-workflow" title="Permalink to this headline">¶</a></h2>
-<p>In R, the main tools that people use are those provided by RStudio, particularly <strong>dplyr</strong> for data analysis and <strong>ggplot2</strong> for plotting. There are Python equivalents that have very similar syntax to these that you can use to help you to become productive quickly in Python–though these libraries are not so popular in Python. So here are the Python equivalents to the R libraries that you might have seen already:</p>
+<p>If you are coming from R, you’re likely familiar with <strong>dplyr</strong> for data analysis and <strong>ggplot2</strong> for plotting. There are Python equivalents that have very similar syntax to these that you can use to help you to become productive quickly in Python–though these libraries are not so popular in Python. Here are the Python equivalents to those R libraries:</p>
 <ul class="simple">
 <li><p><strong>dplyr</strong>: the most similar Python version of this library is <a class="reference external" href="https://plydata.readthedocs.io/en/stable/index.html"><strong>plydata</strong></a>, while the most popular Python library that performs similar functions is <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/index.html"><strong>pandas</strong></a>. I tend to recommend people learn <strong>pandas</strong> for data analysis in Python because it is comprehensive and ubiquitious. It also has unrivaled documentation.</p></li>
-<li><p><strong>ggplot2</strong>: the most similar Python version of this library is <a class="reference external" href="https://plotnine.readthedocs.io/en/stable/index.html"><strong>plotnine</strong></a>, while the most popular Python library that performs similar functions is a combination of <a class="reference external" href="https://matplotlib.org/"><strong>matplolib</strong></a> and <a class="reference external" href="https://seaborn.pydata.org/"><strong>seaborn</strong></a>, which builds on <strong>matplotlib</strong>. I think either those two together or <strong>plotnine</strong> are good choices, though <strong>plotnine</strong>’s documentation is not (yet) as good and it’s certainly not as widely used. (It’s gaining popularity quickly though.)</p></li>
+<li><p>More <strong>dplyr</strong>: <a class="reference external" href="https://ericmjl.github.io/pyjanitor/index.html"><strong>pyjanitor</strong></a> builds a range of extra features on top of <strong>pandas</strong>. Two of the things it adds are likely to make anyone coming from <strong>dplyr</strong> feel a bit more at home: better support for method chaining and some functions with the same names as the ones in <strong>dplyr</strong> and which do the same things.</p></li>
+<li><p><strong>ggplot2</strong>: the most similar Python version of this library is <a class="reference external" href="https://plotnine.readthedocs.io/en/stable/index.html"><strong>plotnine</strong></a>, while the most popular Python library that performs similar functions is a combination of <a class="reference external" href="https://matplotlib.org/"><strong>matplolib</strong></a> and <a class="reference external" href="https://seaborn.pydata.org/"><strong>seaborn</strong></a>, which builds on <strong>matplotlib</strong>. I think either those two together or <strong>plotnine</strong> are good choices, though <strong>plotnine</strong>’s documentation is not (yet) as good and it’s certainly not as widely used. (It’s gaining popularity though.)</p></li>
+<li><p><strong>data.table</strong>: if you use this library instead of <strong>dplyr</strong>, have no fear as there’s an almost identical library in Python called <a class="reference external" href="https://datatable.readthedocs.io/en/latest/"><strong>datatable</strong></a>. It’s not nearly as popular in Python as <strong>data.table</strong> is in R, but it’s a very high quality library.</p></li>
 </ul>
+</div>
+<div class="section" id="need-a-specific-library-that-s-in-r-but-not-in-python">
+<h2>Need a specific library that’s in R but not in Python?<a class="headerlink" href="#need-a-specific-library-that-s-in-r-but-not-in-python" title="Permalink to this headline">¶</a></h2>
+<p>You can run a full R session from Python (if you already have R installed). Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="k">as</span> <span class="nn">ro</span>
+<span class="kn">from</span> <span class="nn">rpy2.robjects.packages</span> <span class="kn">import</span> <span class="n">importr</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="n">importr</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>
+
+<span class="n">fit_full</span> <span class="o">=</span> <span class="n">ro</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s2">&quot;lm(&#39;mpg ~ wt + cyl&#39;, data=mtcars)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">base</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">fit_full</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>To install R packages, use this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rpy2.robjects.packages</span> <span class="kn">import</span> <span class="n">importr</span>
+<span class="n">utils</span> <span class="o">=</span> <span class="n">importr</span><span class="p">(</span><span class="s1">&#39;utils&#39;</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">install_packages</span><span class="p">(</span><span class="s1">&#39;packagename&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="r-python">
 <h2>R &lt;==&gt; Python<a class="headerlink" href="#r-python" title="Permalink to this headline">¶</a></h2>
-<p>Here are some tables of translations between base R and Python code.</p>
+<p>Here are some tables of translations between base R and Python code. For more, see <a class="reference external" href="https://hyperpolyglot.org/numerical-analysis">hyperpolyglot</a>.</p>
 <div class="section" id="general">
 <h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
@@ -417,12 +476,51 @@
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%*%</span> <span class="pre">b</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&#64;</span> <span class="pre">b</span></code></p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">paste(&quot;one&quot;,</span> <span class="pre">&quot;two&quot;,</span> <span class="pre">&quot;three&quot;,</span> <span class="pre">sep=&quot;&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'one'</span> <span class="pre">+</span> <span class="pre">'two'</span> <span class="pre">+</span> <span class="pre">'three'</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">substr(&quot;hello&quot;,</span> <span class="pre">1,</span> <span class="pre">4)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'hello'[:4]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">strsplit('foo,bar,baz',</span> <span class="pre">',')</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'foo,bar,baz'.split(',')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">paste(c('foo',</span> <span class="pre">'bar',</span> <span class="pre">'baz'),</span> <span class="pre">collapse=',')</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">','.join(['foo',</span> <span class="pre">'bar',</span> <span class="pre">'baz'])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gsub(&quot;(^[\n\t</span> <span class="pre">]+|[\n\t</span> <span class="pre">]+$)&quot;,</span> <span class="pre">&quot;&quot;,</span> <span class="pre">&quot;</span> <span class="pre">foo</span> <span class="pre">&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">foo</span> <span class="pre">'.strip()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sprintf(&quot;%10s&quot;,</span> <span class="pre">&quot;lorem&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'lorem'.rjust(10)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">paste(&quot;value:</span> <span class="pre">&quot;,</span> <span class="pre">toString(&quot;8&quot;))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'value:</span> <span class="pre">'</span> <span class="pre">+</span> <span class="pre">str(8)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">toupper(&quot;foo&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'foo'.upper()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nchar(&quot;hello&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">len('hello')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">substr(&quot;hello&quot;,</span> <span class="pre">1,</span> <span class="pre">1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'hello'[0]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">rbind(c(1,</span> <span class="pre">2,</span> <span class="pre">3),</span> <span class="pre">c('a',</span> <span class="pre">'b',</span> <span class="pre">'c'))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">zip([1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c'])</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">list(n=10,</span> <span class="pre">avg=3.7,</span> <span class="pre">sd=0.4)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">{'n':</span> <span class="pre">10,</span> <span class="pre">'avg':</span> <span class="pre">3.7,</span> <span class="pre">'sd':</span> <span class="pre">0.4}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">quit()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">exit()</span></code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="dataframes">
 <h3>Dataframes<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h3>
-<p>Assuming the use of <strong>pandas</strong> in Python.</p>
+<p>Assuming the use of <strong>pandas</strong> in Python, and the <strong>dplyr</strong> and <strong>tidyr</strong> packages in R.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>R</p></th>
@@ -442,15 +540,59 @@
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ncol(df)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">df.shape[1]</span></code> or <code class="docutils literal notranslate"><span class="pre">len(df.columns)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>None</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">df$col_name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['col_name']</span></code> or <code class="docutils literal notranslate"><span class="pre">df.col_name</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>None</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">df.info()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">summary(df)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> (somewhat similar)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">summary(df)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> (not exactly the same)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">%&gt;%</span> <span class="pre">arrange(c1,</span> <span class="pre">desc(c2))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.sort_values(by=['c1','c2'],</span> <span class="pre">ascending=[True,</span> <span class="pre">False])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">%&gt;%</span> <span class="pre">rename(new_col</span> <span class="pre">=</span> <span class="pre">old_col)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.rename(columns={'old_col':</span> <span class="pre">'new_col'})</span> </code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code>df<span class="math notranslate nohighlight">\(smoker &lt;- mapvalues(df\)</span>smoker,<br>  from=c(‘yes’, ‘no’),<br> to=c(0,1))</code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['smoker']</span> <span class="pre">=</span> <span class="pre">df['smoker'].map({'yes':0,</span> <span class="pre">'no':1})</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">df$c1</span> <span class="pre">&lt;-</span> <span class="pre">as.character(df$c1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['c1']</span> <span class="pre">=</span> <span class="pre">df['c1'].astype(str)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unique(df$c1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['c1'].unique()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">length(unique(df$c1))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">len(df['c1'].unique())</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">max(df$c1,</span>&#160; <span class="pre">na.rm</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['c1'].max()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">df$c1[is.na(df$c1)]</span> <span class="pre">&lt;-</span> <span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['c1']</span> <span class="pre">=</span> <span class="pre">df['c1'].fillna(0)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code>col_a &lt;- c(‘a’,’b’,’c’)<br>col_b &lt;- c(1,2,3)<br>df &lt;- data.frame(col_a, col_b)</code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.DataFrame(dict(col_a=['a',</span> <span class="pre">'b',</span> <span class="pre">'c'],</span> <span class="pre">col_b=[1,</span> <span class="pre">2,</span> <span class="pre">3]))</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code> df &lt;- read.csv(“input.csv”, <br>  header = TRUE, <br>   na.strings=c(“”,”NA”), sep = “,”)</code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(&quot;input.csv&quot;)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">write.csv(df,</span> <span class="pre">&quot;output.csv&quot;,</span> <span class="pre">row.names</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.to_csv(&quot;output.csv&quot;,</span> <span class="pre">index</span> <span class="pre">=</span> <span class="pre">False)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">df[c(4:6)]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.iloc[:,</span> <span class="pre">3:6]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mutate(df,</span> <span class="pre">c=a-b)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.assign(c=df['a']-df['b'])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">distinct(select(df,</span> <span class="pre">col1))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df[['col1']].drop_duplicates()</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>More here: https://towardsdatascience.com/cheat-sheet-for-python-dataframe-r-dataframe-syntax-conversions-450f656b44ca</p>
 </div>
 <div class="section" id="object-types">
 <h3>Object types<a class="headerlink" href="#object-types" title="Permalink to this headline">¶</a></h3>
@@ -461,23 +603,83 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Single-element vector</p></td>
+<tr class="row-even"><td><p>character</p></td>
+<td><p>string, aka <code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>integer</p></td>
+<td><p>integer, aka <code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>logical</p></td>
+<td><p>boolean, aka <code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>numeric</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code> or <code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>complex</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">complex</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Single-element vector</p></td>
 <td><p>Scalar</p></td>
 </tr>
-<tr class="row-odd"><td><p>Multi-element vector</p></td>
+<tr class="row-even"><td><p>Multi-element vector</p></td>
 <td><p>List</p></td>
 </tr>
-<tr class="row-even"><td><p>List of multiple types</p></td>
+<tr class="row-odd"><td><p>List of multiple types</p></td>
 <td><p>Tuple</p></td>
 </tr>
-<tr class="row-odd"><td><p>Named list</p></td>
+<tr class="row-even"><td><p>Named list</p></td>
 <td><p>Dict</p></td>
 </tr>
-<tr class="row-even"><td><p>Matrix/Array</p></td>
+<tr class="row-odd"><td><p>Matrix/Array</p></td>
 <td><p>numpy ndarray</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NULL</span></code>, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NULL</span></code>, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Inf</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">inf</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>NaN</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nan</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="other-important-differences">
+<h3>Other important differences<a class="headerlink" href="#other-important-differences" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>R</p></th>
+<th class="head"><p>Python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> works as an assignment operator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=</span></code> is the assignment operator</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dots are valid in variable names, eg <code class="docutils literal notranslate"><span class="pre">var.iable</span></code></p></td>
+<td><p>Dots precede methods, eg <code class="docutils literal notranslate"><span class="pre">'</span>&#160; <span class="pre">strip</span> <span class="pre">whitespace</span>&#160;&#160; <span class="pre">'.strip()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>use of <code class="docutils literal notranslate"><span class="pre">$</span></code>, eg <code class="docutils literal notranslate"><span class="pre">df$col_name</span></code></p></td>
+<td><p>Equivalent is usually <code class="docutils literal notranslate"><span class="pre">.</span></code>, eg <code class="docutils literal notranslate"><span class="pre">df.col_name</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Does not have compound assignments</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, etc. are compound assignment operators</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, and <code class="docutils literal notranslate"><span class="pre">0.0</span></code> are false</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and <code class="docutils literal notranslate"><span class="pre">{}</span></code> are false</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tends to fail silently, eg <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">c()</span></code>, <code class="docutils literal notranslate"><span class="pre">a[10]</span></code> evaluates as NA</p></td>
+<td><p>Python tends to fail loudly, eg <code class="docutils literal notranslate"><span class="pre">a=[]</span></code>, <code class="docutils literal notranslate"><span class="pre">a[10]</span></code> throws an error</p></td>
+</tr>
+<tr class="row-even"><td><p>No built-in decorator operator, but see <a class="reference external" href="https://github.com/klmr/decorator">decorator</a></p></td>
+<td><p>Function decorator, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Walrus operator, <code class="docutils literal notranslate"><span class="pre">:=</span></code>, used in quasiquations</p></td>
+<td><p>Walrus operator, <code class="docutils literal notranslate"><span class="pre">=:</span></code>, combines an expression with an assignment (Python 3.8+)</p></td>
+</tr>
+<tr class="row-even"><td><p>Pipe operator, <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code></p></td>
+<td><p>No built-in pipe operator. Method chaining and <code class="docutils literal notranslate"><span class="pre">.pipe</span></code> used as partial replacements for dataframes, and there are pipe extensions like <a class="reference external" href="https://github.com/0101/pipetools">pipetools</a> and <a class="reference external" href="https://sspipe.github.io/">sspipe</a>, but they’re not widely used.</p></td>
 </tr>
 </tbody>
 </table>
@@ -513,6 +715,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="coming-from-matlab.html" title="previous page">Coming from Matlab</a>
+    <a class='right-next' id="next-link" href="zreferences.html" title="next page">Bibliography</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -538,7 +742,7 @@ This book is licensed under an MIT license.
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

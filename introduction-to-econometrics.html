@@ -40,7 +40,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -116,7 +115,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="basics-of-coding.html">
-   2. Basics of coding
+   2. Basics of Coding
   </a>
  </li>
 </ul>
@@ -138,7 +137,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and Writing Data
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting data
   </a>
  </li>
 </ul>
@@ -167,7 +171,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="best-practice-coding.html">
-   1. Best practice in coding
+   1. Best Practice in Coding
   </a>
  </li>
 </ul>
@@ -185,6 +189,23 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   2. Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Coming from ...
  </span>
 </p>
@@ -197,6 +218,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
   </a>
  </li>
 </ul>
@@ -318,6 +344,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basics">
    Basics
   </a>
@@ -342,13 +373,17 @@
 <h1>Intro to Econometrics with Code<a class="headerlink" href="#intro-to-econometrics-with-code" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll learn about doing econometrics with code. It assumes some familiarity withe the basics of regression and jumps straight into what you need to know to run regressions.</p>
 <p>This chapter uses the <strong>statsmodels</strong> package, along with some others that we’ve already seen. If you’re running this code, you may need to install these packages using, for example, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on your computer’s command line. (If you’re not sure what a command line or terminal is, take a quick look at the basics of coding chapter.)</p>
+<div class="section" id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
+<p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Letters from the Latin alphabet denote the values of data, for instance <span class="math notranslate nohighlight">\(x\)</span> for a variable or vector. Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{N} \displaystyle\sum_{i} x_i\)</span>.</p>
+</div>
 <div class="section" id="basics">
 <h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <p>There are usually two ways to run regressions in code: specifying a formula in text eg <code class="docutils literal notranslate"><span class="pre">reg('y</span> <span class="pre">~</span> <span class="pre">x',</span> <span class="pre">data=df)</span></code>, or specifying columns of a dataframe eg <code class="docutils literal notranslate"><span class="pre">reg(df['y'],</span> <span class="pre">df['x'])</span></code>. To add to the confusion, the conventions in economics and in machine learning are the opposite way around in terms of which comes first, the dependent (endogenous) variable or the independent (exogenous) variable. In machine learning, the basic regression might look more like <code class="docutils literal notranslate"><span class="pre">reg.fit(X,</span> <span class="pre">y)</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a matrix (usually a <strong>numpy</strong> array) and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a vector (ditto). I state these things now to avoid confusion in a later chapter on machine learning! For much of this chapter, we’ll assume that you’re using a <strong>pandas</strong> dataframe rather than <strong>numpy</strong> arrays because that’s a typical econometrics workflow.</p>
 <p>Let’s start with the absolute basic statistics then: how do we find the mean, standard deviation, covariance matrix, and so on?</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a3a3feec-40dc-49e4-857b-de230f0e06b5" name="7c1b3cb3-0ce6-4bcf-9564-857b305fc84b" type="radio">
-</input><label class="tabbed-label" for="a3a3feec-40dc-49e4-857b-de230f0e06b5">
+<input checked="checked" id="443228b4-83de-4193-9ca0-49da30e79a07" name="b7c7c899-fd22-462f-8df1-2af6f93ced7b" type="radio">
+</input><label class="tabbed-label" for="443228b4-83de-4193-9ca0-49da30e79a07">
 Matplotlib</label><div class="tabbed-content docutils">
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
@@ -371,16 +406,16 @@ Matplotlib</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<input id="ec0851f2-8c8b-4cf8-a828-4ea40424f979" name="7c1b3cb3-0ce6-4bcf-9564-857b305fc84b" type="radio">
-</input><label class="tabbed-label" for="ec0851f2-8c8b-4cf8-a828-4ea40424f979">
+<input id="881dfac4-eb87-41d5-84bc-78734332f868" name="b7c7c899-fd22-462f-8df1-2af6f93ced7b" type="radio">
+</input><label class="tabbed-label" for="881dfac4-eb87-41d5-84bc-78734332f868">
 seaborn</label><div class="tabbed-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>some text</p>
 </div>
-<input id="ea849096-62f2-4d08-a305-c81b8867c3d7" name="7c1b3cb3-0ce6-4bcf-9564-857b305fc84b" type="radio">
-</input><label class="tabbed-label" for="ea849096-62f2-4d08-a305-c81b8867c3d7">
+<input id="58e1251e-48bc-4845-a97c-f5b79dfaefa5" name="b7c7c899-fd22-462f-8df1-2af6f93ced7b" type="radio">
+</input><label class="tabbed-label" for="58e1251e-48bc-4845-a97c-f5b79dfaefa5">
 plotnine</label><div class="tabbed-content docutils">
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">

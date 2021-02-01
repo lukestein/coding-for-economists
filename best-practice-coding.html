@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Best practice in coding &#8212; Coding for Economists</title>
+    <title>1. Best Practice in Coding &#8212; Coding for Economists</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -34,13 +34,12 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -68,8 +67,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/best-practice-coding.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Best practice in coding" />
-<meta property="og:description" content="Best practice in coding  In this chapter, you’ll learn about some best practices for coding. As you code, you’ll be tempted to ignore these (that’s normal; we a" />
+<meta property="og:title"       content="Best Practice in Coding" />
+<meta property="og:description" content="Best Practice in Coding  In this chapter, you’ll learn about some best practices for coding. As you code, you’ll be tempted to ignore these (that’s normal; we a" />
 <meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -118,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="basics-of-coding.html">
-   2. Basics of coding
+   2. Basics of Coding
   </a>
  </li>
 </ul>
@@ -140,7 +139,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reading-and-writing.html">
-   3. Reading and Writing Data
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
   </a>
  </li>
 </ul>
@@ -169,7 +173,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Best practice in coding
+   1. Best Practice in Coding
   </a>
  </li>
 </ul>
@@ -187,6 +191,23 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   2. Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Coming from ...
  </span>
 </p>
@@ -199,6 +220,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-matlab.html">
    Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
   </a>
  </li>
 </ul>
@@ -391,7 +417,7 @@
               <div>
                 
   <div class="section" id="best-practice-in-coding">
-<h1><span class="section-number">1. </span>Best practice in coding<a class="headerlink" href="#best-practice-in-coding" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Best Practice in Coding<a class="headerlink" href="#best-practice-in-coding" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll learn about some best practices for coding. As you code, you’ll be tempted to ignore these (that’s normal; we all are). But the truth is that they will <em>save</em> time in the long run, and future you will thank past you for sticking to them.</p>
 <p>The validity of your research depends, to a frightening degree, on the quality of your code. There are many ways to write code and, over the years, software developers have worked out best practices that help to make writing, using, debugging, and reading code more fun, and to make the end product higher quality. (There’s nothing worse than wading through someone else’s terrible code.)</p>
 <p><img alt="Code quality 2" src="https://imgs.xkcd.com/comics/code_quality_2.png" /></p>
@@ -616,7 +642,7 @@ This book is licensed under an MIT license.
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

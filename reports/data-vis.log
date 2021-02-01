@@ -17,26 +17,45 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from plotnine import geom_density
-from plotnine.data import mpg
-(
-    ggplot(mpg, aes(x='cty', color='drv', fill='drv'))
-    + geom_density(
-        aes(y=after_stat('count')),
-        alpha=0.1
-    )
+from plotnine import geom_violin, scale_fill_manual
+
+(ggplot(tips, aes('day', 'total_bill', fill='smoker'))
+ + geom_violin(tips[tips['smoker'] == 'Yes'], style='left')
+ + geom_violin(tips[tips['smoker'] == 'No'], style='right')
+ + scale_fill_manual(values=['dodgerblue', 'darkorange'])
 )
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-31-5aec4163f194>[0m in [0;36m<module>[0;34m[0m
-[1;32m      4[0m     [0mggplot[0m[0;34m([0m[0mmpg[0m[0;34m,[0m [0maes[0m[0;34m([0m[0mx[0m[0;34m=[0m[0;34m'cty'[0m[0;34m,[0m [0mcolor[0m[0;34m=[0m[0;34m'drv'[0m[0;34m,[0m [0mfill[0m[0;34m=[0m[0;34m'drv'[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m     + geom_density(
-[0;32m----> 6[0;31m         [0maes[0m[0;34m([0m[0my[0m[0;34m=[0m[0mafter_stat[0m[0;34m([0m[0;34m'count'[0m[0;34m)[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      7[0m         [0malpha[0m[0;34m=[0m[0;36m0.1[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      8[0m     )
+[0;31mPlotnineError[0m                             Traceback (most recent call last)
+[0;32m<ipython-input-29-866235cae636>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0;34m[0m[0m
+[1;32m      3[0m (ggplot(tips, aes('day', 'total_bill', fill='smoker'))
+[0;32m----> 4[0;31m  [0;34m+[0m [0mgeom_violin[0m[0;34m([0m[0mtips[0m[0;34m[[0m[0mtips[0m[0;34m[[0m[0;34m'smoker'[0m[0;34m][0m [0;34m==[0m [0;34m'Yes'[0m[0;34m][0m[0;34m,[0m [0mstyle[0m[0;34m=[0m[0;34m'left'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m  [0;34m+[0m [0mgeom_violin[0m[0;34m([0m[0mtips[0m[0;34m[[0m[0mtips[0m[0;34m[[0m[0;34m'smoker'[0m[0;34m][0m [0;34m==[0m [0;34m'No'[0m[0;34m][0m[0;34m,[0m [0mstyle[0m[0;34m=[0m[0;34m'right'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m  [0;34m+[0m [0mscale_fill_manual[0m[0;34m([0m[0mvalues[0m[0;34m=[0m[0;34m[[0m[0;34m'dodgerblue'[0m[0;34m,[0m [0;34m'darkorange'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'after_stat' is not defined
-NameError: name 'after_stat' is not defined
+[0;32m~/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom_violin.py[0m in [0;36m__init__[0;34m(self, *args, **kwargs)[0m
+[1;32m     41[0m                     [0;34m"draw_quantiles must be a float or"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     42[0m                     " an iterable of floats (>0.0; < 1.0)")
+[0;32m---> 43[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     44[0m [0;34m[0m[0m
+[1;32m     45[0m     [0;32mdef[0m [0msetup_data[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdata[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom.py[0m in [0;36m__init__[0;34m(self, mapping, data, **kwargs)[0m
+[1;32m     45[0m         [0mself[0m[0;34m.[0m[0m_stat[0m [0;34m=[0m [0mstat[0m[0;34m.[0m[0mfrom_geom[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     46[0m         [0mself[0m[0;34m.[0m[0m_position[0m [0;34m=[0m [0mposition[0m[0;34m.[0m[0mfrom_geom[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 47[0;31m         [0mself[0m[0;34m.[0m[0m_verify_arguments[0m[0;34m([0m[0mkwargs[0m[0;34m)[0m     [0;31m# geom, stat, layer[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     48[0m [0;34m[0m[0m
+[1;32m     49[0m     [0;34m@[0m[0mstaticmethod[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom.py[0m in [0;36m_verify_arguments[0;34m(self, kwargs)[0m
+[1;32m    381[0m             msg = ("Parameters {}, are not understood by "
+[1;32m    382[0m                    "either the geom, stat or layer.")
+[0;32m--> 383[0;31m             [0;32mraise[0m [0mPlotnineError[0m[0;34m([0m[0mmsg[0m[0;34m.[0m[0mformat[0m[0;34m([0m[0munknown[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    384[0m [0;34m[0m[0m
+[1;32m    385[0m     [0;32mdef[0m [0mhandle_na[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdata[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mPlotnineError[0m: "Parameters {'style'}, are not understood by either the geom, stat or layer."
+PlotnineError: "Parameters {'style'}, are not understood by either the geom, stat or layer."
 

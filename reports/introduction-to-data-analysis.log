@@ -17,24 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df = xf.assign(string_col=df['string_col'].astype('string'),
-               double_col=df['double_col'].astype('double'),
-               category_col=df['category_col'].astype('category'),
-               datetime_col=df['datetime_col'].astype('datetime64[ns]'),
-               integer_col=df['integer_col'].astype('int'),
-               bool_col=df['bool_col'].astype('bool'))
-df.info()
+from datatable import dt, f, by, g, join, sort, update, ifelse
+DT = dt.fread('https://vincentarelbundock.github.io/Rdatasets/csv/dplyr/storms.csv')
+
+DT.head(5)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-9-d147e5f95493>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m df = xf.assign(string_col=df['string_col'].astype('string'),
-[0m[1;32m      2[0m                [0mdouble_col[0m[0;34m=[0m[0mdf[0m[0;34m[[0m[0;34m'double_col'[0m[0;34m][0m[0;34m.[0m[0mastype[0m[0;34m([0m[0;34m'double'[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m                [0mcategory_col[0m[0;34m=[0m[0mdf[0m[0;34m[[0m[0;34m'category_col'[0m[0;34m][0m[0;34m.[0m[0mastype[0m[0;34m([0m[0;34m'category'[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m                [0mdatetime_col[0m[0;34m=[0m[0mdf[0m[0;34m[[0m[0;34m'datetime_col'[0m[0;34m][0m[0;34m.[0m[0mastype[0m[0;34m([0m[0;34m'datetime64[ns]'[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m                [0minteger_col[0m[0;34m=[0m[0mdf[0m[0;34m[[0m[0;34m'integer_col'[0m[0;34m][0m[0;34m.[0m[0mastype[0m[0;34m([0m[0;34m'int'[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;32m<ipython-input-59-89f879dfb6c1>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mfrom[0m [0mdatatable[0m [0;32mimport[0m [0mdt[0m[0;34m,[0m [0mf[0m[0;34m,[0m [0mby[0m[0;34m,[0m [0mg[0m[0;34m,[0m [0mjoin[0m[0;34m,[0m [0msort[0m[0;34m,[0m [0mupdate[0m[0;34m,[0m [0mifelse[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mDT[0m [0;34m=[0m [0mdt[0m[0;34m.[0m[0mfread[0m[0;34m([0m[0;34m'https://vincentarelbundock.github.io/Rdatasets/csv/dplyr/storms.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0mDT[0m[0;34m.[0m[0mhead[0m[0;34m([0m[0;36m5[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'xf' is not defined
-NameError: name 'xf' is not defined
+[0;31mModuleNotFoundError[0m: No module named 'datatable'
+ModuleNotFoundError: No module named 'datatable'
 
