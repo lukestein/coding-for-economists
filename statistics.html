@@ -147,6 +147,11 @@
    4. Extracting Data
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   5. Advanced Data
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -411,13 +416,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-pairwise-t-tests">
+   2.8. Multiple pairwise t-tests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#one-way-ancova">
-   2.8. One-way ANCOVA
+   2.9. One-way ANCOVA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shapiro-wilk-test-for-normality">
+   2.10. Shapiro-Wilk Test for Normality
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   2.9. Review
+   2.11. Review
   </a>
  </li>
 </ul>
@@ -435,7 +450,7 @@
 <h1><span class="section-number">2. </span>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. Many of the examples rely on the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> documentation.</p>
+<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <a class="bibtex reference internal" href="zreferences.html#vallat2018pingouin" id="id1">[4]</a>.</p>
 <div class="section" id="notation-and-basic-definitions">
 <h3><span class="section-number">2.1.1. </span>Notation and basic definitions<a class="headerlink" href="#notation-and-basic-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth and represent parameters. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Sometimes Greek letters will stand in for vectors of parameters. Letters from the Latin alphabet denote the values of data, for instance <span class="math notranslate nohighlight">\(x\)</span> for a variable or vector. Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{n} \displaystyle\sum_{i} x_i\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is number of samples. Parameters are given following a vertical bar, for example if <span class="math notranslate nohighlight">\(f(x|\mu, \sigma)\)</span> is a probability density function, the vertical line indicates that its parameters are <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>. The set of distributions with densities <span class="math notranslate nohighlight">\(f_\theta(x)\)</span>, <span class="math notranslate nohighlight">\(\theta \in \Theta\)</span> is called a parametric family, eg there is a family of different distributions that are parametrised by <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -1009,7 +1024,7 @@ Intercept      7.3250      0.642     11.406      0.000       5.806       8.844
 \[
 X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 \]</div>
-<p>so that the <span class="math notranslate nohighlight">\(ith\)</span> group has <span class="math notranslate nohighlight">\(n_i\)</span> observations. The null hypothesis of one-way ANOVA is that <span class="math notranslate nohighlight">\(H_0: \mu_1 = \mu_2 = \dots = \mu_k\)</span>, with the alternative hypothesis that this is <em>not</em> true.</p>
+<p>so that the <span class="math notranslate nohighlight">\(i\)</span>th group has <span class="math notranslate nohighlight">\(n_i\)</span> observations. The null hypothesis of one-way ANOVA is that <span class="math notranslate nohighlight">\(H_0: \mu_1 = \mu_2 = \dots = \mu_k\)</span>, with the alternative hypothesis that this is <em>not</em> true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">read_dataset</span><span class="p">(</span><span class="s1">&#39;mixed_anova&#39;</span><span class="p">)</span>
@@ -1143,8 +1158,106 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </div></div></div>
 </div>
 </div>
+<div class="section" id="multiple-pairwise-t-tests">
+<h2><span class="section-number">2.8. </span>Multiple pairwise t-tests<a class="headerlink" href="#multiple-pairwise-t-tests" title="Permalink to this headline">¶</a></h2>
+<p>There’s a problem with running multiple t-tests: if you run enough of them, something is bound to come up as significant! As such, some <em>post-hoc</em> adjustments exist that correct for the fact that multiple tests are occurring simultaneously. In the example below, multiple pairwise comparisons are made between the scores by time group. There is a corrected p-value, <code class="docutils literal notranslate"><span class="pre">p-corr</span></code>, computed using the Benjamini/Hochberg FDR correction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">.</span><span class="n">pairwise_ttests</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">dv</span><span class="o">=</span><span class="s1">&#39;Scores&#39;</span><span class="p">,</span> <span class="n">within</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="s1">&#39;Subject&#39;</span><span class="p">,</span>
+                   <span class="n">parametric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padjust</span><span class="o">=</span><span class="s1">&#39;fdr_bh&#39;</span><span class="p">,</span> <span class="n">effsize</span><span class="o">=</span><span class="s1">&#39;hedges&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Contrast</th>
+      <th>A</th>
+      <th>B</th>
+      <th>Paired</th>
+      <th>Parametric</th>
+      <th>T</th>
+      <th>dof</th>
+      <th>Tail</th>
+      <th>p-unc</th>
+      <th>p-corr</th>
+      <th>p-adjust</th>
+      <th>BF10</th>
+      <th>hedges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Time</td>
+      <td>August</td>
+      <td>January</td>
+      <td>True</td>
+      <td>True</td>
+      <td>-1.740</td>
+      <td>59.0</td>
+      <td>two-sided</td>
+      <td>0.087</td>
+      <td>0.131</td>
+      <td>fdr_bh</td>
+      <td>0.582</td>
+      <td>-0.328</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Time</td>
+      <td>August</td>
+      <td>June</td>
+      <td>True</td>
+      <td>True</td>
+      <td>-2.743</td>
+      <td>59.0</td>
+      <td>two-sided</td>
+      <td>0.008</td>
+      <td>0.024</td>
+      <td>fdr_bh</td>
+      <td>4.232</td>
+      <td>-0.483</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Time</td>
+      <td>January</td>
+      <td>June</td>
+      <td>True</td>
+      <td>True</td>
+      <td>-1.024</td>
+      <td>59.0</td>
+      <td>two-sided</td>
+      <td>0.310</td>
+      <td>0.310</td>
+      <td>fdr_bh</td>
+      <td>0.232</td>
+      <td>-0.170</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
 <div class="section" id="one-way-ancova">
-<h2><span class="section-number">2.8. </span>One-way ANCOVA<a class="headerlink" href="#one-way-ancova" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9. </span>One-way ANCOVA<a class="headerlink" href="#one-way-ancova" title="Permalink to this headline">¶</a></h2>
 <p>Analysis of covariance (ANCOVA) is a general linear model which blends ANOVA and regression. ANCOVA evaluates whether the means of a dependent variable (dv) are equal across levels of a categorical independent variable (between) often called a treatment, while statistically controlling for the effects of other continuous variables that are not of primary interest, known as covariates or nuisance variables (covar).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1284,8 +1397,108 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </div></div></div>
 </div>
 </div>
+<div class="section" id="shapiro-wilk-test-for-normality">
+<h2><span class="section-number">2.10. </span>Shapiro-Wilk Test for Normality<a class="headerlink" href="#shapiro-wilk-test-for-normality" title="Permalink to this headline">¶</a></h2>
+<p>Note that the null here is that the distribution <em>is</em> normal, so normality is only rejected when the p-value is sufficiently small.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">prng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">normality</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>pval</th>
+      <th>normal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.954132</td>
+      <td>0.434179</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The test can also be run on multiple variables in a dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">.</span><span class="n">normality</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Scores&#39;</span><span class="p">,</span> <span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="s1">&#39;BMI&#39;</span><span class="p">]],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;normaltest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>pval</th>
+      <th>normal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>3.518</td>
+      <td>0.172</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>Income</th>
+      <td>1.869</td>
+      <td>0.393</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>BMI</th>
+      <td>5.135</td>
+      <td>0.077</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
 <div class="section" id="review">
-<h2><span class="section-number">2.9. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.11. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>In this very short introduction to statistics with code, you should have learned how to:</p>
 <ul class="simple">
 <li><p>[x]</p></li>
@@ -1333,9 +1546,7 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
         
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
-            <div>
-This book is licensed under an MIT license.
-</div>
+            This book is available under an MIT license.
 
           </div>
       </p>

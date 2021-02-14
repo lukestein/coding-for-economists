@@ -1,0 +1,1419 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Advanced Data &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/data-advanced.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Intro to Data Visualisation" href="vis-intro.html" />
+    <link rel="prev" title="4. Extracting Data" href="data-extraction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/data-advanced.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Advanced Data" />
+<meta property="og:description" content="Advanced Data  Introduction  In this chapter, you’ll learn about advanced methods for working with data.  Imports  First we need to import the classic packages " />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-preliminaries.html">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-of-coding.html">
+   2. Basics of Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-quickstart.html">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-intro.html">
+   2. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-read-and-write.html">
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Advanced Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-intro.html">
+   1. Intro to Data Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-common-plots.html">
+   2. Common Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best Practice in Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-statistics.html">
+   2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/data-advanced.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-advanced.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/data-advanced.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/data-advanced.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   5.1. Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports">
+     5.1.1. Imports
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-validation">
+   5.2. Data Validation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandera">
+     5.2.1. Pandera
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dataframe-style-checks">
+       5.2.1.1. Dataframe style checks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-checks-as-a-class">
+       5.2.1.2. Data checks as a class
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-checks-for-pipelines">
+       5.2.1.3. Data checks for pipelines
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#great-expectations">
+     5.2.2. Great Expectations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pydantic">
+     5.2.3. Pydantic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cerberus">
+     5.2.4. Cerberus
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-orchestration">
+   5.3. Data orchestration
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="advanced-data">
+<h1><span class="section-number">5. </span>Advanced Data<a class="headerlink" href="#advanced-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you’ll learn about advanced methods for working with data.</p>
+<div class="section" id="imports">
+<h3><span class="section-number">5.1.1. </span>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
+<p>First we need to import the classic packages we almost always need:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: hide cell</span>
+<span class="c1"># Set max rows displayed for readability</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># Plot settings</span>
+<span class="n">plot_style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                  <span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                  <span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+                  <span class="s1">&#39;figure.autolayout&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                  <span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">),</span>
+                  <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+                  <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                  <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                  <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                  <span class="s1">&#39;legend.fontsize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                  <span class="s1">&#39;mathtext.fontset&#39;</span><span class="p">:</span> <span class="s1">&#39;stix&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;STIXGeneral&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;legend.frameon&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">plot_style</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-validation">
+<h2><span class="section-number">5.2. </span>Data Validation<a class="headerlink" href="#data-validation" title="Permalink to this headline">¶</a></h2>
+<p>When working with data, it’s useful to have a way to validate that what you’re getting is what you <em>think</em> you’re getting. And so various data validation methods have appeared that will fail loudly and proudly when your data are not as expected. Although most useful in a situation where data are being regularly updated, for example when producing a monthly index, these tools can also be useful if you want to be extra careful with your data in a research paper, if you are scaling up from a sample to a bigger dataset, or if you are updating an existing project.</p>
+<p>Of course, the most minimal way to do some validation is to ensure that your dataframe has its columns cast as the right data types from the start, and this is good practice in general. That’s about <em>data type</em>, but these tools go beyond that and deal with values <em>within</em> a data type. So rather than just saying it’s an integer, a data validation library might say that a column must be an integer between 0 and 100.</p>
+<p>The normal way that data validation libraries are used is that you specify some expectations you have of the dataset that will be flagged if and when they fail. Let’s see some of the tools that are available that do this. As ever, this chapter has benefitted enormously from the documentation of the featured packages.</p>
+<div class="section" id="pandera">
+<h3><span class="section-number">5.2.1. </span>Pandera<a class="headerlink" href="#pandera" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pandera.readthedocs.io/en/stable/index.html"><strong>Pandera</strong></a> <a class="bibtex reference internal" href="zreferences.html#niels-bantilan-proc-scipy-2020" id="id1">[1]</a> has tight integration with <strong>pandas</strong> (as the name suggests). There are several different ways to specify data validation checks.</p>
+<div class="section" id="dataframe-style-checks">
+<h4><span class="section-number">5.2.1.1. </span>Dataframe style checks<a class="headerlink" href="#dataframe-style-checks" title="Permalink to this headline">¶</a></h4>
+<p>It’s easiest to show how it works with an example. We’ll first create some data that we’d like to validate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandera</span> <span class="k">as</span> <span class="nn">pa</span>
+
+<span class="c1"># data to validate</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.4</span><span class="p">],</span>
+    <span class="s2">&quot;column3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;value_1&quot;</span><span class="p">,</span> <span class="s2">&quot;value_2&quot;</span><span class="p">,</span> <span class="s2">&quot;value_3&quot;</span><span class="p">,</span> <span class="s2">&quot;value_2&quot;</span><span class="p">,</span> <span class="s2">&quot;value_1&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>column1</th>
+      <th>column2</th>
+      <th>column3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>-1.3</td>
+      <td>value_1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>-1.4</td>
+      <td>value_2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>-2.9</td>
+      <td>value_3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10</td>
+      <td>-10.1</td>
+      <td>value_2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>-20.4</td>
+      <td>value_1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>pandera</strong> (I’m going to spell it as pantera sooner or later) works by defining <em>data schemas</em> for each column that say what values should appear in that column. Let’s create a schema for this dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define schema</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">DataFrameSchema</span><span class="p">({</span>
+    <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">checks</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span>
+    <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">checks</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">)),</span>
+    <span class="s2">&quot;column3&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">checks</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="o">.</span><span class="n">str_startswith</span><span class="p">(</span><span class="s2">&quot;value_&quot;</span><span class="p">),</span>
+        <span class="c1"># define custom checks as functions that take a series as input and</span>
+        <span class="c1"># outputs a boolean or boolean Series</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">]),</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What did we ask for here? That:</p>
+<ul class="simple">
+<li><p>column 1 should be an integer that is less than or equal to 10</p></li>
+<li><p>column 2 should be a continuous variable that’s less than 1.2</p></li>
+<li><p>column 3 should be a string that begins ‘value_’ and has a custom check on it that it can be split into chunks based on the single appearance of an underscore.</p></li>
+</ul>
+<p>Alright, let’s see what happens when we put well-behaved data through the schema.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">validated_df</span> <span class="o">=</span> <span class="n">schema</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">validated_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   column1  column2  column3
+0        1     -1.3  value_1
+1        4     -1.4  value_2
+2        0     -2.9  value_3
+3       10    -10.1  value_2
+4        9    -20.4  value_1
+</pre></div>
+</div>
+</div>
+</div>
+<p>The data comes through the schema without incident because the data satisfies all the checks. Now, what about some data that <em>aren’t</em> well-behaved, but in a single column (here 1).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># data to validate</span>
+<span class="n">bad_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">],</span>
+    <span class="s2">&quot;column3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;value_1&quot;</span><span class="p">,</span> <span class="s2">&quot;value_2&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="n">schema</span><span class="p">(</span><span class="n">bad_df</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>SchemaError                               Traceback (most recent call last)
+&lt;ipython-input-6-ff71778da6fd&gt; in &lt;module&gt;
+      5     &quot;column3&quot;: [&quot;value_1&quot;, &quot;value_2&quot;],
+      6 })
+----&gt; 7 schema(bad_df)
+...
+...
+SchemaError: &lt;Schema Column: &#39;column1&#39; type=&lt;class &#39;int&#39;&gt;&gt; failed element-wise validator 0:
+&lt;Check less_than_or_equal_to: less_than_or_equal_to(10)&gt;
+failure cases:
+   index  failure_case
+0      0            11
+</pre></div>
+</div>
+<p>The error message is rather verbose but scroll to the end and we see the cause of it: a ‘schema error’. Not only that but we get a report about what failed (column 1), what check it was (0), and even what value triggered the error (11).</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">schema.validate(df,</span> <span class="pre">lazy=True)</span></code> to get all of the errors rather than just the first one to be triggered.</p>
+<p>You can also pass hypothesis tests into a schema as a check; there’s a nice <a class="reference external" href="https://pandera.readthedocs.io/en/stable/hypothesis.html">example of using a two-sample t-test</a> in the documentation.</p>
+</div>
+<div class="section" id="data-checks-as-a-class">
+<h4><span class="section-number">5.2.1.2. </span>Data checks as a class<a class="headerlink" href="#data-checks-as-a-class" title="Permalink to this headline">¶</a></h4>
+<p>The ‘dataframe’ style of checks is not the only way to specify a schema. If you’re au fait with classes, you can also specify checks that way. Here’s the same example in that form:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandera.typing</span> <span class="kn">import</span> <span class="n">Series</span>
+
+<span class="k">class</span> <span class="nc">Schema</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">SchemaModel</span><span class="p">):</span>
+
+    <span class="n">column1</span><span class="p">:</span> <span class="n">Series</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">le</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">column2</span><span class="p">:</span> <span class="n">Series</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">lt</span><span class="o">=-</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">column3</span><span class="p">:</span> <span class="n">Series</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">str_startswith</span><span class="o">=</span><span class="s2">&quot;value_&quot;</span><span class="p">)</span>
+
+    <span class="nd">@pa</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;column3&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">column_3_check</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">series</span><span class="p">:</span> <span class="n">Series</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Series</span><span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Check that column3 values have two elements after being split with &#39;_&#39;&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="n">Schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>column1</th>
+      <th>column2</th>
+      <th>column3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>-1.3</td>
+      <td>value_1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>-1.4</td>
+      <td>value_2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>-2.9</td>
+      <td>value_3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10</td>
+      <td>-10.1</td>
+      <td>value_2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>-20.4</td>
+      <td>value_1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Again, this passes but again it would not have with <code class="docutils literal notranslate"><span class="pre">bad_df</span></code> as defined earlier.</p>
+<p>It doesn’t <em>have</em> to be a single column that you’re checking at a time, <strong>pandera</strong> can also check data that is the subject of <code class="docutils literal notranslate"><span class="pre">groupby</span></code> operations. Here’s an example where data are grouped by a <code class="docutils literal notranslate"><span class="pre">group</span></code> column and then the means of the <code class="docutils literal notranslate"><span class="pre">height</span></code> column are compared:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.6</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">],</span>
+    <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">schema</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">DataFrameSchema</span><span class="p">({</span>
+    <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">Float</span><span class="p">,</span>
+        <span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="p">(</span><span class="k">lambda</span> <span class="n">g</span><span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">groupby</span><span class="o">=</span><span class="s2">&quot;group&quot;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">String</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="n">schema</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>height</th>
+      <th>group</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.6</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.4</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.0</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.1</td>
+      <td>B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="data-checks-for-pipelines">
+<h4><span class="section-number">5.2.1.3. </span>Data checks for pipelines<a class="headerlink" href="#data-checks-for-pipelines" title="Permalink to this headline">¶</a></h4>
+<p>You can also specify the validations as function decorators that check the data as it <em>enters</em> (<code class="docutils literal notranslate"><span class="pre">check_input</span></code>) or <em>exits</em> (<code class="docutils literal notranslate"><span class="pre">check_output</span></code>) a function (or both, with <code class="docutils literal notranslate"><span class="pre">check_io</span></code>). This could be really useful as part of a larger pipeline of data processes. Here’s an example (of a dataframe that passes the input checks):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+   <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+   <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.4</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">in_schema</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">DataFrameSchema</span><span class="p">({</span>
+   <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">Int</span><span class="p">,</span>
+                     <span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">element_wise</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>
+   <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">Float</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Check</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">)),</span>
+<span class="p">})</span>
+
+
+<span class="nd">@pa</span><span class="o">.</span><span class="n">check_input</span><span class="p">(</span><span class="n">in_schema</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">preprocessor</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
+    <span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;column3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;column1&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">dataframe</span><span class="p">[</span><span class="s2">&quot;column2&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dataframe</span>
+
+
+<span class="n">preprocessed_df</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">preprocessed_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>column1</th>
+      <th>column2</th>
+      <th>column3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>-1.3</td>
+      <td>-0.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>-1.4</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>-2.9</td>
+      <td>-2.9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10</td>
+      <td>-10.1</td>
+      <td>-0.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>-20.4</td>
+      <td>-11.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="great-expectations">
+<h3><span class="section-number">5.2.2. </span>Great Expectations<a class="headerlink" href="#great-expectations" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://greatexpectations.io/"><strong>Great Expectations</strong></a> is another data validation library. It’s really geared toward to production (and can integrate well with some other production tools). I wouldn’t necessarily recommend it if you’re doing a research project but it’s got some amazing features that just mean it made it into this chapter–namely that it doesn’t just validate data, but it documents and profiles it too.</p>
+<p>Their philosophy is that ‘Expectations’, the checks or assertions about data, are unit tests for your data (don’t worry if you’re not familiar with unit tests-they are checks for your code!). Once you have run your expectations, the library can create data documentation and data quality reports from them. The data documentation is quite an amazing feature, providing a navigable HTML report of your dataset.</p>
+<p>Using <strong>Great Expectations</strong> is a bit different from <strong>pandera</strong> as it replaces your dataframe with a <strong>Great Expectations</strong> <code class="docutils literal notranslate"><span class="pre">PandasDataset</span></code> that looks and feels just like a regular pandas dataframe but has extra methods related to data validation. To convert a regular pandas dataframe, you wrap it with <code class="docutils literal notranslate"><span class="pre">ge.from_pandas</span></code>.</p>
+<p>Let’s look at some examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">great_expectations</span> <span class="k">as</span> <span class="nn">ge</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">ge</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;column1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="s2">&quot;column2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.4</span><span class="p">],</span>
+    <span class="s2">&quot;column3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;value_1&quot;</span><span class="p">,</span> <span class="s2">&quot;value_2&quot;</span><span class="p">,</span> <span class="s2">&quot;value_3&quot;</span><span class="p">,</span> <span class="s2">&quot;value_2&quot;</span><span class="p">,</span> <span class="s2">&quot;value_1&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>column1</th>
+      <th>column2</th>
+      <th>column3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>-1.3</td>
+      <td>value_1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>-1.4</td>
+      <td>value_2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>-2.9</td>
+      <td>value_3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10</td>
+      <td>-10.1</td>
+      <td>value_2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>-20.4</td>
+      <td>value_1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now let’s run some expectations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">expect_column_values_to_be_of_type</span><span class="p">(</span><span class="s1">&#39;column1&#39;</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;exception_info&quot;: {
+    &quot;raised_exception&quot;: false,
+    &quot;exception_traceback&quot;: null,
+    &quot;exception_message&quot;: null
+  },
+  &quot;result&quot;: {
+    &quot;observed_value&quot;: &quot;int64&quot;
+  },
+  &quot;meta&quot;: {},
+  &quot;success&quot;: true
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">expect_column_proportion_of_unique_values_to_be_between</span><span class="p">(</span><span class="s1">&#39;column3&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;exception_info&quot;: {
+    &quot;raised_exception&quot;: false,
+    &quot;exception_traceback&quot;: null,
+    &quot;exception_message&quot;: null
+  },
+  &quot;result&quot;: {
+    &quot;observed_value&quot;: 0.6,
+    &quot;element_count&quot;: 5,
+    &quot;missing_count&quot;: null,
+    &quot;missing_percent&quot;: null
+  },
+  &quot;meta&quot;: {},
+  &quot;success&quot;: false
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the first expectation passed, while the second failed but did <em>not</em> throw an error… we were just told in JSON.</p>
+<p>Let’s also see a less stringent expectations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">expect_column_values_to_be_between</span><span class="p">(</span>
+    <span class="n">column</span><span class="o">=</span><span class="s2">&quot;column2&quot;</span><span class="p">,</span>
+    <span class="n">min_value</span><span class="o">=-</span><span class="mi">15</span><span class="p">,</span>
+    <span class="n">max_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">mostly</span><span class="o">=.</span><span class="mi">80</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  &quot;exception_info&quot;: {
+    &quot;raised_exception&quot;: false,
+    &quot;exception_traceback&quot;: null,
+    &quot;exception_message&quot;: null
+  },
+  &quot;result&quot;: {
+    &quot;element_count&quot;: 5,
+    &quot;missing_count&quot;: 0,
+    &quot;missing_percent&quot;: 0.0,
+    &quot;unexpected_count&quot;: 1,
+    &quot;unexpected_percent&quot;: 20.0,
+    &quot;unexpected_percent_nonmissing&quot;: 20.0,
+    &quot;partial_unexpected_list&quot;: [
+      -20.4
+    ]
+  },
+  &quot;meta&quot;: {},
+  &quot;success&quot;: true
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Having a bunch of JSON thrown at you is hardly a pleasant experience, and running a few commands solely in a notebook (which is how this was generated) is not really the way that <strong>Great Expectations</strong> is intended to be used. Instead, it is designed to be used via several commands in the terminal that set up folders and files that will track the expectations you create and produce nice HTML reports on your data and whether it passed your tests or not. There is a <a class="reference external" href="https://docs.greatexpectations.io/en/latest/guides/tutorials/getting_started.html">full tutorial</a> available on the website.</p>
+</div>
+<div class="section" id="pydantic">
+<h3><span class="section-number">5.2.3. </span>Pydantic<a class="headerlink" href="#pydantic" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://pydantic-docs.helpmanual.io/"><strong>Pydantic</strong></a> has some of the same features as <strong>pandera</strong> but it piggybacks on the ability of Python 3.5+ to have ‘typed’ variables (if you’re not sure what that is, it’s a way to declare a variable has a particular data type from inception) and it is really focused around the validation of objects (created from classes) rather than dataframes.</p>
+<p>Here’s an example of a Pydantic schema that also implements a class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Katherine Johnson&#39;</span>
+    <span class="n">signup_ts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">friends</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now pass some (acceptable) external data into this schema, creating an object of type <code class="docutils literal notranslate"><span class="pre">User</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">external_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;123&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;signup_ts&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-06-01 12:22&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;friends&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">external_data</span><span class="p">)</span>
+<span class="n">user</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User(id=123, signup_ts=datetime.datetime(2019, 6, 1, 12, 22), friends=[1, 2, 3], name=&#39;Katherine Johnson&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>That all worked well (as expected) but what if we now create an object that has ‘bad’ data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">User</span><span class="p">(</span><span class="n">signup_ts</span><span class="o">=</span><span class="s1">&#39;broken&#39;</span><span class="p">,</span> <span class="n">friends</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;not number&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="n">ValidationError</span>                           <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">7</span><span class="n">a13cdd5b253</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">User</span><span class="p">(</span><span class="n">signup_ts</span><span class="o">=</span><span class="s1">&#39;broken&#39;</span><span class="p">,</span> <span class="n">friends</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;not number&#39;</span><span class="p">])</span>
+
+<span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">codeforecon</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pydantic</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">cpython</span><span class="o">-</span><span class="mi">38</span><span class="o">-</span><span class="n">darwin</span><span class="o">.</span><span class="n">so</span> <span class="ow">in</span> <span class="n">pydantic</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">BaseModel</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<span class="n">ValidationError</span><span class="p">:</span> <span class="mi">3</span> <span class="n">validation</span> <span class="n">errors</span> <span class="k">for</span> <span class="n">User</span>
+<span class="nb">id</span>
+  <span class="n">field</span> <span class="n">required</span> <span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">value_error</span><span class="o">.</span><span class="n">missing</span><span class="p">)</span>
+<span class="n">signup_ts</span>
+  <span class="n">invalid</span> <span class="n">datetime</span> <span class="nb">format</span> <span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">value_error</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
+<span class="n">friends</span> <span class="o">-&gt;</span> <span class="mi">2</span>
+  <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">integer</span> <span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">type_error</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We get a loud failure, a <code class="docutils literal notranslate"><span class="pre">ValidationError</span></code>, and a short report about what went wrong.</p>
+</div>
+<div class="section" id="cerberus">
+<h3><span class="section-number">5.2.4. </span>Cerberus<a class="headerlink" href="#cerberus" title="Permalink to this headline">¶</a></h3>
+<p>Our final stop on this tour of data validation is <a class="reference external" href="https://docs.python-cerberus.org/en/stable/"><strong>Cerberus</strong></a>. It is designed to be a simple and lightweight data validation functionality. In this case, the schema is specified as a JSON file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schema</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">},</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;integer&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we pass data in to a <strong>Cerberus</strong> validator object along with the schema. This will return true for good data but for bad data…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cerberus</span> <span class="kn">import</span> <span class="n">Validator</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Validator</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sadie Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;occupation&#39;</span><span class="p">:</span> <span class="s1">&#39;Economist&#39;</span><span class="p">}</span>
+<span class="n">v</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is useful to know but we might want a bit more detail:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">errors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;occupation&#39;: [&#39;unknown field&#39;], &#39;score&#39;: [&#39;max value is 10&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Much more complex schemas can be <a class="reference external" href="https://docs.python-cerberus.org/en/stable/validation-rules.html">constructed</a>.</p>
+</div>
+</div>
+<div class="section" id="data-orchestration">
+<h2><span class="section-number">5.3. </span>Data orchestration<a class="headerlink" href="#data-orchestration" title="Permalink to this headline">¶</a></h2>
+<p>Data orchestration is the automation of data-driven processes from end-to-end, including preparing data, making decisions based on that data, and taking actions based on those decisions. Think of a data pipeline in which you extract data (perhaps from files), transform it somehow, and load it into where you want to put it (downstream in your research process, or perhaps into an app).</p>
+<p>There are some truly amazing tools out there to help you do this on a production scale. Perhaps the best known and most suited for production are AirBnB’s <a class="reference external" href="http://airflow.incubator.apache.org/"><strong>Airflow</strong></a> and Spotify’s <a class="reference external" href="https://github.com/spotify/luigi"><strong>Luigi</strong></a>. Airflow in particular is widely used in the tech industry, and doesn’t just schedule data processes in Python: it can run processes in pretty much whatever you like. Both of these tools try to solve the ‘plumbing’ associated with long-running batch processes on data: chaining tasks, automating them, dealing with failures, and scheduling. Both Luigi and Airflow have fancy interfaces to show you what’s going on with your tasks.</p>
+<p>Data orchestration tools typically have a directed acyclic graph, a DAG, at the heart of how tasks are strung together. This defines how different tasks depend on each other in order, with one task following from the previous one (or perhaps following from multiple previous tasks). It’s an automation dream.</p>
+<p>However, for a research project, it’s hard to recommend these two tools as they’re just a bit too powerful; Airflow in particular can do just about anything but has a steep learning curve. So, instead, to show the power of data orchestration we’ll use a more lightweight but also very powerful library: <a class="reference external" href="https://dagster.io/"><strong>dagster</strong></a>, which bills itself as ‘a data orchestrator for machine learning, analytics, and ETL [extract, transform, and load]’. Some of the key features are being able to implement components in various tools, such as Pandas and SQL, define pipelines as DAGs, and to test the same setup on your machine that you then deploy to cloud. Like the other tools, it has a nice visual interface to show what’s happening. Necessarily, we’ll only be seeing a very brief introduction to it here.</p>
+<p><strong>Dagster</strong> works by using <em>function decorators</em> (the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol) to define the ‘solids’ that are the nodes in <strong>dagster</strong>’s DAG. The <code class="docutils literal notranslate"><span class="pre">&#64;pipeline</span></code> defines the set of functions that are composed in the pipeline. Here’s an example of defining a simple pipeline that produces the same phrase with different capitalisations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dagster</span> <span class="kn">import</span> <span class="n">execute_pipeline</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">solid</span>
+
+
+<span class="nd">@solid</span>
+<span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;dagster&#39;</span>
+
+
+<span class="nd">@solid</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;hello, </span><span class="si">{name}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+
+<span class="nd">@solid</span>
+<span class="k">def</span> <span class="nf">leading_caps</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">phrase</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">phrase</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+
+<span class="nd">@solid</span>
+<span class="k">def</span> <span class="nf">all_upper</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">phrase</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">phrase</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+
+<span class="nd">@solid</span>
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">phrase_to_display</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">phrase_to_display</span><span class="p">)</span>
+
+
+<span class="nd">@pipeline</span>
+<span class="k">def</span> <span class="nf">hello_pipeline</span><span class="p">():</span>
+    <span class="n">hello_text</span> <span class="o">=</span> <span class="n">hello</span><span class="p">(</span><span class="n">get_name</span><span class="p">())</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">leading_caps</span><span class="p">(</span><span class="n">hello_text</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">all_upper</span><span class="p">(</span><span class="n">hello_text</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is purposefully both over-engineered and very simple (Dagster pipelines can have a <em>lot</em> more complexity of this), but we’re just seeing the most basic principles of the library here.</p>
+<p>With a pipeline defined, we can now execute it in three different ways: in a python script, using the command line, or via graphical user interface. Let’s see the script method first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">execute_pipeline</span><span class="p">(</span><span class="n">hello_pipeline</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - ENGINE_EVENT - Starting initialization of resources [io_manager].
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - ENGINE_EVENT - Finished initialization of resources [io_manager].
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - PIPELINE_START - Started execution of pipeline &quot;hello_pipeline&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - ENGINE_EVENT - Executing steps in process (pid: 60826)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - get_name - STEP_START - Started execution of step &quot;get_name&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - get_name - STEP_OUTPUT - Yielded output &quot;result&quot; of type &quot;Any&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - get_name - HANDLED_OUTPUT - Handled output &quot;result&quot; using output manager &quot;io_manager&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - get_name - STEP_SUCCESS - Finished execution of step &quot;get_name&quot; in 3.54ms.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - hello - STEP_START - Started execution of step &quot;hello&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - hello - LOADED_INPUT - Loaded input &quot;name&quot; using input manager &quot;io_manager&quot;, from output &quot;result&quot; of step &quot;get_name&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - hello - STEP_INPUT - Got input &quot;name&quot; of type &quot;String&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - hello - STEP_OUTPUT - Yielded output &quot;result&quot; of type &quot;Any&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - hello - HANDLED_OUTPUT - Handled output &quot;result&quot; using output manager &quot;io_manager&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - hello - STEP_SUCCESS - Finished execution of step &quot;hello&quot; in 4.18ms.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - all_upper - STEP_START - Started execution of step &quot;all_upper&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - all_upper - LOADED_INPUT - Loaded input &quot;phrase&quot; using input manager &quot;io_manager&quot;, from output &quot;result&quot; of step &quot;hello&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - all_upper - STEP_INPUT - Got input &quot;phrase&quot; of type &quot;String&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - all_upper - STEP_OUTPUT - Yielded output &quot;result&quot; of type &quot;Any&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - all_upper - HANDLED_OUTPUT - Handled output &quot;result&quot; using output manager &quot;io_manager&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - all_upper - STEP_SUCCESS - Finished execution of step &quot;all_upper&quot; in 4.37ms.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - leading_caps - STEP_START - Started execution of step &quot;leading_caps&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - leading_caps - LOADED_INPUT - Loaded input &quot;phrase&quot; using input manager &quot;io_manager&quot;, from output &quot;result&quot; of step &quot;hello&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - leading_caps - STEP_INPUT - Got input &quot;phrase&quot; of type &quot;String&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - leading_caps - STEP_OUTPUT - Yielded output &quot;result&quot; of type &quot;Any&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - leading_caps - HANDLED_OUTPUT - Handled output &quot;result&quot; using output manager &quot;io_manager&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - leading_caps - STEP_SUCCESS - Finished execution of step &quot;leading_caps&quot; in 4.37ms.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display_2 - STEP_START - Started execution of step &quot;display_2&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display_2 - LOADED_INPUT - Loaded input &quot;phrase_to_display&quot; using input manager &quot;io_manager&quot;, from output &quot;result&quot; of step &quot;all_upper&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display_2 - STEP_INPUT - Got input &quot;phrase_to_display&quot; of type &quot;String&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display_2 - STEP_OUTPUT - Yielded output &quot;result&quot; of type &quot;Any&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display_2 - HANDLED_OUTPUT - Handled output &quot;result&quot; using output manager &quot;io_manager&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display_2 - STEP_SUCCESS - Finished execution of step &quot;display_2&quot; in 4.83ms.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display - STEP_START - Started execution of step &quot;display&quot;.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display - LOADED_INPUT - Loaded input &quot;phrase_to_display&quot; using input manager &quot;io_manager&quot;, from output &quot;result&quot; of step &quot;leading_caps&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display - STEP_INPUT - Got input &quot;phrase_to_display&quot; of type &quot;String&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display - STEP_OUTPUT - Yielded output &quot;result&quot; of type &quot;Any&quot;. (Type check passed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display - HANDLED_OUTPUT - Handled output &quot;result&quot; using output manager &quot;io_manager&quot;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - display - STEP_SUCCESS - Finished execution of step &quot;display&quot; in 4.12ms.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - ENGINE_EVENT - Finished steps in process (pid: 60826) in 65ms
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-14 19:48:23 - dagster - DEBUG - hello_pipeline - efe05aa9-4aed-460e-a2bd-73e1393df14e - 60826 - PIPELINE_SUCCESS - Finished execution of pipeline &quot;hello_pipeline&quot;.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HELLO, DAGSTER!
+Hello, Dagster!
+</pre></div>
+</div>
+</div>
+</div>
+<p>We get a lot of output about how the pipeline executed but it ends with <code class="docutils literal notranslate"><span class="pre">HELLO,</span> <span class="pre">DAGSTER!</span></code> and <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Dagster!</span></code>, which is the result of our DAG.</p>
+<p>The second way of running it is by using the command line. If this was in a script called <code class="docutils literal notranslate"><span class="pre">hello_dagster.py</span></code> then the command to run it would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dagster</span> <span class="n">pipeline</span> <span class="n">execute</span> <span class="o">-</span><span class="n">f</span> <span class="n">hello_dagster</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Finally, there’s a nice GUI (graphical user interface) that you can use to run jobs too. This is launched from the command line via <code class="docutils literal notranslate"><span class="pre">dagit</span> <span class="pre">-f</span> <span class="pre">hello_dagster.py</span></code>. Once you have opened the link using a browser, navigate to ‘Playground’ and use the ‘Launch Execution’ button to set off a run. When you open the GUI, you’ll see the DAG set out for you like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO hide cell</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="s1">&#39;data_dag_gui.png&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data-advanced_46_0.png" src="_images/data-advanced_46_0.png" />
+</div>
+</div>
+<p>There are a lot of benefits to thinking about your data processing in terms of pipelines and DAGs. You can see the last time any particular node executed and, if node execution fails, you can see why, where, and how. The GUI has tons of extra functionality too; for instance, you can track what’s produced by your pipelines with the ‘Asset Manager’, so you can understand how your data was generated and trace issues when it doesn’t look how you expect. There’s also optional typing of data types on input and output which helps you to catch bugs in data like you’d catch bugs in code (in the above, we declared all of the input types to be strings but didn’t declare what the output types were so they appeared as ‘any’).</p>
+<p>This has barely scratched the surface, but hopefully it’s given you an insight into what data orchestration tools do and how they might be helpful for complex data workflows.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "codeforecon"
+        },
+        kernelOptions: {
+            kernelName: "codeforecon",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'codeforecon'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="data-extraction.html" title="previous page"><span class="section-number">4. </span>Extracting Data</a>
+    <a class='right-next' id="next-link" href="vis-intro.html" title="next page"><span class="section-number">1. </span>Intro to Data Visualisation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This book is available under an MIT license.
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-189705534-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

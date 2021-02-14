@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Preliminaries &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/basics-preliminaries.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Basics of Coding" href="basics-of-coding.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/basics-preliminaries.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Preliminaries" />
+<meta property="og:description" content="Preliminaries  In this chapter, you’ll find out how to install and setup everything you need to get coding.  Computational environment  Operating system  Much o" />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-of-coding.html">
+   2. Basics of Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-quickstart.html">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-intro.html">
+   2. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-read-and-write.html">
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   5. Advanced Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-intro.html">
+   1. Intro to Data Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-common-plots.html">
+   2. Common Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best Practice in Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-statistics.html">
+   2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/basics-preliminaries.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbasics-preliminaries.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computational-environment">
+   1.1. Computational environment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operating-system">
+     1.1.1. Operating system
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choice-of-programming-language">
+     1.1.2. Choice of programming language
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-python">
+     1.1.3. Installing Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-an-integrated-development-environment-ide">
+     1.1.4. Installing an integrated development environment (IDE)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-your-first-code-hello-world">
+   1.2. Running your first code: Hello World!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packages-environments-and-the-terminal">
+   1.3. Packages, environments, and the terminal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-terminal">
+     1.3.1. The terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-packages">
+     1.3.2. Installing packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-working-with-python-environments-and-anaconda">
+     1.3.3. (Advanced) Working with Python environments and Anaconda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   1.4. Review
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="preliminaries">
+<h1><span class="section-number">1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, you’ll find out how to install and setup everything you need to get coding.</p>
+<div class="section" id="computational-environment">
+<h2><span class="section-number">1.1. </span>Computational environment<a class="headerlink" href="#computational-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operating-system">
+<h3><span class="section-number">1.1.1. </span>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h3>
+<p>Much of the coding you’ll need to do can be achieved on all three of the major operating systems: Windows, MacOS, and Linux. But if you haven’t yet decided which operating system to use, I strongly recommend you do not choose Windows because coding on Windows brings with it many more challenges. Some packages won’t work at all, and others will be <em>much</em> more difficult to set up. This is only true in a small number of cases, but it’s just often enough for it to be a real problem. Furthermore, if you ever need to scale up your work to the cloud, you’ll find that it’s more cost effective to use machines that have use something which is closer to Linux (which MacOS is). While Macs are famous for being expensive, most Linux distributions are free so even when avoiding Windows, there should be a solution to satisfy all budget constraints. Linux used to have a reputation as being fearsomely difficult for beginners. But modern Linux distributions, such as Ubuntu, are pretty user-friendly.</p>
+</div>
+<div class="section" id="choice-of-programming-language">
+<h3><span class="section-number">1.1.2. </span>Choice of programming language<a class="headerlink" href="#choice-of-programming-language" title="Permalink to this headline">¶</a></h3>
+<p>This book uses Python, which is usually ranked as the first or second most popular programming language in the world and, just as importantly, it’s also one of the easiest to learn. It’s a general purpose language, which means it can perform a wide range of tasks. This combination of features is why people say Python has a low floor and a high ceiling. It’s also very versatile; the joke goes that Python is the 2nd best language at everything, and there’s some truth to that (although Python is 1st best at some tasks, like machine learning). But a language that covers such a lot of ground is also very useful; and Python is widely used across industry, academia, and the public sector. It is used for everything from computer games to websites, data science to software applications. As an economist, you will know that this means Python benefits from strong positive network externalities. As such, learning Python has a lot of value and, once you have, learning more specialised languages like C++ or R is much easier; many of the basic programming concepts you’ll see in this book are useful in almost any programming language. Because of their similarities, however, readers will find that they can follow even more of the content of the book in some specific other languages, especially Julia and R.</p>
+<p><img alt="xkcd-python" src="https://imgs.xkcd.com/comics/python.png" /></p>
+<p>Different languages have different strengths and weaknesses. Python and Julia are so-called high-level languages that are easier to write code in. C++ and Fortran are more low-level languages and much more fussy and labour-intensive to write code in; but, once the code is written (and ‘compiled’), it runs <em>fast</em>.</p>
+<p>Another big difference between languages is the extent to which users have created software that extends the base functionality of the language. The ecosystem of other users, and what they’re using the language for, is really important for determining how useful a language is. For example, Python and R have vibrant data science communities producing extensions (called libraries or packages) that are what really make those languages so useful for data science (far more than the base functionality of either).</p>
+<p>Programming languages come in versions, which can be quite different, and some of the most important functionality of programming languages is provided by add-ons called packages or libraries, which themselves have versions. To make matters worse, not all versions of packages and languages will work together, and the combinations that work may depend on your operating system (Windows, Mac, etc)!</p>
+<p>The combination of the language and its version (eg Python 3.6.1), the packages and their versions (eg numpy 1.19), and the operating system the code is being run on (eg MacOS Catalina) is called the computational environment.</p>
+<p>To programme, you will need two things on your computer:</p>
+<ul class="simple">
+<li><p>an installation of the programming language</p></li>
+<li><p>a way to write and run scripts, using an integrated development environment (IDE)</p></li>
+</ul>
+</div>
+<div class="section" id="installing-python">
+<h3><span class="section-number">1.1.3. </span>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h3>
+<p>Download the individual edition of the <a class="reference external" href="https://www.anaconda.com/">Anaconda distribution</a> of Python for your operating system and install it (on Anaconda’s website, this is currently found under Products -&gt; Individual Edition). This will provide you with a Python installation and a host of the most useful libraries.</p>
+<p>Anaconda might ask whether you want to add Anaconda to your PATH environment variable. Your PATH variable is a list of where programmes are located on your computer that <em>other</em> programmes can see. By adding Anaconda to your PATH, you will be able to more easily launch applications that make use of Python.</p>
+<p>You can confirm that you’ve set up Anaconda correctly by following the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/verify-install/">verify installation instructions</a> on the Anaconda website.</p>
+<p>Python and Anaconda are available on all major operating systems.</p>
+</div>
+<div class="section" id="installing-an-integrated-development-environment-ide">
+<h3><span class="section-number">1.1.4. </span>Installing an integrated development environment (IDE)<a class="headerlink" href="#installing-an-integrated-development-environment-ide" title="Permalink to this headline">¶</a></h3>
+<p>An integrated development environment is a software application that provides a few tools to make coding easier. The most important of these is a way to write the code itself! IDEs are not the only way to programme, but they are perhaps the most useful. If you have used <strong>Stata</strong> or <strong>Matlab</strong>, you may not have realised it, but these package up the language and the IDE together. But they are separate things: the language is a way of processing your instructions, the IDE is where you write those instructions.</p>
+<p>Here are some of the useful features an IDE might have:</p>
+<ul class="simple">
+<li><p>a way to run your code interactively (line-by-line) or all at once</p></li>
+<li><p>a way to debug (look for errors) in your code</p></li>
+<li><p>a quick way to access helpful information about commonly used software packages</p></li>
+<li><p>automatic code formatting, so that your code follows best practice guidelines</p></li>
+<li><p>auto-completion of your code</p></li>
+<li><p>automatic code checking for basic errors</p></li>
+</ul>
+<p>People have strong feelings about which IDE they prefer. I strongly recommend <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, a free and open source IDE from Microsoft that is available on all major operating systems. Just like Python itself, Visual Studio can be extended with packages, and it is those packages, called extensions in this case, that make it so useful. Visual Studio Code is available on all major operating systems.</p>
+<p>Download and install Visual Studio Code. If you need some help, see this <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">very short tutorial</a> on setting it up from Microsoft (ignore the bits about debugging and installing packages).</p>
+<p>Once you have Visual Studio Code installed and opened, navigate to the ‘extensions’ tab on the left hand side navigation bar. You’ll need to install the following extensions, which you can search for by using the text box:</p>
+<ul class="simple">
+<li><p>Python</p></li>
+<li><p>Pylance</p></li>
+</ul>
+<p>If you have installed these then you are ready to run your first script!</p>
+</div>
+</div>
+<div class="section" id="running-your-first-code-hello-world">
+<h2><span class="section-number">1.2. </span>Running your first code: Hello World!<a class="headerlink" href="#running-your-first-code-hello-world" title="Permalink to this headline">¶</a></h2>
+<p>Now you will run your first code. Create a new folder for your work (perhaps named ‘codingforeconomists’, no white space), open that folder with Visual Studio Code and create a new file, naming it <code class="docutils literal notranslate"><span class="pre">hello_world.py</span></code>. The file extension, <code class="docutils literal notranslate"><span class="pre">.py</span></code>, is very important as it implicitly tells Visual Studio Code that this is a Python script. In the Visual Studio Code editor, add a single line to the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hit save. If you now select/highlight this text and right-click you should seem some options, including ‘Run Selection/Line in Terminal’ and `Run Selection/Line in Interactive Window’. Because VS Code is a richly featured IDE, there are lots of options for how to run the file. Let’s try both of the main ways: the terminal and the interactive window.</p>
+<p>To run the code in the <strong>terminal</strong>, right-click and select ‘Run Python file in terminal’. This will bring up a new panel (called a terminal) <em>within</em> Visual Studio Code that runs your entire script from top to bottom–and you should see ‘Hello World!’ pop up!</p>
+<p>The other way of working, with the interactive window, will be much more familiar to anyone who has used Stata or Matlab and is much more suited to the way economists tend to work because it doesn’t require you to write the whole script, start to finish, ahead of time. Instead, you can jam, changing code as you go, (re-)running it line by line. To run the code in an interactive window, <strong>right-click and select ‘Run Selection/Line in Interactive Window’</strong>. This should cause a new ‘interactive’ panel to appear within Visual Studio Code, and the selected line only to execute within it.</p>
+<p>At this point, you may see a message about Visual Studio Code’s default behaviour when you press shift+return; for this book, it’s good to have shift+return default to running a line in the interactive window.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Making code run in the interactive window by default</p>
+<p>Open up Visual Studio Code and go to settings (click on the cog in the bottom left-hand corner, then click settings).</p>
+<p>Type ‘python send’ into the search box. Depending on your configuration and Visual Studio Code version, you will either see ‘Python › Data Science: Send Selection To Interactive Window’ or ‘Jupyter: Send Selection To Interactive Window’. Make sure that there is a tick in the box.</p>
+<p>This will ensure that when you hit shift+enter on code scripts, it will execute your code in Visual Studio’s interactive window (starting a new window if necessary).</p>
+</div>
+<p>Let’s make more use of the interactive window. At the bottom of it, there is a box that says ‘Type code here and press shift-enter to run’. Go ahead and type <code class="docutils literal notranslate"><span class="pre">print('Hello</span> <span class="pre">World!')</span></code> directly in there to achieve the same effect as running the line from your script. Also, any variables you run in the interactive window (from your script or directly by entering them in the box) will persist.</p>
+<p>To see how variables persist, type <code class="docutils literal notranslate"><span class="pre">hello_string</span> <span class="pre">=</span> <span class="pre">'Hello</span> <span class="pre">World!'</span></code> into the interactive window’s code entry box and hit shift-enter. If you now type <code class="docutils literal notranslate"><span class="pre">hello_string</span></code> and hit shift+enter, you will see the contents of the variable you just created. You can also click the grid symbol at the top of the interactive window (between the stop symbol and the save file symbol); this is the variable explorer and will pop open a panel showing all of the variables you’ve created in this interactive session. You should see one called <code class="docutils literal notranslate"><span class="pre">hello_string</span></code> of type <code class="docutils literal notranslate"><span class="pre">str</span></code> with a value <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code>.</p>
+<p>This shows the two ways of working with the interactive window–running (segments) from a script, or writing code directly in the entry box.</p>
+</div>
+<div class="section" id="packages-environments-and-the-terminal">
+<h2><span class="section-number">1.3. </span>Packages, environments, and the terminal<a class="headerlink" href="#packages-environments-and-the-terminal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-terminal">
+<h3><span class="section-number">1.3.1. </span>The terminal<a class="headerlink" href="#the-terminal" title="Permalink to this headline">¶</a></h3>
+<p>In the section above, I mentioned the <em>terminal</em>. This is a text-based way to issue all kinds of commands to your computer (not just Python commands) and knowing a little bit about it is really useful for coding (and more) because managing packages, environments (which we haven’t yet discussed), and version control (ditto) can all be done via the terminal. We’ll come to these in due course, but for now, a little background on what the terminal is and what it does.</p>
+<p>Firstly, everything you can do by clicking on icons to launch programmes on your computer, you can also do via the terminal, also known as the command line. For many programmes, a lot of their functionality can be accessed using the command line, and other programmes <em>only</em> have a command line interface (CLI), including some that are used for data science. If you have installed the Anaconda distribution of Python, your terminal should look something like this as your ‘command prompt’:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> your-username@your-computer current-directory %
+</pre></div>
+</div>
+<p>on Mac, and the same but with ‘%’ replaced by ‘$’ on linux, and</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> C:<span class="se">\U</span>sers<span class="se">\Y</span>ourUsername&gt;
+</pre></div>
+</div>
+<p>on Windows. If you don’t see the word <code class="docutils literal notranslate"><span class="pre">(base)</span></code> at the start of the line, you may need to type <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> first.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">(base)</span></code> part is saying that your current Python environment is the base one (later, we’ll see how to add others for reproducibility and to isolate projects). Unfortunately, and confusingly, the commands that you can use in the terminal on Mac and Linux, on the one hand, and Windows, on the other, are different. This won’t be much of an issue in practice.</p>
+<p>For now, to at least try out the command line, let’s use something that works across all three of the major operating systems. Use Visual Studio Code to open a terminal window by clicking Terminal -&gt; New Terminal on the list of commands at the very top of the window. You should see the command prompt for your system. Now type <code class="docutils literal notranslate"><span class="pre">python</span></code>. If you installed Python, and put it on your PATH, you should see information about your installation of Python appear, including the version, followed by a Python prompt that looks like <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>. This is a kind of interactive Python session, in the terminal. It’s much less rich than the one available in Visual Studio Code (it can’t run scripts, for example) but you can try <code class="docutils literal notranslate"><span class="pre">print('Hello</span> <span class="pre">World!')</span></code> and it will run, printing your message. To exit the terminal-based Python session, type <code class="docutils literal notranslate"><span class="pre">exit()</span></code> to go back to the regular command line.</p>
+<p>If you’re using a bash or zsh terminal, there are a couple of commands that are so essential it would be remiss <em>not</em> to mention them. One is to list the contents of the current directory, for which the command is <code class="docutils literal notranslate"><span class="pre">ls</span></code>. The other is to move directory, for which the command is <code class="docutils literal notranslate"><span class="pre">cd</span></code>. If you find that you’ve opened a terminal you can always get a sense of where you are from <code class="docutils literal notranslate"><span class="pre">ls</span></code> and move to where you need to be using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">directory/</span></code>. One of the advantages of opening a folder in Visual Studio Code and then opening a terminal with Code using ‘New Terminal’ is that the terminal will open in the folder you’re working in (which is usually where you want to be).</p>
+</div>
+<div class="section" id="installing-packages">
+<h3><span class="section-number">1.3.2. </span>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h3>
+<p>The default installation of Anaconda comes with many of the packages you’ll need, but it won’t be long before you’ll need to install some extra ones. Extra packages, for example for regression, deliver a lot of the value of a programming language. You may sometimes hear that Python is a ‘batteries included’ programming language, meaning that the base language is very rich. This is definitely true! But even so, for economics, we’ll extend it further in numerous ways.</p>
+<p>To install extra Python packages, there are two options, and both use the command line. You’ll need to have conda activated before installing a package–if you don’t see the name of an environment, eg <code class="docutils literal notranslate"><span class="pre">(base)</span></code>, at the start of your terminal’s line, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> command first. Once you have activated the conda environment, you install packages using another command.</p>
+<p>For very widely used packages, you can often use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. Anaconda provide pre-built packages that are convenient for a host of reasons. If there isn’t a pre-built Anaconda version of the package available, you can fall back on installing via pip using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install packagename
+</pre></div>
+</div>
+<p>In true programming-humour style, pip is a recursive acronym that stands for ‘pip install packages’. By default, packages are installed into your <code class="docutils literal notranslate"><span class="pre">base</span></code> Python environment.</p>
+<p>Here’s a full example of the commands used to install the <strong>pandas</strong> package into the base environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your-username@your-computer current-directory % conda activate
+<span class="o">(</span>base<span class="o">)</span> your-username@your-computer current-directory % conda install pandas
+</pre></div>
+</div>
+</div>
+<div class="section" id="advanced-working-with-python-environments-and-anaconda">
+<h3><span class="section-number">1.3.3. </span>(Advanced) Working with Python environments and Anaconda<a class="headerlink" href="#advanced-working-with-python-environments-and-anaconda" title="Permalink to this headline">¶</a></h3>
+<p>You can get by just fine using the base Python environment to follow this book. However, it’s always good practice to <em>use a new environment for every project</em> because, for reproducible research, we want to know what packages were used and be able to export them to a file that others can use too. For example, if you’re following this book by running the code yourself, it’s a good idea to create a new environment using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n codeforecon <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+</pre></div>
+</div>
+<p>This will create a brand new Python 3.8 environment called ‘codeforecon’. It will only have the barebones packages in; you can install extras as outlined above. At a minimum, you will want jupyter, matplotlib, numpy, and pandas.</p>
+<p>To activate and use the new Python environment on the command line, type <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">codeforecon</span></code>. This should change <code class="docutils literal notranslate"><span class="pre">(base)</span></code> to <code class="docutils literal notranslate"><span class="pre">(codeforecon)</span></code> on the command line. Likewise you can switch back with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">base</span></code>. Note that this only changes the environment on the command line, what we really want to do is use the new environment in our IDE.</p>
+<p>To install a package into a <em>specific</em> environment, the easiest way is to activate that environment first by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">environmentname</span></code> followed by installing the package with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">packagename</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code>. Here’s a full example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your-username@your-computer current-directory % conda activate environmentname
+<span class="o">(</span>environmentname<span class="o">)</span> your-username@your-computer current-directory % conda install pandas
+</pre></div>
+</div>
+<p>To use your new environment in Visual Studio Code, you may need to restart it. Open up a Python script, for example, ‘hello_world.py’. Then, in the bottom left-hand corner of Visual Studio Code, you will see what Python environment that you are using. You can click on this to bring up a dropdown menu of all Python environments on your system and just choose whichever you want to use for this project. Visual Studio Code configuration settings for individual folders can be saved as ‘workspaces’, which remember which Python environment you were using for which folder.</p>
+<p>Installing packages one-by-one is very tedious. Fortunately, there’s a better way. You can install an entire Anaconda environment from a file. Here’s an example which would be saved as ‘codeforeconomists.yml’:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codeforecon</span>
+<span class="nt">channels</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jupyter</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">matplotlib</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pandas</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python=3.8</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pyyaml</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scikit-learn</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scipy</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">seaborn</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">statsmodels</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tqdm</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">yaml</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pycodestyle</span>
+  <span class="p p-Indicator">-</span> <span class="nt">pip</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jupyter-book</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">specification_curve</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ghp-import</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pandas-profiling</span>
+</pre></div>
+</div>
+<p>Note that most of these packages will be installed by conda, with just a few being installed by pip. The entire environment can be installed on the command line by running (from the same directory as the environment file):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f codeforecon.yml
+</pre></div>
+</div>
+<p>This saves the tedium of installing packages one-by-one, and it gives you a nice separate environment for going through ‘coding for economists’. Remember, to use the new environment, use the button in Visual Studio Code or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">codeforecon</span></code> on the command line. You can find much more details of how to use environments–including deleting them–over on Anaconda’s <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">guide to managing environments</a>.</p>
+</div>
+</div>
+<div class="section" id="review">
+<h2><span class="section-number">1.4. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>If you have:</p>
+<ul class="simple">
+<li><p>✅ installed Python, using the Anaconda distribution of Python;</p></li>
+<li><p>✅ installed Visual Studio Code, and its Python and Pylance extensions;</p></li>
+<li><p>✅ written and saved ‘hello_world.py’ with <code class="docutils literal notranslate"><span class="pre">print('Hello</span> <span class="pre">World!')</span></code> in it; and</p></li>
+<li><p>✅ run ‘hello_world.py’ both in the terminal and in the Visual Studio Code interactive window, then</p></li>
+</ul>
+<p>you are ready to move on to the next chapter!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="basics-of-coding.html" title="next page"><span class="section-number">2. </span>Basics of Coding</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This book is available under an MIT license.
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-189705534-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

@@ -57,8 +57,8 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/data-extraction.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Intro to Data Visualisation" href="data-vis.html" />
-    <link rel="prev" title="3. Reading and Writing Files" href="reading-and-writing.html" />
+    <link rel="next" title="5. Advanced Data" href="data-advanced.html" />
+    <link rel="prev" title="3. Reading and Writing Files" href="data-read-and-write.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -111,7 +111,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="preliminaries.html">
+  <a class="reference internal" href="basics-preliminaries.html">
    1. Preliminaries
   </a>
  </li>
@@ -133,18 +133,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="introduction-to-data-analysis.html">
+  <a class="reference internal" href="data-intro.html">
    2. Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="reading-and-writing.html">
+  <a class="reference internal" href="data-read-and-write.html">
    3. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    4. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   5. Advanced Data
   </a>
  </li>
 </ul>
@@ -155,12 +160,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="data-vis.html">
+  <a class="reference internal" href="vis-intro.html">
    1. Intro to Data Visualisation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="common-plots.html">
+  <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
   </a>
  </li>
@@ -184,7 +189,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="mathematical-coding.html">
+  <a class="reference internal" href="maths-maths-coding.html">
    Intro to Mathematics with Code
   </a>
  </li>
@@ -196,13 +201,18 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="probability-random.html">
+  <a class="reference internal" href="econmt-probability-random.html">
    1. Probability and Random Processes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="statistics.html">
+  <a class="reference internal" href="econmt-statistics.html">
    2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
   </a>
  </li>
 </ul>
@@ -360,54 +370,52 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extracting-data-in-files-on-the-internet">
-   4.2. Extracting data in files on the internet
+  <a class="reference internal nav-link" href="#extracting-data-from-files-on-the-internet">
+   4.2. Extracting data from files on the internet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-data-using-apis">
+   4.3. Extracting data using APIs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-data-from-apis">
-     4.2.1. Extracting data from APIs
+    <a class="reference internal nav-link" href="#an-easier-way-to-interact-with-some-apis">
+     4.3.1. An easier way to interact with (some) APIs
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#an-easier-way-to-interact-with-some-apis">
-       4.2.1.1. An easier way to interact with (some) APIs
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#webscraping">
-   4.3. Webscraping
+   4.4. Webscraping
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#extracting-data-from-pdfs">
-   4.4. Extracting data from PDFs
+   4.5. Extracting data from PDFs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#extracting-images-and-text-from-pdfs">
-     4.4.1. Extracting images and text from PDFs
+     4.5.1. Extracting images and text from PDFs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tables">
-     4.4.2. Tables
+     4.5.2. Tables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#other-useful-pdf-packages">
-     4.4.3. Other useful PDF packages
+     4.5.3. Other useful PDF packages
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#text-extraction">
-   4.5. Text extraction
+   4.6. Text extraction
   </a>
  </li>
 </ul>
@@ -467,8 +475,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="extracting-data-in-files-on-the-internet">
-<h2><span class="section-number">4.2. </span>Extracting data in files on the internet<a class="headerlink" href="#extracting-data-in-files-on-the-internet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="extracting-data-from-files-on-the-internet">
+<h2><span class="section-number">4.2. </span>Extracting data from files on the internet<a class="headerlink" href="#extracting-data-from-files-on-the-internet" title="Permalink to this headline">¶</a></h2>
 <p>As you will have seen in some of the examples in this book, it’s easy to read data from the internet once you have the url and file type. Here, for instance, is an example that reads in the ‘storms’ dataset (we’ll only grab the first 10 rows):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,8 +644,9 @@
 <p>10 rows × 14 columns</p>
 </div></div></div>
 </div>
-<div class="section" id="extracting-data-from-apis">
-<h3><span class="section-number">4.2.1. </span>Extracting data from APIs<a class="headerlink" href="#extracting-data-from-apis" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="extracting-data-using-apis">
+<h2><span class="section-number">4.3. </span>Extracting data using APIs<a class="headerlink" href="#extracting-data-using-apis" title="Permalink to this headline">¶</a></h2>
 <p>Using an API (application programming interface) is another way to draw down information from the interweb. Their just a way for one tool, say Python, to speak to another tool, say a server, and usefully exchange information. The classic use case would be to post a request for data that fits a certain query via an API and to get a download of that data back in return. (You should always preferentially use an API over webscraping a site.)</p>
 <p>Because they are designed to work with any tool, you don’t actually need a programming language to interact with an API, it’s just a <em>lot</em> easier if you do.</p>
 <div class="admonition note">
@@ -673,7 +682,7 @@
 </div>
 <p>We’ve talked about <em>reading</em> APIs. You can also create your own to serve up data, models, whatever you like! This is an advanced topic and we won’t cover it; but if you do need to, the simplest way is to use <a class="reference external" href="https://fastapi.tiangolo.com/">Fast API</a>. You can find some short video tutorials for Fast API <a class="reference external" href="https://calmcode.io/fastapi/hello-world.html">here</a>.</p>
 <div class="section" id="an-easier-way-to-interact-with-some-apis">
-<h4><span class="section-number">4.2.1.1. </span>An easier way to interact with (some) APIs<a class="headerlink" href="#an-easier-way-to-interact-with-some-apis" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.3.1. </span>An easier way to interact with (some) APIs<a class="headerlink" href="#an-easier-way-to-interact-with-some-apis" title="Permalink to this headline">¶</a></h3>
 <p>Although it didn’t take much code to get the ONS data, it would be even better if it was just a single line, wouldn’t it? Fortunately there are some packages out there that make this easy, but it does depend on the API (and APIs come and go over time).</p>
 <p>By far the most comprehensive library for accessing extra APIs is <a class="reference external" href="https://pandas-datareader.readthedocs.io/en/latest/"><strong>pandas-datareader</strong></a>, which provides convenient access to:</p>
 <ul class="simple">
@@ -704,9 +713,8 @@
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="webscraping">
-<h2><span class="section-number">4.3. </span>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>Webscraping<a class="headerlink" href="#webscraping" title="Permalink to this headline">¶</a></h2>
 <p>Webscraping is a way of grabbing information from the internet that was intended to be displayed in a browser. But it should only be used as a last resort, and only then when permitted by the terms and conditions of a website.</p>
 <p>If you’re getting data from the internet, it’s much better to use an API whenever you can: grabbing information in a structure way is <em>exactly</em> why APIs exist. APIs should also be more stable than websites, which may change frequently. Typically, if an organisation is happy for you to grab their data, they will have made an API expressly for that purpose. I’d say it’s pretty rare that there’s a major website which <em>does</em> permit webscraping but which doesn’t have an API; for these websites, if they don’t have an API, chances scraping is against their terms and conditions. Those terms and conditions may be enforceable by law (different rules in different countries here, and you really need legal advice if it’s not unambiguous as to whether you can scrape or not.)</p>
 <p>There are other reasons why webscraping is not so good; for example, if you need a back-run then it might be offered through an API but not shown on the webpage. (Or it might not be available at all, in which case it’s best to get in touch with the organisation or check out WaybackMachine in case they took snapshots).</p>
@@ -745,12 +753,12 @@
   &lt;meta content=&quot;&quot; name=&quot;description&quot;/&gt;
   &lt;meta content=&quot;&quot; name=&quot;author&quot;/&gt;
   &lt;title&gt;
-   Dr Arthur Turrell - research in physics and economics
+   Dr Arthur Turrell - website
   &lt;/title&gt;
   &lt;!-- Bootstrap Core CSS --&gt;
   &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;
   &lt;!-- Custom Fonts --&gt;
-  &lt;link href=&quot;http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800
+  &lt;link href=&quot;http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800
 </pre></div>
 </div>
 </div>
@@ -766,7 +774,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;p class=&quot;card-text&quot;&gt;Given a job title, job description, and job sector this algorithm assigns a 3-digit standard occupational classification (SOC) code to a job using the SOC 2010 standard.&lt;/p&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;p class=&quot;card-text&quot;&gt;I am a contributor to the Library of Statistical Techniques (LOST), a Rosetta stone for analysis with software packages. You can see the source code &lt;a href=&quot;https://github.com/LOST-STATS/lost-stats.github.io&quot;&gt;here&lt;/a&gt; or click the button for the website.&lt;/p&gt;
 </pre></div>
 </div>
 </div>
@@ -779,7 +787,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Given a job title, job description, and job sector this algorithm assigns a 3-digit standard occupational classification (SOC) code to a job using the SOC 2010 standard.&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am a contributor to the Library of Statistical Techniques (LOST), a Rosetta stone for analysis with software packages. You can see the source code here or click the button for the website.&#39;
 </pre></div>
 </div>
 </div>
@@ -819,10 +827,10 @@
 <p>That’s all we’ll cover here but remember we’ve barely <em>scraped</em> the surface of this big, complex topic. If you want to read about an application, it’s hard not to recommend the paper on webscraping that has undoubtedly change the world the most, and very likely has affected your own life in numerous ways: <a class="reference external" href="http://ilpubs.stanford.edu:8090/422/">“The PageRank Citation Ranking: Bringing Order to the Web”</a> by Page, Brin, Motwani and Winograd. For a more in-depth example of webscraping, check out realpython’s <a class="reference external" href="https://realpython.com/python-web-scraping-practical-introduction/">tutorial</a>.</p>
 </div>
 <div class="section" id="extracting-data-from-pdfs">
-<h2><span class="section-number">4.4. </span>Extracting data from PDFs<a class="headerlink" href="#extracting-data-from-pdfs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5. </span>Extracting data from PDFs<a class="headerlink" href="#extracting-data-from-pdfs" title="Permalink to this headline">¶</a></h2>
 <p>PDFs are great. Unfortunately, some people love them so much that they think they’re an appropriate way to store data rather than a convenient way to share text and/or figures. Or perhaps there’s a table in a PDF that you’d legitimately like to get the info out from.</p>
 <div class="section" id="extracting-images-and-text-from-pdfs">
-<h3><span class="section-number">4.4.1. </span>Extracting images and text from PDFs<a class="headerlink" href="#extracting-images-and-text-from-pdfs" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.1. </span>Extracting images and text from PDFs<a class="headerlink" href="#extracting-images-and-text-from-pdfs" title="Permalink to this headline">¶</a></h3>
 <p>We’ll use <span class="xref myst"><strong>pdfminer.six</strong></span> to get text out of the same PDF. For this simple operation, it’s just a single command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -848,7 +856,7 @@ Behavior Changes
 <p>This uses the ‘high-level’ part of the library, which is designed to help cover the most common use cases. But there’s a lot more flexibility there if you need it: essentially, <strong>pdfminer</strong> will break up a pdf into a series of elements that you can sift through in the much the same way as <strong>beautifulsoup</strong> does for HTML. For example, you can use library to <a class="reference external" href="https://pdfminersix.readthedocs.io/en/latest/howto/images.html">extract images</a> from PDFs too.</p>
 </div>
 <div class="section" id="tables">
-<h3><span class="section-number">4.4.2. </span>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.2. </span>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
 <p>The single best solution to grab tables is probably <a class="reference external" href="https://camelot-py.readthedocs.io/en/master/index.html"><strong>camelot</strong></a>. Note that it does need you to have Ghostscript installed on your computer; you can find more information about the dependencies <a class="reference external" href="https://camelot-py.readthedocs.io/en/master/user/install.html">here</a>. It only works with text-based PDFs and not scanned documents: basically, if you can click and drag to select text in your table in a PDF viewer, then your PDF is text-based. In that case, <strong>camelot</strong> is able to sift through the contents and grab any tables and then pass them back as csvs or even <strong>pandas</strong> dataframes.</p>
 <p>Here’s a small example:</p>
 <div class="cell docutils container">
@@ -894,12 +902,12 @@ Behavior Changes
 <p>Finally, <strong>camelot</strong> is not perfect–so it can produce a report on how it did when it tried to extract each table, which includes an accuracy score:</p>
 </div>
 <div class="section" id="other-useful-pdf-packages">
-<h3><span class="section-number">4.4.3. </span>Other useful PDF packages<a class="headerlink" href="#other-useful-pdf-packages" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.5.3. </span>Other useful PDF packages<a class="headerlink" href="#other-useful-pdf-packages" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/hoffmangroup/pdfcomments"><strong>pdfcomments</strong></a> is a library that allows you to strip out comments and sticky notes from PDF. This need not strictly be about data extraction, but <a class="reference external" href="https://pythonhosted.org/PyPDF2/"><strong>PyPDF2</strong></a> allows you to both split a PDF into separate pages and merge multiple PDFs together; see <a class="reference external" href="http://www.blog.pythonlibrary.org/2018/04/11/splitting-and-merging-pdfs-with-python/">here</a> for the steps. (You can drag and drop pages using preview on MacOS but this library may be the easiest way to do the same thing on Windows.)</p>
 </div>
 </div>
 <div class="section" id="text-extraction">
-<h2><span class="section-number">4.5. </span>Text extraction<a class="headerlink" href="#text-extraction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.6. </span>Text extraction<a class="headerlink" href="#text-extraction" title="Permalink to this headline">¶</a></h2>
 <p>Not everything is a PDF file! If you want to get the text out of .doc, .docx, .epub, .gif, .json, .jpg, <em>.mp3</em>, .odt, .pptx, .rtf, .xlsx, .xls and, actually, .pdf too, then <strong>textract</strong> is for you. Mostly, it’s a wrapper around a ton of other libraries. The upside is that getting the text out should be as easy as calling</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">textract</span>
 <span class="n">text</span> <span class="o">=</span> <span class="n">textract</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;file.extension&#39;</span><span class="p">))</span>
@@ -937,8 +945,8 @@ Behavior Changes
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="reading-and-writing.html" title="previous page"><span class="section-number">3. </span>Reading and Writing Files</a>
-    <a class='right-next' id="next-link" href="data-vis.html" title="next page"><span class="section-number">1. </span>Intro to Data Visualisation</a>
+    <a class='left-prev' id="prev-link" href="data-read-and-write.html" title="previous page"><span class="section-number">3. </span>Reading and Writing Files</a>
+    <a class='right-next' id="next-link" href="data-advanced.html" title="next page"><span class="section-number">5. </span>Advanced Data</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -949,9 +957,7 @@ Behavior Changes
         
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
-            <div>
-This book is licensed under an MIT license.
-</div>
+            This book is available under an MIT license.
 
           </div>
       </p>
@@ -971,7 +977,7 @@ This book is licensed under an MIT license.
     <!-- Google Analytics -->
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-78726233-1', 'auto');
+      ga('create', 'UA-189705534-1', 'auto');
       ga('set', 'anonymizeIp', true);
       ga('send', 'pageview');
     </script>

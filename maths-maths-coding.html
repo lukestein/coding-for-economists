@@ -1,0 +1,1516 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Mathematics with Code &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/maths-maths-coding.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Probability and Random Processes" href="econmt-probability-random.html" />
+    <link rel="prev" title="1. Best Practice in Coding" href="best-practice-coding.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/maths-maths-coding.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Intro to Mathematics with Code" />
+<meta property="og:description" content="Intro to Mathematics with Code  In this chapter, you’ll learn about doing mathematics with code, including solving equations both in the abstract and numericall" />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-preliminaries.html">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-of-coding.html">
+   2. Basics of Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-quickstart.html">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-intro.html">
+   2. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-read-and-write.html">
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   5. Advanced Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-intro.html">
+   1. Intro to Data Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-common-plots.html">
+   2. Common Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best Practice in Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-statistics.html">
+   2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/maths-maths-coding.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/maths-maths-coding.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmaths-maths-coding.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/maths-maths-coding.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#symbolic-mathematics">
+   Symbolic mathematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#symbolic-mathematics-for-economics">
+     Symbolic mathematics for economics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#series-expansion">
+       Series expansion
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#symbolic-linear-algebra">
+       Symbolic linear algebra
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lagrangians">
+       Lagrangians
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exporting-to-latex">
+       Exporting to latex
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-coding-symbolic-mathematics-is-useful">
+     Why coding symbolic mathematics is useful
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-mathematics">
+   Numerical Mathematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numeric-linear-algebra">
+     Numeric linear algebra
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solving-systems-of-linear-equations">
+       Solving systems of linear equations
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpolation">
+     Interpolation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optimisation">
+     Optimisation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-integration">
+     Numerical Integration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-composable-function-transformations">
+   Advanced: Composable Function Transformations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#auto-differentiation">
+     Auto-differentiation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#just-in-time-compilation">
+     Just-in-time compilation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-theory">
+   Set theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   Review
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="intro-to-mathematics-with-code">
+<h1>Intro to Mathematics with Code<a class="headerlink" href="#intro-to-mathematics-with-code" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, you’ll learn about doing mathematics with code, including solving equations both in the abstract and numerically.</p>
+<p>This chapter uses the <strong>numpy</strong>, <strong>scipy</strong>, and <strong>sympy</strong> packages. If you’re running this code, you may need to install these packages using, for example, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on your computer’s command line. (If you’re not sure what a command line or terminal is, take a quick look at the basics of coding chapter.)</p>
+<div class="section" id="symbolic-mathematics">
+<h2>Symbolic mathematics<a class="headerlink" href="#symbolic-mathematics" title="Permalink to this headline">¶</a></h2>
+<p>When using computers to do mathematics, we’re most often performing numerical computations such as <span class="math notranslate nohighlight">\(\sqrt{8} = \)</span><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">5.656854249492381</span></code></span>. Although we have the answer, it’s only useful for the one special case. Symbolic mathematics allows us to use coding to solve equations in the general case, which can often be more illuminating. As an example, if we evaluate this in symbolic mathematics we get <span class="math notranslate nohighlight">\(\sqrt{8} = \)</span><span class="pasted-inline"><span class="output text_latex math notranslate nohighlight">\(\displaystyle 2 \sqrt{2}\)</span></span>.</p>
+<p>The Python package for symbolic mathemtics is <a class="reference external" href="https://www.sympy.org/en/index.html"><strong>sympy</strong></a>, which provides some features of a computer algebra system.</p>
+<p>To define <em>symbolic</em> variables, we use sympy’s symbols function. For ease, we’ll import the entire sympy library into the namespace by using <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sympy</span> <span class="pre">import</span> <span class="pre">*</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">β</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;x t \alpha \beta&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The leading ‘r’ in some strings tells Python to treat the string literally so that backslashes are not treated as instructions–otherwise, combinations like <code class="docutils literal notranslate"><span class="pre">\n</span></code> would begin a newline.</p>
+</div>
+<p>Having created these symbolic variables, we can refer to and see them just like normal variables–though they’re not very interesting <em>because</em> they are just symbols (for now):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \alpha\]</div>
+</div>
+</div>
+<p>Things get much more interesting when we start to do maths on them. Let’s see some integration, for example, say we want to evaluate</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Integral</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \int \log{\left(x \right)}\, dx\]</div>
+</div>
+</div>
+<p>(note that the symbols are printed as latex equations) we simply call</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle x \log{\left(x \right)} - x\]</div>
+</div>
+</div>
+<p>We can differentiate too:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle e^{x} \sin{\left(x \right)} + e^{x} \cos{\left(x \right)}\]</div>
+</div>
+</div>
+<p>and even take limits!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1\]</div>
+</div>
+</div>
+<p>It is also possible to solve equations using <strong>sympy</strong>. The solve function tries to find the roots of <span class="math notranslate nohighlight">\(f(x)\)</span> and has syntax <code class="docutils literal notranslate"><span class="pre">solve(f(x)=0,</span> <span class="pre">x)</span></code>. Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2/5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are also solvers for differential equations (<code class="docutils literal notranslate"><span class="pre">dsolve</span></code>), continued fractions, simplifications, and more.</p>
+<p>Another really important thing to know about symbolic mathematics is that you can ‘cash in’ at any time by substituting in an actual value. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1.0\]</div>
+</div>
+</div>
+<p>But you don’t have to substitute in a real value; you can just as well substitute in a different symbolic variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \cos{\left(t \right)}\]</div>
+</div>
+</div>
+<p>I snuck in a simplify here too!</p>
+<div class="section" id="symbolic-mathematics-for-economics">
+<h3>Symbolic mathematics for economics<a class="headerlink" href="#symbolic-mathematics-for-economics" title="Permalink to this headline">¶</a></h3>
+<p>The library does a lot, so let’s focus on a few features that are likely to be useful for economics in particular.</p>
+<div class="section" id="series-expansion">
+<h4>Series expansion<a class="headerlink" href="#series-expansion" title="Permalink to this headline">¶</a></h4>
+<p>The first is performing <strong>Taylor series expansions</strong>. These come up all the time in macroeconomic modelling, where models are frequently log-linearised. Let’s see an example of a couple of expansions together:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">α</span><span class="p">))</span>
+
+<span class="n">expr</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">α</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \log{\left(\alpha \right)} - \frac{\alpha^{2}}{6} + O\left(\alpha^{4}\right)\]</div>
+</div>
+</div>
+<p>This is a 3rd order expansion around <span class="math notranslate nohighlight">\(\alpha=0\)</span>.</p>
+</div>
+<div class="section" id="symbolic-linear-algebra">
+<h4>Symbolic linear algebra<a class="headerlink" href="#symbolic-linear-algebra" title="Permalink to this headline">¶</a></h4>
+<p>The support for <strong>matrices</strong> can also come in handy for economic applications. Here’s a matrix,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="n">α</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="n">β</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; x\\\alpha &amp; - t &amp; 3\\4 &amp; \beta &amp; 2\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>and its determinant:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \alpha \beta x - 3 \beta + 4 t x - 2 t\]</div>
+</div>
+</div>
+<p>I can hardly go to a talk in economics that involves matrices that doesn’t see those matrices get diagonalised: there’s a function for that too.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">α</span><span class="p">,</span> <span class="o">-</span><span class="n">t</span><span class="p">]])</span><span class="o">.</span><span class="n">diagonalize</span><span class="p">()</span>
+<span class="n">D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0\\0 &amp; - t\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="lagrangians">
+<h4>Lagrangians<a class="headerlink" href="#lagrangians" title="Permalink to this headline">¶</a></h4>
+<p>Function optimisation using Lagrangians is about as prevalent in economics as any bit of maths: let’s see how it’s done symbolically.</p>
+<p>We’re going to find the minimum over x, y of the function <span class="math notranslate nohighlight">\(f(x,y)\)</span>, subject to <span class="math notranslate nohighlight">\(g(x,y)=0\)</span>, where <span class="math notranslate nohighlight">\(f(x,y) = 4xy - 2x^2 + y^2\)</span> and <span class="math notranslate nohighlight">\(g(x,y) = 3x+y-5\)</span>.</p>
+<p>First we need to specify the problem, and the Lagrangian for it, in code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">λ</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;x y \lambda&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">-</span><span class="mi">5</span>
+
+<span class="n">ℒ</span> <span class="o">=</span> <span class="n">f</span> <span class="o">-</span> <span class="n">λ</span><span class="o">*</span><span class="n">g</span>
+<span class="n">ℒ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \lambda \left(3 x + y - 5\right) - 2 x^{2} + 4 x y + y^{2}\]</div>
+</div>
+</div>
+<p>The Karush-Kuhn-Tucker (KKT) conditions tell us whether any solutions we find will be optimal. Simply, the constaint is that a solution vector is a saddle point of the Lagrangian, <span class="math notranslate nohighlight">\(\nabla \mathcal{L} = 0\)</span>. Let’s solve this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gradL</span> <span class="o">=</span> <span class="p">[</span><span class="n">diff</span><span class="p">(</span><span class="n">ℒ</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]]</span>
+<span class="n">KKT_eqns</span> <span class="o">=</span> <span class="n">gradL</span> <span class="o">+</span> <span class="p">[</span><span class="n">g</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives 3 equations from the KKT conditions:  <span class="pasted-inline"><span class="output text_latex math notranslate nohighlight">\(\displaystyle - 3 \lambda - 4 x + 4 y\)</span></span>,   <span class="pasted-inline"><span class="output text_latex math notranslate nohighlight">\(\displaystyle - \lambda + 4 x + 2 y\)</span></span>, and  <span class="pasted-inline"><span class="output text_latex math notranslate nohighlight">\(\displaystyle 3 x + y - 5\)</span></span>. (The symbolic manipulation is now over: we solved for the conditions in terms of algebra–now we’re looking for real values.) Now we look for the values of <span class="math notranslate nohighlight">\(x, y\)</span> that minimise <span class="math notranslate nohighlight">\(f\)</span> given that <span class="math notranslate nohighlight">\(g=0\)</span> by solving these equations over <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stationary_pts</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">KKT_eqns</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">λ</span><span class="p">],</span> <span class="nb">dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">stationary_pts</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{x: -1, y: 8, \lambda: 12}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can substitute these in to find the (first–and in this case only) point that minimises our function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stationary_pts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x</span><span class="p">],</span> <span class="n">stationary_pts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">y</span><span class="p">],</span> <span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">stationary_pts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1, 8, 30)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exporting-to-latex">
+<h4>Exporting to latex<a class="headerlink" href="#exporting-to-latex" title="Permalink to this headline">¶</a></h4>
+<p>To turn any equation, for example <code class="docutils literal notranslate"><span class="pre">diff(sin(x)*exp(x),</span> <span class="pre">x)</span></code>, into latex and export it to a file that can be included in a paper, use</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eqn_to_export</span> <span class="o">=</span> <span class="n">latex</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;equation&#39;</span><span class="p">)</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;latex_equation.tex&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">eqn_to_export</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which creates a file called ‘latex_equation.tex’ that has a single line in it: ‘\begin{equation}\int \log{\left(x \right)}, dx\end{equation}’. There are a range of options for exporting to latex, <code class="docutils literal notranslate"><span class="pre">mode='equation*'</span></code> produces an unnumbered equation, ‘inline’ produces an inline equation, and so on. To include these in your latex paper, use ‘\input{latex_equation.tex}’.</p>
+</div>
+</div>
+<div class="section" id="why-coding-symbolic-mathematics-is-useful">
+<h3>Why coding symbolic mathematics is useful<a class="headerlink" href="#why-coding-symbolic-mathematics-is-useful" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Accuracy–using a computer to solve the equations means you’re less likely to make a mistake. At the very least, it’s a useful check on your by-hand working.</p></li>
+<li><p>Consistency–by making your code export the equations you’re solving to your write-up, you can ensure that the equations are consistent across both <em>and</em> you only have to type them once.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="numerical-mathematics">
+<h2>Numerical Mathematics<a class="headerlink" href="#numerical-mathematics" title="Permalink to this headline">¶</a></h2>
+<p>For much of the time, you’ll be dealing with numbers rather than symbols. The workhorses of numerical mathematics are the two packages <strong>numpy</strong> and <strong>scipy</strong>. Both have excellent documentation, where you can find out more. In this section, we’ll look at how to use them in some standard mathematical operations that arise in economics.</p>
+<p>The most basic object is an array, which can be defined as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Arrays are very memory efficient and fast objects that you should use in preference to lists for any heavy duty numerical operation.</p>
+<p>To demonstrate this, let’s do a time race between lists and arrays for squaring all elements of an array:</p>
+<p>Lists:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> [i**2 for i in a_list]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>234 µs ± 18.8 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> a**2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>901 ns ± 80.5 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using arrays was <em>two orders of magnitude</em>* faster! Okay, so we should use arrays for numerical works. How do we make them? You can specify an array explicitly as we did above to create a vector. This manual approach works for other dimensions too:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>To find out about matrix properties, we use <code class="docutils literal notranslate"><span class="pre">.shape</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We already saw how <code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> produces a vector; <code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">number)</span></code> produces a vector of length <code class="docutils literal notranslate"><span class="pre">number</span></code> by equally dividing the space between <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p>
+<p>Three really useful arrays are <code class="docutils literal notranslate"><span class="pre">np.ones(shape)</span></code>, for example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1., 1.],
+       [1., 1., 1.],
+       [1., 1., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.diag</span></code> for diagnoal arrays,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 0, 0],
+       [0, 2, 0, 0],
+       [0, 0, 3, 0],
+       [0, 0, 0, 4]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>and <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> for empty arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0.],
+       [0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Random numbers are supplied by <code class="docutils literal notranslate"><span class="pre">np.random.rand()</span></code> for a uniform distribution in [0, 1], and <code class="docutils literal notranslate"><span class="pre">np.random.randn()</span></code> for numbers drawn from a standard normal distribution.</p>
+<p>You can, of course, specify a function to create an array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfunction</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.,  1.,  4.,  9., 16.],
+       [ 1.,  2.,  5., 10., 17.],
+       [ 4.,  5.,  8., 13., 20.],
+       [ 9., 10., 13., 18., 25.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>To access values in an array, you can use all of the by-position slicing methods that you’ve seen already in data analysis and with lists. The figure gives an example of some common slicing operations:</p>
+<p><img alt="Examples of array slices" src="https://scipy-lectures.org/_images/numpy_indexing.png" /></p>
+<p>Arrays can also be sliced and diced based on boolean indexing, just like a dataframe.</p>
+<p>For example, using the array defined above, we can create a boolean array of true and false values from a condition such as <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">&gt;</span> <span class="pre">6</span></code> and use that to only access some elements of an array (it doesn’t have to be the same array, though it usually is):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">[</span><span class="n">c</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9., 16., 10., 17.,  8., 13., 20.,  9., 10., 13., 18., 25.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>As with dataframes, arrays can be combined. The main command to remember is <code class="docutils literal notranslate"><span class="pre">np.concatenate</span></code>, which has an <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword option.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.],
+       [1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Splitting is performed with <code class="docutils literal notranslate"><span class="pre">np.split(array,</span> <span class="pre">splits,</span> <span class="pre">axis=)</span></code>, for example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([[1., 0., 0.],
+        [0., 1., 0.],
+        [0., 0., 1.]]),
+ array([], shape=(0, 3), dtype=float64)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aggregation operations are very similar to those found in dataframes: <code class="docutils literal notranslate"><span class="pre">x.sum(i)</span></code> to sum across the <span class="math notranslate nohighlight">\(i\)</span>th dimension of the array; similarly for standard deviation, and so on.</p>
+<p>As with dataframes, you can (and often should) specify the datatype of an array when you create it by passing a <code class="docutils literal notranslate"><span class="pre">dtype=</span></code> keyword, eg <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">np.array([1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">dtype=float)</span></code>. To find out the data type of an array that already exists, use <code class="docutils literal notranslate"><span class="pre">c.dtype</span></code>.</p>
+<p>Finally, numpy does a lot of smart broadcasting of arrays. Broadcasting is what means that summing two arrays gives you a third array that has elements that are each the sum of the relevant elements in the two original arrays. Put another way, it’s what causes <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">z</span></code> (for arrays x and y with the same shape) to result in an array z for which <span class="math notranslate nohighlight">\(z_{ij} = x_{ij} + y_{ij}\)</span>.</p>
+<p>Summing two arrays of the same shape is a pretty obvious example, but it also applies to cases that are <em>not</em> completely matched. For example, multiplication by a scalar is broadcast across all elements of an array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3., 3., 3.],
+       [3., 3., 3.],
+       [3., 3., 3.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, numpy functions are broadcast across elements of an array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2.71828183, 2.71828183, 2.71828183],
+       [2.71828183, 2.71828183, 2.71828183],
+       [2.71828183, 2.71828183, 2.71828183]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="numeric-linear-algebra">
+<h3>Numeric linear algebra<a class="headerlink" href="#numeric-linear-algebra" title="Permalink to this headline">¶</a></h3>
+<p>The transpose of an array <code class="docutils literal notranslate"><span class="pre">x</span></code> is given by <code class="docutils literal notranslate"><span class="pre">x.T</span></code>.</p>
+<p>Matrix multiplation is performed using the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator. Here we perform <span class="math notranslate nohighlight">\( M_{il} = \sum_{k} x_{ik} * (x^T)_{kl}\)</span>, where <span class="math notranslate nohighlight">\(x^T\)</span> is the transpose of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">@</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3., 3., 3.],
+       [3., 3., 3.],
+       [3., 3., 3.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>To multiply two arrays element wise, ie to do <span class="math notranslate nohighlight">\( M_{ij} = x_{ij} y_{ij}\)</span>, it’s the usual multiplication operator <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>Inverting matrices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Computing the trace:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Determinant:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-231.99999999999977
+</pre></div>
+</div>
+</div>
+</div>
+<p>Computing a Cholesky decomposition, i.e. finding lower triangular matrix <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(C C' = \Sigma\)</span> for <span class="math notranslate nohighlight">\(\Sigma\)</span> a 2-dimensional positive definite matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Σ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">@</span> <span class="n">c</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">Σ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0.],
+       [0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="solving-systems-of-linear-equations">
+<h4>Solving systems of linear equations<a class="headerlink" href="#solving-systems-of-linear-equations" title="Permalink to this headline">¶</a></h4>
+<p>Say we have a system of equations, <span class="math notranslate nohighlight">\(4x + 3y + 2z = 25\)</span>,
+<span class="math notranslate nohighlight">\(-2x + 2y + 3z = -10\)</span>, and <span class="math notranslate nohighlight">\(3x -5y + 2z = -4\)</span>. We can solve these three equations for the three unknowns, x, y, and z, using the <code class="docutils literal notranslate"><span class="pre">solve</span></code> method. First, remember that this equation can be written in matrix form as</p>
+<div class="math notranslate nohighlight">
+\[
+M\cdot \vec{x} = \vec{c}
+\]</div>
+<p>We can solve this by multiplying by the matrix inverse of <span class="math notranslate nohighlight">\(M\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
+\]</div>
+<p>which could be called by running <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">la.inv(M).dot(c)</span></code>. There’s a convenience function in <strong>numpy</strong> called solve that does the same thing: here it finds the real values of the vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5.,  3., -2.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, eigenvalues and eigenvectors can be found from:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">la</span>
+<span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="n">eigvals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.65662617+0.j        , 1.17168692+4.51348646j,
+       1.17168692-4.51348646j])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="interpolation">
+<h3>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h3>
+<p>This section draws on the <strong>scipy</strong> documentation. There are built-in <strong>pandas</strong> methods for interpolation in dataframes, but <strong>scipy</strong> also has a range of functions for this including for univariate data <code class="docutils literal notranslate"><span class="pre">interp1d</span></code>, multidimensional interpolation on a grid <code class="docutils literal notranslate"><span class="pre">interpn</span></code>, <code class="docutils literal notranslate"><span class="pre">griddata</span></code> for unstructured data. Let’s see a simple example with interpolation between a regular grid of integers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+<span class="c1"># Create a finer grid to interpolation function f</span>
+<span class="n">xnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">ynew</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xnew</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">xnew</span><span class="p">,</span> <span class="n">ynew</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/maths-maths-coding_82_0.png" src="_images/maths-maths-coding_82_0.png" />
+</div>
+</div>
+<p>What about unstructured data? Let’s create a Cobb-Douglas function on a detailed grid but then only retain a random set of the established points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">griddata</span>
+
+<span class="k">def</span> <span class="nf">cobb_doug</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="c1"># Take some random points of the Cobb-Douglas function</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">cobb_doug</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Create a grid</span>
+<span class="n">grid_x</span><span class="p">,</span> <span class="n">grid_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">200</span><span class="n">j</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">200</span><span class="n">j</span><span class="p">]</span>
+
+<span class="c1"># Interpolate the points we have onto the grid</span>
+<span class="n">interp_data</span> <span class="o">=</span> <span class="n">griddata</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="p">(</span><span class="n">grid_x</span><span class="p">,</span> <span class="n">grid_y</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cubic&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot results</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Plot function &amp; scatter of random points</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cobb_doug</span><span class="p">(</span><span class="n">grid_x</span><span class="p">,</span> <span class="n">grid_y</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+               <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+               <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma_r&#39;</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Original + points&#39;</span><span class="p">)</span>
+<span class="c1"># Interpolation of random points</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">interp_data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+               <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma_r&#39;</span><span class="p">,</span>
+               <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cubic interpolation&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/maths-maths-coding_84_0.png" src="_images/maths-maths-coding_84_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="optimisation">
+<h3>Optimisation<a class="headerlink" href="#optimisation" title="Permalink to this headline">¶</a></h3>
+<p><strong>scipy</strong> has functions for minimising scalar functions, minimising multivariate functions with complex surfaces, and root-finding. Let’s see an example of finding the minimum of a scalar function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.2</span>
+
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      fun: -9.145823375615207
+ hess_inv: array([[0.08589248]])
+      jac: array([-1.1920929e-06])
+  message: &#39;Optimization terminated successfully.&#39;
+     nfev: 12
+      nit: 5
+     njev: 6
+   status: 0
+  success: True
+        x: array([-1.30644012])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result of the optimisation is in the ‘x’ attribute of <code class="docutils literal notranslate"><span class="pre">result</span></code>. Let’s see this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/maths-maths-coding_88_0.png" src="_images/maths-maths-coding_88_0.png" />
+</div>
+</div>
+<p>In higher dimensions, the minimisation works in much the same way, with the same function <code class="docutils literal notranslate"><span class="pre">optimize.minimize</span></code>. There are a LOT of minimisation options that you can pass to the <code class="docutils literal notranslate"><span class="pre">method=</span></code> keyword; the default is intelligently chosen from BFGS, L-BFGS-B, or SLSQP, depending upon whether you supply constraints or bounds.</p>
+<p>Root finding, aka solving equations of the form <span class="math notranslate nohighlight">\(f(x)=0\)</span>, is also catered for by <strong>scipy</strong>, through <code class="docutils literal notranslate"><span class="pre">optimize.root</span></code>. It works in much the same way as <code class="docutils literal notranslate"><span class="pre">optimizer.minimize</span></code>.</p>
+<p>In both of these cases, be warned that multiple roots and multiple minima can be hard to detect, and you may need to carefully specify the bounds or the starting positions in order to find the root you’re looking for. Also, both of these methods can accept the Jacobian of the function you’re working with as an argument, which is likely to improve performance with some solvers.</p>
+</div>
+<div class="section" id="numerical-integration">
+<h3>Numerical Integration<a class="headerlink" href="#numerical-integration" title="Permalink to this headline">¶</a></h3>
+<p><strong>scipy</strong> provides routines to numerically evaluate integrals in <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>, which you can find the documentation for <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">here</a>. Let’s see an example using the ‘vanilla’ integration method, <code class="docutils literal notranslate"><span class="pre">quad</span></code>, to solve a known function between given (numerical) limits:</p>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle\int_0^{\pi} \sin(x) d x
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="n">res</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">quad</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if we just have data samples? In that case, there are several routines that perform purely numerical integration:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simps</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">f_of_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">simps</span><span class="p">(</span><span class="n">f_of_x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">9</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even with just 10 evenly spaced points, the composite Simpson’s rule integration given by <code class="docutils literal notranslate"><span class="pre">simps</span></code> is able to accurately find the answer as <span class="math notranslate nohighlight">\(\left( x^2/2\right) |_{0}^{9}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="advanced-composable-function-transformations">
+<h2>Advanced: Composable Function Transformations<a class="headerlink" href="#advanced-composable-function-transformations" title="Permalink to this headline">¶</a></h2>
+<p>In recent years, there have been great developments in the ability of Python to easily carry out numerical ‘composable function transformations’. What this means is that, if you can dream up an arbitrary numerical operations – including differentiation, linear algebrea, and optimisation – you can write code that will execute it quickly and automatically on CPUs, GPUs, or TPUs as you like.</p>
+<p>Here we’ll look at one library that does this, <strong>jax</strong>, developed by Google <a class="bibtex reference internal" href="zreferences.html#jax2018github" id="id1">[8]</a>. It can automatically differentiate native Python and <strong>numpy</strong> functions, including when they are in loops, branches, or subject to recursion, and it can take derivatives of derivatives of derivatives. It supports reverse-mode differentiation (a.k.a. backpropagation) via grad as well as forward-mode differentiation, and the two can be composed arbitrarily to any order.</p>
+<p>To do these at speed, it uses just-in-time compilation. If you don’t know what that is, don’t worry: the details aren’t important. It’s just a way of getting close to C++ or Fortran speeds while still being able to write code in <em>much</em> more user friendly Python!</p>
+<div class="section" id="auto-differentiation">
+<h3>Auto-differentiation<a class="headerlink" href="#auto-differentiation" title="Permalink to this headline">¶</a></h3>
+<p>Let’s see an example of auto-differentiation an arbitrary function. We’ll write the definition of <span class="math notranslate nohighlight">\(\tanh(x)\)</span> as a function and evaluate it. Because we already imported a (symbolic) <code class="docutils literal notranslate"><span class="pre">tanh</span></code> function from Sympy above, we’ll call the function below <code class="docutils literal notranslate"><span class="pre">tanh_num</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">grad</span>
+<span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
+
+<span class="k">def</span> <span class="nf">tanh_num</span><span class="p">(</span><span class="n">θ</span><span class="p">):</span>  <span class="c1"># Define a function</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">θ</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">grad_tanh</span> <span class="o">=</span> <span class="n">grad</span><span class="p">(</span><span class="n">tanh_num</span><span class="p">)</span>  <span class="c1"># Obtain its gradient function</span>
+<span class="n">grad_tanh</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>   <span class="c1"># Evaluate it at x = 1.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(0.4199743, dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can differentiate to any order using grad:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">tanh_num</span><span class="p">)))(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeviceArray(0.6216266, dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check this using symbolic mathematics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">θ</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\theta&#39;</span><span class="p">)</span>
+<span class="n">triple_deriv</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">tanh</span><span class="p">(</span><span class="n">θ</span><span class="p">),</span> <span class="n">θ</span><span class="p">)))</span>
+<span class="n">triple_deriv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(1 - \tanh^{2}{\left(\theta \right)}\right) \left(2 \tanh^{2}{\left(\theta \right)} - 2\right) + 2 \left(2 - 2 \tanh^{2}{\left(\theta \right)}\right) \tanh^{2}{\left(\theta \right)}\]</div>
+</div>
+</div>
+<p>If we evaluate this at <span class="math notranslate nohighlight">\(\theta=1\)</span>, we get <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'0.622'</span></code></span>. This was a simple example that had a (relatively) simple mathematical expression. But imagine if we had lots of branches (eg if, else statements), and/or a really complicated function: <strong>jax</strong>’s grad would still work. It’s designed for really complex derivatives of the kind encountered in machine learning.</p>
+</div>
+<div class="section" id="just-in-time-compilation">
+<h3>Just-in-time compilation<a class="headerlink" href="#just-in-time-compilation" title="Permalink to this headline">¶</a></h3>
+<p>The other nice feature of <strong>jax</strong> is the ability to do just-in-time (JIT) compilation. Because they do not compile their code into machine-code before running, high-level languages like Python and R are not as fast as the same code written in C++ or Fortran (the benefit is that it takes you less time to write the code in the first place). Much of the time, there are pre-composed functions that call C++ under the hood to do these things–but only for those operations that people have already taken the time to code up in a lower level language. JIT compilation offers a compromise: you can code more or less as you like in the high-level language but it will be compiled just-in-time to give you a speed-up!</p>
+<p><strong>jax</strong> is certainly not the only Python package that does this, and if you’re not doing anything like differentiating or propagating, <strong>numba</strong> is a more mature alternative. But here we’ll see the time difference for JIT compilation on an otherwise slow operation: element wise multiplication and addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jax</span> <span class="kn">import</span> <span class="n">jit</span>
+
+<span class="k">def</span> <span class="nf">slow_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Slow, element-wise function&quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">2.0</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">))</span>
+<span class="n">fast_f</span> <span class="o">=</span> <span class="n">jit</span><span class="p">(</span><span class="n">slow_f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s see how fast the ‘slow’ version goes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> -n15 -r3 slow_f(x)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82.9 ms ± 8.35 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>what about with the JIT compilation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> -n15 -r3 fast_f(x)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24 ms ± 1.7 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This short introduction has barely scratched the surface of <strong>jax</strong> and what you can do with it. For more, see the <a class="reference external" href="https://jax.readthedocs.io/en/latest/">official documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="set-theory">
+<h2>Set theory<a class="headerlink" href="#set-theory" title="Permalink to this headline">¶</a></h2>
+<p>Set theory is a surprisingly useful tool in research (and invaluable in spatial analysis). Here are some really useful bits of set theory inspired by examples in <a class="bibtex reference internal" href="zreferences.html#sheppard2012introduction" id="id2">[9]</a>.</p>
+<p>Sets are first class citizens in Python in the same way that lists are. We can define and view a set like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;Ada Lovelace&#39;</span><span class="p">,</span> <span class="s1">&#39;Sadie Alexander&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Charles Babbage&#39;</span><span class="p">,</span> <span class="s1">&#39;Ada Lovelace&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Adam Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Sadie Alexander&#39;</span><span class="p">])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Ada Lovelace&#39;, &#39;Adam Smith&#39;, &#39;Charles Babbage&#39;, &#39;Sadie Alexander&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that a couple of entries appeared twice in the list but only once in the set: that’s because a set contains only unique elements. Let’s define a second set in order to demonstrate some of the operations we can perform on sets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;Grace Hopper&#39;</span><span class="p">,</span> <span class="s1">&#39;Jean Bartik&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Janet Yellen&#39;</span><span class="p">,</span> <span class="s1">&#39;Joan Robinson&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Adam Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;Ada Lovelace&#39;</span><span class="p">])</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Ada Lovelace&#39;,
+ &#39;Adam Smith&#39;,
+ &#39;Grace Hopper&#39;,
+ &#39;Janet Yellen&#39;,
+ &#39;Jean Bartik&#39;,
+ &#39;Joan Robinson&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have two sets we can look at to demonstrate some of the basic functions you can call on the set object type. <code class="docutils literal notranslate"><span class="pre">x.intersection(y)</span></code> gives, in this example, <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">{'Ada</span> <span class="pre">Lovelace',</span> <span class="pre">'Adam</span> <span class="pre">Smith'}</span></code></span>, <code class="docutils literal notranslate"><span class="pre">x.difference(y)</span></code> gives <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">{'Charles</span> <span class="pre">Babbage',</span> <span class="pre">'Sadie</span> <span class="pre">Alexander'}</span></code></span>, and <code class="docutils literal notranslate"><span class="pre">x.union(y)</span></code> gives <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">{'Ada</span> <span class="pre">Lovelace',</span>
+ <span class="pre">'Adam</span> <span class="pre">Smith',</span>
+ <span class="pre">'Charles</span> <span class="pre">Babbage',</span>
+ <span class="pre">'Grace</span> <span class="pre">Hopper',</span>
+ <span class="pre">'Janet</span> <span class="pre">Yellen',</span>
+ <span class="pre">'Jean</span> <span class="pre">Bartik',</span>
+ <span class="pre">'Joan</span> <span class="pre">Robinson',</span>
+ <span class="pre">'Sadie</span> <span class="pre">Alexander'}</span></code></span>.</p>
+<p><strong>numpy</strong> also has functions that use set theory. <code class="docutils literal notranslate"><span class="pre">np.unique</span></code> returns only the unique entries of an input array or list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="s1">&#39;Lovelace&#39;</span><span class="p">,</span> <span class="s1">&#39;Hopper&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;Hopper&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">45</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;27&#39;, &#39;45&#39;, &#39;Alexander&#39;, &#39;Hopper&#39;, &#39;Lovelace&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also ask which of a second set is a repeat of a first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False,  True,  True,  True,  True,
+        True])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we have the numpy equivalents of intersection, <code class="docutils literal notranslate"><span class="pre">np.intersect1d(x,</span> <span class="pre">y)</span></code>, difference, <code class="docutils literal notranslate"><span class="pre">np.setdiff1d(x,</span> <span class="pre">y)</span></code>, and union, <code class="docutils literal notranslate"><span class="pre">np.union1d(x,</span> <span class="pre">y)</span></code>. Additionally, there is the exclusive-or (that I like to call ‘xor’). This effectively returns the two arrays with their union removed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 4, 5, 7])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you should have:</p>
+<ul class="simple">
+<li><p>✅ seen how to use symbolic algebra with code, including Lagrangrians and linear algebra;</p></li>
+<li><p>✅ seen how to code numerical mathematics, including linear algebra and optimisation; and</p></li>
+<li><p>✅ found out about using set theory via the <code class="docutils literal notranslate"><span class="pre">set</span></code> object type and set-oriented functions.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "codeforecon"
+        },
+        kernelOptions: {
+            kernelName: "codeforecon",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'codeforecon'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="best-practice-coding.html" title="previous page"><span class="section-number">1. </span>Best Practice in Coding</a>
+    <a class='right-next' id="next-link" href="econmt-probability-random.html" title="next page"><span class="section-number">1. </span>Probability and Random Processes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This book is available under an MIT license.
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-189705534-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
