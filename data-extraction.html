@@ -190,7 +190,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
-   Intro to Mathematics with Code
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -213,6 +213,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="econmt-regression.html">
    3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Geospatial
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-intro.html">
+   1. Intro to Geo-Spatial Analysis
   </a>
  </li>
 </ul>
@@ -654,7 +666,7 @@
 <p>An API key is needed in order to access some APIs. Sometimes all you need to do is register with site, in other cases you may have to pay for access.</p>
 </div>
 <p>To see this, let’s directly use an API to get some time series data. We will make the call out to the internet using the <strong>requests</strong> package.</p>
-<p>An API has an ‘endpoint’, the base url, and then a URL that encodes the question. Let’s see an example with the ONS API for which the endpoint is “https://api.ons.gov.uk/”. The rest of the API has the form ‘key/value’, for example we’ll ask for timeseries data ‘timeseries’ followed by ‘JP9Z’ for the vacancies in the UK services sector. We then ask for ‘dataset’ followed by ‘UNEM’ to specify which overarching dataset the series we want is in. The last part asks for the data with ‘data’. Often you won’t need to know all of these details, but it’s useful to see a detailed example.</p>
+<p>An API has an ‘endpoint’, the base url, and then a URL that encodes the question. Let’s see an example with the ONS API for which the endpoint is “<a class="reference external" href="https://api.ons.gov.uk/">https://api.ons.gov.uk/</a>”. The rest of the API has the form ‘key/value’, for example we’ll ask for timeseries data ‘timeseries’ followed by ‘JP9Z’ for the vacancies in the UK services sector. We then ask for ‘dataset’ followed by ‘UNEM’ to specify which overarching dataset the series we want is in. The last part asks for the data with ‘data’. Often you won’t need to know all of these details, but it’s useful to see a detailed example.</p>
 <p>The data that are returned by APIs are typically in JSON format, which looks a lot like a nested Python dictionary and its entries can be accessed in the same way–this is what is happening when getting the series’ title in the example below. JSON is not good for analysis, so we’ll use <strong>pandas</strong> to put the data into shape.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,7 +830,7 @@
 </div>
 <p>Hooray! We managed to get the information we wanted: all we needed to know was the right tags. A good tip for finding the tags of the info you want is to look at in your browser (eg Google Chrome) and then right-click on the bit you’re interested in, then hit ‘Inspect’. This will show you the HTML element of the bit of the page you clicked on.</p>
 <p>That’s almost it for this very, very brief introduction to webscraping. We’ll just see one more thing: how to iterate over multiple pages.</p>
-<p>Imagine we had a root webpage such as “www.codingforeconomists.com” which had subpages such as “www.codingforeconomists.com/page=1”, “www.codingforeconomists.com/page=2”, and so on. One need only iterate create the HTML strings to pass into a function that scrapes each one and return the relevant data, eg for the first 50 pages, and with a function called <code class="docutils literal notranslate"><span class="pre">scraper</span></code>, one might run</p>
+<p>Imagine we had a root webpage such as “<a class="reference external" href="http://www.codingforeconomists.com">www.codingforeconomists.com</a>” which had subpages such as “<a class="reference external" href="http://www.codingforeconomists.com/page=1">www.codingforeconomists.com/page=1</a>”, “<a class="reference external" href="http://www.codingforeconomists.com/page=2">www.codingforeconomists.com/page=2</a>”, and so on. One need only iterate create the HTML strings to pass into a function that scrapes each one and return the relevant data, eg for the first 50 pages, and with a function called <code class="docutils literal notranslate"><span class="pre">scraper</span></code>, one might run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span>
 <span class="n">root_url</span> <span class="o">=</span> <span class="s2">&quot;www.codingforeconomists.com/page=&quot;</span>
 <span class="n">info_on_pages</span> <span class="o">=</span> <span class="p">[</span><span class="n">scraper</span><span class="p">(</span><span class="n">root_url</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)]</span>
@@ -858,48 +870,15 @@ Behavior Changes
 <div class="section" id="tables">
 <h3><span class="section-number">4.5.2. </span>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
 <p>The single best solution to grab tables is probably <a class="reference external" href="https://camelot-py.readthedocs.io/en/master/index.html"><strong>camelot</strong></a>. Note that it does need you to have Ghostscript installed on your computer; you can find more information about the dependencies <a class="reference external" href="https://camelot-py.readthedocs.io/en/master/user/install.html">here</a>. It only works with text-based PDFs and not scanned documents: basically, if you can click and drag to select text in your table in a PDF viewer, then your PDF is text-based. In that case, <strong>camelot</strong> is able to sift through the contents and grab any tables and then pass them back as csvs or even <strong>pandas</strong> dataframes.</p>
-<p>Here’s a small example:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">camelot</span>
+<p>At the time of writing, <strong>camelot</strong> had some versioning issues related to a dependency on an outdated version of <strong>sqlalchemy</strong>. You may need to install it in a separate virtual environment to use it.</p>
+<p>Here’s a small example that assumes you have a pdf with a table in stored in a local directory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">camelot</span>
 <span class="c1"># Grab the pdf</span>
 <span class="n">tables</span> <span class="o">=</span> <span class="n">camelot</span><span class="o">.</span><span class="n">read_pdf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf_with_table.pdf&#39;</span><span class="p">))</span>
-<span class="c1"># See how many tables we got</span>
-<span class="n">tables</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mf">77e2</span><span class="n">ba422c4e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">camelot</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Grab the pdf</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">tables</span> <span class="o">=</span> <span class="n">camelot</span><span class="o">.</span><span class="n">read_pdf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf_with_table.pdf&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># See how many tables we got</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">tables</span>
-
-<span class="ne">AttributeError</span>: module &#39;camelot&#39; has no attribute &#39;read_pdf&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>To extra any of the <span class="math notranslate nohighlight">\(n\)</span> tables retrieved into a pandas dataframe, use</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parsing_report</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Finally, <strong>camelot</strong> is not perfect–so it can produce a report on how it did when it tried to extract each table, which includes an accuracy score:</p>
+<p>To extract any of the <span class="math notranslate nohighlight">\(n\)</span> tables that are retrieved into a pandas dataframe individually, use <code class="docutils literal notranslate"><span class="pre">tables[0].df</span></code>.</p>
+<p>Note that <strong>camelot</strong> is not perfect–so it can produce a report on how it did when it tried to extract each table, which includes an accuracy score. This is found using, for example, <code class="docutils literal notranslate"><span class="pre">tables[0].parsing_report</span></code>.</p>
 </div>
 <div class="section" id="other-useful-pdf-packages">
 <h3><span class="section-number">4.5.3. </span>Other useful PDF packages<a class="headerlink" href="#other-useful-pdf-packages" title="Permalink to this headline">¶</a></h3>

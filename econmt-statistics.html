@@ -190,7 +190,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
-   Intro to Mathematics with Code
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -213,6 +213,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="econmt-regression.html">
    3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Geospatial
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-intro.html">
+   1. Intro to Geo-Spatial Analysis
   </a>
  </li>
 </ul>
@@ -455,7 +467,7 @@
 <h1><span class="section-number">2. </span>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <a class="bibtex reference internal" href="zreferences.html#vallat2018pingouin" id="id1">[7]</a>.</p>
+<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <span id="id1">[<a class="reference internal" href="zreferences.html#id4"><span>6</span></a>]</span>.</p>
 <div class="section" id="notation-and-basic-definitions">
 <h3><span class="section-number">2.1.1. </span>Notation and basic definitions<a class="headerlink" href="#notation-and-basic-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth and represent parameters. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Sometimes Greek letters will stand in for vectors of parameters. Most of the time, upper case Latin characters such as <span class="math notranslate nohighlight">\(X\)</span> will represent random variables (which could have more than one dimension). Lower case letters from the Latin alphabet denote realised data, for instance <span class="math notranslate nohighlight">\(x\)</span> (which again could be multi-dimensional).  Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{n} \displaystyle\sum_{i} x_i\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is number of samples. Parameters are given following a vertical bar, for example if <span class="math notranslate nohighlight">\(f(x|\mu, \sigma)\)</span> is a probability density function, the vertical line indicates that its parameters are <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>. The set of distributions with densities <span class="math notranslate nohighlight">\(f_\theta(x)\)</span>, <span class="math notranslate nohighlight">\(\theta \in \Theta\)</span> is called a parametric family, eg there is a family of different distributions that are parametrised by <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -483,6 +495,13 @@
 <span class="c1"># Set seed for random numbers</span>
 <span class="n">seed_for_prng</span> <span class="o">=</span> <span class="mi">78557</span>
 <span class="n">prng</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">PCG64</span><span class="p">(</span><span class="n">seed_for_prng</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/outdated/utils.py:14: OutdatedPackageWarning: The package pingouin is out of date. Your version is 0.3.9, the latest is 0.3.10.
+Set the environment variable OUTDATED_IGNORE=1 to disable these warnings.
+  return warn(
 </pre></div>
 </div>
 </div>
