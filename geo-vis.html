@@ -1,0 +1,1484 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Geo-Spatial Visualisation &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/geo-vis.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Coming from Stata" href="coming-from-stata.html" />
+    <link rel="prev" title="1. Intro to Geo-Spatial Analysis" href="geo-intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/geo-vis.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Geo-Spatial Visualisation" />
+<meta property="og:description" content="Geo-Spatial Visualisation  Introduction  In this chapter, you’ll learn the basics of geospatial visualisation using code. If you’re new to geospatial analysis, " />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-preliminaries.html">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basics-of-coding.html">
+   2. Basics of Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-quickstart.html">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-intro.html">
+   2. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-read-and-write.html">
+   3. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   4. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   5. Advanced Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-intro.html">
+   1. Intro to Data Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-common-plots.html">
+   2. Common Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Best practice
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practice-coding.html">
+   1. Best Practice in Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-statistics.html">
+   2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Geospatial
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-intro.html">
+   1. Intro to Geo-Spatial Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/geo-vis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgeo-vis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/geo-vis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/geo-vis.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports-and-packages">
+     2.1.1. Imports and packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maps">
+   2.2. Maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choropleths">
+   2.3. Choropleths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cartogram">
+   2.4. Cartogram
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quadtree">
+   2.5. Quadtree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kde-plot">
+   2.6. KDE plot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-basemaps">
+   2.7. Using basemaps
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contextily">
+     2.7.1. Contextily
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatio-temporal-plots">
+   2.8. Spatio-Temporal Plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-maps">
+   2.9. Interactive maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#static-maps">
+   2.10. Static maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   2.11. Review
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="geo-spatial-visualisation">
+<h1><span class="section-number">2. </span>Geo-Spatial Visualisation<a class="headerlink" href="#geo-spatial-visualisation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, you’ll learn the basics of geospatial visualisation using code. If you’re new to geospatial analysis, you should look at the introduction page first.</p>
+<p>You should be aware when following this chapter that installing geographic analysis packages isn’t always the easiest and things can and do go wrong! (Some geospatial analysis courses recommend running everything in a Docker container.)</p>
+<div class="section" id="imports-and-packages">
+<h3><span class="section-number">2.1.1. </span>Imports and packages<a class="headerlink" href="#imports-and-packages" title="Permalink to this headline">¶</a></h3>
+<p>We’ll be using <a class="reference external" href="https://geopandas.org/index.html"><strong>geopandas</strong></a>, the go-to package for vector spatial analysis in Python. The easiest way to install this package is using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">geopandas</span></code>; if you want to install it via pip then look at the <a class="reference external" href="https://geopandas.org/install.html">install instructions</a>.</p>
+<p>Let’s import some of the packages we’ll be using:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO hide cell</span>
+<span class="c1"># Set max rows displayed for readability</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># Plot settings</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;plot_style.txt&#39;</span><span class="p">)</span>
+<span class="c1"># For this page, use data limits and bigger default fig size</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">({</span><span class="s1">&#39;axes.autolimit_mode&#39;</span><span class="p">:</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+               <span class="s1">&#39;figure.dpi&#39;</span><span class="p">:</span> <span class="mi">125</span><span class="p">,</span>
+               <span class="s1">&#39;patch.linewidth&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="maps">
+<h2><span class="section-number">2.2. </span>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve looked at the introductory page on geospatial analysis, you’ll know it’s easy to make basic maps: you just need to load a shapefile and use the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;geo&#39;</span><span class="p">,</span> <span class="s1">&#39;uk_lad&#39;</span><span class="p">,</span> <span class="s1">&#39;Local_Authority_Districts__May_2020__UK_BUC.shp&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_5_0.png" src="_images/geo-vis_5_0.png" />
+</div>
+</div>
+<p>As it goes, this is not very attractive, so let’s see some options for customisation that will make it a little better. It’s rare that you’ll want to include the axes on maps, and these can be turned off by turning everything to do with the axes off. There are two ways to do further manipulations of the figure axis: calling plot returns an axis object or we can create one and then pass <code class="docutils literal notranslate"><span class="pre">ax=ax_name</span></code> to plot as a keyword argument. Colour can be changed using the <code class="docutils literal notranslate"><span class="pre">color=</span></code> keyword.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2ca25f&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_7_0.png" src="_images/geo-vis_7_0.png" />
+</div>
+</div>
+<p>The lines that divide up the different local authority districts are faint. They can be controlled with the <code class="docutils literal notranslate"><span class="pre">edgecolor</span></code> and <code class="docutils literal notranslate"><span class="pre">linewidth</span></code> keywords. We can also change the background using the <code class="docutils literal notranslate"><span class="pre">fig.patch.set_facecolor</span></code> method, and add a scale using an extra package, <a class="reference external" href="https://github.com/ppinard/matplotlib-scalebar"><strong>matplotlib-scalebar</strong></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib_scalebar.scalebar</span> <span class="kn">import</span> <span class="n">ScaleBar</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#2ca25f&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+        <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;#9ecae1&#39;</span><span class="p">)</span>
+<span class="c1"># Create scale bar</span>
+<span class="n">scalebar</span> <span class="o">=</span> <span class="n">ScaleBar</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">box_alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="n">location</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="n">length_fraction</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+                    <span class="n">font_properties</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">scalebar</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_9_0.png" src="_images/geo-vis_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="choropleths">
+<h2><span class="section-number">2.3. </span>Choropleths<a class="headerlink" href="#choropleths" title="Permalink to this headline">¶</a></h2>
+<p>A choropleth map shows different areas in colours according to a statistic that represents an aggregate summary of a geographic characteristic within each area. Population density or per-capita income are good examples of characteristics. The statistic shown might be unique values, equal intervals, quantiles, or the Fisher-Jenks natural breaks.</p>
+<p>First, though, let’s create a basic choropleth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pay</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;geo&#39;</span><span class="p">,</span> <span class="s1">&#39;ashe_lad_median_pay_2020.csv&#39;</span><span class="p">))</span>
+<span class="n">pay</span> <span class="o">=</span> <span class="n">pay</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;lad&#39;</span><span class="p">:</span> <span class="s1">&#39;LAD20CD&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pay</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LAD20CD&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;Log median weekly pay (2020 GBP)&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Median weekly pay (2020 GBP)&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;shrink&#39;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">},</span>
+        <span class="n">vmin</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+        <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_14_0.png" src="_images/geo-vis_14_0.png" />
+</div>
+</div>
+<p>This used <strong>geopandas</strong>. There’s a dedicated plotting tool called <span class="xref myst"><strong>geoplot</strong></span> as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geoplot</span> <span class="k">as</span> <span class="nn">gplt</span>
+<span class="kn">import</span> <span class="nn">geoplot.crs</span> <span class="k">as</span> <span class="nn">gcrs</span>
+
+<span class="n">gplt</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                <span class="n">projection</span><span class="o">=</span><span class="n">gcrs</span><span class="o">.</span><span class="n">AlbersEqualArea</span><span class="p">(),</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_16_0.png" src="_images/geo-vis_16_0.png" />
+</div>
+</div>
+<p>Another way to create choropleths is to split the variable into a distinct number of ranges according to a scheme. In the below, we use <code class="docutils literal notranslate"><span class="pre">scheme='Quantiles'</span></code> with <code class="docutils literal notranslate"><span class="pre">k=4</span></code> to produce a choropleth with four distinct groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;Quantiles&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_18_0.png" src="_images/geo-vis_18_0.png" />
+</div>
+</div>
+<p>A third kind of choropleth has distinct levels based on pre-existing categories. Our data doesn’t have any of those, so let’s generate some just to show how it works.</p>
+<p><a class="reference external" href="https://darribas.org/gds_course/content/bD/lab_D.html">https://darribas.org/gds_course/content/bD/lab_D.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cat_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LAD20CD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Conf %</th>
+      <th>Log median weekly pay (2020 GBP)</th>
+      <th>cat_col</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.5</td>
+      <td>6.310100</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7.5</td>
+      <td>6.249010</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.6</td>
+      <td>6.220391</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6.3</td>
+      <td>6.325434</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.7</td>
+      <td>6.192158</td>
+      <td>E</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;cat_col&#39;</span><span class="p">,</span> <span class="n">categorical</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;frameon&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_22_0.png" src="_images/geo-vis_22_0.png" />
+</div>
+</div>
+<p>This is useful for, for example, plotting streets of different types.</p>
+</div>
+<div class="section" id="cartogram">
+<h2><span class="section-number">2.4. </span>Cartogram<a class="headerlink" href="#cartogram" title="Permalink to this headline">¶</a></h2>
+<p>A cartogram is a thematic map in which the geographic size of regions is altered to be proportional to a variable. The shape of the region is warped or shrunk. They can be especially useful when trying to refectly the fact that regions with the largest area do not always have proportionate variable values. Actually, due to the tendency of the shape of political regions to reflect choices made 100s or 1000s of years previously, and for urban areas to be under separate political arrangements, quite often economic variables are anti-correlated with areas.</p>
+<p>A cartogram of pay in Wales demonstrates this. Some areas with higer median incomes, such as Monmouthshire and Conwy, almost completely fill their potential region areas. But others, including Blaenau Gwent and Powys, are shown much smaller than their actual areas.</p>
+<p>The important part of the plot below is the <code class="docutils literal notranslate"><span class="pre">gplt.cartogram</span></code> but, along with other bits to make the plot look better, we’re adding <code class="docutils literal notranslate"><span class="pre">gplt.polyplot</span></code> to show what the true size of each region is when it is not proportional to another variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span>
+<span class="c1"># Get a representative point for each region to annotate</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;coords&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">representative_point</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">coords</span><span class="p">[:][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df_wales</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LAD20CD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">125</span><span class="p">)</span>
+<span class="n">gplt</span><span class="o">.</span><span class="n">cartogram</span><span class="p">(</span>
+    <span class="n">df_wales</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;Median weekly pay (2020 GBP)&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span>
+<span class="p">)</span>
+<span class="n">gplt</span><span class="o">.</span><span class="n">polyplot</span><span class="p">(</span><span class="n">df_wales</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+<span class="c1"># Add text annotation to the largest polygons</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_wales</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">area</span><span class="o">&gt;</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;LAD20NM&#39;</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;coords&#39;</span><span class="p">],</span>
+                    <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-13-2d5c9c1af3ad&gt;:13: UserWarning: Geometry is in a geographic CRS. Results from &#39;area&#39; are likely incorrect. Use &#39;GeoSeries.to_crs()&#39; to re-project geometries to a projected CRS before this operation.
+
+  if(row[&#39;geometry&#39;].area&gt;np.quantile(df.area, q=0.7)):
+</pre></div>
+</div>
+<img alt="_images/geo-vis_25_1.png" src="_images/geo-vis_25_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="quadtree">
+<h2><span class="section-number">2.5. </span>Quadtree<a class="headerlink" href="#quadtree" title="Permalink to this headline">¶</a></h2>
+<p>A quadtree is a tree data structure that splits a space into increasingly small rectangular fractals. This plot takes a sequence of point or polygonal geometries as input and builds a choropleth out of their centroids. Quadtrees are good at illustrating density, and are more flexible than a conventional choropleth: remember that choropleths can be the result of binning point occurrences into geographical regions or of data that are already aggregated to the region level. Quadtree is not a replacement for the latter, because the data are already aggregated. But, if you have point data, quadtree allows you to aggregate them <em>not</em> according to a pre-defined geography. Given pre-defined geographies such as Local Authority Districts may not be useful for the question you’re thinking about (or worse could be downright misleading), this is a very helpful property.</p>
+<p>We’ll use an example from the <strong>geoplot</strong> documentation to illustrate them. The most basic layer just turns a series of points into a quadtree. We’ll use the lats and longs of collisions in New York:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collisions</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gplt</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;nyc_collision_factors&#39;</span><span class="p">))</span>
+<span class="n">gplt</span><span class="o">.</span><span class="n">quadtree</span><span class="p">(</span><span class="n">collisions</span><span class="p">,</span> <span class="n">nmax</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_27_0.png" src="_images/geo-vis_27_0.png" />
+</div>
+</div>
+<p>Now let’s project this onto a background of NY’s boroughs. Because this is computationally expensive, we’ll use the <code class="docutils literal notranslate"><span class="pre">simplify</span></code> method to reduce the complexity of the geometries we’re using.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boroughs</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gplt</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;nyc_boroughs&#39;</span><span class="p">))</span>
+<span class="n">gplt</span><span class="o">.</span><span class="n">quadtree</span><span class="p">(</span>
+    <span class="n">collisions</span><span class="p">,</span> <span class="n">nmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">projection</span><span class="o">=</span><span class="n">gcrs</span><span class="o">.</span><span class="n">AlbersEqualArea</span><span class="p">(),</span> <span class="n">clip</span><span class="o">=</span><span class="n">boroughs</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/geopandas/geoseries.py:371: UserWarning: GeoSeries.isna() previously returned True for both missing (None) and empty geometries. Now, it only returns True for missing values. Since the calling GeoSeries contains empty geometries, the result has changed compared to previous versions of GeoPandas.
+Given a GeoSeries &#39;s&#39;, you can use &#39;s.is_empty | s.isna()&#39; to get back the old behaviour.
+
+To further ignore this warning, you can do: 
+import warnings; warnings.filterwarnings(&#39;ignore&#39;, &#39;GeoSeries.isna&#39;, UserWarning)
+  return self.isna()
+</pre></div>
+</div>
+<img alt="_images/geo-vis_29_1.png" src="_images/geo-vis_29_1.png" />
+</div>
+</div>
+<p>We can enjoy the best of a choropleth’s ability to show us magnitudes <em>alongside</em> the ability of quadtree to show us geographic density through smaller rectangles:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gplt</span><span class="o">.</span><span class="n">quadtree</span><span class="p">(</span>
+    <span class="n">collisions</span><span class="p">,</span> <span class="n">nmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">agg</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+    <span class="n">projection</span><span class="o">=</span><span class="n">gcrs</span><span class="o">.</span><span class="n">AlbersEqualArea</span><span class="p">(),</span> <span class="n">clip</span><span class="o">=</span><span class="n">boroughs</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;NUMBER OF PEDESTRIANS INJURED&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/geopandas/geoseries.py:371: UserWarning: GeoSeries.isna() previously returned True for both missing (None) and empty geometries. Now, it only returns True for missing values. Since the calling GeoSeries contains empty geometries, the result has changed compared to previous versions of GeoPandas.
+Given a GeoSeries &#39;s&#39;, you can use &#39;s.is_empty | s.isna()&#39; to get back the old behaviour.
+
+To further ignore this warning, you can do: 
+import warnings; warnings.filterwarnings(&#39;ignore&#39;, &#39;GeoSeries.isna&#39;, UserWarning)
+  return self.isna()
+</pre></div>
+</div>
+<img alt="_images/geo-vis_31_1.png" src="_images/geo-vis_31_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="kde-plot">
+<h2><span class="section-number">2.6. </span>KDE plot<a class="headerlink" href="#kde-plot" title="Permalink to this headline">¶</a></h2>
+<p>You probably know kernel density estimation from 1D distribution functions, but there’s no reason not to have the same fun in 2D. Taking the collisions data again, below is an example for New York. The <code class="docutils literal notranslate"><span class="pre">thresh=0</span></code> keyword argument just tells the KDE estimation to leave no empty whitespace where the estimated values are at their lowest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">gplt</span><span class="o">.</span><span class="n">polyplot</span><span class="p">(</span><span class="n">boroughs</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">gcrs</span><span class="o">.</span><span class="n">AlbersEqualArea</span><span class="p">(),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gplt</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">collisions</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="n">boroughs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variable as a keyword arg: y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/seaborn/distributions.py:1676: UserWarning: `shade_lowest` is now deprecated in favor of `thresh`. Setting `thresh=0`, but please update your code.
+  warnings.warn(msg, UserWarning)
+</pre></div>
+</div>
+<img alt="_images/geo-vis_33_1.png" src="_images/geo-vis_33_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="using-basemaps">
+<h2><span class="section-number">2.7. </span>Using basemaps<a class="headerlink" href="#using-basemaps" title="Permalink to this headline">¶</a></h2>
+<p>All of the examples we’ve seen have just been lines around coloured polygons. This is, fortunately, not how most maps look. Instead, they have lots of detail or other features. Sometimes you want to incorporate other features into your map, or just give some context to where things are beyond the boundaries of your polygons. Enter different basemaps, ie different backgrounds for you to draw the geospatial data on top of.</p>
+<p>There are a few options to do this. Let’s begin with <strong>geoplot</strong>, the package from the examples above. It has projection called <code class="docutils literal notranslate"><span class="pre">WebMercator</span></code> that is a ‘real’ map. It’s easiest to illustrate with an example; let’s use Wales again. But the whole point is that we can combine this map with other things, so we’ll do a few points to show where some places are: LLandudno, Cardiff, Rhyll, Newport, and St Davids. St Davids is the smallest city in Britain, and we’ll make the points proportional to population, so you may have to squint to see it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wales_places</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cardiff&#39;</span><span class="p">,</span> <span class="s1">&#39;Llandudno&#39;</span><span class="p">,</span> <span class="s1">&#39;Rhyl&#39;</span><span class="p">,</span> <span class="s1">&#39;Newport&#39;</span><span class="p">,</span> <span class="s1">&#39;St Davids&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">51.481583</span><span class="p">,</span> <span class="mf">53.3241</span><span class="p">,</span> <span class="mf">53.3191</span><span class="p">,</span> <span class="mf">51.5842</span><span class="p">,</span> <span class="mf">51.8812</span><span class="p">],</span>
+                <span class="s1">&#39;lon&#39;</span><span class="p">:</span>	<span class="p">[</span><span class="o">-</span><span class="mf">3.179090</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.8276</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.4916</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.9977</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.2660</span><span class="p">],</span>
+                <span class="s1">&#39;pop&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">335145</span><span class="p">,</span> <span class="mi">20701</span><span class="p">,</span> <span class="mi">25149</span><span class="p">,</span> <span class="mi">145700</span><span class="p">,</span> <span class="mi">1600</span><span class="p">]}</span>
+<span class="n">wdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">wales_places</span><span class="p">)</span>
+<span class="n">gwdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">wdf</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">wdf</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">wdf</span><span class="o">.</span><span class="n">lat</span><span class="p">))</span>
+<span class="n">gwdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>pop</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cardiff</td>
+      <td>51.481583</td>
+      <td>-3.17909</td>
+      <td>335145</td>
+      <td>POINT (-3.17909 51.48158)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Llandudno</td>
+      <td>53.324100</td>
+      <td>-3.82760</td>
+      <td>20701</td>
+      <td>POINT (-3.82760 53.32410)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Rhyl</td>
+      <td>53.319100</td>
+      <td>-3.49160</td>
+      <td>25149</td>
+      <td>POINT (-3.49160 53.31910)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Newport</td>
+      <td>51.584200</td>
+      <td>-2.99770</td>
+      <td>145700</td>
+      <td>POINT (-2.99770 51.58420)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>St Davids</td>
+      <td>51.881200</td>
+      <td>-5.26600</td>
+      <td>1600</td>
+      <td>POINT (-5.26600 51.88120)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create basemap</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">gplt</span><span class="o">.</span><span class="n">webmap</span><span class="p">(</span><span class="n">df_wales</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">gcrs</span><span class="o">.</span><span class="n">WebMercator</span><span class="p">())</span>
+<span class="c1"># Add points for places</span>
+<span class="n">gplt</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+    <span class="n">gwdf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="n">gwdf</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">300</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_36_0.png" src="_images/geo-vis_36_0.png" />
+</div>
+</div>
+<div class="section" id="contextily">
+<h3><span class="section-number">2.7.1. </span>Contextily<a class="headerlink" href="#contextily" title="Permalink to this headline">¶</a></h3>
+<p><strong>geoplot</strong> has some basic functionality for basemaps but the <a class="reference external" href="https://contextily.readthedocs.io/en/latest/intro_guide.html"><strong>contextlily</strong></a> package provides a whole lot more flexibility and is solely focused on different ‘context tiles’ for your map. It’s also designed to work with <strong>geopandas</strong> (it’s built by the same people) and the syntax is quite similar to what you’ve seen already.</p>
+<p>Let’s see an example of it in action. We’ll ask for a bounding box around a place we’re interested in, London’s Canary Wharf. The option that brings in different basemaps is the <code class="docutils literal notranslate"><span class="pre">source=</span></code> keyword argument. There are a range of sources of basemaps but the real magic is that, given a location, <strong>contextily</strong> <em>downloads a background map for you</em>. Pretty cool. There is a full list of providers <a class="reference external" href="https://contextily.readthedocs.io/en/latest/providers_deepdive.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+
+<span class="n">west</span><span class="p">,</span> <span class="n">south</span><span class="p">,</span> <span class="n">east</span><span class="p">,</span> <span class="n">north</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="o">-</span><span class="mf">0.030251</span><span class="p">,</span>
+    <span class="mf">51.499019</span><span class="p">,</span>
+    <span class="mf">0.002017</span><span class="p">,</span>
+    <span class="mf">51.509511</span>
+             <span class="p">)</span>
+<span class="n">cw_img</span><span class="p">,</span> <span class="n">cw_ext</span> <span class="o">=</span> <span class="n">cx</span><span class="o">.</span><span class="n">bounds2img</span><span class="p">(</span><span class="n">west</span><span class="p">,</span> <span class="n">south</span><span class="p">,</span>
+                               <span class="n">east</span><span class="p">,</span> <span class="n">north</span><span class="p">,</span>
+                               <span class="n">ll</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                               <span class="n">source</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Stamen</span><span class="o">.</span><span class="n">Toner</span>
+                            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because the map gets downloaded when you make this request, it takes a long time the first time it’s run. But the map is locally cached so that, if you call the same function again, it will be much faster the second time. Let’s plot the map out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cw_img</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">cw_ext</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_40_0.png" src="_images/geo-vis_40_0.png" />
+</div>
+</div>
+<p>You can also get a map through a text search, though be warned you may get another place with the same name in a different region. You can do this type of map-grab using <code class="docutils literal notranslate"><span class="pre">cx.Place(&quot;...&quot;,</span> <span class="pre">source=...)</span></code>.</p>
+<p>Okay, it’s great to download a map but what about combining it with some useful info? Well, we can do that too. Let’s use <strong>osmnx</strong> to get some data on coffee shops in an area more tightly focused around Canary Wharf. We’ll then pop these onto a map of the area.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+
+<span class="n">coffee_shops</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geometries_from_place</span><span class="p">(</span><span class="s1">&#39;Canary Wharf&#39;</span><span class="p">,</span>
+                                       <span class="n">tags</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;amenity&#39;</span><span class="p">:</span><span class="s1">&#39;cafe&#39;</span><span class="p">},</span>
+                                       <span class="n">buffer_dist</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">coffee_shops</span> <span class="o">=</span> <span class="n">coffee_shops</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">coffee_shops</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+                  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                  <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">coffee_shops</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_string</span><span class="p">(),</span> <span class="n">source</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_43_0.png" src="_images/geo-vis_43_0.png" />
+</div>
+</div>
+<p>You can also add boundary and polygon objects to <strong>contextily</strong> basemaps.</p>
+</div>
+</div>
+<div class="section" id="spatio-temporal-plots">
+<h2><span class="section-number">2.8. </span>Spatio-Temporal Plots<a class="headerlink" href="#spatio-temporal-plots" title="Permalink to this headline">¶</a></h2>
+<p>This is really going to combine two things we already have at our fingertips: space and time. There are various ways we could approach this. The first we’ll see is to do a series of <em>small multiples</em>, also known as a <em>facet chart</em>, and advance time by one unit in each plot. The second is just a heat map in which the two dimensions are space and time.</p>
+<p>The data we’ll be using tell a tragic story. They are counts of deaths that occurred within 28 days of (a known case of) coronavirus organised by the death date. Note that there are various issues with these data and they do not tell the whole story of coronavirus by any means. But this is just an illustrative example.</p>
+<p>We’ll just bring in data for London. They don’t come with their own geometry, so our first job is to merge them onto our existing UK local authority geodataframe, which does have a geometry. Fortunately, both data sets have the ‘LAD20CD’ and ‘LAD20NM’ columns, which makes this easier than it might have been.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LAD20CD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;E09&#39;</span><span class="p">)]</span>
+<span class="n">cv_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;geo&#39;</span><span class="p">,</span> <span class="s1">&#39;cv_ldn_deaths.parquet&#39;</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">cv_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LAD20CD&#39;</span><span class="p">,</span> <span class="s1">&#39;LAD20NM&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>OBJECTID</th>
+      <th>LAD20CD</th>
+      <th>LAD20NM</th>
+      <th>LAD20NMW</th>
+      <th>BNG_E</th>
+      <th>BNG_N</th>
+      <th>LONG</th>
+      <th>LAT</th>
+      <th>Shape__Are</th>
+      <th>Shape__Len</th>
+      <th>geometry</th>
+      <th>name</th>
+      <th>Median weekly pay (2020 GBP)</th>
+      <th>Conf %</th>
+      <th>Log median weekly pay (2020 GBP)</th>
+      <th>cat_col</th>
+      <th>coords</th>
+      <th>date</th>
+      <th>newDeaths28DaysByDeathDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>283</td>
+      <td>E09000002</td>
+      <td>Barking and Dagenham</td>
+      <td>None</td>
+      <td>547757</td>
+      <td>185111</td>
+      <td>0.129479</td>
+      <td>51.5456</td>
+      <td>3.635701e+07</td>
+      <td>31245.950962</td>
+      <td>POLYGON ((0.16012 51.51178, 0.15874 51.51227, ...</td>
+      <td>Barking and Dagenham</td>
+      <td>609.1</td>
+      <td>5.7</td>
+      <td>6.411982</td>
+      <td>E</td>
+      <td>(0.15149832858864332, 51.55501166518745)</td>
+      <td>2020-03-31</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>283</td>
+      <td>E09000002</td>
+      <td>Barking and Dagenham</td>
+      <td>None</td>
+      <td>547757</td>
+      <td>185111</td>
+      <td>0.129479</td>
+      <td>51.5456</td>
+      <td>3.635701e+07</td>
+      <td>31245.950962</td>
+      <td>POLYGON ((0.16012 51.51178, 0.15874 51.51227, ...</td>
+      <td>Barking and Dagenham</td>
+      <td>609.1</td>
+      <td>5.7</td>
+      <td>6.411982</td>
+      <td>E</td>
+      <td>(0.15149832858864332, 51.55501166518745)</td>
+      <td>2020-04-30</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>283</td>
+      <td>E09000002</td>
+      <td>Barking and Dagenham</td>
+      <td>None</td>
+      <td>547757</td>
+      <td>185111</td>
+      <td>0.129479</td>
+      <td>51.5456</td>
+      <td>3.635701e+07</td>
+      <td>31245.950962</td>
+      <td>POLYGON ((0.16012 51.51178, 0.15874 51.51227, ...</td>
+      <td>Barking and Dagenham</td>
+      <td>609.1</td>
+      <td>5.7</td>
+      <td>6.411982</td>
+      <td>E</td>
+      <td>(0.15149832858864332, 51.55501166518745)</td>
+      <td>2020-05-31</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>283</td>
+      <td>E09000002</td>
+      <td>Barking and Dagenham</td>
+      <td>None</td>
+      <td>547757</td>
+      <td>185111</td>
+      <td>0.129479</td>
+      <td>51.5456</td>
+      <td>3.635701e+07</td>
+      <td>31245.950962</td>
+      <td>POLYGON ((0.16012 51.51178, 0.15874 51.51227, ...</td>
+      <td>Barking and Dagenham</td>
+      <td>609.1</td>
+      <td>5.7</td>
+      <td>6.411982</td>
+      <td>E</td>
+      <td>(0.15149832858864332, 51.55501166518745)</td>
+      <td>2020-06-30</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>283</td>
+      <td>E09000002</td>
+      <td>Barking and Dagenham</td>
+      <td>None</td>
+      <td>547757</td>
+      <td>185111</td>
+      <td>0.129479</td>
+      <td>51.5456</td>
+      <td>3.635701e+07</td>
+      <td>31245.950962</td>
+      <td>POLYGON ((0.16012 51.51178, 0.15874 51.51227, ...</td>
+      <td>Barking and Dagenham</td>
+      <td>609.1</td>
+      <td>5.7</td>
+      <td>6.411982</td>
+      <td>E</td>
+      <td>(0.15149832858864332, 51.55501166518745)</td>
+      <td>2020-07-31</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we will create the small multiple chart. There’s quite a lot going on in the below so let’s talk through the moving pieces. There’s a perpectually uniform heatmap from the <strong>colorcet</strong> package that ranges between a min of 0 and max of 250 as set by <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code>. To plot every one of the 12 time periods, <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> is called with <code class="docutils literal notranslate"><span class="pre">nrows=4</span></code> and <code class="docutils literal notranslate"><span class="pre">ncols=3</span></code> for 12 axes in total. We <code class="docutils literal notranslate"><span class="pre">.flatten()</span></code> the axes to make it easier to iterate over them. We turn the legend off for all but one axis. With all of this set up, we iterate through the unique values of the date column, which is at monthly frequency, and plot each in turn on a separate axis oject. For each, we also add a title that is the month and year.</p>
+<p>The overall effect is quite powerful: you can really see how deaths peaked around April 2020 and January 2021, having begun to pick up in November, but you can also see the long period of relatively few deaths 28 days after diagnosis during the summer months.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">colorcet</span> <span class="k">as</span> <span class="nn">cc</span>
+
+<span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;newDeaths28DaysByDeathDate&#39;</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">legend_choice</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">legend_choice</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">date</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+    <span class="n">df_cut</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">date</span><span class="p">]</span>
+    <span class="n">df_cut</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">column</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;shrink&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">},</span>
+                <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">vmax</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+                <span class="n">legend</span><span class="o">=</span><span class="n">legend_choice</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">cc</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">CET_L19</span><span class="p">,</span>
+                <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%B %Y&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_48_0.png" src="_images/geo-vis_48_0.png" />
+</div>
+</div>
+<p>Another way to show time and space is using a heatmap. The easiest way to plot a heatmap is to put the data into wide format first. To ensure we have nice labels though, we’re going to cast the datetime variable in a month and year in the format ‘Jan 20’ using <code class="docutils literal notranslate"><span class="pre">strftime</span></code> first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%b </span><span class="se">\n</span><span class="s2"> %y&quot;</span><span class="p">))</span>
+<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="s2">&quot;LAD20NM&quot;</span><span class="p">,</span> <span class="s2">&quot;newDeaths28DaysByDeathDate&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># Puts the datetimes in the correct order</span>
+<span class="n">hmap_df</span> <span class="o">=</span> <span class="n">hmap_df</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())]</span>
+<span class="n">hmap_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Time</th>
+      <th>Mar \n 20</th>
+      <th>Apr \n 20</th>
+      <th>May \n 20</th>
+      <th>Jun \n 20</th>
+      <th>Jul \n 20</th>
+      <th>Aug \n 20</th>
+      <th>Sep \n 20</th>
+      <th>Oct \n 20</th>
+      <th>Nov \n 20</th>
+      <th>Dec \n 20</th>
+      <th>Jan \n 21</th>
+      <th>Feb \n 21</th>
+    </tr>
+    <tr>
+      <th>LAD20NM</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Barking and Dagenham</th>
+      <td>29</td>
+      <td>66</td>
+      <td>9</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>6</td>
+      <td>15</td>
+      <td>49</td>
+      <td>94</td>
+      <td>147</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>Barnet</th>
+      <td>81</td>
+      <td>213</td>
+      <td>22</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>8</td>
+      <td>34</td>
+      <td>76</td>
+      <td>241</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th>Bexley</th>
+      <td>29</td>
+      <td>107</td>
+      <td>32</td>
+      <td>8</td>
+      <td>8</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>40</td>
+      <td>63</td>
+      <td>204</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>Brent</th>
+      <td>79</td>
+      <td>273</td>
+      <td>26</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>9</td>
+      <td>11</td>
+      <td>49</td>
+      <td>182</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>Bromley</th>
+      <td>46</td>
+      <td>146</td>
+      <td>51</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>5</td>
+      <td>10</td>
+      <td>49</td>
+      <td>225</td>
+      <td>57</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we have the data where we want it, we can call the <code class="docutils literal notranslate"><span class="pre">ax.imshow</span></code> method with a colourmap and set the labels to the index and columns in order to show how, for each London Borough, the number of deaths has changed over time. Note that, unlike the geospatial map, this does not capture the linkages in space very well: but it arguably does a better job of capturing linkages in time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hmap_df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cc</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">CET_L19</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hmap_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hmap_df</span><span class="o">.</span><span class="n">index</span><span class="p">)))</span>
+<span class="c1"># Labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">hmap_df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">hmap_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/geo-vis_52_0.png" src="_images/geo-vis_52_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="interactive-maps">
+<h2><span class="section-number">2.9. </span>Interactive maps<a class="headerlink" href="#interactive-maps" title="Permalink to this headline">¶</a></h2>
+<p>We’ll use <a class="reference external" href="https://python-visualization.github.io/folium/index.html"><strong>folium</strong></a>, a wrapper for the leaflet javascript library, to create interactive maps that we can layer information on top of. The library has a number of built-in tilesets from OpenStreetMap, Mapbox, and Stamen, and supports custom tilesets too. If it has a disadvantage, it’s that it doesn’t play that nicely with <strong>geopandas</strong>. It isn’t easy to create an interactive choropleth using a <strong>geopandas</strong> dataframe, for example. However, choropleths can be added as a layer from a URL that points to a geoJSON file.</p>
+<p>In the simple example below, we’ll do two things: create a basemap showing the City of London and add some markers to it that show new information on a mouse hover and when clicked. Let’s put markers down for the places to get coffee in the serenity of a City church.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">folium</span>
+
+<span class="c1"># create data for markers</span>
+<span class="n">caff_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Host Coffee&#39;</span><span class="p">,</span> <span class="s1">&#39;Cosy Coffee Corner&#39;</span><span class="p">,</span> <span class="s1">&#39;The Wren Coffee&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mf">51.5128</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0933</span><span class="p">],</span> <span class="p">[</span><span class="mf">51.5128</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0882</span><span class="p">],</span> <span class="p">[</span><span class="mf">51.512106</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.096870</span><span class="p">]]})</span>
+<span class="c1"># create hover over marker msg</span>
+<span class="n">tooltip</span> <span class="o">=</span> <span class="s2">&quot;Click here.&quot;</span>
+
+<span class="c1"># create map</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">51.5128</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0933</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="c1"># add markers to map</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">caff_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;loc&#39;</span><span class="p">],</span> <span class="n">popup</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">tooltip</span><span class="o">=</span><span class="n">tooltip</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="c1"># show map</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe src="about:blank" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" data-html=%3C%21DOCTYPE%20html%3E%0A%3Chead%3E%20%20%20%20%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22content-type%22%20content%3D%22text/html%3B%20charset%3DUTF-8%22%20/%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20L_NO_TOUCH%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L_DISABLE_3D%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%3C/script%3E%0A%20%20%20%20%0A%20%20%20%20%3Cstyle%3Ehtml%2C%20body%20%7Bwidth%3A%20100%25%3Bheight%3A%20100%25%3Bmargin%3A%200%3Bpadding%3A%200%3B%7D%3C/style%3E%0A%20%20%20%20%3Cstyle%3E%23map%20%7Bposition%3Aabsolute%3Btop%3A0%3Bbottom%3A0%3Bright%3A0%3Bleft%3A0%3B%7D%3C/style%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/npm/leaflet%401.6.0/dist/leaflet.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//code.jquery.com/jquery-1.12.4.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/npm/leaflet%401.6.0/dist/leaflet.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css%22/%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initial-scale%3D1.0%2C%20maximum-scale%3D1.0%2C%20user-scalable%3Dno%22%20/%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23map_5718a5b49e6c463f89283520b8986972%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20100.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20left%3A%200.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20top%3A%200.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/style%3E%0A%20%20%20%20%20%20%20%20%0A%3C/head%3E%0A%3Cbody%3E%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22folium-map%22%20id%3D%22map_5718a5b49e6c463f89283520b8986972%22%20%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%0A%3C/body%3E%0A%3Cscript%3E%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20map_5718a5b49e6c463f89283520b8986972%20%3D%20L.map%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22map_5718a5b49e6c463f89283520b8986972%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20center%3A%20%5B51.5128%2C%20-0.0933%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20crs%3A%20L.CRS.EPSG3857%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20zoom%3A%2016%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20zoomControl%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20preferCanvas%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20tile_layer_015304d308a24591b363dd41479efa59%20%3D%20L.tileLayer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22https%3A//%7Bs%7D.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22attribution%22%3A%20%22Data%20by%20%5Cu0026copy%3B%20%5Cu003ca%20href%3D%5C%22http%3A//openstreetmap.org%5C%22%5Cu003eOpenStreetMap%5Cu003c/a%5Cu003e%2C%20under%20%5Cu003ca%20href%3D%5C%22http%3A//www.openstreetmap.org/copyright%5C%22%5Cu003eODbL%5Cu003c/a%5Cu003e.%22%2C%20%22detectRetina%22%3A%20false%2C%20%22maxNativeZoom%22%3A%2018%2C%20%22maxZoom%22%3A%2018%2C%20%22minZoom%22%3A%200%2C%20%22noWrap%22%3A%20false%2C%20%22opacity%22%3A%201%2C%20%22subdomains%22%3A%20%22abc%22%2C%20%22tms%22%3A%20false%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_5718a5b49e6c463f89283520b8986972%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20marker_1562ca5e429b48d0b8fba90cb77d70b6%20%3D%20L.marker%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B51.5128%2C%20-0.0933%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_5718a5b49e6c463f89283520b8986972%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20var%20popup_83335ae6761f44aaa2629d175ddf7e8f%20%3D%20L.popup%28%7B%22maxWidth%22%3A%20%22100%25%22%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20html_e1936d6e98364aca99b39b45ae0019ae%20%3D%20%24%28%60%3Cdiv%20id%3D%22html_e1936d6e98364aca99b39b45ae0019ae%22%20style%3D%22width%3A%20100.0%25%3B%20height%3A%20100.0%25%3B%22%3EHost%20Coffee%3C/div%3E%60%29%5B0%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20popup_83335ae6761f44aaa2629d175ddf7e8f.setContent%28html_e1936d6e98364aca99b39b45ae0019ae%29%3B%0A%20%20%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%20%20marker_1562ca5e429b48d0b8fba90cb77d70b6.bindPopup%28popup_83335ae6761f44aaa2629d175ddf7e8f%29%0A%20%20%20%20%20%20%20%20%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20marker_1562ca5e429b48d0b8fba90cb77d70b6.bindTooltip%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%60%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Click%20here.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%60%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22sticky%22%3A%20true%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20marker_1cd2621a08e145b7a079d096f5e7854c%20%3D%20L.marker%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B51.5128%2C%20-0.0882%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_5718a5b49e6c463f89283520b8986972%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20var%20popup_a80b7da729a84ff2b8b040bec3e49582%20%3D%20L.popup%28%7B%22maxWidth%22%3A%20%22100%25%22%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20html_58e4da5028a0436ebc780419eb0a19d0%20%3D%20%24%28%60%3Cdiv%20id%3D%22html_58e4da5028a0436ebc780419eb0a19d0%22%20style%3D%22width%3A%20100.0%25%3B%20height%3A%20100.0%25%3B%22%3ECosy%20Coffee%20Corner%3C/div%3E%60%29%5B0%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20popup_a80b7da729a84ff2b8b040bec3e49582.setContent%28html_58e4da5028a0436ebc780419eb0a19d0%29%3B%0A%20%20%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%20%20marker_1cd2621a08e145b7a079d096f5e7854c.bindPopup%28popup_a80b7da729a84ff2b8b040bec3e49582%29%0A%20%20%20%20%20%20%20%20%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20marker_1cd2621a08e145b7a079d096f5e7854c.bindTooltip%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%60%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Click%20here.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%60%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22sticky%22%3A%20true%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20marker_7c34eeebbf1e41958ba495c11053f13c%20%3D%20L.marker%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B51.512106%2C%20-0.09687%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_5718a5b49e6c463f89283520b8986972%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20var%20popup_cd148b93c5ce404c8b87aeedcb0aace8%20%3D%20L.popup%28%7B%22maxWidth%22%3A%20%22100%25%22%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20html_ff2ace1632bc4dba8d4b0d1eea7cc8ae%20%3D%20%24%28%60%3Cdiv%20id%3D%22html_ff2ace1632bc4dba8d4b0d1eea7cc8ae%22%20style%3D%22width%3A%20100.0%25%3B%20height%3A%20100.0%25%3B%22%3EThe%20Wren%20Coffee%3C/div%3E%60%29%5B0%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20popup_cd148b93c5ce404c8b87aeedcb0aace8.setContent%28html_ff2ace1632bc4dba8d4b0d1eea7cc8ae%29%3B%0A%20%20%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%20%20marker_7c34eeebbf1e41958ba495c11053f13c.bindPopup%28popup_cd148b93c5ce404c8b87aeedcb0aace8%29%0A%20%20%20%20%20%20%20%20%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20marker_7c34eeebbf1e41958ba495c11053f13c.bindTooltip%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%60%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Click%20here.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%60%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22sticky%22%3A%20true%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%0A%3C/script%3E onload="this.contentDocument.open();this.contentDocument.write(    decodeURIComponent(this.getAttribute('data-html')));this.contentDocument.close();" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+<p>Folium can also be combined with a choropleth; see the <a class="reference external" href="https://python-visualization.github.io/folium/quickstart.html">documentation</a> for more information.</p>
+</div>
+<div class="section" id="static-maps">
+<h2><span class="section-number">2.10. </span>Static maps<a class="headerlink" href="#static-maps" title="Permalink to this headline">¶</a></h2>
+<p>This is an honourable mention to <a class="reference external" href="https://github.com/flopp/py-staticmaps"><strong>py-staticmaps</strong></a>, which provides the kind of tilesets we’ve seen already with <strong>contextlily</strong> and <strong>folium</strong> but includes easy methods to add:</p>
+<ul class="simple">
+<li><p>markers</p></li>
+<li><p>image (PNG) markers</p></li>
+<li><p>geodesic lines, i.e. the shortest path between two points given the geometry. These are <em>very</em> important in general relativity, where they appear as solutions to the geodesic equation  <span class="math notranslate nohighlight">\({\displaystyle {d^{2}x^{\mu } \over ds^{2}}+\Gamma ^{\mu }{}_{\alpha \beta }{dx^{\alpha } \over ds}{dx^{\beta } \over ds}=0\ }\)</span></p></li>
+<li><p>geodesic circles</p></li>
+<li><p>polygons; and</p></li>
+<li><p>GPX Tracks, i.e. the paths traced out when you record the route of a run using GPS.</p></li>
+</ul>
+</div>
+<div class="section" id="review">
+<h2><span class="section-number">2.11. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>If you know how to :</p>
+<ul class="simple">
+<li><p>✅  plot geographic data on a map;</p></li>
+<li><p>✅  plot choropleths of different kinds on maps;</p></li>
+<li><p>✅  create cartographs;</p></li>
+<li><p>✅  create quadtrees and when you might use one over a choropleth;</p></li>
+<li><p>✅  create geographic kernel density estimate plots;</p></li>
+<li><p>✅  use different basemaps in your geospatial visualisations;</p></li>
+<li><p>✅  show time and space dimensions on plots; and</p></li>
+<li><p>✅  produce interactive geospatial maps</p></li>
+</ul>
+<p>then you are well on your way to becoming a geospatial visualisation pro!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "codeforecon"
+        },
+        kernelOptions: {
+            kernelName: "codeforecon",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'codeforecon'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="geo-intro.html" title="previous page"><span class="section-number">1. </span>Intro to Geo-Spatial Analysis</a>
+    <a class='right-next' id="next-link" href="coming-from-stata.html" title="next page">Coming from Stata</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This book is available under an MIT license.
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-189705534-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

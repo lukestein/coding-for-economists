@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -54,6 +52,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/data-extraction.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -225,6 +225,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-intro.html">
    1. Intro to Geo-Spatial Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-vis.html">
+   2. Geo-Spatial Visualisation
   </a>
  </li>
 </ul>
@@ -430,6 +435,11 @@
    4.6. Text extraction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review">
+   4.7. Review
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -463,24 +473,10 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: hide cell</span>
-<span class="c1"># Set max rows displayed for readability</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set max rows displayed for readability</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># Plot settings</span>
-<span class="n">plot_style</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-                  <span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-                  <span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                  <span class="s1">&#39;figure.autolayout&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                  <span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">),</span>
-                  <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
-                  <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-                  <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-                  <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-                  <span class="s1">&#39;legend.fontsize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                  <span class="s1">&#39;mathtext.fontset&#39;</span><span class="p">:</span> <span class="s1">&#39;stix&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;STIXGeneral&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;legend.frameon&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">plot_style</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;plot_style.txt&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -893,6 +889,17 @@ Behavior Changes
 </pre></div>
 </div>
 <p>The downside is that it requires that some other (non-Python) libraries be installed and it doesn’t (yet) work on Windows.</p>
+</div>
+<div class="section" id="review">
+<h2><span class="section-number">4.7. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>If you know how to get data from:</p>
+<ul class="simple">
+<li><p>✅ the internet using a URL;</p></li>
+<li><p>✅ the internet using an API;</p></li>
+<li><p>✅ the internet using webscraping; and</p></li>
+<li><p>✅ PDFs, Microsoft Word Documents, and more, using tools like <strong>pdfminer.six</strong> and <strong>textract</strong></p></li>
+</ul>
+<p>then you have a good basic set of tools for getting the data that you need into a form you can use.</p>
 </div>
 </div>
 
