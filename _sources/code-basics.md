@@ -182,6 +182,8 @@ Below is a table of the basic arithmetic operations.
 |   `%`    |      modulo      |
 |   `@`    |     matrix multiplication |
 
+As well as the usual operators, Python supports *assignment operators*. An example of one is `x+=3`, which is equivalent to running `x = x + 3`. Pretty much all of the operators can be used in this way.
+
 
 ## Strings
 
@@ -366,9 +368,27 @@ You may wonder why both are needed given lists seem to provide a superset of fun
 
 ## Indentation
 
-You'll have seen that certain parts of the code examples are indented. Code that is part of a function, conditional clause, or loop is indented. This isn't a code style choice, it's actually what tells the language that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.
+You'll have seen that certain parts of the code examples are indented. Code that is part of a function, a conditional clause, or loop is indented. This isn't a code style choice, it's actually what tells the language that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.
 
-The standard for indentation is that each sub-statement should be indented by 4 spaces. It can be hard to keep track of these but, as usual, Visual Studio Code has you covered. Go to Settings (the cog in the bottom left-hand corner, then click Settings) and type 'Whitespace' into the search bar. Under 'Editor: Render Whitespace', select 'boundary'. This will show any whitespace that is more than one character long using faint grey dots. Each level of indentation in your Python code should now begin with four grey dots showing that it consists of four spaces.
+Here's a basic example of indentation as part of an `if` loop. The `print` statement that is indented only executes if the condition evaluates to true.
+
+```{code-cell} ipython3
+x = 10
+
+if x > 2:
+    print('x is greater than 2')
+```
+
+When functions, conditional clauses, or loops are combined together, they each cause an *increase* in the level of indentation. Here's a double indent.
+
+```{code-cell} ipython3
+if x > 2:
+    print('outer conditional cause')
+    for i in range(4):
+        print('inner loop')
+```
+
+The standard practice for indentation is that each sub-statement should be indented by 4 spaces. It can be hard to keep track of these but, as usual, Visual Studio Code has you covered. Go to Settings (the cog in the bottom left-hand corner, then click Settings) and type 'Whitespace' into the search bar. Under 'Editor: Render Whitespace', select 'boundary'. This will show any whitespace that is more than one character long using faint grey dots. Each level of indentation in your Python code should now begin with four grey dots showing that it consists of four spaces. To make it even easier, you can install the 'indent-rainbow' extension in VS Code-this shows different levels of indentation in different colours.
 
 ## Loops and list comprehensions
 
@@ -497,7 +517,7 @@ Being able to create empty containers is sometimes useful. The commands to creat
 
 ## Functions
 
-If you're an economist, I hardly need to tell you what a function is. In coding, it's much the same as in mathematics: a function has inputs, it performs its function, and it returns any outputs. Functions begin with a `def` keyword for 'define a function'. The body of the function is then indented relative to the left-most text. Function arguments are defined in brackets following the name, with different inputs separated by commas. Any outputs are given with the `return` keyword, again with different variables separated by commas. Let's see a very simple example:
+If you're an economist, I hardly need to tell you what a function is. In coding, it's much the same as in mathematics: a function has inputs, it performs its function, and it returns any outputs. Functions begin with a `def` keyword for 'define a function'. It then has a name, followed by brackets, `()`, which may contain *function arguments* and *function keyword arguments*. The body of the function is then indented relative to the left-most text. Function arguments are defined in brackets following the name, with different inputs separated by commas. Any outputs are given with the `return` keyword, again with different variables separated by commas. Let's see a very simple example:
 
 ```{code-cell} ipython3
 
@@ -622,6 +642,7 @@ plt.show();
 How would this work in practice? We would define a file 'utilities.py' that had the following:
 
 ```python
+# Contents of utilities.py file
 def really_useful_func(number):
     return number*10
 ```
@@ -645,6 +666,7 @@ print(ru_fn(30))
 Another important example is the case where you want to run 'utilities.py' as a script, but still want to borrow functions from it to run in other scripts. There's a way to do this. Let's change utilities.py to
 
 ```python
+# Contents of utilities.py file
 def really_useful_func(number):
     return number*10
 
@@ -663,7 +685,13 @@ What this says is that if we call 'utilities.py' from the command line, eg
 python utilities.py
 ```
 
-It will return `Script has run` because, by executing the script alone, we are asking for anything in the `main` block defined at the end of the file to be run. But we can still import anything from utilities into other scripts as before--and in this case it is not the main script, but an import, and so the `main` block will *not* be executed.
+It will return `Script has run` because, by executing the script alone, we are asking for anything in the `main` block defined at the end of the file to be run. But we can still import anything from utilities into other scripts as before--and in that case it is not the main script, but an import, and so the `main` block will *not* be executed.
+
+You can important several functions at once from a module (aka another script file) like this:
+
+```python
+from utilities import really_useful_func, default_func
+```
 
 ## Lambda functions
 

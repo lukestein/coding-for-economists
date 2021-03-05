@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Best Practice in Coding &#8212; Coding for Economists</title>
+    <title>1. Basics of Best Practice Coding &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,21 +52,21 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/best-practice-coding.html" />
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/wrkflow-best-practice-coding.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Intro to Mathematics with Code" href="maths-maths-coding.html" />
-    <link rel="prev" title="2. Common Plots" href="vis-common-plots.html" />
+    <link rel="next" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
+    <link rel="prev" title="3. Advanced Coding" href="code-advanced.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/best-practice-coding.html" />
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/wrkflow-best-practice-coding.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Best Practice in Coding" />
-<meta property="og:description" content="Best Practice in Coding  In this chapter, you’ll learn about some best practices for coding. As you code, you’ll be tempted to ignore these (that’s normal; we a" />
+<meta property="og:title"       content="Basics of Best Practice Coding" />
+<meta property="og:description" content="Basics of Best Practice Coding  In this chapter, you’ll learn about some best practices for coding. These will save you so much time!. Trust me.  As you code, y" />
 <meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -104,23 +104,40 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Basics
+  Coding
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="basics-preliminaries.html">
+  <a class="reference internal" href="code-preliminaries.html">
    1. Preliminaries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="basics-of-coding.html">
+  <a class="reference internal" href="code-basics.html">
    2. Basics of Coding
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="basics-of-coding.html#scope">
-   3. Scope
+  <a class="reference internal" href="code-advanced.html">
+   3. Advanced Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-advanced.html#i-am-the-walrus">
+   4. I am the Walrus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workflow
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Basics of Best Practice Coding
   </a>
  </li>
 </ul>
@@ -170,18 +187,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Best practice
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. Best Practice in Coding
   </a>
  </li>
 </ul>
@@ -308,11 +313,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/best-practice-coding.ipynb"><button type="button"
+            href="_sources/wrkflow-best-practice-coding.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/best-practice-coding.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/wrkflow-best-practice-coding.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -332,7 +337,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbest-practice-coding.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fwrkflow-best-practice-coding.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -353,7 +358,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/best-practice-coding.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/wrkflow-best-practice-coding.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -446,9 +451,10 @@
         
               <div>
                 
-  <div class="section" id="best-practice-in-coding">
-<h1><span class="section-number">1. </span>Best Practice in Coding<a class="headerlink" href="#best-practice-in-coding" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, you’ll learn about some best practices for coding. As you code, you’ll be tempted to ignore these (that’s normal; we all are). But the truth is that they will <em>save</em> time in the long run, and future you will thank past you for sticking to them.</p>
+  <div class="section" id="basics-of-best-practice-coding">
+<h1><span class="section-number">1. </span>Basics of Best Practice Coding<a class="headerlink" href="#basics-of-best-practice-coding" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, you’ll learn about some best practices for coding. <strong>These will save you <em>so much time</em>!</strong>. Trust me.</p>
+<p>As you code, you’ll be tempted to ignore these (that’s normal; we all are). But the truth is that they will <em>save</em> time in the long run, and future you will thank past you for sticking to them.</p>
 <p>The validity of your research depends, to a frightening degree, on the quality of your code. There are many ways to write code and, over the years, software developers have worked out best practices that help to make writing, using, debugging, and reading code more fun, and to make the end product higher quality. (There’s nothing worse than wading through someone else’s terrible code.)</p>
 <p><img alt="Code quality 2" src="https://imgs.xkcd.com/comics/code_quality_2.png" /></p>
 <p>Most of the time, you are going to be writing code for your co-authors or for future you. Following best practice will save you hours, and hours, and <em>hours</em> of time. You may think that by cutting out some of these practices that you’ll save time. Well, it depends how heavily you discount your future time. Regardless of your discount rate, it’s almost always worth it to follow best practices.</p>
@@ -645,8 +651,8 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="vis-common-plots.html" title="previous page"><span class="section-number">2. </span>Common Plots</a>
-    <a class='right-next' id="next-link" href="maths-maths-coding.html" title="next page"><span class="section-number">1. </span>Intro to Mathematics with Code</a>
+    <a class='left-prev' id="prev-link" href="code-advanced.html" title="previous page"><span class="section-number">3. </span>Advanced Coding</a>
+    <a class='right-next' id="next-link" href="data-analysis-quickstart.html" title="next page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

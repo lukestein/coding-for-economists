@@ -54,18 +54,18 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/basics-of-coding.html" />
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/code-basics.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
-    <link rel="prev" title="1. Preliminaries" href="basics-preliminaries.html" />
+    <link rel="next" title="3. Advanced Coding" href="code-advanced.html" />
+    <link rel="prev" title="1. Preliminaries" href="code-preliminaries.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/basics-of-coding.html" />
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/code-basics.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Basics of Coding" />
 <meta property="og:description" content="Basics of Coding  In this chapter, you’ll learn about the basics of objects, types, operations, conditions, loops, functions, and imports. These are the basic b" />
@@ -106,18 +106,40 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Basics
+  Coding
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="basics-preliminaries.html">
+  <a class="reference internal" href="code-preliminaries.html">
    1. Preliminaries
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    2. Basics of Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-advanced.html">
+   3. Advanced Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-advanced.html#i-am-the-walrus">
+   4. I am the Walrus
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-best-practice-coding.html">
+   1. Basics of Best Practice Coding
   </a>
  </li>
 </ul>
@@ -293,11 +315,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="_sources/basics-of-coding.ipynb"><button type="button"
+            href="_sources/code-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/basics-of-coding.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/code-basics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -317,7 +339,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbasics-of-coding.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcode-basics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -338,7 +360,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/basics-of-coding.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/code-basics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -809,6 +831,7 @@ one more entry
 </tr>
 </tbody>
 </table>
+<p>As well as the usual operators, Python supports <em>assignment operators</em>. An example of one is <code class="docutils literal notranslate"><span class="pre">x+=3</span></code>, which is equivalent to running <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">3</span></code>. Pretty much all of the operators can be used in this way.</p>
 </div>
 <div class="section" id="strings">
 <h2><span class="section-number">2.5. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
@@ -1110,8 +1133,44 @@ False
 </div>
 <div class="section" id="indentation">
 <h2><span class="section-number">2.9. </span>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h2>
-<p>You’ll have seen that certain parts of the code examples are indented. Code that is part of a function, conditional clause, or loop is indented. This isn’t a code style choice, it’s actually what tells the language that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.</p>
-<p>The standard for indentation is that each sub-statement should be indented by 4 spaces. It can be hard to keep track of these but, as usual, Visual Studio Code has you covered. Go to Settings (the cog in the bottom left-hand corner, then click Settings) and type ‘Whitespace’ into the search bar. Under ‘Editor: Render Whitespace’, select ‘boundary’. This will show any whitespace that is more than one character long using faint grey dots. Each level of indentation in your Python code should now begin with four grey dots showing that it consists of four spaces.</p>
+<p>You’ll have seen that certain parts of the code examples are indented. Code that is part of a function, a conditional clause, or loop is indented. This isn’t a code style choice, it’s actually what tells the language that some code is to be executed as part of, say, a loop and not to executed after the loop is finished.</p>
+<p>Here’s a basic example of indentation as part of an <code class="docutils literal notranslate"><span class="pre">if</span></code> loop. The <code class="docutils literal notranslate"><span class="pre">print</span></code> statement that is indented only executes if the condition evaluates to true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is greater than 2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is greater than 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>When functions, conditional clauses, or loops are combined together, they each cause an <em>increase</em> in the level of indentation. Here’s a double indent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;outer conditional cause&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;inner loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outer conditional cause
+inner loop
+inner loop
+inner loop
+inner loop
+</pre></div>
+</div>
+</div>
+</div>
+<p>The standard practice for indentation is that each sub-statement should be indented by 4 spaces. It can be hard to keep track of these but, as usual, Visual Studio Code has you covered. Go to Settings (the cog in the bottom left-hand corner, then click Settings) and type ‘Whitespace’ into the search bar. Under ‘Editor: Render Whitespace’, select ‘boundary’. This will show any whitespace that is more than one character long using faint grey dots. Each level of indentation in your Python code should now begin with four grey dots showing that it consists of four spaces. To make it even easier, you can install the ‘indent-rainbow’ extension in VS Code-this shows different levels of indentation in different colours.</p>
 </div>
 <div class="section" id="loops-and-list-comprehensions">
 <h2><span class="section-number">2.10. </span>Loops and list comprehensions<a class="headerlink" href="#loops-and-list-comprehensions" title="Permalink to this headline">¶</a></h2>
@@ -1333,7 +1392,7 @@ Cox maps into Apple
 </div>
 <div class="section" id="functions">
 <h2><span class="section-number">2.14. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p>If you’re an economist, I hardly need to tell you what a function is. In coding, it’s much the same as in mathematics: a function has inputs, it performs its function, and it returns any outputs. Functions begin with a <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword for ‘define a function’. The body of the function is then indented relative to the left-most text. Function arguments are defined in brackets following the name, with different inputs separated by commas. Any outputs are given with the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword, again with different variables separated by commas. Let’s see a very simple example:</p>
+<p>If you’re an economist, I hardly need to tell you what a function is. In coding, it’s much the same as in mathematics: a function has inputs, it performs its function, and it returns any outputs. Functions begin with a <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword for ‘define a function’. It then has a name, followed by brackets, <code class="docutils literal notranslate"><span class="pre">()</span></code>, which may contain <em>function arguments</em> and <em>function keyword arguments</em>. The body of the function is then indented relative to the left-most text. Function arguments are defined in brackets following the name, with different inputs separated by commas. Any outputs are given with the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword, again with different variables separated by commas. Let’s see a very simple example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">welcome_message</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
@@ -1484,11 +1543,12 @@ Inverse:
 <p>Sometimes, you will want to call in some code from a different script. Imagine you have several code scripts (a, b, and c), all of which use the same underlying function that <em>you</em> have written. A central tenet of good coding is that you <em>do not repeat yourself</em>. Therefore, a bad solution to this problem would be to copy and paste the same code into all three of the scripts. A <em>good</em> solution is to write the code that’s need just once in a separate ‘utility’ script and have the other scripts import that one function:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/basics-of-coding_85_0.png" src="_images/basics-of-coding_85_0.png" />
+<img alt="_images/code-basics_89_0.png" src="_images/code-basics_89_0.png" />
 </div>
 </div>
 <p>How would this work in practice? We would define a file ‘<a class="reference external" href="http://utilities.py">utilities.py</a>’ that had the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">really_useful_func</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of utilities.py file</span>
+<span class="k">def</span> <span class="nf">really_useful_func</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">number</span><span class="o">*</span><span class="mi">10</span>
 </pre></div>
 </div>
@@ -1523,7 +1583,8 @@ Inverse:
 </div>
 </div>
 <p>Another important example is the case where you want to run ‘<a class="reference external" href="http://utilities.py">utilities.py</a>’ as a script, but still want to borrow functions from it to run in other scripts. There’s a way to do this. Let’s change <a class="reference external" href="http://utilities.py">utilities.py</a> to</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">really_useful_func</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contents of utilities.py file</span>
+<span class="k">def</span> <span class="nf">really_useful_func</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">number</span><span class="o">*</span><span class="mi">10</span>
 
 
@@ -1539,7 +1600,11 @@ Inverse:
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python utilities.py
 </pre></div>
 </div>
-<p>It will return <code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">has</span> <span class="pre">run</span></code> because, by executing the script alone, we are asking for anything in the <code class="docutils literal notranslate"><span class="pre">main</span></code> block defined at the end of the file to be run. But we can still import anything from utilities into other scripts as before–and in this case it is not the main script, but an import, and so the <code class="docutils literal notranslate"><span class="pre">main</span></code> block will <em>not</em> be executed.</p>
+<p>It will return <code class="docutils literal notranslate"><span class="pre">Script</span> <span class="pre">has</span> <span class="pre">run</span></code> because, by executing the script alone, we are asking for anything in the <code class="docutils literal notranslate"><span class="pre">main</span></code> block defined at the end of the file to be run. But we can still import anything from utilities into other scripts as before–and in that case it is not the main script, but an import, and so the <code class="docutils literal notranslate"><span class="pre">main</span></code> block will <em>not</em> be executed.</p>
+<p>You can important several functions at once from a module (aka another script file) like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utilities</span> <span class="kn">import</span> <span class="n">really_useful_func</span><span class="p">,</span> <span class="n">default_func</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="lambda-functions">
@@ -1748,7 +1813,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-02-28
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-03-02
 </pre></div>
 </div>
 </div>
@@ -1836,8 +1901,8 @@ False
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="basics-preliminaries.html" title="previous page"><span class="section-number">1. </span>Preliminaries</a>
-    <a class='right-next' id="next-link" href="data-analysis-quickstart.html" title="next page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
+    <a class='left-prev' id="prev-link" href="code-preliminaries.html" title="previous page"><span class="section-number">1. </span>Preliminaries</a>
+    <a class='right-next' id="next-link" href="code-advanced.html" title="next page"><span class="section-number">3. </span>Advanced Coding</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
