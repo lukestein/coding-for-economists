@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. More Tips for Better Coding &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/wrkflow-advcd-best-practice.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
+    <link rel="prev" title="1. Tips for Better Coding" href="wrkflow-best-practice-coding.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/wrkflow-advcd-best-practice.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="More Tips for Better Coding" />
+<meta property="og:description" content="More Tips for Better Coding  Introduction  This chapter covers more best practice tips for coding. Here, we’ll cover more practical matters such as debugging co" />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coding
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-preliminaries.html">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-basics.html">
+   2. Basics of Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-advanced.html">
+   3. Advanced Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workflow
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-best-practice-coding.html">
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. More Tips for Better Coding
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-quickstart.html">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-intro.html">
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-read-and-write.html">
+   4. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   5. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   6. Advanced Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-intro.html">
+   1. Intro to Data Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-common-plots.html">
+   2. Common Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-statistics.html">
+   2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Geospatial
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-intro.html">
+   1. Intro to Geo-Spatial Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-vis.html">
+   2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/wrkflow-advcd-best-practice.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Fwrkflow-advcd-best-practice.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/wrkflow-advcd-best-practice.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging-code">
+   2.2. Debugging code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-statements">
+     2.2.1. Print statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#icecream-and-better-print-statements">
+     2.2.2. Icecream and better print statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugging-with-the-ide">
+     2.2.3. Debugging with the IDE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logging">
+   2.3. Logging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auto-magically-improving-your-code-s-style">
+   2.4. Auto-magically improving your code’s style
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linting">
+     2.4.1. Linting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting">
+     2.4.2. Formatting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="more-tips-for-better-coding">
+<h1><span class="section-number">2. </span>More Tips for Better Coding<a class="headerlink" href="#more-tips-for-better-coding" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This chapter covers more best practice tips for coding. Here, we’ll cover more practical matters such as debugging code, logging, and the magic of linting and formatting for better code.</p>
+<p>As ever, you may need to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on the terminal before being able to use some of the packages that are featured.</p>
+</div>
+<div class="section" id="debugging-code">
+<h2><span class="section-number">2.2. </span>Debugging code<a class="headerlink" href="#debugging-code" title="Permalink to this headline">¶</a></h2>
+<p>Computers are <em>very</em> literal, so literal that unless you’re perfectly precise about what you want, they will end up doing something different. When that happens, one of the most difficult issues in programming is to understand <em>why</em> the code isn’t doing what you expected. When the code doesn’t do what we expect, it’s called a bug.</p>
+<p>Bugs could be fundamental issues with the code you’re using (in fact, the term originated because a moth causing a problem in an early computer) and, if you find one of these, you should file an issue with the maintainers of the code. However, what’s much more likely is that the instructions you gave aren’t quite what is needed to produce the outcome that you want. And, in this case, you might need to <em>debug</em> the code: to find out which part of it isn’t doing what you expect.</p>
+<p>Even with a small code base, it can be tricky to track down where the bug is: but don’t fear, there are tools on hand to help you find where the bug is.</p>
+<div class="section" id="print-statements">
+<h3><span class="section-number">2.2.1. </span>Print statements<a class="headerlink" href="#print-statements" title="Permalink to this headline">¶</a></h3>
+<p>The simplest, and I’m afraid to say the most common, way to debug code is to plonk <code class="docutils literal notranslate"><span class="pre">print</span></code> statements in the code. Let’s take a common example in which we perform some simple array operations, here multiplying an array and then summing it with another array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+    <span class="k">return</span> <span class="n">out_arr</span>
+
+
+<span class="n">in_vals_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
+<span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">166160824</span><span class="n">d19</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">result</span>
+
+<span class="nn">&lt;ipython-input-1-166160824d19&gt;</span> in <span class="ni">array_operations</span><span class="nt">(in_arr_one, in_arr_two)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="n">out_arr</span>
+
+<span class="ne">UFuncTypeError</span>: ufunc &#39;multiply&#39; did not contain a loop with signature matching types (dtype(&#39;&lt;U32&#39;), dtype(&#39;&lt;U32&#39;)) -&gt; dtype(&#39;&lt;U32&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oh no! We’ve got a <code class="docutils literal notranslate"><span class="pre">UFuncTypeError</span></code> here, perhaps not the most illuminating error message we’ve ever seen. We’d like to know what’s going wrong here. The <code class="docutils literal notranslate"><span class="pre">Traceback</span></code> did give us a hint about where the issue occurred though; it happens in the multiplication line of the function we wrote.</p>
+<p>To debug the error with print statements, we might re-run the code like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;in_arr_one is </span><span class="si">{</span><span class="n">in_arr_one</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+    <span class="k">return</span> <span class="n">out_arr</span>
+
+
+<span class="n">in_vals_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
+<span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>in_arr_one is [&#39;3&#39; &#39;2&#39; &#39;5&#39; &#39;16&#39; &#39;7&#39; &#39;8&#39; &#39;9&#39; &#39;22&#39;]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">6</span><span class="n">a04719bc0ff</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">result</span>
+
+<span class="nn">&lt;ipython-input-2-6a04719bc0ff&gt;</span> in <span class="ni">array_operations</span><span class="nt">(in_arr_one, in_arr_two)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;in_arr_one is </span><span class="si">{</span><span class="n">in_arr_one</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">out_arr</span>
+
+<span class="ne">UFuncTypeError</span>: ufunc &#39;multiply&#39; did not contain a loop with signature matching types (dtype(&#39;&lt;U32&#39;), dtype(&#39;&lt;U32&#39;)) -&gt; dtype(&#39;&lt;U32&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>What can we tell from the values of <code class="docutils literal notranslate"><span class="pre">in_arr_one</span></code> that are now being printed? Well, they seem to have quote marks around them and what that means is that they’re strings, <em>not</em> floating point numbers or integers! Multiplying a string by 1.5 doesn’t make sense here, so that’s our error. If we did this, we might then trace the origin of that array back to find out where it was defined and see that instead of <code class="docutils literal notranslate"><span class="pre">np.array([3,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">16,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">22])</span></code> being declared, we have <code class="docutils literal notranslate"><span class="pre">np.array([3,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">16,</span> <span class="pre">'7',</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">22])</span></code> instead and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> decides to cast the whole array as a string to ensure consistency.</p>
+<p>Let’s fix that problem by turning <code class="docutils literal notranslate"><span class="pre">'7'</span></code> into <code class="docutils literal notranslate"><span class="pre">7</span></code> and run it again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+    <span class="k">return</span> <span class="n">out_arr</span>
+
+
+<span class="n">in_vals_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
+<span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">ebd3efde9b3e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">result</span>
+
+<span class="nn">&lt;ipython-input-3-ebd3efde9b3e&gt;</span> in <span class="ni">array_operations</span><span class="nt">(in_arr_one, in_arr_two)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">return</span> <span class="n">out_arr</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (8,) (7,) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Still not working! But we’ve moved on to a different error now. We can still use a print statement to debug this one, which seems to be related to the shapes of variables passed into the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;in_arr_one shape is </span><span class="si">{</span><span class="n">in_arr_one</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;intermediate out_arr shape is </span><span class="si">{</span><span class="n">out_arr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;in_arr_two shape is </span><span class="si">{</span><span class="n">in_arr_two</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+    <span class="k">return</span> <span class="n">out_arr</span>
+
+
+<span class="n">in_vals_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
+<span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>in_arr_one shape is (8,)
+intermediate out_arr shape is (8,)
+in_arr_two shape is (7,)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">4961</span><span class="n">f476c7eb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">result</span> <span class="o">=</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">result</span>
+
+<span class="nn">&lt;ipython-input-4-4961f476c7eb&gt;</span> in <span class="ni">array_operations</span><span class="nt">(in_arr_one, in_arr_two)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;intermediate out_arr shape is </span><span class="si">{</span><span class="n">out_arr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;in_arr_two shape is </span><span class="si">{</span><span class="n">in_arr_two</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="n">out_arr</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (8,) (7,) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The print statement now tells us the shapes of the arrays as we go through the function. We can see that in the line before the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement the two arrays that are being combined using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator don’t have the same shape, so we’re effectively adding two vectors from two differently dimensioned vector spaces and, understandably, we are being called out on our nonsense. To fix this problem, we would have to ensure that the input arrays are the same shape (it looks like we may have just missed a value from <code class="docutils literal notranslate"><span class="pre">in_vals_two</span></code>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> statements are great for a quick bit of debugging and you are likely to want to use them more frequently than any other debugging tool. However, for complex, nested code debugging, they aren’t always very efficient and you will sometimes feel like you are playing battleships in continually refining where they should go until you have pinpointed the actual problem, so they’re far from perfect. Fortunately, there are other tools in the debugging toolbox…</p>
+</div>
+<div class="section" id="icecream-and-better-print-statements">
+<h3><span class="section-number">2.2.2. </span>Icecream and better print statements<a class="headerlink" href="#icecream-and-better-print-statements" title="Permalink to this headline">¶</a></h3>
+<p>Typing <code class="docutils literal notranslate"><span class="pre">print</span></code> statements with arguments that help you debug code can become tedious. There are better ways to work, which we’ll come to, but we must also recognise that <code class="docutils literal notranslate"><span class="pre">print</span></code> is used widely in practice. So what if we had a function that was as easier to use as <code class="docutils literal notranslate"><span class="pre">print</span></code> but better geared toward debugging? Well, we do, and it’s called [<strong>icecream</strong>], and it’s available in most major languages, including Python, Dart, Rust, javascript, C++, PHP, Go, Ruby, and Java.</p>
+<p>Let’s take an example from earlier in this chapter, where we used a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to display the contents of <code class="docutils literal notranslate"><span class="pre">in_arr_one</span></code> in advance of the line that caused an error being run. All we will do now is switch out <code class="docutils literal notranslate"><span class="pre">print(f'in_arr_one</span> <span class="pre">is</span> <span class="pre">{in_arr_one}')</span></code> for <code class="docutils literal notranslate"><span class="pre">ic(in_arr_one)</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">icecream</span> <span class="kn">import</span> <span class="n">ic</span>
+
+<span class="k">def</span> <span class="nf">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">):</span>
+    <span class="c1"># Old debug line using `print`</span>
+    <span class="c1"># print(f&#39;in_arr_one is {in_arr_one}&#39;)</span>
+    <span class="c1"># new debug line:</span>
+    <span class="n">ic</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">)</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+    <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+    <span class="k">return</span> <span class="n">out_arr</span>
+
+
+<span class="n">in_vals_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">])</span>
+<span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span><span class="o">|</span> <span class="n">in_arr_one</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;16&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;22&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;&lt;U21&#39;</span><span class="p">)</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="n">UFuncTypeError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">9</span><span class="n">efd5fc1a1fe</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+     <span class="mi">14</span> <span class="n">in_vals_two</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+     <span class="mi">15</span> 
+<span class="o">---&gt;</span> <span class="mi">16</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_vals_one</span><span class="p">,</span> <span class="n">in_vals_two</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">9</span><span class="n">efd5fc1a1fe</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">array_operations</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">,</span> <span class="n">in_arr_two</span><span class="p">)</span>
+      <span class="mi">6</span>     <span class="c1"># new debug line:</span>
+      <span class="mi">7</span>     <span class="n">ic</span><span class="p">(</span><span class="n">in_arr_one</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">8</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">in_arr_one</span><span class="o">*</span><span class="mf">1.5</span>
+      <span class="mi">9</span>     <span class="n">out_arr</span> <span class="o">=</span> <span class="n">out_arr</span> <span class="o">+</span> <span class="n">in_arr_two</span>
+     <span class="mi">10</span>     <span class="k">return</span> <span class="n">out_arr</span>
+
+<span class="n">UFuncTypeError</span><span class="p">:</span> <span class="n">ufunc</span> <span class="s1">&#39;multiply&#39;</span> <span class="n">did</span> <span class="ow">not</span> <span class="n">contain</span> <span class="n">a</span> <span class="n">loop</span> <span class="k">with</span> <span class="n">signature</span> <span class="n">matching</span> <span class="n">types</span> <span class="p">(</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;&lt;U32&#39;</span><span class="p">),</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;&lt;U32&#39;</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;&lt;U32&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What we get in terms of debugging output is <code class="docutils literal notranslate"><span class="pre">ic|</span> <span class="pre">in_arr_one:</span> <span class="pre">array(['3',</span> <span class="pre">'2',</span> <span class="pre">'5',</span> <span class="pre">'16',</span> <span class="pre">'7',</span> <span class="pre">'8',</span> <span class="pre">'9',</span> <span class="pre">'22'],</span> <span class="pre">dtype='&lt;U21')</span></code>, which is quite similar to before apart from three important differences, all of which are advantages:</p>
+<ol class="simple">
+<li><p>it is easier and quicker to write <code class="docutils literal notranslate"><span class="pre">ic(in_arr_one)</span></code> than <code class="docutils literal notranslate"><span class="pre">print(f'in_arr_one</span> <span class="pre">is</span> <span class="pre">{in_arr_one}')</span></code></p></li>
+<li><p><strong>icecream</strong> automatically picks up the name of the variable, <code class="docutils literal notranslate"><span class="pre">in_arr_one</span></code>, and clearly displays its contents</p></li>
+<li><p><strong>icecream</strong> shows us that <code class="docutils literal notranslate"><span class="pre">in_arr_one</span></code> is of <code class="docutils literal notranslate"><span class="pre">type</span></code> array and that it has the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of <code class="docutils literal notranslate"><span class="pre">U</span></code>, which stands for Unicode (i.e. a string). <code class="docutils literal notranslate"><span class="pre">&lt;U21</span></code> just means that all strings in the array are less than 21 characters long.</p></li>
+</ol>
+<p><strong>icecream</strong> has some other advantages relative to print statements too, for instance it can tell you about which lines were executed in which scripts if you call it without arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">ic</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">ic</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;second&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ic</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Never executed&#39;</span><span class="p">)</span>
+
+<span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span><span class="o">|</span> <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">8</span><span class="n">ced0f8fcf82</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">foo</span><span class="p">()</span> <span class="n">at</span> <span class="mi">00</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mf">19.962</span>
+<span class="n">ic</span><span class="o">|</span> <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">8</span><span class="n">ced0f8fcf82</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">6</span> <span class="ow">in</span> <span class="n">foo</span><span class="p">()</span> <span class="n">at</span> <span class="mi">00</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mf">19.979</span>
+<span class="n">first</span>
+<span class="n">second</span>
+</pre></div>
+</div>
+<p>And it can wrap assignments rather than living on its own lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">half</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">ic</span><span class="p">(</span><span class="n">half</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span><span class="o">|</span> <span class="n">i</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">ic</span><span class="o">|</span> <span class="n">half</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+<p>All in all, if you find yourself using <code class="docutils literal notranslate"><span class="pre">print</span></code> to debug, you might find a one-time import of <strong>icecream</strong> followed by use of <code class="docutils literal notranslate"><span class="pre">ic</span></code> instead both more convenient and more effective.</p>
+</div>
+<div class="section" id="debugging-with-the-ide">
+<h3><span class="section-number">2.2.3. </span>Debugging with the IDE<a class="headerlink" href="#debugging-with-the-ide" title="Permalink to this headline">¶</a></h3>
+<p>In this section, we’ll learn about how your Integrated Development Environment, or IDE, can aid you with debugging. While we’ll talk through the use of Visual Studio Code, which is free, directly supports Python, R, and other languages, and is especially rich, many of the features will be present in other IDEs too and the ideas are somewhat general.</p>
+<p>To begin debugging using Visual Studio Code, get a script ready, for example <code class="docutils literal notranslate"><span class="pre">script.py</span></code>, that you’d like to debug. If your script has an error in, a debug run will automatically run into it and stop on the error; alternatively you can click to the left of the line number in your script to create a <em>breakpoint</em> that your code will stop at anyway when in debug mode.</p>
+<p>To begin a debug session, click on the play button partially covered by a bug that’s on the left hand ribbon of the VS Code window. It will bring up a menu. Click ‘Run and debug’ and select ‘Python file’. The debugger will now start running the script you had open. When it reaches and error or a breakpoint it will stop.</p>
+<p>Why is this useful? Once the code stops, you can hover over any variables and see what’s ‘inside’ them, which is useful for working out what’s going on. Remember, in the examples above, we only saw variables that we asked for. Using the debugger, we can hover over any variable we’re interested in without having to decide ahead of time! We can also see other useful bits of info such as the <em>call stack</em> of functions that have been called, what local (within the current scope) and global (available everywhere) variables have been defined, and we can nominate variables to watch too.</p>
+<p>Perhaps you now want to progress the code on from a breakpoint; you can do this too. You’ll see that a menu has appeared with stop, restart, play, and other buttons on it. To skip over the next line of code, use the curved arrow over the dot. To dig in to the next line of code, for example if it’s a function, use the arrow pointing toward a dot. To carry on running the code, use the play button.</p>
+<p>This is only really scratching the surface of what you can do with IDE based debugging, but even that surface layer provides lots of really useful tools for finding out what’s going on when your code executes.</p>
+</div>
+</div>
+<div class="section" id="logging">
+<h2><span class="section-number">2.3. </span>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>Logging is a means of tracking events that happen when software runs. An event is described by a descriptive message that can optionally contain data about variables that are defined as the code is executing.</p>
+<p>Logging has two main purposes: to record events of interest, such as an error, and to act as an auditable account of what happened after the fact.</p>
+<p>Although Python has a built-in logger, we will see an example of logging using <span class="xref myst"><strong>loguru</strong></span>, a package that makes logging a little easier and has some nice settings.</p>
+<p>Let’s see how to log a debug message:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Simple logging!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-03-17 11:22:21.470 | DEBUG    | __main__:&lt;module&gt;:3 - Simple logging!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The default message includes the time, the type of log entry message it is, what bit of code it happened in (including a line number), and the message itself (basically all the info we need). There are different levels of code messages. They are:</p>
+<ul class="simple">
+<li><p>CRITICAL</p></li>
+<li><p>ERROR</p></li>
+<li><p>WARNING</p></li>
+<li><p>SUCCESS</p></li>
+<li><p>INFO</p></li>
+<li><p>DEBUG</p></li>
+<li><p>TRACE</p></li>
+</ul>
+<p>You can find advice on what level to use for what message <a class="reference external" href="https://reflectoring.io/logging-levels/">here</a>, but it will depend a bit on what you’re using your logs for.</p>
+<p>What we’ve just seen are logging messages written out to the console, which doesn’t persist. This is clearly no good for auditing what happened long after the fact (and it may not be that good for debugging either) so we also need a way to write a log to a file. This snippet of code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;file_</span><span class="si">{time}</span><span class="s2">.log&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>tells <strong>loguru</strong> to send your logging messages to a <em>log file</em> instead of to the console. This is really handy for auditing what happened when your code executed long after it ran. You can choose any name for your log file, using “{time}” as part of the string is a shorthand that tells <strong>loguru</strong> to use the current datetime to name the file.</p>
+<p>Log files can become quite numerous and quite large, which you might not want. Those logs from 6 months ago may just be taking up space and not be all that useful, for example. So, what you can also do, is tell <strong>loguru</strong> to use a new log file. Some examples of this would be <code class="docutils literal notranslate"><span class="pre">logger.add(&quot;file_1.log&quot;,</span> <span class="pre">rotation=&quot;500</span> <span class="pre">MB&quot;)</span></code> to clean up a file after it reaches 500 MB in size, <code class="docutils literal notranslate"><span class="pre">rotation=&quot;12:00&quot;</span></code> to refresh the log file at lunch time, and <code class="docutils literal notranslate"><span class="pre">retention=&quot;10</span> <span class="pre">days&quot;</span></code> to keep the file for 10 days.</p>
+<p>One further feature that is worth being aware of is the capability to trace what caused errors, including the trace back through functions and modules, and report them in the log. Of course, you can debug these using the console, but sometimes having such complex errors written to a file (in full) can be handy. This example of a full traceback comes from the <strong>loguru</strong> documentation. The script would have:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;out.log&quot;</span><span class="p">,</span> <span class="n">backtrace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">diagnose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Caution, may leak sensitive data if used in production</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">func</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;What?!&quot;</span><span class="p">)</span>
+
+<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>while the log file would record:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2018-07-17 01:38:43.975 | ERROR    | __main__:nested:10 - What?!
+Traceback (most recent call last):
+
+  File &quot;test.py&quot;, line 12, in &lt;module&gt;
+    nested(0)
+    └ &lt;function nested at 0x7f5c755322f0&gt;
+
+&gt; File &quot;test.py&quot;, line 8, in nested
+    func(5, c)
+    │       └ 0
+    └ &lt;function func at 0x7f5c79fc2e18&gt;
+
+  File &quot;test.py&quot;, line 4, in func
+    return a / b
+           │   └ 0
+           └ 5
+
+ZeroDivisionError: division by zero
+</pre></div>
+</div>
+</div>
+<div class="section" id="auto-magically-improving-your-code-s-style">
+<h2><span class="section-number">2.4. </span>Auto-magically improving your code’s style<a class="headerlink" href="#auto-magically-improving-your-code-s-style" title="Permalink to this headline">¶</a></h2>
+<p>In the previous chapter, we met the idea of <em>code style</em>: even for code that runs, <em>how</em> you write it matters for readability. (And it goes without saying that you don’t want bugs in your code that stop it running at all.) It is possible to catch some errors, to flag style issues, and even to re-format code to comply with a code style automatically. In this section, we’ll see how to use tools to perform these functions automatically.</p>
+<div class="section" id="linting">
+<h3><span class="section-number">2.4.1. </span>Linting<a class="headerlink" href="#linting" title="Permalink to this headline">¶</a></h3>
+<p>Linters are tools that analyse code for programmatic and stylistic errors, assuming you have declared a style. A linting tool flags any potential errors and deviations from style before you even run it. When you run a linter, you get a report of what line the issue is on and why it has been raised. They are supposedly named after the lint trap in a clothes dryer because of the way they catch small errors that could have big effects.</p>
+<p>Some of the most popular linters in Python are <a class="reference external" href="https://flake8.pycqa.org/en/latest/"><strong>flake8</strong></a>, <a class="reference external" href="https://pycodestyle.pycqa.org/en/latest/intro.html"><strong>pycodestyle</strong></a>, and <a class="reference external" href="https://www.pylint.org/"><strong>pylint</strong></a>.</p>
+<p>Let’s see an example of running a linter. VS Code has direct integration with a range of linters. To get going, use <code class="docutils literal notranslate"><span class="pre">⇧⌘P</span></code> (Mac) and then type ‘Python Select Linter’. In the example below, we’ll use <strong>flake8</strong> (and <strong>pylance</strong>, another VS Code extension). Let’s pretend we have a script, <code class="docutils literal notranslate"><span class="pre">test.py</span></code>, containing</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_defn</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>
+<span class="mi">7</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">this_is_a_func</span><span class="p">():</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>To see the linting report, press ``⌃``` (Mac) and navigate to the ‘Problems’ tab. We get a whole load of error messages about this script, here are a few:</p>
+<ul class="simple">
+<li><p>ⓧ missing whitespace after ‘,’ flake8(E231) 1, 15</p></li>
+<li><p>ⓧ continuation line under-indented for visual indent flake8(E128) 2, 1</p></li>
+<li><p>ⓧ expected 2 blank lines, found 1 flake8(E302) 4, 1</p></li>
+<li><p>ⓧ indentation is not a multiple of 4 flake8(E111) 5, 4</p></li>
+<li><p>ⓧ undefined name ‘X’ flake8(F821) 7, 7</p></li>
+<li><p>ⓧ module level import not at top of file flake8(E402) 9, 1</p></li>
+<li><p>ⓧ ‘numpy as np’ imported but unused flake8(F3401) 9, 1</p></li>
+<li><p>⚠ “X” is not defined Pylance(reportUndefinedVariable) 7, 7</p></li>
+<li><p>⚠ no newline at end of file flake8(W292) 78, 338</p></li>
+</ul>
+<p>each message is a warning or error that says what the problem is (for example, missing whitespace after ‘,’), what library is reporting it (mostly flake8 here), the name of the rule that has been broken (E231), and the line, row position (1, 15). Very helpfully, we get an undefined name message for variable <code class="docutils literal notranslate"><span class="pre">X</span></code>, this is especially handy because it would cause an error on execution otherwise. The same goes for the indentation message (indentation matters!). You can customise your <a class="reference external" href="https://code.visualstudio.com/docs/python/linting">linting settings</a> in VS Code too.</p>
+<p>Although the automatic linting offered by an IDE is very convenient, it’s not the only way to use linting tools. You can also run them from the command line. For example, for <strong>flake8</strong>, the command is <code class="docutils literal notranslate"><span class="pre">flake8</span> <span class="pre">test.py</span></code>.</p>
+</div>
+<div class="section" id="formatting">
+<h3><span class="section-number">2.4.2. </span>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h3>
+<p>It’s great to find out all the ways in which you are failing with respect to code style from a linter but wouldn’t it be <em>even</em> better if you could fix those style issues automatically? The answer is clearly yes! This is where formatters come in; they can take valid code and forcibly apply a code style to them. This is really handy in practice for all kinds of reasons.</p>
+<p>The most popular code formatters in Python are probably: <a class="reference external" href="https://github.com/google/yapf"><strong>yapf</strong></a>, ‘yet another Python formatter’, from Google; <a class="reference external" href="https://github.com/hhatto/autopep8"><strong>autopep8</strong></a>, which applies PEP8 to your code; and <a class="reference external" href="https://black.readthedocs.io/en/stable/"><strong>black</strong></a>, the ‘uncompromising formatter’ that is very opinionated (“any colour, as long as it’s black”).</p>
+<p>There are two ways to use formatters, line-by-line (though <strong>black</strong> doesn’t work in this mode) or on an entire script at once. VS Code offers an integration with formatters. To select a formatter in VS Code, bring up the settings using <code class="docutils literal notranslate"><span class="pre">⌘,</span></code> (Mac) or <code class="docutils literal notranslate"><span class="pre">ctrl+,</span></code> (otherwise) and type ‘python formatting provider’ and you can choose from autopep8, black, and yapf.</p>
+<p>If you choose <strong>autopep8</strong> and then open a script you can format a <em>selection</em> of code by pressing <code class="docutils literal notranslate"><span class="pre">⌘+k,</span> <span class="pre">⌘+f</span></code> (Mac) or  <code class="docutils literal notranslate"><span class="pre">ctrl+k,</span> <span class="pre">ctrl+f</span></code> (otherwise). They can also (and only, in the case of <strong>black</strong>) be used from the command line. For instance, to use <strong>black</strong>, the command is <code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">test.py</span></code>, assuming you have it installed.</p>
+<p>Let’s see an example of a poorly styled script and see what happens when we select all lines and use ctrl+k, ctrl+f to auto format with <strong>autopep8</strong>. The contents of <code class="docutils literal notranslate"><span class="pre">test.py</span></code> before formatting are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+
+
+<span class="k">def</span> <span class="nf">very_important_function</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">keyword_arg_here</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>   <span class="n">another_arg</span>  <span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">X</span><span class="o">+</span><span class="n">y_val</span> \
+    <span class="o">+</span>       <span class="n">keyword_arg_here</span>
+<span class="n">very_important_function</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">list_defn</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span>
+<span class="mi">6</span><span class="p">,</span>
+<span class="mi">7</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>and, after formatting,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">def</span> <span class="nf">very_important_function</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keyword_arg_here</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>   <span class="n">another_arg</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">X</span><span class="o">+</span><span class="n">y_val</span> \
+        <span class="o">+</span> <span class="n">keyword_arg_here</span>
+
+
+<span class="n">very_important_function</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">list_defn</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
+             <span class="mi">6</span><span class="p">,</span>
+             <span class="mi">7</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<p>So what did the formatter do? Many things. It moved the import to the top, put two blank lines after the function definition, removed whitespace around keyword arguments, added a new line at the end, and fixed some of the indentation. The different formatters have different strengths and weaknesses; for example, <strong>black</strong> is not so good at putting imports in the right place but excels at splitting up troublesome wide lines. If you need a formatter that deals specifically with module imports, check out <a class="reference external" href="https://pycqa.github.io/isort/"><strong>isort</strong></a>.</p>
+<p>Apart from taking the pressure off you to always be thinking about code style, formatters can be useful when working collaboratively too. For some open source packages, maintainers ask that new code or changed code be run through a particular formatter if it is to be incorporated into the main branch. This helps ensure the code style is consistent regardless of who is writing it. Running the code formatter can even be automated to happen every time someone <em>commits</em> some code to a shared code repository too, using something called a <em>pre-commit hook</em>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "codeforecon"
+        },
+        kernelOptions: {
+            kernelName: "codeforecon",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'codeforecon'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="wrkflow-best-practice-coding.html" title="previous page"><span class="section-number">1. </span>Tips for Better Coding</a>
+    <a class='right-next' id="next-link" href="data-analysis-quickstart.html" title="next page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This book is available under an MIT license.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-189705534-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

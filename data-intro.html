@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Data Analysis &#8212; Coding for Economists</title>
+    <title>2. Working with data &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,7 +57,7 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/data-intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Reading and Writing Files" href="data-read-and-write.html" />
+    <link rel="next" title="3. Exploratory Data Analysis" href="data-exploratory-analysis.html" />
     <link rel="prev" title="1. Data Analysis Quickstart" href="data-analysis-quickstart.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,8 +67,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/data-intro.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Data Analysis" />
-<meta property="og:description" content="Data Analysis  Introduction  The previous chapter was just a quick tour of what can be done with a single tabular dataset (a ‘dataframe’). In this chapter, we’l" />
+<meta property="og:title"       content="Working with data" />
+<meta property="og:description" content="Working with data  Introduction  The previous chapter was just a quick tour of what can be done with a single tabular dataset (a ‘dataframe’). In this chapter, " />
 <meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -132,7 +134,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-best-practice-coding.html">
-   1. Basics of Best Practice Coding
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. More Tips for Better Coding
   </a>
  </li>
 </ul>
@@ -149,22 +156,27 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Data Analysis
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-read-and-write.html">
-   3. Reading and Writing Files
+   4. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-extraction.html">
-   4. Extracting Data
+   5. Extracting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   5. Advanced Data
+   6. Advanced Data
   </a>
  </li>
 </ul>
@@ -325,11 +337,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Fdata-intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -350,15 +362,9 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/data-intro.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/data-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/data-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -557,8 +563,8 @@
         
               <div>
                 
-  <div class="section" id="data-analysis">
-<h1><span class="section-number">2. </span>Data Analysis<a class="headerlink" href="#data-analysis" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="working-with-data">
+<h1><span class="section-number">2. </span>Working with data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The previous chapter was just a quick tour of what can be done with a single tabular dataset (a ‘dataframe’). In this chapter, we’ll go deeper into working with data.</p>
@@ -5161,7 +5167,7 @@ dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="data-analysis-quickstart.html" title="previous page"><span class="section-number">1. </span>Data Analysis Quickstart</a>
-    <a class='right-next' id="next-link" href="data-read-and-write.html" title="next page"><span class="section-number">3. </span>Reading and Writing Files</a>
+    <a class='right-next' id="next-link" href="data-exploratory-analysis.html" title="next page"><span class="section-number">3. </span>Exploratory Data Analysis</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -5173,7 +5179,6 @@ dtype: float64
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
             This book is available under an MIT license.
-
           </div>
       </p>
     </div>

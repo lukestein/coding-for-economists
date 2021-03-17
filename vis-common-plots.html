@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -134,7 +136,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-best-practice-coding.html">
-   1. Basics of Best Practice Coding
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. More Tips for Better Coding
   </a>
  </li>
 </ul>
@@ -151,22 +158,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Data Analysis
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-read-and-write.html">
-   3. Reading and Writing Files
+   4. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-extraction.html">
-   4. Extracting Data
+   5. Extracting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   5. Advanced Data
+   6. Advanced Data
   </a>
  </li>
 </ul>
@@ -327,11 +339,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvis-common-plots.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Fvis-common-plots.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -352,15 +364,9 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/vis-common-plots.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/vis-common-plots.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/vis-common-plots.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -1268,7 +1274,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_15_0.png" src="_images/vis-common-plots_15_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786244957862)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622222457)&gt;
 </pre></div>
 </div>
 </div>
@@ -1292,12 +1298,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-97312e5ac59c4ad08cad38c029c9cea2"></div>
+<div id="altair-viz-8e46871f77e7490eba1b6dedf0ff8a0c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-97312e5ac59c4ad08cad38c029c9cea2") {
-      outputDiv = document.getElementById("altair-viz-97312e5ac59c4ad08cad38c029c9cea2");
+    if (outputDiv.id !== "altair-viz-8e46871f77e7490eba1b6dedf0ff8a0c") {
+      outputDiv = document.getElementById("altair-viz-8e46871f77e7490eba1b6dedf0ff8a0c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1512,7 +1518,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_25_1.png" src="_images/vis-common-plots_25_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312557764)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656027365)&gt;
 </pre></div>
 </div>
 </div>
@@ -1534,12 +1540,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-2a0258b28a6a447bbf4ecb02fc840b7f"></div>
+<div id="altair-viz-719bcc3f7f66485bb44abc75983f9a50"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2a0258b28a6a447bbf4ecb02fc840b7f") {
-      outputDiv = document.getElementById("altair-viz-2a0258b28a6a447bbf4ecb02fc840b7f");
+    if (outputDiv.id !== "altair-viz-719bcc3f7f66485bb44abc75983f9a50") {
+      outputDiv = document.getElementById("altair-viz-719bcc3f7f66485bb44abc75983f9a50");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1734,7 +1740,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_33_0.png" src="_images/vis-common-plots_33_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786229397974)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777605291596)&gt;
 </pre></div>
 </div>
 </div>
@@ -1799,7 +1805,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_41_1.png" src="_images/vis-common-plots_41_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786280785321)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777639804368)&gt;
 </pre></div>
 </div>
 </div>
@@ -1819,12 +1825,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-339d55c5b22a4e9a8548670d09181ea0"></div>
+<div id="altair-viz-0db2706179ab4e6ab8d1e888588d507b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-339d55c5b22a4e9a8548670d09181ea0") {
-      outputDiv = document.getElementById("altair-viz-339d55c5b22a4e9a8548670d09181ea0");
+    if (outputDiv.id !== "altair-viz-0db2706179ab4e6ab8d1e888588d507b") {
+      outputDiv = document.getElementById("altair-viz-0db2706179ab4e6ab8d1e888588d507b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2028,7 +2034,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_51_1.png" src="_images/vis-common-plots_51_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786280797760)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777639824439)&gt;
 </pre></div>
 </div>
 </div>
@@ -2049,12 +2055,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f43ec13f44014772afccc2c847a3350e"></div>
+<div id="altair-viz-218daa326d3e4742bbc20d8a6eb42e64"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f43ec13f44014772afccc2c847a3350e") {
-      outputDiv = document.getElementById("altair-viz-f43ec13f44014772afccc2c847a3350e");
+    if (outputDiv.id !== "altair-viz-218daa326d3e4742bbc20d8a6eb42e64") {
+      outputDiv = document.getElementById("altair-viz-218daa326d3e4742bbc20d8a6eb42e64");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2194,7 +2200,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fdb58de26d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbb41f3f070&gt;
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_59_1.png" src="_images/vis-common-plots_59_1.png" />
@@ -2216,7 +2222,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_61_0.png" src="_images/vis-common-plots_61_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786245072342)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622424441)&gt;
 </pre></div>
 </div>
 </div>
@@ -2238,12 +2244,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-802fe31dc08f4c95a36002f6992f11f5"></div>
+<div id="altair-viz-c29407734d124ea888f9518df1988ee7"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-802fe31dc08f4c95a36002f6992f11f5") {
-      outputDiv = document.getElementById("altair-viz-802fe31dc08f4c95a36002f6992f11f5");
+    if (outputDiv.id !== "altair-viz-c29407734d124ea888f9518df1988ee7") {
+      outputDiv = document.getElementById("altair-viz-c29407734d124ea888f9518df1988ee7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2399,7 +2405,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fdba1996610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbb00289bb0&gt;
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_69_1.png" src="_images/vis-common-plots_69_1.png" />
@@ -2420,7 +2426,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_71_0.png" src="_images/vis-common-plots_71_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312353220)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656060124)&gt;
 </pre></div>
 </div>
 </div>
@@ -2443,12 +2449,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-1604fd48069940268104bc621fcf1cd8"></div>
+<div id="altair-viz-939bbad411a543779ef43a329689972b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1604fd48069940268104bc621fcf1cd8") {
-      outputDiv = document.getElementById("altair-viz-1604fd48069940268104bc621fcf1cd8");
+    if (outputDiv.id !== "altair-viz-939bbad411a543779ef43a329689972b") {
+      outputDiv = document.getElementById("altair-viz-939bbad411a543779ef43a329689972b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2541,7 +2547,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_79_0.png" src="_images/vis-common-plots_79_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786330228444)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777673078044)&gt;
 </pre></div>
 </div>
 </div>
@@ -2563,12 +2569,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-ca3314395c16455b8532c56be472c2f0"></div>
+<div id="altair-viz-9a41969db4e84cffadaa68058ae96c8f"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ca3314395c16455b8532c56be472c2f0") {
-      outputDiv = document.getElementById("altair-viz-ca3314395c16455b8532c56be472c2f0");
+    if (outputDiv.id !== "altair-viz-9a41969db4e84cffadaa68058ae96c8f") {
+      outputDiv = document.getElementById("altair-viz-9a41969db4e84cffadaa68058ae96c8f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2758,7 +2764,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_88_0.png" src="_images/vis-common-plots_88_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312531734)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656443396)&gt;
 </pre></div>
 </div>
 </div>
@@ -2782,12 +2788,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-0a704f50e43a48408539296833c700ac"></div>
+<div id="altair-viz-21279d1a082d4bce992711acdd3e055c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0a704f50e43a48408539296833c700ac") {
-      outputDiv = document.getElementById("altair-viz-0a704f50e43a48408539296833c700ac");
+    if (outputDiv.id !== "altair-viz-21279d1a082d4bce992711acdd3e055c") {
+      outputDiv = document.getElementById("altair-viz-21279d1a082d4bce992711acdd3e055c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2975,7 +2981,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_98_1.png" src="_images/vis-common-plots_98_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312392009)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656044831)&gt;
 </pre></div>
 </div>
 </div>
@@ -2994,12 +3000,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f96e17cf2ccb4badb809ff88886aadf1"></div>
+<div id="altair-viz-3761363db6b34ee88c124f283ce91ce8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f96e17cf2ccb4badb809ff88886aadf1") {
-      outputDiv = document.getElementById("altair-viz-f96e17cf2ccb4badb809ff88886aadf1");
+    if (outputDiv.id !== "altair-viz-3761363db6b34ee88c124f283ce91ce8") {
+      outputDiv = document.getElementById("altair-viz-3761363db6b34ee88c124f283ce91ce8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3103,7 +3109,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_107_1.png" src="_images/vis-common-plots_107_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312549407)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777605484782)&gt;
 </pre></div>
 </div>
 </div>
@@ -3153,12 +3159,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-dc7cc725a97d4474b104198499a7ce99"></div>
+<div id="altair-viz-2dcf96d76d09406b9e556ebb9ee12fad"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-dc7cc725a97d4474b104198499a7ce99") {
-      outputDiv = document.getElementById("altair-viz-dc7cc725a97d4474b104198499a7ce99");
+    if (outputDiv.id !== "altair-viz-2dcf96d76d09406b9e556ebb9ee12fad") {
+      outputDiv = document.getElementById("altair-viz-2dcf96d76d09406b9e556ebb9ee12fad");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3394,7 +3400,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_117_0.png" src="_images/vis-common-plots_117_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786261845965)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656454208)&gt;
 </pre></div>
 </div>
 </div>
@@ -3414,12 +3420,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a29bf90be83e4c26bca8269c68ff11fb"></div>
+<div id="altair-viz-b990d22bdaca497b8996814e27764537"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a29bf90be83e4c26bca8269c68ff11fb") {
-      outputDiv = document.getElementById("altair-viz-a29bf90be83e4c26bca8269c68ff11fb");
+    if (outputDiv.id !== "altair-viz-b990d22bdaca497b8996814e27764537") {
+      outputDiv = document.getElementById("altair-viz-b990d22bdaca497b8996814e27764537");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3614,7 +3620,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_127_0.png" src="_images/vis-common-plots_127_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312382760)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622345012)&gt;
 </pre></div>
 </div>
 </div>
@@ -3634,12 +3640,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c85349649656474aae8a79df1c3935e9"></div>
+<div id="altair-viz-e5382d9d991c48b0b22233083f77f93d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c85349649656474aae8a79df1c3935e9") {
-      outputDiv = document.getElementById("altair-viz-c85349649656474aae8a79df1c3935e9");
+    if (outputDiv.id !== "altair-viz-e5382d9d991c48b0b22233083f77f93d") {
+      outputDiv = document.getElementById("altair-viz-e5382d9d991c48b0b22233083f77f93d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3741,7 +3747,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_136_0.png" src="_images/vis-common-plots_136_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786280780460)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777672971689)&gt;
 </pre></div>
 </div>
 </div>
@@ -3785,12 +3791,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f1396040338940e7b0a013e2ab8e291e"></div>
+<div id="altair-viz-8228d3167c5144d5bb7ec23b2c7bf4c0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f1396040338940e7b0a013e2ab8e291e") {
-      outputDiv = document.getElementById("altair-viz-f1396040338940e7b0a013e2ab8e291e");
+    if (outputDiv.id !== "altair-viz-8228d3167c5144d5bb7ec23b2c7bf4c0") {
+      outputDiv = document.getElementById("altair-viz-8228d3167c5144d5bb7ec23b2c7bf4c0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3898,7 +3904,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_145_0.png" src="_images/vis-common-plots_145_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312361024)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656841337)&gt;
 </pre></div>
 </div>
 </div>
@@ -4039,7 +4045,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_153_0.png" src="_images/vis-common-plots_153_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312402854)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777639688235)&gt;
 </pre></div>
 </div>
 </div>
@@ -4059,12 +4065,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-0c9573227b4b474cb0e0a581db238751"></div>
+<div id="altair-viz-4960d394d9834b7e8fcb056fddde6145"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0c9573227b4b474cb0e0a581db238751") {
-      outputDiv = document.getElementById("altair-viz-0c9573227b4b474cb0e0a581db238751");
+    if (outputDiv.id !== "altair-viz-4960d394d9834b7e8fcb056fddde6145") {
+      outputDiv = document.getElementById("altair-viz-4960d394d9834b7e8fcb056fddde6145");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4275,7 +4281,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_163_0.png" src="_images/vis-common-plots_163_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786312565610)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777605175772)&gt;
 </pre></div>
 </div>
 </div>
@@ -4295,12 +4301,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-82c4cae7828d493f9af912340fe9e3ca"></div>
+<div id="altair-viz-e37f98c599204106b0fa3f90505529ea"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-82c4cae7828d493f9af912340fe9e3ca") {
-      outputDiv = document.getElementById("altair-viz-82c4cae7828d493f9af912340fe9e3ca");
+    if (outputDiv.id !== "altair-viz-e37f98c599204106b0fa3f90505529ea") {
+      outputDiv = document.getElementById("altair-viz-e37f98c599204106b0fa3f90505529ea");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4920,12 +4926,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d98c70c2989a44f69045f5300fc5e908"></div>
+<div id="altair-viz-a47e1822af03446086fa917feaf44ea1"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d98c70c2989a44f69045f5300fc5e908") {
-      outputDiv = document.getElementById("altair-viz-d98c70c2989a44f69045f5300fc5e908");
+    if (outputDiv.id !== "altair-viz-a47e1822af03446086fa917feaf44ea1") {
+      outputDiv = document.getElementById("altair-viz-a47e1822af03446086fa917feaf44ea1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -5229,7 +5235,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_200_0.png" src="_images/vis-common-plots_200_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786254451529)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777640314305)&gt;
 </pre></div>
 </div>
 </div>
@@ -5354,7 +5360,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_206_0.png" src="_images/vis-common-plots_206_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786254534343)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777571099426)&gt;
 </pre></div>
 </div>
 </div>
@@ -5481,7 +5487,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_212_0.png" src="_images/vis-common-plots_212_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8786331029116)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622697313)&gt;
 </pre></div>
 </div>
 </div>
@@ -7551,7 +7557,6 @@ A = \dfrac{2}{\frac{1}{\sqrt{1-\gamma}}+\frac{1}{\sqrt{1+\gamma}}}
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
             This book is available under an MIT license.
-
           </div>
       </p>
     </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Reading and Writing Files &#8212; Coding for Economists</title>
+    <title>4. Reading and Writing Files &#8212; Coding for Economists</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,8 +57,8 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/data-read-and-write.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Extracting Data" href="data-extraction.html" />
-    <link rel="prev" title="2. Data Analysis" href="data-intro.html" />
+    <link rel="next" title="5. Extracting Data" href="data-extraction.html" />
+    <link rel="prev" title="3. Exploratory Data Analysis" href="data-exploratory-analysis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -132,7 +134,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-best-practice-coding.html">
-   1. Basics of Best Practice Coding
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. More Tips for Better Coding
   </a>
  </li>
 </ul>
@@ -149,22 +156,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Data Analysis
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Reading and Writing Files
+   4. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-extraction.html">
-   4. Extracting Data
+   5. Extracting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   5. Advanced Data
+   6. Advanced Data
   </a>
  </li>
 </ul>
@@ -328,11 +340,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-read-and-write.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Fdata-read-and-write.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -353,12 +365,6 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/data-read-and-write.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
         
         
         
@@ -377,36 +383,36 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reading-in-data-from-a-file">
-   3.1. Reading in data from a file
+   4.1. Reading in data from a file
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reading-data-from-lots-of-files">
-     3.1.1. Reading data from lots of files
+     4.1.1. Reading data from lots of files
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#writing-data-to-file">
-   3.2. Writing data to file
+   4.2. Writing data to file
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#formats">
-     3.2.1. Formats
+     4.2.1. Formats
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reading-and-writing-text-tex-md-and-other-text-editor-friendly-file-formats">
-   3.3. Reading and writing text, tex, md, and other text-editor friendly file formats
+   4.3. Reading and writing text, tex, md, and other text-editor friendly file formats
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   3.4. Review
+   4.4. Review
   </a>
  </li>
 </ul>
@@ -421,13 +427,13 @@
               <div>
                 
   <div class="section" id="reading-and-writing-files">
-<h1><span class="section-number">3. </span>Reading and Writing Files<a class="headerlink" href="#reading-and-writing-files" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Reading and Writing Files<a class="headerlink" href="#reading-and-writing-files" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll learn about reading and writing data.</p>
 <p>This chapter uses the <strong>pandas</strong> package. If you’re running this code, you may need to install these packages using, for example, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagename</span></code> on your computer’s command line. (If you’re not sure what a command line or terminal is, take a quick look at the basics of coding chapter.)</p>
 <p><img alt="From the pandas documentation" src="https://pandas.pydata.org/pandas-docs/stable/_images/02_io_readwrite1.svg" /></p>
 <p>There are a huge range of input and output formats available in <strong>pandas</strong>: Stata (.dta), Excel (.xls, .xlsx), csv (tab or comma or whatever, use the <code class="docutils literal notranslate"><span class="pre">sep=</span></code> keyword), big data formats (HDF5, parquet), JSON, SAS, SPSS, SQL, and more; there’s a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">full list</a> of formats available in the documentation.</p>
 <div class="section" id="reading-in-data-from-a-file">
-<h2><span class="section-number">3.1. </span>Reading in data from a file<a class="headerlink" href="#reading-in-data-from-a-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Reading in data from a file<a class="headerlink" href="#reading-in-data-from-a-file" title="Permalink to this headline">¶</a></h2>
 <p>The syntax for reading in data is usually very similar and of the form <code class="docutils literal notranslate"><span class="pre">pd.read_</span></code> and then the format e.g. <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_stata('path/to/statafile.dta')</span></code> for Stata. Here’s a really typical example of reading in a csv called ‘data.csv’:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -438,7 +444,7 @@
 <p>This code assumes that python is being executed in a directory that has a subdirectory ‘path’, which has a subdirectory ‘to’, inside which is ‘data.csv’. Why are we using <code class="docutils literal notranslate"><span class="pre">os.path.join(...)</span></code> instead of just passing <code class="docutils literal notranslate"><span class="pre">pd.read_csv('path/to/data.csv'))</span></code>? The answer is that paths are not all alike; they’re different on Linux/Mac and Windows. By saying <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code> we tell Python to figure out how to create a path from the folder names.</p>
 <p>TODO: Change this to use pathlib. There are introductory videos to pathlib and its use available <a class="reference external" href="https://calmcode.io/pathlib/do-not-hardcode.html">here</a>.</p>
 <div class="section" id="reading-data-from-lots-of-files">
-<h3><span class="section-number">3.1.1. </span>Reading data from lots of files<a class="headerlink" href="#reading-data-from-lots-of-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1. </span>Reading data from lots of files<a class="headerlink" href="#reading-data-from-lots-of-files" title="Permalink to this headline">¶</a></h3>
 <p>Quite often, you have a case where you need to read in data from many files at once. There are two tools that will help with this: glob and concatenate.</p>
 <p>Imagine you have a directory full of files with names like ‘Jan-2001-data.csv’, ‘Feb-2001-data.csv’, and so on. Glob can help you grab the names of all of these files.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
@@ -454,11 +460,11 @@
 </div>
 </div>
 <div class="section" id="writing-data-to-file">
-<h2><span class="section-number">3.2. </span>Writing data to file<a class="headerlink" href="#writing-data-to-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Writing data to file<a class="headerlink" href="#writing-data-to-file" title="Permalink to this headline">¶</a></h2>
 <p>The syntax for writing to a file is also very consistent, taking the form <code class="docutils literal notranslate"><span class="pre">df.to_*</span></code> where <code class="docutils literal notranslate"><span class="pre">*</span></code> might be <code class="docutils literal notranslate"><span class="pre">csv</span></code>, <code class="docutils literal notranslate"><span class="pre">stata</span></code>, or a number of output formats (you can even output to your computer’s clipboard!).</p>
 <p>In general, you <em>do</em> need to specify the file extension though, i.e. when saving data you should specify <code class="docutils literal notranslate"><span class="pre">df.to_csv('dataout.csv')</span></code> rather than <code class="docutils literal notranslate"><span class="pre">df.to_csv('dataout')</span></code>. As with reading in, there are plenty of options for how to output data, and you can find more on outputs in the <strong>pandas</strong> <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/io.html">documentation</a>.</p>
 <div class="section" id="formats">
-<h3><span class="section-number">3.2.1. </span>Formats<a class="headerlink" href="#formats" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1. </span>Formats<a class="headerlink" href="#formats" title="Permalink to this headline">¶</a></h3>
 <p>You may wonder what file format to use in your work. Note that data formats differ in whether they are text based (csv, JSON) or binary (encoded and compressed, like Python’s pickle format). The former tend to be more easy to use with a range of tools, while the latter are usually faster to read/write and take up less space on disk.</p>
 <p>There’s a lot to be said for plain old csv because it’s interoperable between so many different software tools. I highly recommend it for your final results, if they will be shared. Its only trouble is that it’s not very efficiency with space, and it’s not ‘intelligent’ about column datatypes. If you want a format for intermediate data within a project, I tend to recommend parquet, which scales well to big data (it is very efficient with disk space) and has excellent read and write speeds. Feather is interoperable between Python and R and may also be a good choice. Depending on the structure of your data, you may find JSON a good option too.</p>
 <p>If you’re interested in how effective the different data formats are, there blog posts that address this question <a class="reference external" href="https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d">here</a> and <a class="reference external" href="https://ursalabs.org/blog/2019-10-columnar-perf/">here</a>.</p>
@@ -466,7 +472,7 @@
 </div>
 </div>
 <div class="section" id="reading-and-writing-text-tex-md-and-other-text-editor-friendly-file-formats">
-<h2><span class="section-number">3.3. </span>Reading and writing text, tex, md, and other text-editor friendly file formats<a class="headerlink" href="#reading-and-writing-text-tex-md-and-other-text-editor-friendly-file-formats" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Reading and writing text, tex, md, and other text-editor friendly file formats<a class="headerlink" href="#reading-and-writing-text-tex-md-and-other-text-editor-friendly-file-formats" title="Permalink to this headline">¶</a></h2>
 <p>It’s frequently the case that you’ll want to write an individual table, chunk of text, or other content that can be opened with a text editor to file. <strong>pandas</strong> has some convenience functions for this (there was a short example in the data analysis quickstart). Let’s say we had a table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,7 +573,7 @@
 </div>
 </div>
 <div class="section" id="review">
-<h2><span class="section-number">3.4. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>If you know how to read in data and text from file(s), the internet, and APIs, and write out to file too, then you’ve mastered the content of this chapter!</p>
 </div>
 </div>
@@ -600,8 +606,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="data-intro.html" title="previous page"><span class="section-number">2. </span>Data Analysis</a>
-    <a class='right-next' id="next-link" href="data-extraction.html" title="next page"><span class="section-number">4. </span>Extracting Data</a>
+    <a class='left-prev' id="prev-link" href="data-exploratory-analysis.html" title="previous page"><span class="section-number">3. </span>Exploratory Data Analysis</a>
+    <a class='right-next' id="next-link" href="data-extraction.html" title="next page"><span class="section-number">5. </span>Extracting Data</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -613,7 +619,6 @@
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
             This book is available under an MIT license.
-
           </div>
       </p>
     </div>

@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,7 +58,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Common Plots" href="vis-common-plots.html" />
-    <link rel="prev" title="5. Advanced Data" href="data-advanced.html" />
+    <link rel="prev" title="6. Advanced Data" href="data-advanced.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -132,7 +134,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-best-practice-coding.html">
-   1. Basics of Best Practice Coding
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. More Tips for Better Coding
   </a>
  </li>
 </ul>
@@ -149,22 +156,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Data Analysis
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-read-and-write.html">
-   3. Reading and Writing Files
+   4. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-extraction.html">
-   4. Extracting Data
+   5. Extracting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   5. Advanced Data
+   6. Advanced Data
   </a>
  </li>
 </ul>
@@ -325,11 +337,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvis-intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Fvis-intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -350,15 +362,9 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/vis-intro.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/vis-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/vis-intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -498,7 +504,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed00d2c1c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe4c0046340&gt;]
 </pre></div>
 </div>
 <img alt="_images/vis-intro_5_1.png" src="_images/vis-intro_5_1.png" />
@@ -1272,7 +1278,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_50_0.png" src="_images/vis-intro_50_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8790995118216)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788847349694)&gt;
 </pre></div>
 </div>
 </div>
@@ -1288,7 +1294,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_52_0.png" src="_images/vis-intro_52_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8790977153217)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788847355639)&gt;
 </pre></div>
 </div>
 </div>
@@ -1308,7 +1314,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-intro_54_1.png" src="_images/vis-intro_54_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791010631846)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788879490630)&gt;
 </pre></div>
 </div>
 </div>
@@ -1327,7 +1333,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-intro_56_1.png" src="_images/vis-intro_56_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791009898653)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788863381703)&gt;
 </pre></div>
 </div>
 </div>
@@ -1347,7 +1353,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_58_0.png" src="_images/vis-intro_58_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8790995146247)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788796446166)&gt;
 </pre></div>
 </div>
 </div>
@@ -1366,7 +1372,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_60_0.png" src="_images/vis-intro_60_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791009900707)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788796546949)&gt;
 </pre></div>
 </div>
 </div>
@@ -1389,7 +1395,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-intro_61_1.png" src="_images/vis-intro_61_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8790960521391)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788847687563)&gt;
 </pre></div>
 </div>
 </div>
@@ -1408,7 +1414,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_63_0.png" src="_images/vis-intro_63_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791011133290)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788863469587)&gt;
 </pre></div>
 </div>
 </div>
@@ -1436,12 +1442,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4fc8416480334bafab1234105777b9bb"></div>
+<div id="altair-viz-087b2d654e2546df9b242a2c94f8788c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4fc8416480334bafab1234105777b9bb") {
-      outputDiv = document.getElementById("altair-viz-4fc8416480334bafab1234105777b9bb");
+    if (outputDiv.id !== "altair-viz-087b2d654e2546df9b242a2c94f8788c") {
+      outputDiv = document.getElementById("altair-viz-087b2d654e2546df9b242a2c94f8788c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1512,12 +1518,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-8153839d1857468aaa403f8a953f296e"></div>
+<div id="altair-viz-df808e9e394248b0aaa46644f46566a0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8153839d1857468aaa403f8a953f296e") {
-      outputDiv = document.getElementById("altair-viz-8153839d1857468aaa403f8a953f296e");
+    if (outputDiv.id !== "altair-viz-df808e9e394248b0aaa46644f46566a0") {
+      outputDiv = document.getElementById("altair-viz-df808e9e394248b0aaa46644f46566a0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1584,12 +1590,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-fde9916980184394a5a529a6cfeeb727"></div>
+<div id="altair-viz-a7d065d482384b0195fcc3497b93124d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fde9916980184394a5a529a6cfeeb727") {
-      outputDiv = document.getElementById("altair-viz-fde9916980184394a5a529a6cfeeb727");
+    if (outputDiv.id !== "altair-viz-a7d065d482384b0195fcc3497b93124d") {
+      outputDiv = document.getElementById("altair-viz-a7d065d482384b0195fcc3497b93124d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1648,12 +1654,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b43224f75f884f849da526628e35af61"></div>
+<div id="altair-viz-c7ce88dae33d4e72a528db4be95e3a94"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b43224f75f884f849da526628e35af61") {
-      outputDiv = document.getElementById("altair-viz-b43224f75f884f849da526628e35af61");
+    if (outputDiv.id !== "altair-viz-c7ce88dae33d4e72a528db4be95e3a94") {
+      outputDiv = document.getElementById("altair-viz-c7ce88dae33d4e72a528db4be95e3a94");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1714,12 +1720,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-1a89740b24be42fca5bc8a8f3099949d"></div>
+<div id="altair-viz-e3db50af546b4780b0cddd510edbc890"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1a89740b24be42fca5bc8a8f3099949d") {
-      outputDiv = document.getElementById("altair-viz-1a89740b24be42fca5bc8a8f3099949d");
+    if (outputDiv.id !== "altair-viz-e3db50af546b4780b0cddd510edbc890") {
+      outputDiv = document.getElementById("altair-viz-e3db50af546b4780b0cddd510edbc890");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1780,12 +1786,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b4923fe4ba984c0c9ab31587c62d8689"></div>
+<div id="altair-viz-d87de3c343934118b376e7d540a269fe"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b4923fe4ba984c0c9ab31587c62d8689") {
-      outputDiv = document.getElementById("altair-viz-b4923fe4ba984c0c9ab31587c62d8689");
+    if (outputDiv.id !== "altair-viz-d87de3c343934118b376e7d540a269fe") {
+      outputDiv = document.getElementById("altair-viz-d87de3c343934118b376e7d540a269fe");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1866,12 +1872,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b6d1d9f8c3c640a6966eb985245b0207"></div>
+<div id="altair-viz-5db25d1558f84a26ada0bec34c0bb027"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b6d1d9f8c3c640a6966eb985245b0207") {
-      outputDiv = document.getElementById("altair-viz-b6d1d9f8c3c640a6966eb985245b0207");
+    if (outputDiv.id !== "altair-viz-5db25d1558f84a26ada0bec34c0bb027") {
+      outputDiv = document.getElementById("altair-viz-5db25d1558f84a26ada0bec34c0bb027");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1972,12 +1978,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9fa5e71a4410463da78fee0f607cd6ee"></div>
+<div id="altair-viz-00d93364fa5343a792303aad33cadb2b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9fa5e71a4410463da78fee0f607cd6ee") {
-      outputDiv = document.getElementById("altair-viz-9fa5e71a4410463da78fee0f607cd6ee");
+    if (outputDiv.id !== "altair-viz-00d93364fa5343a792303aad33cadb2b") {
+      outputDiv = document.getElementById("altair-viz-00d93364fa5343a792303aad33cadb2b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2101,7 +2107,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="data-advanced.html" title="previous page"><span class="section-number">5. </span>Advanced Data</a>
+    <a class='left-prev' id="prev-link" href="data-advanced.html" title="previous page"><span class="section-number">6. </span>Advanced Data</a>
     <a class='right-next' id="next-link" href="vis-common-plots.html" title="next page"><span class="section-number">2. </span>Common Plots</a>
 
     </div>
@@ -2114,7 +2120,6 @@
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
             This book is available under an MIT license.
-
           </div>
       </p>
     </div>

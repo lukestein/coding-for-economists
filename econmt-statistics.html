@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -134,7 +136,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-best-practice-coding.html">
-   1. Basics of Best Practice Coding
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. More Tips for Better Coding
   </a>
  </li>
 </ul>
@@ -151,22 +158,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Data Analysis
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-read-and-write.html">
-   3. Reading and Writing Files
+   4. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-extraction.html">
-   4. Extracting Data
+   5. Extracting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   5. Advanced Data
+   6. Advanced Data
   </a>
  </li>
 </ul>
@@ -327,11 +339,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feconmt-statistics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Feconmt-statistics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -352,15 +364,9 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/econmt-statistics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/econmt-statistics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/econmt-statistics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -485,8 +491,12 @@
 <p>An <strong>estimator</strong> of a parameter <span class="math notranslate nohighlight">\(\theta\)</span> is a function <span class="math notranslate nohighlight">\(T=T(x)\)</span> which is used to estimate <span class="math notranslate nohighlight">\(\theta\)</span> based on observations of data. <span class="math notranslate nohighlight">\(T\)</span> is an unbiased estimator if <span class="math notranslate nohighlight">\(\mathbb{E}(T) = \theta\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(X\)</span> has PDF <span class="math notranslate nohighlight">\(f(x|\theta)\)</span> then, given the observed value <span class="math notranslate nohighlight">\(x\)</span> of <span class="math notranslate nohighlight">\(X\)</span>, the <strong>likelihood</strong> of <span class="math notranslate nohighlight">\(\theta\)</span> is defined by <span class="math notranslate nohighlight">\(\text{lik}(\theta) = f(x | \theta)\)</span>. For independent and identically distributed observed values, then <span class="math notranslate nohighlight">\(\text{lik}(\theta) = f(x_1, \dots, x_n| \theta) = \Pi_{i=1}^n f(x_i | \theta)\)</span>. The <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> such that this function attains its maximum value is the <strong>maximum likelihood estimator (MLE)</strong> of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>Given an MLE <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> of <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> is said to be <strong>consistent</strong> if <span class="math notranslate nohighlight">\(\mathbb{P}(\hat{\theta} - \theta &gt; \epsilon) \rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(n\rightarrow \infty\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(\gamma(X)\)</span> and <span class="math notranslate nohighlight">\(\delta(X)\)</span> be two statistics satisfying <span class="math notranslate nohighlight">\(\gamma(X) &lt; \delta(X)\)</span> for all <span class="math notranslate nohighlight">\(X\)</span>. If on observing <span class="math notranslate nohighlight">\(X = x\)</span>, the inference can be made that <span class="math notranslate nohighlight">\(\gamma(x) \leq \theta \leq \delta(x)\)</span>. Then <span class="math notranslate nohighlight">\([\delta(x), \gamma(x)]\)</span> is an <strong>interval estimate</strong> and <span class="math notranslate nohighlight">\([\delta(X), \gamma(X)]\)</span> is an <strong>interval estimator</strong>. The random interval (random because the <em>endpoints</em> are random variables) <span class="math notranslate nohighlight">\([\delta(X), \gamma(X)]\)</span> is called a <span class="math notranslate nohighlight">\(100\cdot\alpha \%\)</span> <strong>confidence interval</strong> for <span class="math notranslate nohighlight">\(\theta\)</span>. Of course, there is a true <span class="math notranslate nohighlight">\(\theta\)</span>, so either it is in this interval or it is not. But if the confidence interval was constructed many times over using samples, then it would contain <span class="math notranslate nohighlight">\(\theta\)</span> <span class="math notranslate nohighlight">\(100\cdot\alpha \%\)</span> of the times.</p>
-<p>A <strong>hypothesis test</strong> is a conjecture about the distribution of one or more random variables, and a test of a hypothesis is a procedure for deciding whether or not to reject that conjecture. The <strong>null hypothesis</strong> is <span class="math notranslate nohighlight">\(H_0\)</span> is only ever conservatively rejected. If it <em>is</em> rejected, the <strong>alternative hypothesis</strong>, <span class="math notranslate nohighlight">\(H_1\)</span>, is accepted. If <span class="math notranslate nohighlight">\(H_0\)</span> is rejected when it is true, it is a type I error (arguably more serioues given the test favours <span class="math notranslate nohighlight">\(H_0\)</span>); if <span class="math notranslate nohighlight">\(H_1\)</span> is accepted when it is false, it is a type II error. In the most simple situations, the upper bound on the probability of a type I error is called the size or <strong>significance level</strong> of the <em>test</em>. The <strong>p-value</strong> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is the smallest value of the significance level (often denoted <span class="math notranslate nohighlight">\(\alpha\)</span>) for which <span class="math notranslate nohighlight">\(H_0\)</span> would be rejected on the basis of seeing <span class="math notranslate nohighlight">\(x\)</span>. The p-value is sometimes called the significance level of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>An estimator <em>W</em> is <strong>efficient</strong> relative to another estimator <span class="math notranslate nohighlight">\(V\)</span> if <span class="math notranslate nohighlight">\(\text{Var}(W) &lt; \text{Var}(V)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\alpha\)</span> be the ‘significance level’ of a test statistic <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\gamma(X)\)</span> and <span class="math notranslate nohighlight">\(\delta(X)\)</span> be two statistics satisfying <span class="math notranslate nohighlight">\(\gamma(X) &lt; \delta(X)\)</span> for all <span class="math notranslate nohighlight">\(X\)</span>. If on observing <span class="math notranslate nohighlight">\(X = x\)</span>, the inference can be made that <span class="math notranslate nohighlight">\(\gamma(x) \leq \theta \leq \delta(x)\)</span>. Then <span class="math notranslate nohighlight">\([\delta(x), \gamma(x)]\)</span> is an <strong>interval estimate</strong> and <span class="math notranslate nohighlight">\([\delta(X), \gamma(X)]\)</span> is an <strong>interval estimator</strong>. The random interval (random because the <em>endpoints</em> are random variables) <span class="math notranslate nohighlight">\([\delta(X), \gamma(X)]\)</span> is called a <span class="math notranslate nohighlight">\(100\cdot\alpha \%\)</span> <strong>confidence interval</strong> for <span class="math notranslate nohighlight">\(\theta\)</span>. Of course, there is a true <span class="math notranslate nohighlight">\(\theta\)</span>, so either it is in this interval or it is not. But if the confidence interval was constructed many times over using samples, <span class="math notranslate nohighlight">\(\theta\)</span> would be contained within it <span class="math notranslate nohighlight">\(100\cdot\alpha \%\)</span> of the times.</p>
+<p>A <strong>hypothesis test</strong> is a conjecture about the distribution of one or more random variables, and a test of a hypothesis is a procedure for deciding whether or not to reject that conjecture. The <strong>null hypothesis</strong>, <span class="math notranslate nohighlight">\(H_0\)</span>, is only ever conservatively rejected and represents the default positiion. The <strong>alternative hypothesis</strong>, <span class="math notranslate nohighlight">\(H_1\)</span>, is the conclusion contrary to this.</p>
+<p>A type I error occurs when <span class="math notranslate nohighlight">\(H_0\)</span> is rejected when it is true, ie when a <em>true</em> null hypothesis is rejected. Mistakenly failing to reject a false null hypothesis is called a type II error.</p>
+<p>In the most simple situations, the upper bound on the probability of a type I error is called the size or <strong>significance level</strong> of the <em>test</em>. The <strong>p-value</strong> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is the smallest value of the significance level (denoted <span class="math notranslate nohighlight">\(\alpha\)</span>) for which <span class="math notranslate nohighlight">\(H_0\)</span> would be rejected on the basis of seeing <span class="math notranslate nohighlight">\(x\)</span>. The p-value is sometimes called the significance level of <span class="math notranslate nohighlight">\(X\)</span>. The probability that a test will reject the null is called the power of the test. The probability of a type II error is equal to 1 minus the power of the test.</p>
 <p>Recall that there are two types of statistics out there: parametrised, eg by <span class="math notranslate nohighlight">\(\theta\)</span>, and non-parametrised. The latter are often distribution free (ie don’t involve a PDF) or don’t require parameters to be specified.</p>
 </div>
 <div class="section" id="imports">
@@ -1574,7 +1584,6 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
             This book is available under an MIT license.
-
           </div>
       </p>
     </div>

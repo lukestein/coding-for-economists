@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -134,7 +136,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-best-practice-coding.html">
-   1. Basics of Best Practice Coding
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. More Tips for Better Coding
   </a>
  </li>
 </ul>
@@ -151,22 +158,27 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Data Analysis
+   2. Working with data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-read-and-write.html">
-   3. Reading and Writing Files
+   4. Reading and Writing Files
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-extraction.html">
-   4. Extracting Data
+   5. Extracting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   5. Advanced Data
+   6. Advanced Data
   </a>
  </li>
 </ul>
@@ -327,11 +339,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feconmt-regression.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Feconmt-regression.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -352,15 +364,9 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/econmt-regression.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/econmt-regression.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/econmt-regression.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -492,23 +498,40 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-probability-model">
+   3.10. Linear probability model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violations-of-the-classical-linear-model-clm">
+   3.11. Violations of the classical linear model (CLM)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heteroskedasticity">
+     3.11.1. Heteroskedasticity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quantile-regression">
-   3.10. Quantile regression
+   3.12. Quantile regression
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regression-plots">
-   3.11. Regression plots
+   3.13. Regression plots
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#specification-curve-analysis">
-   3.12. Specification curve analysis
+   3.14. Specification curve analysis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   3.13. Review
+   3.15. Review
   </a>
  </li>
 </ul>
@@ -532,12 +555,12 @@
 <div class="section" id="notation-and-basic-definitions">
 <h3><span class="section-number">3.1.1. </span>Notation and basic definitions<a class="headerlink" href="#notation-and-basic-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth and represent parameters. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Sometimes Greek letters will stand in for vectors of parameters. Most of the time, upper case Latin characters such as <span class="math notranslate nohighlight">\(X\)</span> will represent random variables (which could have more than one dimension). Lower case letters from the Latin alphabet denote realised data, for instance <span class="math notranslate nohighlight">\(x\)</span> (which again could be multi-dimensional).  Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{n} \displaystyle\sum_{i} x_i\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is number of samples.</p>
-<p>Ordinary least squares (OLS) regression is used to predict the value of an outcome variable <span class="math notranslate nohighlight">\(y\)</span> based on one or more input predictor variables arrange in a matrix <span class="math notranslate nohighlight">\(X\)</span>. The equation that we would like to recover is</p>
+<p>Ordinary least squares (OLS) regression can be used to <em>estimate</em> the parameters of certain types of model, most typically models of the form</p>
 <div class="math notranslate nohighlight">
 \[
 y = \beta_0 + \beta_1 \cdot x_1 + \beta_2 \cdot x_2
 \]</div>
-<p>where the <span class="math notranslate nohighlight">\(x_i\)</span> could be transforms of original data. But this is a platonic ideal, what is called the data generating process (DGP). All we can do is recover <em>estimates</em> of it, i.e. we can find <span class="math notranslate nohighlight">\(\hat{\beta_i}\)</span> and the relationship</p>
+<p>This generic model says that the value of an outcome variable <span class="math notranslate nohighlight">\(y\)</span> is a linear function of one or more input predictor variables <span class="math notranslate nohighlight">\(x_i\)</span>, where the <span class="math notranslate nohighlight">\(x_i\)</span> could be transforms of original data. But the above equation is a platonic ideal, what we call a data generating process (DGP). OLS allows us to recover <em>estimates</em> of the parameters of the model , i.e. to find <span class="math notranslate nohighlight">\(\hat{\beta_i}\)</span> and to enable us to write an estimated model:</p>
 <div class="math notranslate nohighlight">
 \[
 y = \hat{\beta_0} + \hat{\beta_1} \cdot x_1 + \hat{\beta_2} \cdot x_2 + \epsilon
@@ -553,7 +576,17 @@ y = x'\cdot \hat{\beta} + \epsilon
 \[
 \hat{\beta} = \left(X'X\right)^{-1} X'y
 \]</div>
-<p>The interpretation of these regression coefficients depends on what their units are to begin with, but you can always work it out by differentiating both sides of the model equation with respect to the <span class="math notranslate nohighlight">\(x_i\)</span>. For example, for the first model equation above</p>
+<p>To be sure that the estimates of these parameters are the <em>best linear unbiased estimate</em>, a few conditions need to hold: the Gauss-Markov conditions:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(y\)</span> is a linear function of the <span class="math notranslate nohighlight">\(\beta_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> and the <span class="math notranslate nohighlight">\(x_i\)</span> are randomly sampled from the population.</p></li>
+<li><p>There is no perfect multi-collinearity of variables.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{E}(\epsilon | x_1, \dots, x_n) = 0\)</span> (unconfoundedness)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{Var}(\epsilon | x_1, \dots, x_n) = \sigma^2\)</span> (homoskedasticity)</p></li>
+</ol>
+<p>(1)-(4) also guarantee that OLS estimates are unbiased and <span class="math notranslate nohighlight">\(\mathbb{E}(\hat{\beta}_i) = \beta_i\)</span>.</p>
+<p>The classic linear model requires a 6th assumption; that <span class="math notranslate nohighlight">\(\epsilon \thicksim \mathcal{N}(0, \sigma^2)\)</span>.</p>
+<p>The interpretation of regression coefficients depends on what their units are to begin with, but you can always work it out by differentiating both sides of the model equation with respect to the <span class="math notranslate nohighlight">\(x_i\)</span>. For example, for the first model equation above</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial y}{\partial x_i} = \beta_i
@@ -563,7 +596,7 @@ y = x'\cdot \hat{\beta} + \epsilon
 \[
 \frac{\partial y}{\partial x_i} = \beta_i \frac{1}{x_i} 
 \]</div>
-<p>with some abuse of notation, we can rewrite this as <span class="math notranslate nohighlight">\(dy = \beta_i dx_i/x_i\)</span>, which says that a percent change in <span class="math notranslate nohighlight">\(x_i\)</span> is associated with a <span class="math notranslate nohighlight">\(\beta_i\)</span> unit change in <span class="math notranslate nohighlight">\(y\)</span>. With a logged <span class="math notranslate nohighlight">\(y\)</span> variable, it’s a percent change in <span class="math notranslate nohighlight">\(x_i\)</span> that is associated with a percent change in <span class="math notranslate nohighlight">\(y\)</span>, or <span class="math notranslate nohighlight">\(dy/y = \beta_i dx_i/x_i\)</span> (note that both sides of this equation are unitless in this case). Finally, another example that is important in practice is that of log differences, eg <span class="math notranslate nohighlight">\(y = \beta_i (\ln x_i - \ln x_i')\)</span>. Again, we will abuse notation and say that this case may be represented as <span class="math notranslate nohighlight">\(dy = \beta_i (d x_i/x_i - dx_i'/x_i')\)</span>, i.e. the difference in two percentages, a <em>percentage point</em> change, in <span class="math notranslate nohighlight">\(x_i\)</span> is associated with a <span class="math notranslate nohighlight">\(\beta_i\)</span> unit change in <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>with some abuse of notation, we can rewrite this as <span class="math notranslate nohighlight">\(\partial y = \beta_i \partial x_i/x_i\)</span>, which says that a percent change in <span class="math notranslate nohighlight">\(x_i\)</span> is associated with a <span class="math notranslate nohighlight">\(\beta_i\)</span> unit change in <span class="math notranslate nohighlight">\(y\)</span>. With a logged <span class="math notranslate nohighlight">\(y\)</span> variable, it’s a percent change in <span class="math notranslate nohighlight">\(x_i\)</span> that is associated with a percent change in <span class="math notranslate nohighlight">\(y\)</span>, or <span class="math notranslate nohighlight">\(\partial y/y = \beta_i \partial x_i/x_i\)</span> (note that both sides of this equation are unitless in this case). Finally, another example that is important in practice is that of log differences, eg <span class="math notranslate nohighlight">\(y = \beta_i (\ln x_i - \ln x_i')\)</span>. Again, we will abuse notation and say that this case may be represented as <span class="math notranslate nohighlight">\(\partial y = \beta_i (\partial x_i/x_i - \partial x_i'/x_i')\)</span>, i.e. the difference in two percentages, a <em>percentage point</em> change, in <span class="math notranslate nohighlight">\(x_i\)</span> is associated with a <span class="math notranslate nohighlight">\(\beta_i\)</span> unit change in <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </div>
 <div class="section" id="imports">
 <h3><span class="section-number">3.1.2. </span>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
@@ -716,8 +749,8 @@ y = x'\cdot \hat{\beta} + \epsilon
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     1.040
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):              0.312
-Time:                        00:41:34   Log-Likelihood:                -385.50
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):              0.312
+Time:                        11:20:52   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -798,8 +831,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.580
 Model:                            OLS   Adj. R-squared:                  0.572
 Method:                 Least Squares   F-statistic:                     77.18
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):           4.02e-12
-Time:                        00:41:34   Log-Likelihood:                -252.48
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):           4.02e-12
+Time:                        11:20:53   Log-Likelihood:                -252.48
 No. Observations:                  58   AIC:                             509.0
 Df Residuals:                      56   BIC:                             513.1
 Df Model:                           1                                         
@@ -842,8 +875,8 @@ Method:                          IRLS   Df Model:                            1
 Norm:                     TrimmedMean                                         
 Scale Est.:                       mad                                         
 Cov Type:                          H1                                         
-Date:                Fri, 05 Mar 2021                                         
-Time:                        00:41:34                                         
+Date:                Wed, 17 Mar 2021                                         
+Time:                        11:20:53                                         
 No. Iterations:                     7                                         
 ==============================================================================
                  coef    std err          z      P&gt;|z|      [0.025      0.975]
@@ -914,8 +947,8 @@ If the model instance has been used for another fit with different fit parameter
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     52.75
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):           1.16e-09
-Time:                        00:41:35   Log-Likelihood:                -385.50
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):           1.16e-09
+Time:                        11:20:53   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -969,8 +1002,8 @@ errors in panel data, again with keyword arguments; and</p></li>
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     39.44
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):           2.63e-07
-Time:                        00:41:35   Log-Likelihood:                -361.23
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):           2.63e-07
+Time:                        11:20:53   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1011,8 +1044,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     35.10
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):           1.96e-06
-Time:                        00:41:35   Log-Likelihood:                -361.23
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):           1.96e-06
+Time:                        11:20:53   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1181,8 +1214,8 @@ Notes:
 Dep. Variable:                    mpg   R-squared:                       0.754
 Model:                            OLS   Adj. R-squared:                  0.727
 Method:                 Least Squares   F-statistic:                     28.59
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):           1.14e-08
-Time:                        00:41:35   Log-Likelihood:                -79.948
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):           1.14e-08
+Time:                        11:20:53   Log-Likelihood:                -79.948
 No. Observations:                  32   AIC:                             167.9
 Df Residuals:                      28   BIC:                             173.8
 Df Model:                           3                                         
@@ -1244,6 +1277,7 @@ hp            -0.0240      0.015     -1.560      0.130      -0.056       0.008
 </div>
 </div>
 </div>
+<p>When there is an intercept, the coefficients of fixed effect variables can be interpreted as being the average of <span class="math notranslate nohighlight">\(y\)</span> for that class <em>compared</em> to the excluded classes holding all other categories and variables fixed.</p>
 </div>
 <div class="section" id="transformations-of-regressors">
 <h2><span class="section-number">3.4. </span>Transformations of regressors<a class="headerlink" href="#transformations-of-regressors" title="Permalink to this headline">¶</a></h2>
@@ -1480,8 +1514,8 @@ hp:disp       -0.0001   1.91e-05     -7.409      0.000      -0.000      -0.000
 Dep. Variable:                      y   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                    0.7446
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):              0.392
-Time:                        00:41:35   Log-Likelihood:                -361.23
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):              0.392
+Time:                        11:20:53   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1643,8 +1677,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.998
 Model:                            OLS   Adj. R-squared:                  0.998
 Method:                 Least Squares   F-statistic:                 4.302e+04
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):          6.90e-261
-Time:                        00:41:35   Log-Likelihood:                 165.45
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):          6.90e-261
+Time:                        11:20:53   Log-Likelihood:                 165.45
 No. Observations:                 200   AIC:                            -324.9
 Df Residuals:                     197   BIC:                            -315.0
 Df Model:                           2                                         
@@ -1674,6 +1708,7 @@ Notes:
 <div class="section" id="instrumental-variables">
 <h2><span class="section-number">3.8. </span>Instrumental variables<a class="headerlink" href="#instrumental-variables" title="Permalink to this headline">¶</a></h2>
 <p>Rather than use <strong>statsmodels</strong> for IV, we’ll use the <a class="reference external" href="https://bashtage.github.io/linearmodels/doc/index.html"><strong>linearmodels</strong></a> package, which has very clean documentation (indeed, this sub-section is indebted to that documentation).</p>
+<p>Recall that a good instrumental variable <span class="math notranslate nohighlight">\(z\)</span> has zero covariance with the error from the regression (which is untestable) and non-zero covariance with the variable of interest (which is).</p>
 <p>Recall that in IV regression, we have a model of the form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1838,8 +1873,8 @@ x_{2i} &amp; = z_{1i}\hat{\delta} + z_{2i}\hat{\gamma} + \nu_i\end{split}
 Dep. Variable:          np.log(packs)   R-squared:                      0.9659
 Estimator:                    IV-2SLS   Adj. R-squared:                 0.9279
 No. Observations:                  96   F-statistic:                  2.66e+16
-Date:                Fri, Mar 05 2021   P-value (F-stat)                0.0000
-Time:                        00:41:36   Distribution:                 chi2(50)
+Date:                Wed, Mar 17 2021   P-value (F-stat)                0.0000
+Time:                        11:20:54   Distribution:                 chi2(50)
 Cov. Estimator:             clustered                                         
                                                                               
                                 Parameter Estimates                                
@@ -2055,7 +2090,7 @@ H0: Endogenous variables are exogenous
 Statistic: 14000039221717696.0000
 P-value: 0.0000
 Distributed: chi2(1)
-WaldTestStatistic, id: 0x7fa47007f940
+WaldTestStatistic, id: 0x7fc9d81667c0
 </pre></div>
 </div>
 </div>
@@ -2271,8 +2306,8 @@ T-stats reported in parentheses
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                          Logit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Fri, 05 Mar 2021   Pseudo R-squ.:                  0.3740
-Time:                        00:41:36   Log-Likelihood:                -12.890
+Date:                Wed, 17 Mar 2021   Pseudo R-squ.:                  0.3740
+Time:                        11:20:54   Log-Likelihood:                -12.890
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001502
 ==============================================================================
@@ -2351,13 +2386,15 @@ PSI            2.3787      1.065      2.234      0.025       0.292       4.465
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
          Current function value: 0.400588
          Iterations 6
-                          Probit Regression Results                           
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                          Probit Regression Results                           
 ==============================================================================
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                         Probit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Fri, 05 Mar 2021   Pseudo R-squ.:                  0.3775
-Time:                        00:41:36   Log-Likelihood:                -12.819
+Date:                Wed, 17 Mar 2021   Pseudo R-squ.:                  0.3775
+Time:                        11:20:54   Log-Likelihood:                -12.819
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001405
 ==============================================================================
@@ -2422,7 +2459,7 @@ PSI            1.4263      0.595      2.397      0.017       0.260       2.593
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_93_0.png" src="_images/econmt-regression_93_0.png" />
+<img alt="_images/econmt-regression_94_0.png" src="_images/econmt-regression_94_0.png" />
 </div>
 </div>
 <p>What difference there is, is that logistic regression puts more weight into the tails of the distribution. Arguably, logit is easier to interpret too. With logistic regression, a one unit change in <span class="math notranslate nohighlight">\(x_i\)</span> is associated with a <span class="math notranslate nohighlight">\(\beta_i\)</span> change in the log odds of a 1 outcome or, alternatively, an <span class="math notranslate nohighlight">\(e^{\beta_i}\)</span>-fold change in the odds, all else being equal. With a probit, this is a change of <span class="math notranslate nohighlight">\(\beta_i z\)</span> for <span class="math notranslate nohighlight">\(z\)</span> a normalised variable that you’d have to convert into a predicted probability using the normal CDF.</p>
@@ -2437,8 +2474,34 @@ PSI            1.4263      0.595      2.397      0.017       0.260       2.593
 <p>But as well as the ones we’ve seen, there are many possible link functions one can use via the catch-all <code class="docutils literal notranslate"><span class="pre">glm</span></code> function. These come in different ‘families’ of distributions, with the default for the binomial family being logit. So, running <code class="docutils literal notranslate"><span class="pre">smf.glm('GRADE</span> <span class="pre">~</span> <span class="pre">GPA</span> <span class="pre">+</span> <span class="pre">TUCE</span> <span class="pre">+</span> <span class="pre">PSI',</span> <span class="pre">data=df,</span> <span class="pre">family=sm.families.Binomial()).fit()</span></code> will produce exactly the same as we got both using the <code class="docutils literal notranslate"><span class="pre">logit</span></code> function. For more on the families of distributions and possible link functions, see the <a class="reference external" href="https://www.statsmodels.org/stable/glm.html">relevant part</a> of the <strong>statsmodels</strong> documentation.</p>
 </div>
 </div>
+<div class="section" id="linear-probability-model">
+<h2><span class="section-number">3.10. </span>Linear probability model<a class="headerlink" href="#linear-probability-model" title="Permalink to this headline">¶</a></h2>
+<p>When <span class="math notranslate nohighlight">\(y\)</span> takes values in <span class="math notranslate nohighlight">\(\{0, 1\}\)</span> but the model looks like</p>
+<div class="math notranslate nohighlight">
+\[
+y = x' \cdot \beta
+\]</div>
+<p>and is estimated by OLS then you have a linear probability model. In this case, the interpretion of a unit change in <span class="math notranslate nohighlight">\(x_i\)</span> is that it induces a <span class="math notranslate nohighlight">\(\beta_i\)</span> <em>change in probability</em> of <span class="math notranslate nohighlight">\(y\)</span>. Note that homoskedasticity does not hold for the linear probability model.</p>
+</div>
+<div class="section" id="violations-of-the-classical-linear-model-clm">
+<h2><span class="section-number">3.11. </span>Violations of the classical linear model (CLM)<a class="headerlink" href="#violations-of-the-classical-linear-model-clm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="heteroskedasticity">
+<h3><span class="section-number">3.11.1. </span>Heteroskedasticity<a class="headerlink" href="#heteroskedasticity" title="Permalink to this headline">¶</a></h3>
+<p>If an estimated model is homoskedastic then its random variables have equal (finite) variance. This is also known as homogeneity of variance. Another way of putting it is that, for all <em>observations</em> <span class="math notranslate nohighlight">\(i\)</span> in an estimated model <span class="math notranslate nohighlight">\(y_i = X_i\hat{\beta} + \epsilon_i\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}(\epsilon_i \epsilon_i) = \sigma^2
+\]</div>
+<p>When this relationship does not hold, an estimated model is said to be heteroskedastic.</p>
+<p>To test for heteroskedasticity, you can use <strong>statsmodels</strong>’ versions of the <a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.stats.diagnostic.het_breuschpagan.html#statsmodels.stats.diagnostic.het_breuschpagan">Breusch-Pagan</a> or <a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.stats.diagnostic.het_white.html#statsmodels.stats.diagnostic.het_white">White</a> tests with the null hypothesis that the estimated model is homoskedastic. If the null hypothesis is rejected, then standard errors, t-statistics, and F-statistics are invalidated. In this case, you will need HAC (heteroskedasticity and auto-correlation consistent) standard errors, t- and F-statistics.</p>
+<p>To obtain HAC standard errors from existing regression results in a variable <code class="docutils literal notranslate"><span class="pre">results</span></code>, you can use (for 1 lag):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">get_robustcov_results</span><span class="p">(</span><span class="s1">&#39;HAC&#39;</span><span class="p">,</span> <span class="n">maxlags</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="quantile-regression">
-<h2><span class="section-number">3.10. </span>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.12. </span>Quantile regression<a class="headerlink" href="#quantile-regression" title="Permalink to this headline">¶</a></h2>
 <p>Quantile regression estimates the conditional quantiles of a response variable. In some cases, it can be more robust to outliers and, in the case of the <span class="math notranslate nohighlight">\(q=0.5\)</span> quantile it is equivalent LAD (Least Absolute Deviation) regression. Let’s look at an example of quantile regression in action, lifted direct from the <strong>statsmodels</strong> <a class="reference external" href="https://www.statsmodels.org/dev/examples/notebooks/generated/quantile_regression.html">documentation</a> and based on a Journal of Economic Perspectives paper by Koenker and Hallock.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2523,8 +2586,8 @@ PSI            1.4263      0.595      2.397      0.017       0.260       2.593
 Dep. Variable:                foodexp   Pseudo R-squared:               0.6206
 Model:                       QuantReg   Bandwidth:                       64.51
 Method:                 Least Squares   Sparsity:                        209.3
-Date:                Fri, 05 Mar 2021   No. Observations:                  235
-Time:                        00:41:36   Df Residuals:                      233
+Date:                Wed, 17 Mar 2021   No. Observations:                  235
+Time:                        11:20:55   Df Residuals:                      233
                                         Df Model:                            1
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
@@ -2565,13 +2628,13 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_103_0.png" src="_images/econmt-regression_103_0.png" />
+<img alt="_images/econmt-regression_106_0.png" src="_images/econmt-regression_106_0.png" />
 </div>
 </div>
 <p>This chart shows very clearly how quantile regression differs from OLS. The line fitted by OLS is trying to be all things to all points whereas the line fitted by quantile regression is focused only on its quantile. You can also see how points far from the median (not all shown) may be having a large influence on the OLS line.</p>
 </div>
 <div class="section" id="regression-plots">
-<h2><span class="section-number">3.11. </span>Regression plots<a class="headerlink" href="#regression-plots" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.13. </span>Regression plots<a class="headerlink" href="#regression-plots" title="Permalink to this headline">¶</a></h2>
 <p><strong>statsmodels</strong> has a number of built-in plotting methods to help you understand how well your regression is capturing the relationships you’re looking for. Let’s see a few examples of these using <strong>statsmodels</strong> built-in Statewide Crime data set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2630,7 +2693,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_108_0.png" src="_images/econmt-regression_108_0.png" />
+<img alt="_images/econmt-regression_111_0.png" src="_images/econmt-regression_111_0.png" />
 </div>
 </div>
 <p>Clearly, this is not quite normal and there are some serious outliers in the tails.</p>
@@ -2648,8 +2711,8 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_110_0.png" src="_images/econmt-regression_110_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8771633899990)&gt;
+<img alt="_images/econmt-regression_113_0.png" src="_images/econmt-regression_113_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781657650701)&gt;
 </pre></div>
 </div>
 </div>
@@ -2666,7 +2729,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_112_0.png" src="_images/econmt-regression_112_0.png" />
+<img alt="_images/econmt-regression_115_0.png" src="_images/econmt-regression_115_0.png" />
 </div>
 </div>
 <p>At this point, the results of the regression are useful context.</p>
@@ -2684,8 +2747,8 @@ strong multicollinearity or other numerical problems.
 Dep. Variable:                 murder   R-squared:                       0.813
 Model:                            OLS   Adj. R-squared:                  0.797
 Method:                 Least Squares   F-statistic:                     50.08
-Date:                Fri, 05 Mar 2021   Prob (F-statistic):           3.42e-16
-Time:                        00:41:38   Log-Likelihood:                -95.050
+Date:                Wed, 17 Mar 2021   Prob (F-statistic):           3.42e-16
+Time:                        11:20:57   Log-Likelihood:                -95.050
 No. Observations:                  51   AIC:                             200.1
 Df Residuals:                      46   BIC:                             209.8
 Df Model:                           4                                         
@@ -2726,7 +2789,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_117_0.png" src="_images/econmt-regression_117_0.png" />
+<img alt="_images/econmt-regression_120_0.png" src="_images/econmt-regression_120_0.png" />
 </div>
 </div>
 <p><strong>statsmodels</strong> can also produce influence plots of the ‘externally studentised’ residuals vs. the leverage of each observation as measured by the so-called hat matrix <span class="math notranslate nohighlight">\(X(X^{\;\prime}X)^{-1}X^{\;\prime}\)</span> (because it puts the ‘hat’ on <span class="math notranslate nohighlight">\(y\)</span>). Externally studentised residuals are residuals that are scaled by their standard deviation. High leverage points could exert an undue influence over the regression line, but only if the predicted <span class="math notranslate nohighlight">\(y\)</span> values of a regression that was fit with them excluded was quite different. In the example below, DC is having a big influence.</p>
@@ -2738,7 +2801,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_120_0.png" src="_images/econmt-regression_120_0.png" />
+<img alt="_images/econmt-regression_123_0.png" src="_images/econmt-regression_123_0.png" />
 </div>
 </div>
 <p>Finally, it’s nice to be able to see plots of our coefficients along with their standard errors. There isn’t a built-in <strong>statsmodels</strong> option for this, but happily it’s easy to extract the results of regressions in a sensible format. Using the <code class="docutils literal notranslate"><span class="pre">results</span></code> object from earlier, and excluding the intercept, we can get the coefficients from <code class="docutils literal notranslate"><span class="pre">results.params[1:]</span></code> and the associated errors from <code class="docutils literal notranslate"><span class="pre">results.bse[1:]</span></code>.</p>
@@ -2758,15 +2821,15 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_122_0.png" src="_images/econmt-regression_122_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8771633409552)&gt;
+<img alt="_images/econmt-regression_125_0.png" src="_images/econmt-regression_125_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781657573949)&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="specification-curve-analysis">
-<h2><span class="section-number">3.12. </span>Specification curve analysis<a class="headerlink" href="#specification-curve-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.14. </span>Specification curve analysis<a class="headerlink" href="#specification-curve-analysis" title="Permalink to this headline">¶</a></h2>
 <p>When specifying a model, modellers have many options. These can be informed by field intelligence, priors, and even misguided attempts to find a significant result. Even with the best of intentions, research teams can reach entirely different conclusions using the same, or similar, data because of different choices made in preparing data or in modelling it.</p>
 <p>There’s formal evidence that researchers really do make different decisions; one study <span id="id3">[<a class="reference internal" href="zreferences.html#id8"><span>9</span></a>]</span> gave the same research question - whether soccer referees are more likely to give red cards to dark-skin-toned players than to light-skin-toned players - to 29 different teams. From the abstract of that paper:</p>
 <blockquote>
@@ -2808,12 +2871,12 @@ strong multicollinearity or other numerical problems.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit complete
 </pre></div>
 </div>
-<img alt="_images/econmt-regression_126_1.png" src="_images/econmt-regression_126_1.png" />
+<img alt="_images/econmt-regression_129_1.png" src="_images/econmt-regression_129_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="review">
-<h2><span class="section-number">3.13. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.15. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>In this very short introduction to regression with code, you should have learned how to:</p>
 <ul class="simple">
 <li><p>✅ perform linear OLS regressions with code;</p></li>
@@ -2870,7 +2933,6 @@ strong multicollinearity or other numerical problems.
             &copy; Copyright 2020.<br/>
           <div class="extra_footer">
             This book is available under an MIT license.
-
           </div>
       </p>
     </div>
