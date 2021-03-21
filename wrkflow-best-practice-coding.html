@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -156,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Working with data
+   2. Working with Data
   </a>
  </li>
  <li class="toctree-l1">
@@ -581,14 +583,15 @@ Artwork by &#64;allison_horst.</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/raw/file.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This works great on Mac and Linux, but it’s not going to work on Windows. For that we need to use operating system independent paths. One way of doing this in Python is to use the <code class="docutils literal notranslate"><span class="pre">os</span></code> package that tells the operating system (whatever it may be) to combine folder names into a path:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<p>This works great on Mac and Linux, but it’s not going to work on Windows; Windows uses backwards slashes, which unfortunately tend to do other things in programming too. To ensure relative paths work across operating systems, the best way is to wrap the file path in a call to the <code class="docutils literal notranslate"><span class="pre">Path</span></code> method in the <strong>pathlib</strong> module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">path_to_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;raw&#39;</span><span class="p">,</span> <span class="s1">&#39;file.csv&#39;</span><span class="p">)</span>
+<span class="n">path_to_data</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data/raw/file.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_data</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>pathlib</strong> will translate the relative path you have entered into whatever the local operating system needs.</p>
 </div>
 <div class="section" id="don-t-prematurely-optimise-for-speed">
 <h2><span class="section-number">1.8. </span>Don’t prematurely optimise for speed<a class="headerlink" href="#don-t-prematurely-optimise-for-speed" title="Permalink to this headline">¶</a></h2>

@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -68,7 +70,7 @@
 <meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/code-preliminaries.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Preliminaries" />
-<meta property="og:description" content="Preliminaries  In this chapter, you’ll find out how to install and setup everything you need to get coding.  Computational environment  Operating system  Much o" />
+<meta property="og:description" content="Preliminaries  In this chapter, you’ll find out how to install and setup everything you need to get coding.  Computational environment  Operating system  Almost" />
 <meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -156,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Working with data
+   2. Working with Data
   </a>
  </li>
  <li class="toctree-l1">
@@ -449,12 +451,13 @@
 <h2><span class="section-number">1.1. </span>Computational environment<a class="headerlink" href="#computational-environment" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="operating-system">
 <h3><span class="section-number">1.1.1. </span>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h3>
-<p>Much of the coding you’ll need to do can be achieved on all three of the major operating systems: Windows, MacOS, and Linux.</p>
-<p>However, if you haven’t yet decided which operating system to use, I strongly recommend you do not choose Windows because coding on that operating system brings with it many more challenges. Some packages won’t work at all, and others will be <em>much</em> more difficult to set up. This is only true in a small number of cases, but it’s just often enough for it to be a real problem. Furthermore, if you ever need to scale up your work to the cloud, you’ll find that it’s more cost effective to use machines that have use something which is closer to Linux (which MacOS is). While Macs are famous for being expensive, most Linux distributions are free so even when avoiding Windows, there should be a solution to satisfy all budget constraints. Linux used to have a reputation as being fearsomely difficult for beginners. But modern Linux distributions, such as Ubuntu, are pretty user-friendly. If you are using Windows, for whatever reason, I recommend you work in the <a class="reference external" href="https://pbpython.com/wsl-python.html"><em>Windows Subsystem for Linux</em></a> for the best experience.</p>
+<p>Almost all of the code you’ll see can be run on all three of the major operating systems: Windows, MacOS, and Linux.</p>
+<p>However, if you haven’t yet decided which operating system to use, I strongly recommend that you choose either Linux or MacOS because, in a small number of cases, your code, third party packages and libraries, and coding related tools like Docker, either won’t work at all on Windows or will be <em>much</em> more difficult to set up. (Don’t panic if you have Windows already: we’ll come to a workaround in a moment.) Although it is rare that you run into a case like this, it’s just often enough for it to be a real pain. Furthermore, if you ever need to scale up your work to the cloud, you’ll find that it’s more cost effective to use machines that have use an operating system closer to Linux (which MacOS is). While Macs are famous for being expensive, most Linux distributions are free, so you should be able to find a code-friendly operating system to satisfy any budget constraint. Linux used to have a reputation as being fearsomely difficult for beginners. But modern Linux distributions, such as Ubuntu, are pretty user-friendly.</p>
+<p>If you are using Windows, then a good workaround for some of these issues is to use the <a class="reference external" href="https://pbpython.com/wsl-python.html"><em>Windows Subsystem for Linux</em></a>. It’s essentially a Linux operating system that installs alongside and integrates with your existing Windows operating system. This allows you to run code as if you were using Linux. You can get WSL <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">for free from Microsoft</a>.</p>
 </div>
 <div class="section" id="choice-of-programming-language">
 <h3><span class="section-number">1.1.2. </span>Choice of programming language<a class="headerlink" href="#choice-of-programming-language" title="Permalink to this headline">¶</a></h3>
-<p>This book uses Python, which is usually ranked as the first or second most popular programming language in the world and, just as importantly, it’s also one of the easiest to learn. It’s a general purpose language, which means it can perform a wide range of tasks. This combination of features is why people say Python has a low floor and a high ceiling. It’s also very versatile; the joke goes that Python is the 2nd best language at everything, and there’s some truth to that (although Python is 1st best at some tasks, like machine learning). But a language that covers such a lot of ground is also very useful; and Python is widely used across industry, academia, and the public sector. Python is the main ‘dynamic’ language used at <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google</a> and the most demanded language for jobs at <a class="reference external" href="https://insights.dice.com/2020/12/01/7-programming-languages-popular-at-apple-that-could-land-you-a-job/">Apple</a>. It is used for everything from computer games to websites, data science to software applications: it’s even being used to help <a class="reference external" href="https://github.com/nasa/fprime">fly a helicopter on Mars</a>. As an economist, you will know that this means Python benefits from strong positive network externalities. As such, learning Python has a lot of value and, once you have, learning more specialised languages like C++ or R is much easier; many of the basic programming concepts you’ll see in this book are useful in almost any programming language. Because of their similarities, however, readers will find that they can follow even more of the content of the book in some specific other languages, especially Julia and R.</p>
+<p>This book uses Python, which is usually ranked as the first or second most popular programming language in the world and, just as importantly, it’s also one of the easiest to learn. It’s a general purpose language, which means it can perform a wide range of tasks. This combination of features is why people say Python has a low floor and a high ceiling. It’s also very versatile; the joke goes that Python is the 2nd best language at everything, and there’s some truth to that (although Python is 1st best at some tasks, like machine learning). But a language that covers such a lot of ground is also very useful; and Python is widely used across industry, academia, and the public sector. Python is the main ‘dynamic’ language used at <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google</a> and the <a class="reference external" href="https://insights.dice.com/2020/12/01/7-programming-languages-popular-at-apple-that-could-land-you-a-job/">most demanded language</a> in jobs for Apple. It is used for everything from computer games to websites, data science to software applications: it’s even being used to help <a class="reference external" href="https://github.com/nasa/fprime">fly a helicopter on Mars</a>. As an economist, you will know that this means Python benefits from strong positive network externalities. As such, learning Python has a lot of value and, once you have, learning more specialised languages like C++ or R is much easier; many of the basic programming concepts you’ll see in this book are useful in almost any programming language. Because of their similarities, however, readers will find that they can follow even more of the content of the book in some specific other languages, especially Julia and R.</p>
 <p><img alt="xkcd-python" src="https://imgs.xkcd.com/comics/python.png" /></p>
 <p>Different languages have different strengths and weaknesses. Python and Julia are so-called high-level languages that are easier to write code in. C++ and Fortran are more low-level languages and much more fussy and labour-intensive to write code in; but, once the code is written (and ‘compiled’), it runs <em>fast</em>.</p>
 <p>Another big difference between languages is the extent to which users have created software that extends the base functionality of the language. The ecosystem of other users, and what they’re using the language for, is really important for determining how useful a language is. For example, Python and R have vibrant data science communities producing extensions (called libraries or packages) that are what really make those languages so useful for data science (far more than the base functionality of either).</p>
@@ -563,7 +566,7 @@
 </pre></div>
 </div>
 <p>To use your new environment in Visual Studio Code, you may need to restart it. Open up a Python script, for example, ‘hello_world.py’. Then, in the bottom left-hand corner of Visual Studio Code, you will see what Python environment that you are using. You can click on this to bring up a dropdown menu of all Python environments on your system and just choose whichever you want to use for this project. Visual Studio Code configuration settings for individual folders can be saved as ‘workspaces’, which remember which Python environment you were using for which folder.</p>
-<p>Installing packages one-by-one is very tedious. Fortunately, there’s a better way. You can install an entire Anaconda environment from a file. Here’s an example which would be saved as ‘codeforecon.yml’:</p>
+<p>Installing packages one-by-one is very tedious. Fortunately, there’s a better way. You can install an entire Anaconda environment from a file. Here’s an example ‘yaml’ (this stands for “YAML Ain’t Markup Language”) file that would be saved as ‘codeforecon.yml’ and which includes a good standard set of packages for doing economics:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">codeforecon</span>
 <span class="nt">channels</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
@@ -583,11 +586,17 @@
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tqdm</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">yaml</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pycodestyle</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">autopep8</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pyarrow</span>
   <span class="p p-Indicator">-</span> <span class="nt">pip</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jupyter-book</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">specification_curve</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ghp-import</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pandas-profiling</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pandas-datareader</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sympy</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">plotnine</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">altair</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stargazer</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">linearmodels</span>
 </pre></div>
 </div>
 <p>Note that most of these packages will be installed by conda, with just a few being installed by pip. The entire environment can be installed on the command line by running (from the same directory as the environment file):</p>

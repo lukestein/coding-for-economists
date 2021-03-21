@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -156,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Working with data
+   2. Working with Data
   </a>
  </li>
  <li class="toctree-l1">
@@ -490,7 +492,7 @@
 <span class="c1"># Set max rows displayed for readability</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># Plot settings</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;plot_style.txt&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://github.com/aeturrell/coding-for-economists/raw/main/plot_style.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -504,7 +506,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe4c0046340&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b42bc0880&gt;]
 </pre></div>
 </div>
 <img alt="_images/vis-intro_5_1.png" src="_images/vis-intro_5_1.png" />
@@ -1278,7 +1280,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_50_0.png" src="_images/vis-intro_50_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788847349694)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769056496270)&gt;
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1296,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_52_0.png" src="_images/vis-intro_52_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788847355639)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769056505501)&gt;
 </pre></div>
 </div>
 </div>
@@ -1310,11 +1312,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/stats/smoothers.py:310: PlotnineWarning: Confidence intervals are not yet implementedfor lowess smoothings.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/stats/smoothers.py:310: PlotnineWarning: Confidence intervals are not yet implementedfor lowess smoothings.
 </pre></div>
 </div>
 <img alt="_images/vis-intro_54_1.png" src="_images/vis-intro_54_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788879490630)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769055971542)&gt;
 </pre></div>
 </div>
 </div>
@@ -1329,11 +1331,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/stats/smoothers.py:310: PlotnineWarning: Confidence intervals are not yet implementedfor lowess smoothings.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/stats/smoothers.py:310: PlotnineWarning: Confidence intervals are not yet implementedfor lowess smoothings.
 </pre></div>
 </div>
 <img alt="_images/vis-intro_56_1.png" src="_images/vis-intro_56_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788863381703)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769051803841)&gt;
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1355,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_58_0.png" src="_images/vis-intro_58_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788796446166)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769055914108)&gt;
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1374,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_60_0.png" src="_images/vis-intro_60_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788796546949)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769055907792)&gt;
 </pre></div>
 </div>
 </div>
@@ -1391,11 +1393,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-intro_61_1.png" src="_images/vis-intro_61_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788847687563)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769056935440)&gt;
 </pre></div>
 </div>
 </div>
@@ -1414,7 +1416,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_63_0.png" src="_images/vis-intro_63_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8788863469587)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8769056970415)&gt;
 </pre></div>
 </div>
 </div>
@@ -1442,12 +1444,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-087b2d654e2546df9b242a2c94f8788c"></div>
+<div id="altair-viz-435d396c574941ccab32318092e13162"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-087b2d654e2546df9b242a2c94f8788c") {
-      outputDiv = document.getElementById("altair-viz-087b2d654e2546df9b242a2c94f8788c");
+    if (outputDiv.id !== "altair-viz-435d396c574941ccab32318092e13162") {
+      outputDiv = document.getElementById("altair-viz-435d396c574941ccab32318092e13162");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1518,12 +1520,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-df808e9e394248b0aaa46644f46566a0"></div>
+<div id="altair-viz-82c212e282b54d599b97ea66527db379"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-df808e9e394248b0aaa46644f46566a0") {
-      outputDiv = document.getElementById("altair-viz-df808e9e394248b0aaa46644f46566a0");
+    if (outputDiv.id !== "altair-viz-82c212e282b54d599b97ea66527db379") {
+      outputDiv = document.getElementById("altair-viz-82c212e282b54d599b97ea66527db379");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1590,12 +1592,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a7d065d482384b0195fcc3497b93124d"></div>
+<div id="altair-viz-176492f5f6ba481a909c4bd530e4785c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a7d065d482384b0195fcc3497b93124d") {
-      outputDiv = document.getElementById("altair-viz-a7d065d482384b0195fcc3497b93124d");
+    if (outputDiv.id !== "altair-viz-176492f5f6ba481a909c4bd530e4785c") {
+      outputDiv = document.getElementById("altair-viz-176492f5f6ba481a909c4bd530e4785c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1654,12 +1656,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c7ce88dae33d4e72a528db4be95e3a94"></div>
+<div id="altair-viz-b438fb45559945348d94f03e0652afcb"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c7ce88dae33d4e72a528db4be95e3a94") {
-      outputDiv = document.getElementById("altair-viz-c7ce88dae33d4e72a528db4be95e3a94");
+    if (outputDiv.id !== "altair-viz-b438fb45559945348d94f03e0652afcb") {
+      outputDiv = document.getElementById("altair-viz-b438fb45559945348d94f03e0652afcb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1720,12 +1722,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-e3db50af546b4780b0cddd510edbc890"></div>
+<div id="altair-viz-3e1b7d520fc54c358d91b2b48f16a072"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e3db50af546b4780b0cddd510edbc890") {
-      outputDiv = document.getElementById("altair-viz-e3db50af546b4780b0cddd510edbc890");
+    if (outputDiv.id !== "altair-viz-3e1b7d520fc54c358d91b2b48f16a072") {
+      outputDiv = document.getElementById("altair-viz-3e1b7d520fc54c358d91b2b48f16a072");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1786,12 +1788,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d87de3c343934118b376e7d540a269fe"></div>
+<div id="altair-viz-8c971e2b59654b848ec63ffd884ee0f4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d87de3c343934118b376e7d540a269fe") {
-      outputDiv = document.getElementById("altair-viz-d87de3c343934118b376e7d540a269fe");
+    if (outputDiv.id !== "altair-viz-8c971e2b59654b848ec63ffd884ee0f4") {
+      outputDiv = document.getElementById("altair-viz-8c971e2b59654b848ec63ffd884ee0f4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1872,12 +1874,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-5db25d1558f84a26ada0bec34c0bb027"></div>
+<div id="altair-viz-42b40baa87fc44ecb970e06b4f4b6c72"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5db25d1558f84a26ada0bec34c0bb027") {
-      outputDiv = document.getElementById("altair-viz-5db25d1558f84a26ada0bec34c0bb027");
+    if (outputDiv.id !== "altair-viz-42b40baa87fc44ecb970e06b4f4b6c72") {
+      outputDiv = document.getElementById("altair-viz-42b40baa87fc44ecb970e06b4f4b6c72");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1978,12 +1980,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-00d93364fa5343a792303aad33cadb2b"></div>
+<div id="altair-viz-0fa38938e6b34474be958a3165dd35d2"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-00d93364fa5343a792303aad33cadb2b") {
-      outputDiv = document.getElementById("altair-viz-00d93364fa5343a792303aad33cadb2b");
+    if (outputDiv.id !== "altair-viz-0fa38938e6b34474be958a3165dd35d2") {
+      outputDiv = document.getElementById("altair-viz-0fa38938e6b34474be958a3165dd35d2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

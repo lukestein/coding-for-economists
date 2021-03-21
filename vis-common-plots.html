@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -54,8 +56,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/vis-common-plots.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -158,7 +158,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-intro.html">
-   2. Working with data
+   2. Working with Data
   </a>
  </li>
  <li class="toctree-l1">
@@ -1031,13 +1031,14 @@
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="c1"># Set seed for reproducibility</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="c1"># Set max rows displayed for readability</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># Plot settings</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;plot_style.txt&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://github.com/aeturrell/coding-for-economists/raw/main/plot_style.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1274,7 +1275,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_15_0.png" src="_images/vis-common-plots_15_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622222457)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791805224720)&gt;
 </pre></div>
 </div>
 </div>
@@ -1298,12 +1299,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-8e46871f77e7490eba1b6dedf0ff8a0c"></div>
+<div id="altair-viz-b92173c3f5274a8e9e5384fbfb32e7d4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8e46871f77e7490eba1b6dedf0ff8a0c") {
-      outputDiv = document.getElementById("altair-viz-8e46871f77e7490eba1b6dedf0ff8a0c");
+    if (outputDiv.id !== "altair-viz-b92173c3f5274a8e9e5384fbfb32e7d4") {
+      outputDiv = document.getElementById("altair-viz-b92173c3f5274a8e9e5384fbfb32e7d4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1514,11 +1515,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_25_1.png" src="_images/vis-common-plots_25_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656027365)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791810573053)&gt;
 </pre></div>
 </div>
 </div>
@@ -1540,12 +1541,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-719bcc3f7f66485bb44abc75983f9a50"></div>
+<div id="altair-viz-1c88f1dde83d486d9ce7a03b7d3d0814"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-719bcc3f7f66485bb44abc75983f9a50") {
-      outputDiv = document.getElementById("altair-viz-719bcc3f7f66485bb44abc75983f9a50");
+    if (outputDiv.id !== "altair-viz-1c88f1dde83d486d9ce7a03b7d3d0814") {
+      outputDiv = document.getElementById("altair-viz-1c88f1dde83d486d9ce7a03b7d3d0814");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1740,7 +1741,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_33_0.png" src="_images/vis-common-plots_33_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777605291596)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812696733)&gt;
 </pre></div>
 </div>
 </div>
@@ -1801,11 +1802,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_41_1.png" src="_images/vis-common-plots_41_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777639804368)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812337496)&gt;
 </pre></div>
 </div>
 </div>
@@ -1825,12 +1826,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-0db2706179ab4e6ab8d1e888588d507b"></div>
+<div id="altair-viz-198f49a641b84d7389a21054b7dd591c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0db2706179ab4e6ab8d1e888588d507b") {
-      outputDiv = document.getElementById("altair-viz-0db2706179ab4e6ab8d1e888588d507b");
+    if (outputDiv.id !== "altair-viz-198f49a641b84d7389a21054b7dd591c") {
+      outputDiv = document.getElementById("altair-viz-198f49a641b84d7389a21054b7dd591c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2030,11 +2031,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom_path.py:75: PlotnineWarning: geom_path: Removed 4 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom_path.py:75: PlotnineWarning: geom_path: Removed 4 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_51_1.png" src="_images/vis-common-plots_51_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777639824439)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791815827080)&gt;
 </pre></div>
 </div>
 </div>
@@ -2055,12 +2056,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-218daa326d3e4742bbc20d8a6eb42e64"></div>
+<div id="altair-viz-898f84b6ff174b4986bc186f19b83115"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-218daa326d3e4742bbc20d8a6eb42e64") {
-      outputDiv = document.getElementById("altair-viz-218daa326d3e4742bbc20d8a6eb42e64");
+    if (outputDiv.id !== "altair-viz-898f84b6ff174b4986bc186f19b83115") {
+      outputDiv = document.getElementById("altair-viz-898f84b6ff174b4986bc186f19b83115");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2200,7 +2201,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbb41f3f070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7ff00f4729a0&gt;
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_59_1.png" src="_images/vis-common-plots_59_1.png" />
@@ -2222,7 +2223,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_61_0.png" src="_images/vis-common-plots_61_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622424441)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791813463992)&gt;
 </pre></div>
 </div>
 </div>
@@ -2244,12 +2245,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c29407734d124ea888f9518df1988ee7"></div>
+<div id="altair-viz-247fe08f616b46bf8418bf7716cd746c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c29407734d124ea888f9518df1988ee7") {
-      outputDiv = document.getElementById("altair-viz-c29407734d124ea888f9518df1988ee7");
+    if (outputDiv.id !== "altair-viz-247fe08f616b46bf8418bf7716cd746c") {
+      outputDiv = document.getElementById("altair-viz-247fe08f616b46bf8418bf7716cd746c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2405,7 +2406,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fbb00289bb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7ff00f454c70&gt;
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_69_1.png" src="_images/vis-common-plots_69_1.png" />
@@ -2426,7 +2427,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_71_0.png" src="_images/vis-common-plots_71_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656060124)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791814786823)&gt;
 </pre></div>
 </div>
 </div>
@@ -2449,12 +2450,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-939bbad411a543779ef43a329689972b"></div>
+<div id="altair-viz-2a9cca7cd1454c6983e71a0346636b68"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-939bbad411a543779ef43a329689972b") {
-      outputDiv = document.getElementById("altair-viz-939bbad411a543779ef43a329689972b");
+    if (outputDiv.id !== "altair-viz-2a9cca7cd1454c6983e71a0346636b68") {
+      outputDiv = document.getElementById("altair-viz-2a9cca7cd1454c6983e71a0346636b68");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2547,7 +2548,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_79_0.png" src="_images/vis-common-plots_79_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777673078044)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791810621633)&gt;
 </pre></div>
 </div>
 </div>
@@ -2569,12 +2570,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9a41969db4e84cffadaa68058ae96c8f"></div>
+<div id="altair-viz-2a7bdd9641714209ad779c6c17c8b36b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9a41969db4e84cffadaa68058ae96c8f") {
-      outputDiv = document.getElementById("altair-viz-9a41969db4e84cffadaa68058ae96c8f");
+    if (outputDiv.id !== "altair-viz-2a7bdd9641714209ad779c6c17c8b36b") {
+      outputDiv = document.getElementById("altair-viz-2a7bdd9641714209ad779c6c17c8b36b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2764,7 +2765,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_88_0.png" src="_images/vis-common-plots_88_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656443396)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791811836085)&gt;
 </pre></div>
 </div>
 </div>
@@ -2788,12 +2789,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-21279d1a082d4bce992711acdd3e055c"></div>
+<div id="altair-viz-ac6228f71bcf4b77a07add44a5dea7b3"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-21279d1a082d4bce992711acdd3e055c") {
-      outputDiv = document.getElementById("altair-viz-21279d1a082d4bce992711acdd3e055c");
+    if (outputDiv.id !== "altair-viz-ac6228f71bcf4b77a07add44a5dea7b3") {
+      outputDiv = document.getElementById("altair-viz-ac6228f71bcf4b77a07add44a5dea7b3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2977,11 +2978,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:372: PlotnineWarning: stat_bin : Removed 2 rows containing non-finite values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:372: PlotnineWarning: stat_bin : Removed 2 rows containing non-finite values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_98_1.png" src="_images/vis-common-plots_98_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656044831)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812278137)&gt;
 </pre></div>
 </div>
 </div>
@@ -3000,12 +3001,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3761363db6b34ee88c124f283ce91ce8"></div>
+<div id="altair-viz-797eb07129b34712a52c2cddbf5e2bb0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3761363db6b34ee88c124f283ce91ce8") {
-      outputDiv = document.getElementById("altair-viz-3761363db6b34ee88c124f283ce91ce8");
+    if (outputDiv.id !== "altair-viz-797eb07129b34712a52c2cddbf5e2bb0") {
+      outputDiv = document.getElementById("altair-viz-797eb07129b34712a52c2cddbf5e2bb0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3105,11 +3106,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_107_1.png" src="_images/vis-common-plots_107_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777605484782)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791813466724)&gt;
 </pre></div>
 </div>
 </div>
@@ -3159,12 +3160,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-2dcf96d76d09406b9e556ebb9ee12fad"></div>
+<div id="altair-viz-7bd4b431fccb4a8d9def2b62b56dad52"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2dcf96d76d09406b9e556ebb9ee12fad") {
-      outputDiv = document.getElementById("altair-viz-2dcf96d76d09406b9e556ebb9ee12fad");
+    if (outputDiv.id !== "altair-viz-7bd4b431fccb4a8d9def2b62b56dad52") {
+      outputDiv = document.getElementById("altair-viz-7bd4b431fccb4a8d9def2b62b56dad52");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3400,7 +3401,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_117_0.png" src="_images/vis-common-plots_117_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656454208)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791814703348)&gt;
 </pre></div>
 </div>
 </div>
@@ -3420,12 +3421,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b990d22bdaca497b8996814e27764537"></div>
+<div id="altair-viz-577c3072ae8749d5bb98dc23d1a5e14f"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b990d22bdaca497b8996814e27764537") {
-      outputDiv = document.getElementById("altair-viz-b990d22bdaca497b8996814e27764537");
+    if (outputDiv.id !== "altair-viz-577c3072ae8749d5bb98dc23d1a5e14f") {
+      outputDiv = document.getElementById("altair-viz-577c3072ae8749d5bb98dc23d1a5e14f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3620,7 +3621,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_127_0.png" src="_images/vis-common-plots_127_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622345012)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812239677)&gt;
 </pre></div>
 </div>
 </div>
@@ -3640,12 +3641,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-e5382d9d991c48b0b22233083f77f93d"></div>
+<div id="altair-viz-68639570ea9f42b587785c4e564ef1df"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e5382d9d991c48b0b22233083f77f93d") {
-      outputDiv = document.getElementById("altair-viz-e5382d9d991c48b0b22233083f77f93d");
+    if (outputDiv.id !== "altair-viz-68639570ea9f42b587785c4e564ef1df") {
+      outputDiv = document.getElementById("altair-viz-68639570ea9f42b587785c4e564ef1df");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3747,7 +3748,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_136_0.png" src="_images/vis-common-plots_136_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777672971689)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812332343)&gt;
 </pre></div>
 </div>
 </div>
@@ -3791,12 +3792,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-8228d3167c5144d5bb7ec23b2c7bf4c0"></div>
+<div id="altair-viz-377a4a8f42504b1d8651b37ba559dab0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8228d3167c5144d5bb7ec23b2c7bf4c0") {
-      outputDiv = document.getElementById("altair-viz-8228d3167c5144d5bb7ec23b2c7bf4c0");
+    if (outputDiv.id !== "altair-viz-377a4a8f42504b1d8651b37ba559dab0") {
+      outputDiv = document.getElementById("altair-viz-377a4a8f42504b1d8651b37ba559dab0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3904,7 +3905,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_145_0.png" src="_images/vis-common-plots_145_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777656841337)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812749150)&gt;
 </pre></div>
 </div>
 </div>
@@ -4045,7 +4046,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_153_0.png" src="_images/vis-common-plots_153_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777639688235)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791814734252)&gt;
 </pre></div>
 </div>
 </div>
@@ -4065,12 +4066,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4960d394d9834b7e8fcb056fddde6145"></div>
+<div id="altair-viz-8fefedaae7544679a96678f3a13c50b8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4960d394d9834b7e8fcb056fddde6145") {
-      outputDiv = document.getElementById("altair-viz-4960d394d9834b7e8fcb056fddde6145");
+    if (outputDiv.id !== "altair-viz-8fefedaae7544679a96678f3a13c50b8") {
+      outputDiv = document.getElementById("altair-viz-8fefedaae7544679a96678f3a13c50b8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4281,7 +4282,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_163_0.png" src="_images/vis-common-plots_163_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777605175772)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791812701687)&gt;
 </pre></div>
 </div>
 </div>
@@ -4301,12 +4302,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-e37f98c599204106b0fa3f90505529ea"></div>
+<div id="altair-viz-3e95fef586d34ec88ff0e6c0880a474f"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e37f98c599204106b0fa3f90505529ea") {
-      outputDiv = document.getElementById("altair-viz-e37f98c599204106b0fa3f90505529ea");
+    if (outputDiv.id !== "altair-viz-3e95fef586d34ec88ff0e6c0880a474f") {
+      outputDiv = document.getElementById("altair-viz-3e95fef586d34ec88ff0e6c0880a474f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4573,7 +4574,7 @@ Name: number, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_175_1.png" src="_images/vis-common-plots_175_1.png" />
@@ -4698,7 +4699,11 @@ Name: number, dtype: int64
 <p>These should be used sparingly. Let’s grab part of a famous text from Project Gutenberg:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;smith_won.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To run this example, download smith_won.txt from</span>
+<span class="c1"># https://github.com/aeturrell/coding-for-economists/blob/main/data/smith_won.txt</span>
+<span class="c1"># and put it in a sub-folder called &#39;data</span>
+
+<span class="n">book_text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;smith_won.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="c1"># Print some lines</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">book_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">linesep</span><span class="p">)[</span><span class="mi">107</span><span class="p">:</span><span class="mi">117</span><span class="p">]))</span>
 </pre></div>
@@ -4738,7 +4743,7 @@ Name: number, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;book_mask.png&quot;</span><span class="p">)))</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;book_mask.png&quot;</span><span class="p">)))</span>
 <span class="n">wc</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
                <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
                <span class="n">background_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>              
@@ -4926,12 +4931,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a47e1822af03446086fa917feaf44ea1"></div>
+<div id="altair-viz-aefbe90d9ceb4cacab91439cbab82ad5"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a47e1822af03446086fa917feaf44ea1") {
-      outputDiv = document.getElementById("altair-viz-a47e1822af03446086fa917feaf44ea1");
+    if (outputDiv.id !== "altair-viz-aefbe90d9ceb4cacab91439cbab82ad5") {
+      outputDiv = document.getElementById("altair-viz-aefbe90d9ceb4cacab91439cbab82ad5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4984,7 +4989,10 @@ Name: number, dtype: int64
 <p>We’ll use a summary of the daily land-surface average temperature anomaly produced by the Berkeley Earth averaging method. Temperatures are in Celsius and reported as anomalies relative to the Jan 1951-Dec 1980 average (the estimated Jan 1951-Dec 1980 land-average temperature is 8.63 +/- 0.06 C).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;berkeley_data.pkl&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To run this example, download the pickle file from</span>
+<span class="c1"># https://github.com/aeturrell/coding-for-economists/blob/main/data/berkeley_data.pkl</span>
+<span class="c1"># and put it in a sub-folder called &#39;data&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data/berkeley_data.pkl&#39;</span><span class="p">))</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -5135,7 +5143,7 @@ Name: number, dtype: int64
 <p>This displays a timeline of start and end events in time, and their overlap.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;priestley-timeline.csv&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://github.com/aeturrell/coding-for-economists/raw/main/data/priestley-timeline.csv&quot;</span><span class="p">)</span>
       <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
       <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])))</span>
 <span class="n">df</span>
@@ -5235,7 +5243,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_200_0.png" src="_images/vis-common-plots_200_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777640314305)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791790000881)&gt;
 </pre></div>
 </div>
 </div>
@@ -5360,7 +5368,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_206_0.png" src="_images/vis-common-plots_206_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777571099426)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791789763603)&gt;
 </pre></div>
 </div>
 </div>
@@ -5487,7 +5495,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_212_0.png" src="_images/vis-common-plots_212_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8777622697313)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8791792715828)&gt;
 </pre></div>
 </div>
 </div>
@@ -7247,7 +7255,7 @@ A = \dfrac{2}{\frac{1}{\sqrt{1-\gamma}}+\frac{1}{\sqrt{1+\gamma}}}
 <p>Reading in the forecast:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpi_future</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;Nov2020_MPR_CPI_fan.csv&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpi_future</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://github.com/aeturrell/coding-for-economists/raw/main/data/Nov2020_MPR_CPI_fan.csv&quot;</span><span class="p">)</span>
                 <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Date</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])))</span>
 <span class="n">cpi_future</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
