@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -60,7 +58,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Working with Data" href="data-intro.html" />
-    <link rel="prev" title="2. More Tips for Better Coding" href="wrkflow-advcd-best-practice.html" />
+    <link rel="prev" title="3. The Command Line" href="wrkflow-command-line.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -142,6 +140,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-advcd-best-practice.html">
    2. More Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-command-line.html">
+   3. The Command Line
   </a>
  </li>
 </ul>
@@ -364,6 +367,12 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
+        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/data-analysis-quickstart.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/data-analysis-quickstart.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
@@ -553,10 +562,7 @@
 <span class="c1"># Plot settings</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;https://github.com/aeturrell/coding-for-economists/raw/main/plot_style.txt&quot;</span><span class="p">)</span>
 
-<span class="c1"># Read in data: you can download the data from</span>
-<span class="c1"># https://github.com/aeturrell/coding-for-economists/raw/main/data/starwars.pickle</span>
-<span class="c1"># The line below expects to find it in a sub-folder called &#39;data&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data/starwars.pickle&#39;</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://github.com/aeturrell/coding-for-economists/raw/main/data/starwars.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1"># Check info about dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
@@ -564,20 +570,20 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 87 entries, 0 to 86
+Int64Index: 87 entries, 0 to 86
 Data columns (total 8 columns):
- #   Column      Non-Null Count  Dtype   
----  ------      --------------  -----   
- 0   name        87 non-null     string  
- 1   height      81 non-null     float64 
- 2   mass        59 non-null     float64 
- 3   hair_color  81 non-null     category
- 4   eye_color   84 non-null     category
- 5   gender      84 non-null     category
- 6   homeworld   77 non-null     category
- 7   species     82 non-null     category
-dtypes: category(5), float64(2), string(1)
-memory usage: 3.5 KB
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   name        87 non-null     object 
+ 1   height      81 non-null     float64
+ 2   mass        59 non-null     float64
+ 3   hair_color  81 non-null     object 
+ 4   eye_color   84 non-null     object 
+ 5   gender      84 non-null     object 
+ 6   homeworld   77 non-null     object 
+ 7   species     82 non-null     object 
+dtypes: float64(2), object(6)
+memory usage: 6.1+ KB
 </pre></div>
 </div>
 </div>
@@ -1955,7 +1961,7 @@ std  &amp;  169.457163 &amp;   34.770429 \\
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="wrkflow-advcd-best-practice.html" title="previous page"><span class="section-number">2. </span>More Tips for Better Coding</a>
+    <a class='left-prev' id="prev-link" href="wrkflow-command-line.html" title="previous page"><span class="section-number">3. </span>The Command Line</a>
     <a class='right-next' id="next-link" href="data-intro.html" title="next page"><span class="section-number">2. </span>Working with Data</a>
 
     </div>
