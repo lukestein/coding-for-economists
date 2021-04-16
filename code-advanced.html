@@ -369,7 +369,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/code-advanced.ipynb"><button type="button"
+        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/code-advanced.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -584,7 +584,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Martineau&#39;, &#39;Ostrom&#39;, &#39;Fawcett&#39;, &#39;Robinson&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Robinson&#39;, &#39;Martineau&#39;, &#39;Fawcett&#39;, &#39;Ostrom&#39;]
 </pre></div>
 </div>
 </div>
@@ -711,7 +711,7 @@ Using higher_order_function(&#39;cube&#39;), result(3) yields 27
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11:19
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14:54
 </pre></div>
 </div>
 </div>
@@ -955,24 +955,18 @@ cube applied to 4 is 64
 </div>
 </div>
 <p>Alright, we’ve been through all of the values so… what’s going to happen <code class="docutils literal notranslate"><span class="pre">next</span></code>!?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">myiterator</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">myiterator</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span>                             <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="mi">29</span><span class="n">fb3b4dbbec</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">myiterator</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="nb">next</span><span class="p">(</span><span class="n">myiterator</span><span class="p">)</span>
 
-<span class="ne">StopIteration</span>: 
+<span class="ne">StopIteration</span><span class="p">:</span> 
 </pre></div>
 </div>
-</div>
-</div>
-<p>Iterating beyond the end raises a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error. You can build your own iterators (here we used a built-in object type, the <code class="docutils literal notranslate"><span class="pre">list</span></code>, to give an iteratory of type <code class="docutils literal notranslate"><span class="pre">list_iterator</span></code>).</p>
+<p>Iterating beyond the end raises a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> error because we reached the end. To keep going, use <code class="docutils literal notranslate"><span class="pre">cycle</span></code> in place of <code class="docutils literal notranslate"><span class="pre">iter</span></code>. Note that you can build your own iterators (here we used a built-in object type, the <code class="docutils literal notranslate"><span class="pre">list</span></code>, to create an iterator of type <code class="docutils literal notranslate"><span class="pre">list_iterator</span></code>).</p>
 </div>
 <div class="section" id="generators">
 <h2><span class="section-number">3.7. </span>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
@@ -1055,7 +1049,7 @@ cube applied to 4 is 64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x7fa0f8128cf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x7fc8a0dab970&gt;
 </pre></div>
 </div>
 </div>
@@ -1229,26 +1223,20 @@ Adding ten...
 <h2><span class="section-number">3.9. </span>Errors and exceptions<a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">¶</a></h2>
 <p>When a programme goes wrong, it throws up an error and halts. You won’t be coding for long before you hit one of these errors, which have special names depending on what triggered them.</p>
 <p>Let’s see a real-life error in action:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">denom</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span>                         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="n">e45c0e0a3e37</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">denom</span><span class="p">)</span>
+      <span class="mi">1</span> <span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="mi">2</span> 
+<span class="o">----&gt;</span> <span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">denom</span><span class="p">)</span>
 
-<span class="ne">ZeroDivisionError</span>: division by zero
+<span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Oh no! We got a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> and our programme crashed. Note that the error includes a ‘Traceback’ to show which line went wrong, which is helpful for debugging.</p>
 <p>In practice, there are often times when we know that an error <em>could</em> arise, and we would like to specify what should happen when it does (rather than having the programme crash).</p>
@@ -1574,7 +1562,7 @@ I alway run.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circle1 at 0x7fa1084d47c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circle1 at 0x7fc88009b310&gt;
 </pre></div>
 </div>
 </div>
@@ -1650,7 +1638,7 @@ I alway run.
 <p>If we had run</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">positive_num</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="k">assert</span> <span class="n">positive_num</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">positive_num</span> <span class="o">&lt;</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>it would have resulted in</p>
@@ -1868,7 +1856,7 @@ TOTAL                        <span class="m">76</span>     <span class="m">10</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0030577529999998
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0001658830000002
 </pre></div>
 </div>
 </div>
@@ -1896,7 +1884,7 @@ TOTAL                        <span class="m">76</span>     <span class="m">10</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.003517021
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.004139731
 </pre></div>
 </div>
 </div>
@@ -1909,7 +1897,7 @@ TOTAL                        <span class="m">76</span>     <span class="m">10</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.7 ms ± 197 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.7 ms ± 150 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1946,7 +1934,7 @@ TOTAL                        <span class="m">76</span>     <span class="m">10</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0011029849999993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0041719530000002
 </pre></div>
 </div>
 </div>
@@ -1966,15 +1954,15 @@ TOTAL                        <span class="m">76</span>     <span class="m">10</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         6 function calls in 3.507 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         6 function calls in 3.506 seconds
 
    Ordered by: standard name
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000    3.507    3.507 &lt;ipython-input-65-9498e9d50d7f&gt;:4(foo)
-        1    0.000    0.000    3.507    3.507 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000    3.507    3.507 {built-in method builtins.exec}
-        2    3.507    1.754    3.507    1.754 {built-in method time.sleep}
+        1    0.000    0.000    3.505    3.505 &lt;ipython-input-63-9498e9d50d7f&gt;:4(foo)
+        1    0.000    0.000    3.505    3.505 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    3.506    3.506 {built-in method builtins.exec}
+        2    3.505    1.753    3.505    1.753 {built-in method time.sleep}
         1    0.000    0.000    0.000    0.000 {method &#39;disable&#39; of &#39;_lsprof.Profiler&#39; objects}
 </pre></div>
 </div>
@@ -2011,31 +1999,30 @@ TOTAL                        <span class="m">76</span>     <span class="m">10</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  _     ._   __/__   _ _  _  _ _/_   Recorded: 11:19:58  Samples:  3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  _     ._   __/__   _ _  _  _ _/_   Recorded: 14:54:19  Samples:  3
  /_//_/// /_\ / //_// / //_&#39;/ //     Duration: 0.004     CPU time: 0.004
 /   _/                      v3.4.1
 
-Program: /Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/ipykernel_launcher.py -f /private/var/folders/jv/1ydhmpn53q10752dykrrn2nm0000gq/T/tmp2salz5io.json
+Program: /Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/ipykernel_launcher.py -f /private/var/folders/jv/1ydhmpn53q10752dykrrn2nm0000gq/T/tmpytwif_8q.json
 
 <span class=" -Color -Color-Red">0.003</span> run_code  <span class=" -Color -Color-Faint">IPython/core/interactiveshell.py:3281</span>
-└─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">&lt;module&gt;</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:17</span>
-   └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-      └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-         └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-            └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-               └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                  └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                     └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                        └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                           └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                              └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                                 ├─ <span class=" -Color -Color-Red">0.002</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                                 │  └─ <span class=" -Color -Color-Red">0.002</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                                 │     ├─ <span class=" -Color -Color-Yellow">0.001</span> [self]  
-                                 │     └─ <span class=" -Color -Color-Yellow">0.001</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                                 │        └─ <span class=" -Color -Color-Yellow">0.001</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                                 │           └─ <span class=" -Color -Color-Yellow">0.001</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-66-aedea2f618c0&gt;:7</span>
-                                 └─ <span class=" -Color -Color-Yellow">0.001</span> [self]  
+└─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">&lt;module&gt;</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:17</span>
+   └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+      └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+         └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+            └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+               └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                  └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                     └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                        └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                           └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                              └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                                 └─ <span class=" -Color -Color-Red">0.003</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                                    ├─ <span class=" -Color -Color-Red">0.002</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                                    │  ├─ <span class=" -Color -Color-Yellow">0.001</span> [self]  
+                                    │  └─ <span class=" -Color -Color-Yellow">0.001</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                                    │     └─ <span class=" -Color -Color-Yellow">0.001</span> <span class=" -Color -Color-C15 -Color-C15-BGC24">fibonacci</span>  <span class=" -Color -Color-Faint">&lt;ipython-input-64-aedea2f618c0&gt;:7</span>
+                                    └─ <span class=" -Color -Color-Yellow">0.001</span> [self]  
 </pre></div>
 </div>
 </div>

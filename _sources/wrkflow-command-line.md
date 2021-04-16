@@ -72,7 +72,7 @@ Let's break down what this is telling us. `username` says who the current user i
 Let's try a simple command: type `date` into a command line window and hit return. You should see today's date and time (and timezone). You could also try `echo hello` and `whoami`.
 
 All commands that you run in the terminal have the same structure:
-`command`, followed by `option(s)`, followed by `argument(s)`. The options are also called flag.s An example serves to demonstrate this: if you have a terminal open in a directory that includes a CSV file called 'data.csv', the command to look at the first 5 lines is:
+`command`, followed by `option(s)`, followed by `argument(s)`. The options are also called flags. An example serves to demonstrate this: if you have a terminal open in a directory that includes a CSV file called 'data.csv', the command to look at the first 5 lines is:
 
 ```bash
 head -n 5 data.csv
@@ -340,7 +340,7 @@ wget https://github.com/aeturrell/coding-for-economists/blob/main/data/starwars.
 
 [**htop**](https://htop.dev/) is a tool that lets you see what processes are running on your computer at any time (across individual processors), and how much memory you are using up. To install it on a Mac, you can use `brew install htop` if you use homebrew. Otherwise you can compile it from source after downloading it from the website. To use it, simply type `htop` on the command line.
 
-[**parallel**](https://www.gnu.org/software/parallel/) is a tool for executing jobs in parallel using one or more processors on your computer. A job can be a single command or a small script that has to be run for each of the lines in the input. The typical input is a list of files, a list of URLs, or similar. It's useful in coding when you have a so-called embarrassingly parallel job that can be perfectly and evenly split into sub-operations. You may need to install it using `brew install parallel` (Mac) or `apt-get install parallel` (most Linux distributions). 
+[**parallel**](https://www.gnu.org/software/parallel/) is a tool for executing jobs in parallel using one or more processors on your computer. A job can be a single command or a small script that has to be run for each of the lines in the input. The typical input is a list of files, a list of URLs, or similar. It's useful in coding when you have a so-called embarrassingly parallel job that can be perfectly and evenly split into sub-operations. You may need to install it using `brew install parallel` (Mac) or `apt-get install parallel` (most Linux distributions).
 
 Using all of the processors available on your computer, you can launch the jobs in parallel batches of as many as you like. For example, if you had a python script called `print_num.py` that prints the number it is given as an input via `sys.argv`:
 

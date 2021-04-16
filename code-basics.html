@@ -372,7 +372,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://gesis.mybinder.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/code-basics.md"><button type="button"
+        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/code-basics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -403,6 +403,13 @@
   <a class="reference internal nav-link" href="#values-variables-and-types">
    2.2. Values, variables, and types
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brackets">
+     2.2.1. Brackets
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lists-and-slicing">
@@ -492,13 +499,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time">
+   2.19. Time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-and-writing-files">
+   2.20. Reading and writing files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#miscellaneous-fun">
-   2.19. Miscellaneous fun
+   2.21. Miscellaneous fun
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#review">
-   2.20. Review
+   2.22. Review
   </a>
  </li>
 </ul>
@@ -516,6 +533,10 @@
 <h1><span class="section-number">2. </span>Basics of Coding<a class="headerlink" href="#basics-of-coding" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, you’ll learn about the basics of objects, types, operations, conditions, loops, functions, and imports. These are the basic building blocks of almost all programming languages.</p>
 <p>This chapter has benefited from the excellent <a class="reference external" href="https://www.tomasbeuzen.com/python-programming-for-data-science/README.html"><em>Python Programming for Data Science</em></a> book by Tomas Beuzen.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember, you can download this notebook (to run it on your own computer) using the ‘download .ipynb’ button at the top of the page.</p>
+</div>
 <div class="section" id="if-you-get-stuck">
 <h2><span class="section-number">2.1. </span>If you get stuck<a class="headerlink" href="#if-you-get-stuck" title="Permalink to this headline">¶</a></h2>
 <p>It’s worth saying at the outset that, <em>no-one</em>, and I mean no-one, memorises half of the stuff you’ll see in this book. 80% or more of time spent programming is actually time spent looking up how to do this or that online, ‘debugging’ a code for errors, or testing code. This applies to all programmers, regardless of level. You are here to learn the skills and concepts of programming, not the precise syntax (which is easy to look up later).</p>
@@ -662,6 +683,15 @@
 </tr>
 </tbody>
 </table>
+<div class="section" id="brackets">
+<h3><span class="section-number">2.2.1. </span>Brackets<a class="headerlink" href="#brackets" title="Permalink to this headline">¶</a></h3>
+<p>You may notice that there are several kinds of brackets that appear in the code we’ve seen so far, including <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, and <code class="docutils literal notranslate"><span class="pre">()</span></code>. These can play different roles depending on the context, but the most common uses are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code> is used to denote a list, eg <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'b']</span></code>, or to signify accessing a position using an index, eg <code class="docutils literal notranslate"><span class="pre">vector[0]</span></code> to get the first entry of a variable called vector.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{}</span></code> is used to denote a set, eg <code class="docutils literal notranslate"><span class="pre">{'a',</span> <span class="pre">'b'}</span></code>, or a dictionary (with pairs of terms), eg <code class="docutils literal notranslate"><span class="pre">{'first_letter':</span> <span class="pre">'a',</span> <span class="pre">'second_letter':</span> <span class="pre">'b'}</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> is used to denote a tuple, eg <code class="docutils literal notranslate"><span class="pre">('a',</span> <span class="pre">'b')</span></code>, or the arguments to a function, eg <code class="docutils literal notranslate"><span class="pre">function(x)</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the input passed to the function, <em>or</em> to indicate the order operations are carried out.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="lists-and-slicing">
 <h2><span class="section-number">2.3. </span>Lists and slicing<a class="headerlink" href="#lists-and-slicing" title="Permalink to this headline">¶</a></h2>
@@ -694,7 +724,8 @@ one more entry
 </div>
 </div>
 </div>
-<p>As well as accessing positions in lists using indexing, you can use <em>slices</em> on lists. This uses the colon character, <code class="docutils literal notranslate"><span class="pre">:</span></code>, to stand in for ‘from the beginning’ or ‘until the end’ (when only appearing once). For instance, to print just the last two entries, we would use the index <code class="docutils literal notranslate"><span class="pre">-2:</span></code> to mean from the second-to-last onwards. If we just want the first and last three entries to be printed, we can use:</p>
+<p>You can</p>
+<p>As well as accessing positions in lists using indexing, you can use <em>slices</em> on lists. This uses the colon character, <code class="docutils literal notranslate"><span class="pre">:</span></code>, to stand in for ‘from the beginning’ or ‘until the end’ (when only appearing once). For instance, to print just the last two entries, we would use the index <code class="docutils literal notranslate"><span class="pre">-2:</span></code> to mean from the second-to-last onwards. Here are two distinct examples: getting the first three and last three entries to be successively printed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">list_example</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
@@ -709,7 +740,7 @@ one more entry
 </div>
 </div>
 </div>
-<p>Slicing can be even more elaborate than that because we can jump entries using a second colon. Here’s a full example that begins at the second entry (remember the index starts at 0), runs up until the second-to-last entry (exclusive), and jumps every other entry inbetween (range just produces a list of numbers):</p>
+<p>Slicing can be even more elaborate than that because we can jump entries using a second colon. Here’s a full example that begins at the second entry (remember the index starts at 0), runs up until the second-to-last entry (exclusive), and jumps every other entry inbetween (range just produces a list of integers from the value to one less than the last):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -726,7 +757,7 @@ one more entry
 </div>
 </div>
 </div>
-<p>A handy trick is that you can reverse a list entirely using this:</p>
+<p>A handy trick is that you can print a reversed list entirely using double colons:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">list_of_numbers</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -1090,6 +1121,21 @@ False
 </div>
 </div>
 <p>Note that this does nothing if the score is between 11 and 90, and prints a message otherwise.</p>
+<p>One nice feature of Python is that you can make multiple boolean comparisons in a single line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span>
+
+<span class="mi">1</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="casting-variables">
 <h2><span class="section-number">2.7. </span>Casting variables<a class="headerlink" href="#casting-variables" title="Permalink to this headline">¶</a></h2>
@@ -1221,6 +1267,23 @@ Babbage
 The name in position 1 is Smith
 The name in position 2 is Hopper
 The name in position 3 is Babbage
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember, Python indexes from 0 so the first entry of <code class="docutils literal notranslate"><span class="pre">i</span></code> will be zero. But, if you’d like to index from a different number, you can:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">name_list</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The name in position </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The name in position 1 is Lovelace
+The name in position 2 is Smith
+The name in position 3 is Hopper
+The name in position 4 is Babbage
 </pre></div>
 </div>
 </div>
@@ -1555,7 +1618,7 @@ Inverse:
 <p>Sometimes, you will want to call in some code from a different script. Imagine you have several code scripts (a, b, and c), all of which use the same underlying function that <em>you</em> have written. A central tenet of good coding is that you <em>do not repeat yourself</em>. Therefore, a bad solution to this problem would be to copy and paste the same code into all three of the scripts. A <em>good</em> solution is to write the code that’s need just once in a separate ‘utility’ script and have the other scripts import that one function:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/code-basics_89_0.png" src="_images/code-basics_89_0.png" />
+<img alt="_images/code-basics_93_0.png" src="_images/code-basics_93_0.png" />
 </div>
 </div>
 <p>How would this work in practice? We would define a file ‘<a class="reference external" href="http://utilities.py">utilities.py</a>’ that had the following:</p>
@@ -1743,8 +1806,108 @@ Name: strings, dtype: object
 </div>
 <p>To learn more about args and kwargs, check out these <a class="reference external" href="https://calmcode.io/args-kwargs/introduction.html">short video tutorials</a>.</p>
 </div>
+<div class="section" id="time">
+<h2><span class="section-number">2.19. </span>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h2>
+<p>Let’s do a quick dive into how to deal with dates and times. This is only going to scratch the surface, but should give a sense of what’s possible.</p>
+<p>The built-in library that deals with datetimes is called <code class="docutils literal notranslate"><span class="pre">datetime</span></code>. Let’s import it and ask it to give us a very precise account of the datetime (when the code is executed):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-16 14:56:17.418558
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can pick out bits of the datetime that you need:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">day</span>
+<span class="n">month</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">month</span>
+<span class="n">year</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">year</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">minute</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="n">minute</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">hour</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">minute</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/4/16, 14:56
+</pre></div>
+</div>
+</div>
+</div>
+<p>To add or subtract time to a datetime, use <code class="docutils literal notranslate"><span class="pre">timedelta</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="n">new_time</span> <span class="o">=</span> <span class="n">now</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">365</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-16 19:56:17.418558
+</pre></div>
+</div>
+</div>
+</div>
+<p>To take the difference of two dates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">new_year</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2022</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time_till_ny</span> <span class="o">=</span> <span class="n">new_year</span> <span class="o">-</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">time_till_ny</span><span class="o">.</span><span class="n">days</span><span class="si">}</span><span class="s1"> days until New Year&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260 days until New Year
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that date and datetime are two different types of objects-a datetime includes information on the date and time, whereas a date does not.</p>
+</div>
+<div class="section" id="reading-and-writing-files">
+<h2><span class="section-number">2.20. </span>Reading and writing files<a class="headerlink" href="#reading-and-writing-files" title="Permalink to this headline">¶</a></h2>
+<p>Although most applications in economics will probably use the <strong>pandas</strong> package to read and write tabular data, it’s sometimes useful to know how to read and write arbitrary files using the built-in Python libraries too. To open a file</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">mode</span></code> could be <code class="docutils literal notranslate"><span class="pre">r</span></code> for read, <code class="docutils literal notranslate"><span class="pre">a</span></code> for append, <code class="docutils literal notranslate"><span class="pre">w</span></code> for write, and <code class="docutils literal notranslate"><span class="pre">x</span></code> to create a file. Create a file called <code class="docutils literal notranslate"><span class="pre">text_example.txt</span></code> and write a single line in it, ‘hello world’. To open the file and print the text, use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;text_example.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">text_in</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text_in</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hello world!</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">\n</span></code> is the new line character. Now let’s try adding a line to the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;text_example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;this is another line</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Writing and reading files using the <code class="docutils literal notranslate"><span class="pre">with</span></code> command is a quick and convenient shorthand for the less concise open, action, close pattern. For example, the above example can also be written as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;text_example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;this is another line</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Although this short example shows opening and writing a text file, this approach can be used to edit a wide range of file extensions including .json, .xml, .csv, .tsv, and many more, including binary files in addition to plain text files.</p>
+</div>
 <div class="section" id="miscellaneous-fun">
-<h2><span class="section-number">2.19. </span>Miscellaneous fun<a class="headerlink" href="#miscellaneous-fun" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.21. </span>Miscellaneous fun<a class="headerlink" href="#miscellaneous-fun" title="Permalink to this headline">¶</a></h2>
 <p>Here are some other bits of basic coding that might be useful. They really show why Python is such a delightful language.</p>
 <p>You can use unicode characters for variables</p>
 <div class="cell docutils container">
@@ -1825,7 +1988,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-03-17
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-16
 </pre></div>
 </div>
 </div>
@@ -1880,7 +2043,7 @@ False
 <p>This is just a taster of what can be done using ‘batteries included’ base Python; for more see the Advanced Coding Chapter.</p>
 </div>
 <div class="section" id="review">
-<h2><span class="section-number">2.20. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.22. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
 <p>If you now understand a bit about what objects, types, operators, conditional statements, loops, functions, and imports are, and <em>how</em> to use them, you are well on your way to becoming a coder. What you’ve seen in this chapter are the building blocks and you need to know a bit about them. But bricks by themselves do not a house make. In subsequent chapters, we’ll see how to combine the elements here to do productive analysis in economics.</p>
 </div>
 </div>
