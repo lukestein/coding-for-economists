@@ -68,7 +68,7 @@
 <meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/wrkflow-best-practice-coding.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Tips for Better Coding" />
-<meta property="og:description" content="Tips for Better Coding  In this chapter, you’ll learn about some best practices for coding. These will save you so much time!. Trust me.  As you code, you’ll be" />
+<meta property="og:description" content="Tips for Better Coding  In this chapter, you’ll learn some of the easiest and most impactful tips for better coding.  There are many ways to write equally valid" />
 <meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -370,7 +370,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/wrkflow-best-practice-coding.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/wrkflow-best-practice-coding.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -398,8 +398,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naming-conventions">
-     1.1.1. Naming conventions
+    <a class="reference internal nav-link" href="#what-s-in-a-name">
+     1.1.1. What’s in a name?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -477,13 +477,11 @@
                 
   <div class="section" id="tips-for-better-coding">
 <h1><span class="section-number">1. </span>Tips for Better Coding<a class="headerlink" href="#tips-for-better-coding" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, you’ll learn about some best practices for coding. <strong>These will save you <em>so much time</em>!</strong>. Trust me.</p>
-<p>As you code, you’ll be tempted to ignore these (that’s normal; we all are). But the truth is that they will <em>save</em> time in the long run, and future you will thank past you for sticking to them.</p>
-<p>The validity of your research depends, to a frightening degree, on the quality of your code. There are many ways to write code and, over the years, software developers have worked out best practices that help to make writing, using, debugging, and reading code more fun, and to make the end product higher quality. (There’s nothing worse than wading through someone else’s terrible code.)</p>
+<p>In this chapter, you’ll learn some of the easiest and most impactful tips for better coding.</p>
+<p>There are many ways to write equally valid code and, over the years, software developers have worked out ways that help to make writing, using, debugging, and reading code more fun and certainly more efficient. <strong>Following these best practice tips will save you hours, and hours, and <em>hours</em> of time.</strong></p>
 <p><img alt="Code quality 2" src="https://imgs.xkcd.com/comics/code_quality_2.png" /></p>
-<p>Most of the time, you are going to be writing code for your co-authors or for future you. Following best practice will save you hours, and hours, and <em>hours</em> of time. You may think that by cutting out some of these practices that you’ll save time. Well, it depends how heavily you discount your future time. Regardless of your discount rate, it’s almost always worth it to follow best practices.</p>
-<p>Fortunately there’s lot of great advice, and even tools, to help you do this.</p>
-<p>(Reproducibility is also an important part of coding best practice, but we’ll talk about that in a later chapter. Likewise, I won’t talk about a more advanced best practice, testing, here.)</p>
+<p>Remember, most of the time, you are going to be writing code that someone else will read (most probably it will be future you), or that you’ll need to run again. So you may think that by cutting out some of these practices that you’ll save time, but it depends how heavily you discount your future time! It’s almost always worth it to follow best practices.</p>
+<p>As this is the bare bones of best practice for research. we won’t cover some very important but more complex topics, such as reproducibility, testing, and version control, here.</p>
 <div class="section" id="code-in-style">
 <h2><span class="section-number">1.1. </span>Code in style<a class="headerlink" href="#code-in-style" title="Permalink to this headline">¶</a></h2>
 <p>The first thing to think about is code style, ie the way you write equivalent valid code. Python has a whole set of conventions about good style called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">‘PEP8’</a>, which it’s worth taking a quick look at. It includes advice like indentation should always be 4 spaces per level and to surround top-level function and class definitions with two blank lines.</p>
@@ -491,14 +489,15 @@
 <p>For now, we will find out about some of the most important style factors. Before that, PEP8 is not the only Python style guide going around: another popular one is the <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google style guide</a>.</p>
 <p>Most programming languages have a style guide or at least some conventions!</p>
 <p><img alt="Code quality" src="https://imgs.xkcd.com/comics/code_quality.png" /></p>
-<div class="section" id="naming-conventions">
-<h3><span class="section-number">1.1.1. </span>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
-<p>In Python, the naming convention for almost all objects is lower case separated by underscores, e.g. <code class="docutils literal notranslate"><span class="pre">a_variable=10</span></code> or ‘this_is_a_script.py’. This style of naming is also known as snake case. There are different naming conventions though–<a class="reference external" href="https://twitter.com/allison_horst">Allison Horst</a> made this fantastic cartoon of the different conventions that are in use.</p>
-<p><img alt="Different naming conventions" src="http://aeturrell.github.io/home/images/in_that_case.jpeg" />
+<div class="section" id="what-s-in-a-name">
+<h3><span class="section-number">1.1.1. </span>What’s in a name?<a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h3>
+<p>First, naming matters. Use meaningful names for variables, functions, or whatever it is you’re naming. Avoid abbreviations that you understand <em>now</em> but which will be unclear to others, or future you. For example, use <code class="docutils literal notranslate"><span class="pre">real_wage_hourly</span></code> over <code class="docutils literal notranslate"><span class="pre">re_wg_ph</span></code>. I know it’s tempting to use <code class="docutils literal notranslate"><span class="pre">temp</span></code> but you’ll feel silly later when you can’t for the life of you remember what <code class="docutils literal notranslate"><span class="pre">temp</span></code> does or is. A good trick when naming booleans (variables that are either true or false) is to use <code class="docutils literal notranslate"><span class="pre">is</span></code> followed by what the boolean variable refers to, for example <code class="docutils literal notranslate"><span class="pre">is_married</span></code>.</p>
+<p>As well as this general tip, Python has conventions on naming different kinds of variables. The naming convention for almost all objects is lower case separated by underscores, e.g. <code class="docutils literal notranslate"><span class="pre">a_variable=10</span></code> or ‘this_is_a_script.py’. This style of naming is also known as snake case. There are different naming conventions though–<a class="reference external" href="https://twitter.com/allison_horst">Allison Horst</a> made this fantastic cartoon of the different conventions that are in use.</p>
+<p><img alt="Different naming conventions" src="https://github.com/aeturrell/home/blob/master/images/in_that_case.jpeg" />
 Artwork by &#64;allison_horst.</p>
 <p>There are three exceptions to the snake case convention: classes, which should be in camel case, eg <code class="docutils literal notranslate"><span class="pre">ThisIsAClass</span></code>; constants, which are in capital snake case, eg <code class="docutils literal notranslate"><span class="pre">THIS_IS_A_CONSTANT</span></code>; and packages, which are typically without spaces or underscores and are lowercase <code class="docutils literal notranslate"><span class="pre">thisisapackage</span></code>.</p>
 <p>For some quick shortcuts to re-naming columns in <strong>pandas</strong> dataframes or other string variables, try the unicode-friendly <a class="reference external" href="https://github.com/un33k/python-slugify"><strong>slugify</strong></a> library or the <code class="docutils literal notranslate"><span class="pre">clean_headers</span></code> function from the <a class="reference external" href="https://docs.dataprep.ai/index.html"><strong>dataprep</strong></a> library.</p>
-<p>Good naming isn’t just about following the conventions, it’s also about giving objects names that are clear and useful. Instead of calling a variable that measures incomes <code class="docutils literal notranslate"><span class="pre">variable_one</span></code>, call it <code class="docutils literal notranslate"><span class="pre">income_measure</span></code>. Instead of calling a function that inverts a matrix <code class="docutils literal notranslate"><span class="pre">matrix_stuff</span></code>, call it <code class="docutils literal notranslate"><span class="pre">matrix_invert</span></code>. The better named your variables, the clearer your code will be–and the fewer comments you will need to write!</p>
+<p>The better named your variables, the clearer your code will be–and the fewer comments you will need to write!</p>
 </div>
 <div class="section" id="whitespace">
 <h3><span class="section-number">1.1.2. </span>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h3>

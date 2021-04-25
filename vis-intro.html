@@ -367,7 +367,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/vis-intro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/vis-intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -480,7 +480,7 @@
 <div class="section" id="libraries-for-data-visualisation">
 <h2><span class="section-number">1.3. </span>Libraries for data visualisation<a class="headerlink" href="#libraries-for-data-visualisation" title="Permalink to this headline">¶</a></h2>
 <p>In the rest of this chapter, we’ll take a look at making visualisations with several of these libraries. But first, let’s introduce them.</p>
-<p>The most important and widely used data visualisation library in Python is <a class="reference external" href="https://matplotlib.org/"><strong>matplotlib</strong></a>. It was used to make the first image of a black hole <span id="id1">[<a class="reference internal" href="zreferences.html#id11"><span>2</span></a>]</span> and to image the first empirical evidence of gravitational waves <span id="id2">[<a class="reference internal" href="zreferences.html#id12"><span>3</span></a>]</span>. <strong>matplotlib</strong> is an imperative visualisation library: you specify each part of what you want individually to build up an entire picture. It’s perhaps the easiest to get started with and the most difficult to master. As well as making plots, it can also be used to make diagrams, animations, and 3D visualisations (which you should use sparingly, if at all).</p>
+<p>The most important and widely used data visualisation library in Python is <a class="reference external" href="https://matplotlib.org/"><strong>matplotlib</strong></a>. It was used to make the first image of a black hole <span id="id1">[<a class="reference internal" href="zreferences.html#id11"><span>3</span></a>]</span> and to image the first empirical evidence of gravitational waves <span id="id2">[<a class="reference internal" href="zreferences.html#id12"><span>4</span></a>]</span>. <strong>matplotlib</strong> is an imperative visualisation library: you specify each part of what you want individually to build up an entire picture. It’s perhaps the easiest to get started with and the most difficult to master. As well as making plots, it can also be used to make diagrams, animations, and 3D visualisations (which you should use sparingly, if at all).</p>
 <p><a class="reference external" href="https://seaborn.pydata.org/index.html"><strong>seaborn</strong></a> is a popular declarative library that builds on <strong>maplotlib</strong> and works especially well with data that are in a <em>tidy</em> format (one row per observation, one column per variable). I tend to use a mixture of <strong>seaborn</strong> and <strong>matplotlib</strong> in my work.</p>
 <p><a class="reference external" href="https://plotnine.readthedocs.io/en/latest/"><strong>plotnine</strong></a> is another declarative plotting library but, rather than having lots of different functions (eg ‘boxplot’, ‘violinplot’, ‘scatterplot’) as <strong>seaborn</strong> does, it adopts a <em>grammar of graphics</em> approach. What this means is that <em>all</em> visualisations begin with the same command, <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>, and are combinations of layers that address different aspects of a plot, for example points or lines, scale, labels, and so on. It’ll be clearer when we come to an example.</p>
 <p><a class="reference external" href="https://altair-viz.github.io/"><strong>altair</strong></a> is yet another declarative plotting library for Python! It’s most suited to interactive graphics on the web, and produces really beautiful charts. Under the hood, it calls a javascript library named <strong>Vega-Lite</strong> that’s the sort of thing newspaper data visualisation units might use to make their infographics.</p>
@@ -515,7 +515,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe130bd3250&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fca50269430&gt;]
 </pre></div>
 </div>
 <img alt="_images/vis-intro_5_1.png" src="_images/vis-intro_5_1.png" />
@@ -1298,7 +1298,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_50_0.png" src="_images/vis-intro_50_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787823285800)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781717909809)&gt;
 </pre></div>
 </div>
 </div>
@@ -1314,7 +1314,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_52_0.png" src="_images/vis-intro_52_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787823296988)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781718485983)&gt;
 </pre></div>
 </div>
 </div>
@@ -1334,7 +1334,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-intro_54_1.png" src="_images/vis-intro_54_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787823044081)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781718477252)&gt;
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1353,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-intro_56_1.png" src="_images/vis-intro_56_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787823020909)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781699353820)&gt;
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1373,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_58_0.png" src="_images/vis-intro_58_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787807910873)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781718724678)&gt;
 </pre></div>
 </div>
 </div>
@@ -1392,7 +1392,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_60_0.png" src="_images/vis-intro_60_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787772259295)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781699353772)&gt;
 </pre></div>
 </div>
 </div>
@@ -1415,7 +1415,7 @@
 </pre></div>
 </div>
 <img alt="_images/vis-intro_61_1.png" src="_images/vis-intro_61_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787773113941)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781718882187)&gt;
 </pre></div>
 </div>
 </div>
@@ -1434,7 +1434,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-intro_63_0.png" src="_images/vis-intro_63_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8787772329066)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8781681904074)&gt;
 </pre></div>
 </div>
 </div>
@@ -1462,12 +1462,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-405d541324b6459aac5cb53f59fbdd29"></div>
+<div id="altair-viz-890056e71d0e4edb8966e106118f7da7"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-405d541324b6459aac5cb53f59fbdd29") {
-      outputDiv = document.getElementById("altair-viz-405d541324b6459aac5cb53f59fbdd29");
+    if (outputDiv.id !== "altair-viz-890056e71d0e4edb8966e106118f7da7") {
+      outputDiv = document.getElementById("altair-viz-890056e71d0e4edb8966e106118f7da7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1538,12 +1538,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d4f0adf16ce34611b5354004a22ae5c0"></div>
+<div id="altair-viz-cd65847ae5834264b2fc87e0d0ee4ffa"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d4f0adf16ce34611b5354004a22ae5c0") {
-      outputDiv = document.getElementById("altair-viz-d4f0adf16ce34611b5354004a22ae5c0");
+    if (outputDiv.id !== "altair-viz-cd65847ae5834264b2fc87e0d0ee4ffa") {
+      outputDiv = document.getElementById("altair-viz-cd65847ae5834264b2fc87e0d0ee4ffa");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1610,12 +1610,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-72fc84d3a04a4f469c392907f0859fdc"></div>
+<div id="altair-viz-e1b4c588b5984ed7a98f4876404fc61e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-72fc84d3a04a4f469c392907f0859fdc") {
-      outputDiv = document.getElementById("altair-viz-72fc84d3a04a4f469c392907f0859fdc");
+    if (outputDiv.id !== "altair-viz-e1b4c588b5984ed7a98f4876404fc61e") {
+      outputDiv = document.getElementById("altair-viz-e1b4c588b5984ed7a98f4876404fc61e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1674,12 +1674,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-e437e118ddf040469c2dbb5345d7efe9"></div>
+<div id="altair-viz-910a7aba13cc4bc594f3502bef9a89c4"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e437e118ddf040469c2dbb5345d7efe9") {
-      outputDiv = document.getElementById("altair-viz-e437e118ddf040469c2dbb5345d7efe9");
+    if (outputDiv.id !== "altair-viz-910a7aba13cc4bc594f3502bef9a89c4") {
+      outputDiv = document.getElementById("altair-viz-910a7aba13cc4bc594f3502bef9a89c4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1740,12 +1740,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3445ae137ef14e788b309c364471d454"></div>
+<div id="altair-viz-8594924a13c842d199c10d43e8c11db0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3445ae137ef14e788b309c364471d454") {
-      outputDiv = document.getElementById("altair-viz-3445ae137ef14e788b309c364471d454");
+    if (outputDiv.id !== "altair-viz-8594924a13c842d199c10d43e8c11db0") {
+      outputDiv = document.getElementById("altair-viz-8594924a13c842d199c10d43e8c11db0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1806,12 +1806,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9ed76d2c6dc246649409278503781caf"></div>
+<div id="altair-viz-84bbe21746ad41bd9c9b57c31abe1c03"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9ed76d2c6dc246649409278503781caf") {
-      outputDiv = document.getElementById("altair-viz-9ed76d2c6dc246649409278503781caf");
+    if (outputDiv.id !== "altair-viz-84bbe21746ad41bd9c9b57c31abe1c03") {
+      outputDiv = document.getElementById("altair-viz-84bbe21746ad41bd9c9b57c31abe1c03");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1892,12 +1892,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-61734cf59bf24c56b3e3d9b9604b3ce5"></div>
+<div id="altair-viz-c6b747fef4324d719e52084155031bae"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-61734cf59bf24c56b3e3d9b9604b3ce5") {
-      outputDiv = document.getElementById("altair-viz-61734cf59bf24c56b3e3d9b9604b3ce5");
+    if (outputDiv.id !== "altair-viz-c6b747fef4324d719e52084155031bae") {
+      outputDiv = document.getElementById("altair-viz-c6b747fef4324d719e52084155031bae");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1998,12 +1998,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-eaacd7f0dd7f4918b9e3ea01de8f5a23"></div>
+<div id="altair-viz-391bf9cad3cc4be882bea211e0c15aa8"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-eaacd7f0dd7f4918b9e3ea01de8f5a23") {
-      outputDiv = document.getElementById("altair-viz-eaacd7f0dd7f4918b9e3ea01de8f5a23");
+    if (outputDiv.id !== "altair-viz-391bf9cad3cc4be882bea211e0c15aa8") {
+      outputDiv = document.getElementById("altair-viz-391bf9cad3cc4be882bea211e0c15aa8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

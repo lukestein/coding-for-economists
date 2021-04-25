@@ -369,7 +369,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://notebooks.gesis.org/binder/v2/gh/aeturrell/coding-for-economists/e27d7c0ba0345eeebdeec37909baf54a744e8b76/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/econmt-regression.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/econmt-regression.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -441,6 +441,13 @@
   <a class="reference internal nav-link" href="#fixed-effects-and-categorical-variables">
    3.3. Fixed effects and categorical variables
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#high-dimensional-fixed-effects-aka-absorbing-regression">
+     3.3.1. High dimensional fixed effects, aka absorbing regression
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#transformations-of-regressors">
@@ -761,8 +768,8 @@ y = x'\cdot \hat{\beta} + \epsilon
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     1.040
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):              0.312
-Time:                        14:56:38   Log-Likelihood:                -385.50
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):              0.312
+Time:                        10:17:57   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -844,8 +851,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.580
 Model:                            OLS   Adj. R-squared:                  0.572
 Method:                 Least Squares   F-statistic:                     77.18
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):           4.02e-12
-Time:                        14:56:38   Log-Likelihood:                -252.48
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):           4.02e-12
+Time:                        10:17:58   Log-Likelihood:                -252.48
 No. Observations:                  58   AIC:                             509.0
 Df Residuals:                      56   BIC:                             513.1
 Df Model:                           1                                         
@@ -888,8 +895,8 @@ Method:                          IRLS   Df Model:                            1
 Norm:                     TrimmedMean                                         
 Scale Est.:                       mad                                         
 Cov Type:                          H1                                         
-Date:                Fri, 16 Apr 2021                                         
-Time:                        14:56:38                                         
+Date:                Sun, 25 Apr 2021                                         
+Time:                        10:17:58                                         
 No. Iterations:                     7                                         
 ==============================================================================
                  coef    std err          z      P&gt;|z|      [0.025      0.975]
@@ -961,8 +968,8 @@ If the model instance has been used for another fit with different fit parameter
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     52.75
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):           1.16e-09
-Time:                        14:56:39   Log-Likelihood:                -385.50
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):           1.16e-09
+Time:                        10:17:58   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -1016,8 +1023,8 @@ errors in panel data, again with keyword arguments; and</p></li>
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     39.44
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):           2.63e-07
-Time:                        14:56:39   Log-Likelihood:                -361.23
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):           2.63e-07
+Time:                        10:17:58   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1058,8 +1065,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     35.10
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):           1.96e-06
-Time:                        14:56:39   Log-Likelihood:                -361.23
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):           1.96e-06
+Time:                        10:17:58   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1228,8 +1235,8 @@ Notes:
 Dep. Variable:                    mpg   R-squared:                       0.754
 Model:                            OLS   Adj. R-squared:                  0.727
 Method:                 Least Squares   F-statistic:                     28.59
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):           1.14e-08
-Time:                        14:56:39   Log-Likelihood:                -79.948
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):           1.14e-08
+Time:                        10:17:59   Log-Likelihood:                -79.948
 No. Observations:                  32   AIC:                             167.9
 Df Residuals:                      28   BIC:                             173.8
 Df Model:                           3                                         
@@ -1292,6 +1299,149 @@ hp            -0.0240      0.015     -1.560      0.130      -0.056       0.008
 </div>
 </div>
 <p>When there is an intercept, the coefficients of fixed effect variables can be interpreted as being the average of <span class="math notranslate nohighlight">\(y\)</span> for that class <em>compared</em> to the excluded classes holding all other categories and variables fixed.</p>
+<div class="section" id="high-dimensional-fixed-effects-aka-absorbing-regression">
+<h3><span class="section-number">3.3.1. </span>High dimensional fixed effects, aka absorbing regression<a class="headerlink" href="#high-dimensional-fixed-effects-aka-absorbing-regression" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, you just have a LOT of fixed effects (and perhaps you don’t particularly care about them individually). A common example is having a large number of firms as part of a panel. Fortunately, there are ways to make regression with high dimensional fixed effects be both fast and concise. (In Stata, this is provided by the <code class="docutils literal notranslate"><span class="pre">reghdfe</span></code> package.) Here, we will use the <a class="reference external" href="https://bashtage.github.io/linearmodels/index.html"><strong>linearmodels</strong></a> package, which is built on top of <strong>statsmodels</strong>.</p>
+<p>Let’s say we have a regression of the form</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = x_i\cdot \beta + z_i\cdot \gamma +\epsilon_i
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span> are observations indexed by <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(x_i\)</span> are vectors of exogenous variables we care about the coefficients (<span class="math notranslate nohighlight">\(\beta\)</span>), <span class="math notranslate nohighlight">\(z_i\)</span> are vectors of fixed effects we don’t care too much about the coefficients (\gamma) for, and the <span class="math notranslate nohighlight">\(\epsilon_i\)</span> are errors. Then we can use an <em>absorbing regression</em> to solve for the <span class="math notranslate nohighlight">\(\beta\)</span> while ignoring the <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
+<p>Here’s an example using simulated data on workers taken from the <strong>linearmodels</strong> docs. Let’s simulate some data first, with two fixed effects (state and firm) alongside the two exogenous variables we’re interested in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>  <span class="c1"># Random number generator</span>
+
+<span class="c1"># Create synthetic input data</span>
+<span class="n">nobs</span> <span class="o">=</span> <span class="mi">1_000_000</span>  <span class="c1"># No. observations</span>
+<span class="n">state_id</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nobs</span><span class="p">)</span>  <span class="c1"># State identifier</span>
+<span class="n">firm_id</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">nobs</span> <span class="o">//</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nobs</span><span class="p">)</span>  <span class="c1"># Firm identifier (mean of 5 workers/firm)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">((</span><span class="n">nobs</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Exogenous variables </span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;state_id&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">state_id</span><span class="p">),</span> <span class="s2">&quot;firm_id&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">firm_id</span><span class="p">),</span>
+     <span class="s2">&quot;exog_0&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;exog_1&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]}</span>
+<span class="p">)</span>
+
+<span class="c1"># Create synthetic relationship</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># coefficients of interest</span>
+<span class="n">state_effects</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">state_id</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">state_effects</span> <span class="o">=</span> <span class="n">state_effects</span><span class="p">[</span><span class="n">state_id</span><span class="p">]</span>  <span class="c1"># Generate state fixed effects </span>
+<span class="n">firm_effects</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">firm_id</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">firm_effects</span> <span class="o">=</span> <span class="n">firm_effects</span><span class="p">[</span><span class="n">firm_id</span><span class="p">]</span>  <span class="c1"># Generate firm fixed effects </span>
+<span class="n">eps</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>  <span class="c1"># Generate errors</span>
+<span class="c1"># Generate endogeneous outcome variable</span>
+<span class="n">sim</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sim</span><span class="p">[</span><span class="s1">&#39;exog_0&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sim</span><span class="p">[</span><span class="s1">&#39;exog_1&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">firm_effects</span> <span class="o">+</span> <span class="n">state_effects</span> <span class="o">+</span> <span class="n">eps</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state_id</th>
+      <th>firm_id</th>
+      <th>exog_0</th>
+      <th>exog_1</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>97104</td>
+      <td>-1.047952</td>
+      <td>1.678242</td>
+      <td>1.952398</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>18</td>
+      <td>135453</td>
+      <td>0.526345</td>
+      <td>-0.813449</td>
+      <td>-3.555980</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>47</td>
+      <td>102472</td>
+      <td>-0.984569</td>
+      <td>-0.577399</td>
+      <td>-4.226191</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9</td>
+      <td>50991</td>
+      <td>-1.900709</td>
+      <td>-0.243010</td>
+      <td>-1.794509</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>40</td>
+      <td>138361</td>
+      <td>-0.553658</td>
+      <td>2.107699</td>
+      <td>8.133976</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we pass this to <strong>linearmodels</strong> and with the <code class="docutils literal notranslate"><span class="pre">state_id</span></code> and <code class="docutils literal notranslate"><span class="pre">firm_id</span></code> variables entered via the <code class="docutils literal notranslate"><span class="pre">absorb</span></code> keyword argument:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">linearmodels.iv.absorbing</span> <span class="kn">import</span> <span class="n">AbsorbingLS</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">AbsorbingLS</span><span class="p">(</span><span class="n">sim</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">sim</span><span class="p">[[</span><span class="s1">&#39;exog_0&#39;</span><span class="p">,</span> <span class="s1">&#39;exog_1&#39;</span><span class="p">]],</span> <span class="n">absorb</span><span class="o">=</span><span class="n">sim</span><span class="p">[[</span><span class="s1">&#39;state_id&#39;</span><span class="p">,</span> <span class="s1">&#39;firm_id&#39;</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Absorbing LS Estimation Summary                          
+==================================================================================
+Dep. Variable:                      y   R-squared:                          0.9367
+Estimator:               Absorbing LS   Adj. R-squared:                     0.9210
+No. Observations:             1000000   F-statistic:                     9.825e+06
+Date:                Sun, Apr 25 2021   P-value (F-stat):                   0.0000
+Time:                        10:18:03   Distribution:                      chi2(2)
+Cov. Estimator:                robust   R-squared (No Effects):             0.9091
+                                        Varaibles Absorbed:              1.987e+05
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+exog_0         0.9984     0.0010     986.64     0.0000      0.9964      1.0004
+exog_1         3.0002     0.0010     2974.4     0.0000      2.9983      3.0022
+==============================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, from our 1,000,000 observations, we have roughly 200,000 fixed effects that have been scooped up and packed away, leaving us with just the coefficients, <span class="math notranslate nohighlight">\(\beta\)</span>, on the exogenous variables of interest.</p>
+</div>
 </div>
 <div class="section" id="transformations-of-regressors">
 <h2><span class="section-number">3.4. </span>Transformations of regressors<a class="headerlink" href="#transformations-of-regressors" title="Permalink to this headline">¶</a></h2>
@@ -1339,7 +1489,7 @@ np.log(hp)   -10.7642      1.224     -8.792      0.000     -13.265      -8.264
 </div>
 </div>
 </div>
-<p>Clearly, the first method will work for <code class="docutils literal notranslate"><span class="pre">arcsinh(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">log(x+1)</span></code>, but you can also pass both of these into the formula directly too. (For more on the pros and cons of arcsinh, see <span id="id1">[<a class="reference internal" href="zreferences.html#id6"><span>7</span></a>]</span>.) Here it is with arcsinh:</p>
+<p>Clearly, the first method will work for <code class="docutils literal notranslate"><span class="pre">arcsinh(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">log(x+1)</span></code>, but you can also pass both of these into the formula directly too. (For more on the pros and cons of arcsinh, see <span id="id1">[<a class="reference internal" href="zreferences.html#id6"><span>8</span></a>]</span>.) Here it is with arcsinh:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;mpg ~ np.arcsinh(hp)&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
@@ -1374,7 +1524,7 @@ y = \beta_0 + \beta_1 x_1 \cdot x_2
 y = \beta_0 + \beta_1 x_1^2
 \]</div>
 <p>i.e. the last term enters only after it is multiplied by itself.</p>
-<p>One note of warning: the interpretation of the effect of a variable is no longer as simple as was set out at the start of this chapter. To work out <em>what</em> the new interpretation is, the procedure is the same though: just take the derivative. In the case of the interaction model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> is now going to be a function of <span class="math notranslate nohighlight">\(x_2\)</span>. In the case of the polynomial model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> will be <span class="math notranslate nohighlight">\(2\beta_1 \cdot x_1\)</span>. For more on interaction terms, see <span id="id2">[<a class="reference internal" href="zreferences.html#id7"><span>8</span></a>]</span>.</p>
+<p>One note of warning: the interpretation of the effect of a variable is no longer as simple as was set out at the start of this chapter. To work out <em>what</em> the new interpretation is, the procedure is the same though: just take the derivative. In the case of the interaction model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> is now going to be a function of <span class="math notranslate nohighlight">\(x_2\)</span>. In the case of the polynomial model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> will be <span class="math notranslate nohighlight">\(2\beta_1 \cdot x_1\)</span>. For more on interaction terms, see <span id="id2">[<a class="reference internal" href="zreferences.html#id7"><span>9</span></a>]</span>.</p>
 <p>Alright, with all of that preamble out of the way, let’s see how we actual do some of this! Let’s try including a linear and squared term in the regression of <code class="docutils literal notranslate"><span class="pre">mpg</span></code> on <code class="docutils literal notranslate"><span class="pre">hp</span></code> making use of the numpy power function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1528,8 +1678,8 @@ hp:disp       -0.0001   1.91e-05     -7.409      0.000      -0.000      -0.000
 Dep. Variable:                      y   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                    0.7446
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):              0.392
-Time:                        14:56:39   Log-Likelihood:                -361.23
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):              0.392
+Time:                        10:18:03   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1691,8 +1841,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.998
 Model:                            OLS   Adj. R-squared:                  0.998
 Method:                 Least Squares   F-statistic:                 4.302e+04
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):          6.90e-261
-Time:                        14:56:39   Log-Likelihood:                 165.45
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):          6.90e-261
+Time:                        10:18:03   Log-Likelihood:                 165.45
 No. Observations:                 200   AIC:                            -324.9
 Df Residuals:                     197   BIC:                            -315.0
 Df Model:                           2                                         
@@ -1887,8 +2037,8 @@ x_{2i} &amp; = z_{1i}\hat{\delta} + z_{2i}\hat{\gamma} + \nu_i\end{split}
 Dep. Variable:          np.log(packs)   R-squared:                      0.9659
 Estimator:                    IV-2SLS   Adj. R-squared:                 0.9279
 No. Observations:                  96   F-statistic:                  2.66e+16
-Date:                Fri, Apr 16 2021   P-value (F-stat)                0.0000
-Time:                        14:56:40   Distribution:                 chi2(50)
+Date:                Sun, Apr 25 2021   P-value (F-stat)                0.0000
+Time:                        10:18:03   Distribution:                 chi2(50)
 Cov. Estimator:             clustered                                         
                                                                               
                                 Parameter Estimates                                
@@ -2104,7 +2254,7 @@ H0: Endogenous variables are exogenous
 Statistic: 14000039221717696.0000
 P-value: 0.0000
 Distributed: chi2(1)
-WaldTestStatistic, id: 0x7fb44023b550
+WaldTestStatistic, id: 0x7fd2e80eb1f0
 </pre></div>
 </div>
 </div>
@@ -2320,8 +2470,8 @@ T-stats reported in parentheses
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                          Logit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Fri, 16 Apr 2021   Pseudo R-squ.:                  0.3740
-Time:                        14:56:40   Log-Likelihood:                -12.890
+Date:                Sun, 25 Apr 2021   Pseudo R-squ.:                  0.3740
+Time:                        10:18:03   Log-Likelihood:                -12.890
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001502
 ==============================================================================
@@ -2405,8 +2555,8 @@ PSI            2.3787      1.065      2.234      0.025       0.292       4.465
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                         Probit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Fri, 16 Apr 2021   Pseudo R-squ.:                  0.3775
-Time:                        14:56:40   Log-Likelihood:                -12.819
+Date:                Sun, 25 Apr 2021   Pseudo R-squ.:                  0.3775
+Time:                        10:18:03   Log-Likelihood:                -12.819
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001405
 ==============================================================================
@@ -2473,7 +2623,7 @@ PSI            1.4263      0.595      2.397      0.017       0.260       2.593
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_94_0.png" src="_images/econmt-regression_94_0.png" />
+<img alt="_images/econmt-regression_99_0.png" src="_images/econmt-regression_99_0.png" />
 </div>
 </div>
 <p>What difference there is, is that logistic regression puts more weight into the tails of the distribution. Arguably, logit is easier to interpret too. With logistic regression, a one unit change in <span class="math notranslate nohighlight">\(x_i\)</span> is associated with a <span class="math notranslate nohighlight">\(\beta_i\)</span> change in the log odds of a 1 outcome or, alternatively, an <span class="math notranslate nohighlight">\(e^{\beta_i}\)</span>-fold change in the odds, all else being equal. With a probit, this is a change of <span class="math notranslate nohighlight">\(\beta_i z\)</span> for <span class="math notranslate nohighlight">\(z\)</span> a normalised variable that you’d have to convert into a predicted probability using the normal CDF.</p>
@@ -2600,8 +2750,8 @@ y = x' \cdot \beta
 Dep. Variable:                foodexp   Pseudo R-squared:               0.6206
 Model:                       QuantReg   Bandwidth:                       64.51
 Method:                 Least Squares   Sparsity:                        209.3
-Date:                Fri, 16 Apr 2021   No. Observations:                  235
-Time:                        14:56:41   Df Residuals:                      233
+Date:                Sun, 25 Apr 2021   No. Observations:                  235
+Time:                        10:18:04   Df Residuals:                      233
                                         Df Model:                            1
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
@@ -2642,7 +2792,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_106_0.png" src="_images/econmt-regression_106_0.png" />
+<img alt="_images/econmt-regression_111_0.png" src="_images/econmt-regression_111_0.png" />
 </div>
 </div>
 <p>This chart shows very clearly how quantile regression differs from OLS. The line fitted by OLS is trying to be all things to all points whereas the line fitted by quantile regression is focused only on its quantile. You can also see how points far from the median (not all shown) may be having a large influence on the OLS line.</p>
@@ -2707,7 +2857,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_111_0.png" src="_images/econmt-regression_111_0.png" />
+<img alt="_images/econmt-regression_116_0.png" src="_images/econmt-regression_116_0.png" />
 </div>
 </div>
 <p>Clearly, this is not quite normal and there are some serious outliers in the tails.</p>
@@ -2725,8 +2875,8 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_113_0.png" src="_images/econmt-regression_113_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775709381367)&gt;
+<img alt="_images/econmt-regression_118_0.png" src="_images/econmt-regression_118_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783988790414)&gt;
 </pre></div>
 </div>
 </div>
@@ -2743,7 +2893,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_115_0.png" src="_images/econmt-regression_115_0.png" />
+<img alt="_images/econmt-regression_120_0.png" src="_images/econmt-regression_120_0.png" />
 </div>
 </div>
 <p>At this point, the results of the regression are useful context.</p>
@@ -2761,8 +2911,8 @@ strong multicollinearity or other numerical problems.
 Dep. Variable:                 murder   R-squared:                       0.813
 Model:                            OLS   Adj. R-squared:                  0.797
 Method:                 Least Squares   F-statistic:                     50.08
-Date:                Fri, 16 Apr 2021   Prob (F-statistic):           3.42e-16
-Time:                        14:56:42   Log-Likelihood:                -95.050
+Date:                Sun, 25 Apr 2021   Prob (F-statistic):           3.42e-16
+Time:                        10:18:06   Log-Likelihood:                -95.050
 No. Observations:                  51   AIC:                             200.1
 Df Residuals:                      46   BIC:                             209.8
 Df Model:                           4                                         
@@ -2803,7 +2953,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_120_0.png" src="_images/econmt-regression_120_0.png" />
+<img alt="_images/econmt-regression_125_0.png" src="_images/econmt-regression_125_0.png" />
 </div>
 </div>
 <p><strong>statsmodels</strong> can also produce influence plots of the ‘externally studentised’ residuals vs. the leverage of each observation as measured by the so-called hat matrix <span class="math notranslate nohighlight">\(X(X^{\;\prime}X)^{-1}X^{\;\prime}\)</span> (because it puts the ‘hat’ on <span class="math notranslate nohighlight">\(y\)</span>). Externally studentised residuals are residuals that are scaled by their standard deviation. High leverage points could exert an undue influence over the regression line, but only if the predicted <span class="math notranslate nohighlight">\(y\)</span> values of a regression that was fit with them excluded was quite different. In the example below, DC is having a big influence.</p>
@@ -2815,7 +2965,7 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_123_0.png" src="_images/econmt-regression_123_0.png" />
+<img alt="_images/econmt-regression_128_0.png" src="_images/econmt-regression_128_0.png" />
 </div>
 </div>
 <p>Finally, it’s nice to be able to see plots of our coefficients along with their standard errors. There isn’t a built-in <strong>statsmodels</strong> option for this, but happily it’s easy to extract the results of regressions in a sensible format. Using the <code class="docutils literal notranslate"><span class="pre">results</span></code> object from earlier, and excluding the intercept, we can get the coefficients from <code class="docutils literal notranslate"><span class="pre">results.params[1:]</span></code> and the associated errors from <code class="docutils literal notranslate"><span class="pre">results.bse[1:]</span></code>.</p>
@@ -2835,8 +2985,8 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-regression_125_0.png" src="_images/econmt-regression_125_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775776146384)&gt;
+<img alt="_images/econmt-regression_130_0.png" src="_images/econmt-regression_130_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8784024033407)&gt;
 </pre></div>
 </div>
 </div>
@@ -2845,18 +2995,18 @@ strong multicollinearity or other numerical problems.
 <div class="section" id="specification-curve-analysis">
 <h2><span class="section-number">3.14. </span>Specification curve analysis<a class="headerlink" href="#specification-curve-analysis" title="Permalink to this headline">¶</a></h2>
 <p>When specifying a model, modellers have many options. These can be informed by field intelligence, priors, and even misguided attempts to find a significant result. Even with the best of intentions, research teams can reach entirely different conclusions using the same, or similar, data because of different choices made in preparing data or in modelling it.</p>
-<p>There’s formal evidence that researchers really do make different decisions; one study <span id="id3">[<a class="reference internal" href="zreferences.html#id8"><span>9</span></a>]</span> gave the same research question - whether soccer referees are more likely to give red cards to dark-skin-toned players than to light-skin-toned players - to 29 different teams. From the abstract of that paper:</p>
+<p>There’s formal evidence that researchers really do make different decisions; one study <span id="id3">[<a class="reference internal" href="zreferences.html#id8"><span>10</span></a>]</span> gave the same research question - whether soccer referees are more likely to give red cards to dark-skin-toned players than to light-skin-toned players - to 29 different teams. From the abstract of that paper:</p>
 <blockquote>
 <div><p>Analytic approaches varied widely across the teams, and the estimated effect sizes ranged from 0.89 to 2.93 (Mdn = 1.31) in odds-ratio units. Twenty teams (69%) found a statistically significant positive effect, and 9 teams (31%) did not observe a significant relationship. Overall, the 29 different analyses used 21 unique combinations of covariates. Neither analysts’ prior beliefs about the effect of interest nor their level of expertise readily explained the variation in the outcomes of the analyses. Peer ratings of the quality of the analyses also did not account for the variability.</p>
 </div></blockquote>
 <p>So not only were different decisions made, there seems to be no clearly identifiable reason for them. There is usually scope for reasonable alternative model specifications when estimating coefficients, and those coefficients will vary with those specifications.</p>
-<p>Specification curve analysis <span id="id4">[<a class="reference internal" href="zreferences.html#id9"><span>10</span></a>]</span> looks for a more exhaustive way of trying out alternative specifications. The three steps of specification curve analysis are:</p>
+<p>Specification curve analysis <span id="id4">[<a class="reference internal" href="zreferences.html#id9"><span>11</span></a>]</span> looks for a more exhaustive way of trying out alternative specifications. The three steps of specification curve analysis are:</p>
 <ol class="simple">
 <li><p>identifying the set of theoretically justified, statistically valid, and non-redundant analytic specifications;</p></li>
 <li><p>displaying alternative results graphically, allowing the identification of decisions producing different results; and</p></li>
 <li><p>conducting statistical tests to determine whether as a whole results are inconsistent with the null hypothesis.</p></li>
 </ol>
-<p>For a good example of specification curve analysis in action, see this recent Nature Human Behaviour paper <span id="id5">[<a class="reference internal" href="zreferences.html#id10"><span>11</span></a>]</span> on the association between adolescent well-being and the use of digital technology.</p>
+<p>For a good example of specification curve analysis in action, see this recent Nature Human Behaviour paper <span id="id5">[<a class="reference internal" href="zreferences.html#id10"><span>12</span></a>]</span> on the association between adolescent well-being and the use of digital technology.</p>
 <p>We’ll use the <a class="reference external" href="https://specification-curve.readthedocs.io/en/latest/readme.html"><strong>specification curve analysis</strong></a> package to do the first two, which you can install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">specification_curve</span></code> (full disclosure: I wrote this package). To demonstrate the full functionality, we’ll create a second, alternative ‘hp’ that is a transformed version of the original.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2885,7 +3035,7 @@ strong multicollinearity or other numerical problems.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit complete
 </pre></div>
 </div>
-<img alt="_images/econmt-regression_129_1.png" src="_images/econmt-regression_129_1.png" />
+<img alt="_images/econmt-regression_134_1.png" src="_images/econmt-regression_134_1.png" />
 </div>
 </div>
 </div>
