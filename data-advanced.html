@@ -125,6 +125,11 @@
    3. Advanced Coding
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-where.html">
+   4. Options for Writing Code
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -133,13 +138,13 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="wrkflow-best-practice-coding.html">
+  <a class="reference internal" href="wrkflow-best-practice.html">
    1. Tips for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-advcd-best-practice.html">
-   2. More Tips for Better Coding
+   2. Tools for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
@@ -982,15 +987,15 @@ failure cases:
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
   &quot;meta&quot;: {},
+  &quot;result&quot;: {
+    &quot;observed_value&quot;: &quot;int64&quot;
+  },
   &quot;exception_info&quot;: {
     &quot;raised_exception&quot;: false,
     &quot;exception_traceback&quot;: null,
     &quot;exception_message&quot;: null
   },
-  &quot;success&quot;: true,
-  &quot;result&quot;: {
-    &quot;observed_value&quot;: &quot;int64&quot;
-  }
+  &quot;success&quot;: true
 }
 </pre></div>
 </div>
@@ -1005,18 +1010,18 @@ failure cases:
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
   &quot;meta&quot;: {},
-  &quot;exception_info&quot;: {
-    &quot;raised_exception&quot;: false,
-    &quot;exception_traceback&quot;: null,
-    &quot;exception_message&quot;: null
-  },
-  &quot;success&quot;: false,
   &quot;result&quot;: {
     &quot;observed_value&quot;: 0.6,
     &quot;element_count&quot;: 5,
     &quot;missing_count&quot;: null,
     &quot;missing_percent&quot;: null
-  }
+  },
+  &quot;exception_info&quot;: {
+    &quot;raised_exception&quot;: false,
+    &quot;exception_traceback&quot;: null,
+    &quot;exception_message&quot;: null
+  },
+  &quot;success&quot;: false
 }
 </pre></div>
 </div>
@@ -1038,12 +1043,6 @@ failure cases:
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
   &quot;meta&quot;: {},
-  &quot;exception_info&quot;: {
-    &quot;raised_exception&quot;: false,
-    &quot;exception_traceback&quot;: null,
-    &quot;exception_message&quot;: null
-  },
-  &quot;success&quot;: true,
   &quot;result&quot;: {
     &quot;element_count&quot;: 5,
     &quot;missing_count&quot;: 0,
@@ -1055,7 +1054,13 @@ failure cases:
     &quot;partial_unexpected_list&quot;: [
       -20.4
     ]
-  }
+  },
+  &quot;exception_info&quot;: {
+    &quot;raised_exception&quot;: false,
+    &quot;exception_traceback&quot;: null,
+    &quot;exception_message&quot;: null
+  },
+  &quot;success&quot;: true
 }
 </pre></div>
 </div>
@@ -1225,368 +1230,368 @@ failure cases:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
         orig_message = &quot;Started execution of pipeline \&quot;hello_pipeline\&quot;.&quot;
-      log_message_id = &quot;6f9a0143-2447-4254-a932-66e428a968fa&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.219732&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;4ff2ad30-b982-44c1-bb1d-311283b35aa8&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.968130&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
        dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;PIPELINE_START&quot;, &quot;logging_tags&quot;: {}, &quot;message&quot;: &quot;Started execution of pipeline \&quot;hello_pipeline\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: null, &quot;step_key&quot;: null, &quot;step_kind_value&quot;: null}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Executing steps in process (pid: 95185)&quot;
-      log_message_id = &quot;5b56bf5f-011c-462c-9d5c-5c1605447ac5&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.223104&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
+        orig_message = &quot;Executing steps in process (pid: 16377)&quot;
+      log_message_id = &quot;03d3c7cd-e44a-4b16-b139-eead75ca571c&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.970862&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
-       dagster_event = {&quot;event_specific_data&quot;: [[[&quot;pid&quot;, null, [&quot;95185&quot;]], [&quot;step_keys&quot;, null, [&quot;{&#39;leading.compute&#39;, &#39;get_name.compute&#39;, &#39;hello.compute&#39;, &#39;upper.compute&#39;, &#39;leading_caps.compute&#39;, &#39;all_upper.compute&#39;}&quot;]]]], &quot;event_type_value&quot;: &quot;ENGINE_EVENT&quot;, &quot;logging_tags&quot;: {}, &quot;message&quot;: &quot;Executing steps in process (pid: 95185)&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: null, &quot;step_key&quot;: null, &quot;step_kind_value&quot;: null}
+execution_epoch_time = 1619789058.938138
+       dagster_event = {&quot;event_specific_data&quot;: [[[&quot;pid&quot;, null, [&quot;16377&quot;]], [&quot;step_keys&quot;, null, [&quot;{&#39;leading_caps.compute&#39;, &#39;hello.compute&#39;, &#39;upper.compute&#39;, &#39;get_name.compute&#39;, &#39;all_upper.compute&#39;, &#39;leading.compute&#39;}&quot;]]]], &quot;event_type_value&quot;: &quot;ENGINE_EVENT&quot;, &quot;logging_tags&quot;: {}, &quot;message&quot;: &quot;Executing steps in process (pid: 16377)&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: null, &quot;step_key&quot;: null, &quot;step_kind_value&quot;: null}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
         orig_message = &quot;Started execution of step \&quot;get_name.compute\&quot;.&quot;
-      log_message_id = &quot;8aded7fb-687d-4529-9297-ace916c256a5&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.223945&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;3bee9a21-c9dc-484e-ba55-7d37fa79cc66&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.971805&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;get_name.compute&quot;
                solid = &quot;get_name&quot;
     solid_definition = &quot;get_name&quot;
-       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;get_name&quot;, &quot;solid_definition&quot;: &quot;get_name&quot;, &quot;step_key&quot;: &quot;get_name.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;get_name.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;get_name&quot;, &quot;get_name&quot;, null], &quot;step_key&quot;: &quot;get_name.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;get_name&quot;, &quot;solid_definition&quot;: &quot;get_name&quot;, &quot;step_key&quot;: &quot;get_name.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;get_name.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;get_name&quot;, &quot;get_name&quot;, null], &quot;step_key&quot;: &quot;get_name.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
         orig_message = &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;b6663df9-c6c2-423c-bad1-8520e9664ac5&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.236827&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;b12bdc5f-f263-4418-bf68-8a6684639b79&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.985061&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;get_name.compute&quot;
                solid = &quot;get_name&quot;
     solid_definition = &quot;get_name&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [[&quot;get_name.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;get_name&quot;, &quot;solid_definition&quot;: &quot;get_name&quot;, &quot;step_key&quot;: &quot;get_name.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;get_name&quot;, &quot;get_name&quot;, null], &quot;step_key&quot;: &quot;get_name.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [[&quot;get_name.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;get_name&quot;, &quot;solid_definition&quot;: &quot;get_name&quot;, &quot;step_key&quot;: &quot;get_name.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;get_name&quot;, &quot;get_name&quot;, null], &quot;step_key&quot;: &quot;get_name.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished execution of step \&quot;get_name.compute\&quot; in 14ms.&quot;
-      log_message_id = &quot;8d4b3c2b-0b70-4c9b-a01e-e1bf6bfa5f24&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.238779&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
+        orig_message = &quot;Finished execution of step \&quot;get_name.compute\&quot; in 15ms.&quot;
+      log_message_id = &quot;84a1a2ac-bb08-4726-b969-5208fc2b7b28&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.987544&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;get_name.compute&quot;
                solid = &quot;get_name&quot;
     solid_definition = &quot;get_name&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [14.22686800000017], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;get_name&quot;, &quot;solid_definition&quot;: &quot;get_name&quot;, &quot;step_key&quot;: &quot;get_name.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;get_name.compute\&quot; in 14ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;get_name&quot;, &quot;get_name&quot;, null], &quot;step_key&quot;: &quot;get_name.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [15.00498100000014], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;get_name&quot;, &quot;solid_definition&quot;: &quot;get_name&quot;, &quot;step_key&quot;: &quot;get_name.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;get_name.compute\&quot; in 15ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;get_name&quot;, &quot;get_name&quot;, null], &quot;step_key&quot;: &quot;get_name.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
         orig_message = &quot;Started execution of step \&quot;hello.compute\&quot;.&quot;
-      log_message_id = &quot;696fc117-3c26-455f-b98c-c00d95f79a39&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.239598&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;28e9108b-e174-46b2-8a36-84b569694227&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.988624&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;hello.compute&quot;
                solid = &quot;hello&quot;
     solid_definition = &quot;hello&quot;
-       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;hello.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;hello.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:18 - dagster - DEBUG - 
         orig_message = &quot;Got input \&quot;name\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;7e49e399-30d9-4857-9191-5f762df0d05b&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.240240&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;b62a5530-43a5-4e09-a9b8-c12df090ffe8&quot;
+       log_timestamp = &quot;2021-04-30T13:24:18.989355&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;hello.compute&quot;
                solid = &quot;hello&quot;
     solid_definition = &quot;hello&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [&quot;name&quot;, [true, &quot;name&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;name\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [&quot;name&quot;, [true, &quot;name&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;name\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;24b61ba6-14f7-47fa-8dc6-10bd762b6ca4&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.251423&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;3dad66b0-e4b1-43dc-a502-355b20f97771&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.001644&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;hello.compute&quot;
                solid = &quot;hello&quot;
     solid_definition = &quot;hello&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [[&quot;hello.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [[&quot;hello.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished execution of step \&quot;hello.compute\&quot; in 12ms.&quot;
-      log_message_id = &quot;a93500ac-e26d-4e00-85ad-f756100bb1b3&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.253373&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
+        orig_message = &quot;Finished execution of step \&quot;hello.compute\&quot; in 13ms.&quot;
+      log_message_id = &quot;11d95dfc-18ec-4ac3-8aa1-a2daa75f99b0&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.003669&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;hello.compute&quot;
                solid = &quot;hello&quot;
     solid_definition = &quot;hello&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [12.117520999999964], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;hello.compute\&quot; in 12ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [13.323202000000034], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;hello&quot;, &quot;solid_definition&quot;: &quot;hello&quot;, &quot;step_key&quot;: &quot;hello.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;hello.compute\&quot; in 13ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;hello&quot;, &quot;hello&quot;, null], &quot;step_key&quot;: &quot;hello.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Started execution of step \&quot;all_upper.compute\&quot;.&quot;
-      log_message_id = &quot;e7d143c1-2495-4b28-81aa-0ccff949287b&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.254152&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;37dca229-c442-43d5-9693-5d67a9420bee&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.004756&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;all_upper.compute&quot;
                solid = &quot;all_upper&quot;
     solid_definition = &quot;all_upper&quot;
-       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;all_upper.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;all_upper.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Got input \&quot;phrase\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;6125fdca-bf46-49c5-b323-3189b6ce0712&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.254880&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;fe253ceb-03ff-4e63-8340-be3837f50688&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.005452&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;all_upper.compute&quot;
                solid = &quot;all_upper&quot;
     solid_definition = &quot;all_upper&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase&quot;, [true, &quot;phrase&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase&quot;, [true, &quot;phrase&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;fd15727d-9050-4e68-8a73-5762092b273f&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.265952&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;fa479a8c-67cb-4944-b8f1-a04b3a93022f&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.019734&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;all_upper.compute&quot;
                solid = &quot;all_upper&quot;
     solid_definition = &quot;all_upper&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [[&quot;all_upper.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [[&quot;all_upper.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished execution of step \&quot;all_upper.compute\&quot; in 12ms.&quot;
-      log_message_id = &quot;7896037b-234e-4193-b838-060cc6bf7fc7&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.267869&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
+        orig_message = &quot;Finished execution of step \&quot;all_upper.compute\&quot; in 15ms.&quot;
+      log_message_id = &quot;cfc62cb9-5658-489f-b03e-a85a39a64e27&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.021765&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;all_upper.compute&quot;
                solid = &quot;all_upper&quot;
     solid_definition = &quot;all_upper&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [12.193385000000223], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;all_upper.compute\&quot; in 12ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [15.559330999999954], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;all_upper&quot;, &quot;solid_definition&quot;: &quot;all_upper&quot;, &quot;step_key&quot;: &quot;all_upper.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;all_upper.compute\&quot; in 15ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;all_upper&quot;, &quot;all_upper&quot;, null], &quot;step_key&quot;: &quot;all_upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Started execution of step \&quot;leading_caps.compute\&quot;.&quot;
-      log_message_id = &quot;6765d548-c3b1-4660-8fe0-dddd4f54f89a&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.268772&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;de8af4c2-9e62-4f07-b8fb-e7e052b05cc1&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.022598&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading_caps.compute&quot;
                solid = &quot;leading_caps&quot;
     solid_definition = &quot;leading_caps&quot;
-       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;leading_caps.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;leading_caps.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Got input \&quot;phrase\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;6426ca2e-11c2-4569-a957-574d5a0a634e&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.269470&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;f4ab7ae5-0ed4-40ec-a56c-be51f3f0c436&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.023374&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading_caps.compute&quot;
                solid = &quot;leading_caps&quot;
     solid_definition = &quot;leading_caps&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase&quot;, [true, &quot;phrase&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase&quot;, [true, &quot;phrase&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;4e1b09a5-6f71-476e-996a-4c6985b36f33&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.280093&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;9fdb56fb-be19-46b7-b413-0100c266662d&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.036966&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading_caps.compute&quot;
                solid = &quot;leading_caps&quot;
     solid_definition = &quot;leading_caps&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [[&quot;leading_caps.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [[&quot;leading_caps.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished execution of step \&quot;leading_caps.compute\&quot; in 11ms.&quot;
-      log_message_id = &quot;e33060a9-9240-414d-8362-29725968129d&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.282002&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
+        orig_message = &quot;Finished execution of step \&quot;leading_caps.compute\&quot; in 15ms.&quot;
+      log_message_id = &quot;f1fa8a47-cb24-4c64-98c7-c4d366811693&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.039137&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading_caps.compute&quot;
                solid = &quot;leading_caps&quot;
     solid_definition = &quot;leading_caps&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [11.618292999999724], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;leading_caps.compute\&quot; in 11ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [15.034283999999953], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading_caps&quot;, &quot;solid_definition&quot;: &quot;leading_caps&quot;, &quot;step_key&quot;: &quot;leading_caps.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;leading_caps.compute\&quot; in 15ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading_caps&quot;, &quot;leading_caps&quot;, null], &quot;step_key&quot;: &quot;leading_caps.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Started execution of step \&quot;leading.compute\&quot;.&quot;
-      log_message_id = &quot;4bac12b5-fcf2-4678-b18f-c16dbf9a775c&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.282894&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;13e079ed-5794-4d06-8ebc-cbe7057dbecf&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.040267&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading.compute&quot;
                solid = &quot;leading&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;leading.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;leading.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Got input \&quot;phrase_to_display\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;032f1d61-1602-4dee-ad81-29b39e5409f5&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.283598&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;25ef7a13-e283-43c7-b28d-f853c4bc8778&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.041101&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading.compute&quot;
                solid = &quot;leading&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase_to_display&quot;, [true, &quot;phrase_to_display&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase_to_display\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase_to_display&quot;, [true, &quot;phrase_to_display&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase_to_display\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;f37cb095-5f5f-4ad3-9059-937b86275be1&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.293459&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;5d815a60-6612-4a8f-87a2-c3ebd67c3524&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.055088&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading.compute&quot;
                solid = &quot;leading&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [[&quot;leading.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [[&quot;leading.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished execution of step \&quot;leading.compute\&quot; in 10ms.&quot;
-      log_message_id = &quot;d4193aad-42d5-4896-90ac-96cf6026252c&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.295067&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
+        orig_message = &quot;Finished execution of step \&quot;leading.compute\&quot; in 15ms.&quot;
+      log_message_id = &quot;f5a83649-8545-4097-b578-5eec59dce414&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.057286&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;leading.compute&quot;
                solid = &quot;leading&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [10.705349999999836], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;leading.compute\&quot; in 10ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [15.227455999999862], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;leading&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;leading.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;leading.compute\&quot; in 15ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;leading&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;leading.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Started execution of step \&quot;upper.compute\&quot;.&quot;
-      log_message_id = &quot;34dff1c7-e426-4d06-b6b8-aa42d0487301&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.295913&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;6a1cfa98-dc18-4738-8c05-0f5b1f54721a&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.058323&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;upper.compute&quot;
                solid = &quot;upper&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;upper.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;STEP_START&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Started execution of step \&quot;upper.compute\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Got input \&quot;phrase_to_display\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;92ba6dc9-94ab-4735-8b79-d9f55911510f&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.296440&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;5b835dd8-7987-45af-ae6d-99a451fce0a8&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.059161&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;upper.compute&quot;
                solid = &quot;upper&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase_to_display&quot;, [true, &quot;phrase_to_display&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase_to_display\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [&quot;phrase_to_display&quot;, [true, &quot;phrase_to_display&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_INPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Got input \&quot;phrase_to_display\&quot; of type \&quot;String\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;
-      log_message_id = &quot;056e4dd8-8cfd-4283-a7d7-cc25579ce395&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.306084&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;901abc0f-4dd5-4e17-806c-4b14d8ddd6db&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.072530&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;upper.compute&quot;
                solid = &quot;upper&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [[&quot;upper.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [[&quot;upper.compute&quot;, &quot;result&quot;], null, [true, &quot;result&quot;, null, []]], &quot;event_type_value&quot;: &quot;STEP_OUTPUT&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Yielded output \&quot;result\&quot; of type \&quot;Any\&quot;. (Type check passed).&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished execution of step \&quot;upper.compute\&quot; in 10ms.&quot;
-      log_message_id = &quot;d0e68602-9e79-4728-910b-b137cc47bf3b&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.307644&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
+        orig_message = &quot;Finished execution of step \&quot;upper.compute\&quot; in 14ms.&quot;
+      log_message_id = &quot;e05380d5-f533-4c7a-bb9d-f05d823d4ac7&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.074698&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
             step_key = &quot;upper.compute&quot;
                solid = &quot;upper&quot;
     solid_definition = &quot;display&quot;
-       dagster_event = {&quot;event_specific_data&quot;: [10.4889349999997], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619342204.086196, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;upper.compute\&quot; in 10ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
+       dagster_event = {&quot;event_specific_data&quot;: [14.533323999999848], &quot;event_type_value&quot;: &quot;STEP_SUCCESS&quot;, &quot;logging_tags&quot;: {&quot;execution_epoch_time&quot;: 1619789058.938138, &quot;pipeline&quot;: &quot;hello_pipeline&quot;, &quot;solid&quot;: &quot;upper&quot;, &quot;solid_definition&quot;: &quot;display&quot;, &quot;step_key&quot;: &quot;upper.compute&quot;}, &quot;message&quot;: &quot;Finished execution of step \&quot;upper.compute\&quot; in 14ms.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: [&quot;upper&quot;, &quot;display&quot;, null], &quot;step_key&quot;: &quot;upper.compute&quot;, &quot;step_kind_value&quot;: &quot;COMPUTE&quot;}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
-        orig_message = &quot;Finished steps in process (pid: 95185) in 84ms&quot;
-      log_message_id = &quot;0dfd6077-e923-4116-8e91-b549dd20fac6&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.308408&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
+        orig_message = &quot;Finished steps in process (pid: 16377) in 103ms&quot;
+      log_message_id = &quot;1cc6388f-54c3-4013-b3ae-77553c3dd6e2&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.075647&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
-       dagster_event = {&quot;event_specific_data&quot;: [[[&quot;pid&quot;, null, [&quot;95185&quot;]], [&quot;step_keys&quot;, null, [&quot;{&#39;leading.compute&#39;, &#39;get_name.compute&#39;, &#39;hello.compute&#39;, &#39;upper.compute&#39;, &#39;leading_caps.compute&#39;, &#39;all_upper.compute&#39;}&quot;]]]], &quot;event_type_value&quot;: &quot;ENGINE_EVENT&quot;, &quot;logging_tags&quot;: {}, &quot;message&quot;: &quot;Finished steps in process (pid: 95185) in 84ms&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: null, &quot;step_key&quot;: null, &quot;step_kind_value&quot;: null}
+execution_epoch_time = 1619789058.938138
+       dagster_event = {&quot;event_specific_data&quot;: [[[&quot;pid&quot;, null, [&quot;16377&quot;]], [&quot;step_keys&quot;, null, [&quot;{&#39;leading_caps.compute&#39;, &#39;hello.compute&#39;, &#39;upper.compute&#39;, &#39;get_name.compute&#39;, &#39;all_upper.compute&#39;, &#39;leading.compute&#39;}&quot;]]]], &quot;event_type_value&quot;: &quot;ENGINE_EVENT&quot;, &quot;logging_tags&quot;: {}, &quot;message&quot;: &quot;Finished steps in process (pid: 16377) in 103ms&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: null, &quot;step_key&quot;: null, &quot;step_kind_value&quot;: null}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:16:44 - dagster - DEBUG - 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:24:19 - dagster - DEBUG - 
         orig_message = &quot;Finished execution of pipeline \&quot;hello_pipeline\&quot;.&quot;
-      log_message_id = &quot;f7d0a709-c1a4-4320-94fd-cfde5de0dd46&quot;
-       log_timestamp = &quot;2021-04-25T09:16:44.308976&quot;
-              run_id = &quot;7bd0dbe3-3479-4ea1-a327-45bdf444a358&quot;
+      log_message_id = &quot;8ff0dbda-7b48-4ba0-a288-5f6986b3a658&quot;
+       log_timestamp = &quot;2021-04-30T13:24:19.076509&quot;
+              run_id = &quot;8ed185d3-f214-4552-8fd8-8aa8dd3fc2ec&quot;
             pipeline = &quot;hello_pipeline&quot;
-execution_epoch_time = 1619342204.086196
+execution_epoch_time = 1619789058.938138
        dagster_event = {&quot;event_specific_data&quot;: null, &quot;event_type_value&quot;: &quot;PIPELINE_SUCCESS&quot;, &quot;logging_tags&quot;: {}, &quot;message&quot;: &quot;Finished execution of pipeline \&quot;hello_pipeline\&quot;.&quot;, &quot;pipeline_name&quot;: &quot;hello_pipeline&quot;, &quot;solid_handle&quot;: null, &quot;step_key&quot;: null, &quot;step_kind_value&quot;: null}
        pipeline_name = &quot;hello_pipeline&quot;
 </pre></div>

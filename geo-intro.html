@@ -125,6 +125,11 @@
    3. Advanced Coding
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-where.html">
+   4. Options for Writing Code
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -133,13 +138,13 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="wrkflow-best-practice-coding.html">
+  <a class="reference internal" href="wrkflow-best-practice.html">
    1. Tips for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-advcd-best-practice.html">
-   2. More Tips for Better Coding
+   2. Tools for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
@@ -1691,7 +1696,7 @@ Name: geometry, dtype: geometry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bank of England, 8AH, Threadneedle Street, Barbican, City of London, Greater London, England, EC2R 8AH, United Kingdom&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bank of England, 8AH, Threadneedle Street, Bishopsgate, City of London, Greater London, England, EC2R 8AH, United Kingdom&#39;
 </pre></div>
 </div>
 </div>
@@ -1856,7 +1861,7 @@ Name: geometry, dtype: geometry
 <div class="section" id="openstreetmap-and-osmnx">
 <h2><span class="section-number">1.7. </span>OpenStreetMap and Osmnx<a class="headerlink" href="#openstreetmap-and-osmnx" title="Permalink to this headline">¶</a></h2>
 <p>OpenStreetMap (OSM) is a crowd-sourced project that aims to create a free map of the world containing information about streets, buildings, landmarks, landuse, and more. Its users regularly update the information it holds. Think Wikipedia but for a world map. It excels at highly detailed and freely available renderings of streets.</p>
-<p><a class="reference external" href="https://geoffboeing.com/publications/osmnx-complex-street-networks/"><strong>Osmnx</strong></a> is a package that can retrieve, construct, analyze, and visualize street networks from OpenStreetMap <span id="id2">[<a class="reference internal" href="zreferences.html#id13"><span>13</span></a>]</span>. It also does some geocoding on the fly. Let’s see it in action and feed in the address we obtained in the geocoding example from earlier; using the <code class="docutils literal notranslate"><span class="pre">graph_from_point</span></code> method will give us the network of streets around a location.</p>
+<p><a class="reference external" href="https://geoffboeing.com/publications/osmnx-complex-street-networks/"><strong>Osmnx</strong></a> is a package that can retrieve, construct, analyze, and visualize street networks from OpenStreetMap <span id="id2">[<a class="reference internal" href="zreferences.html#id13"><span>14</span></a>]</span>. It also does some geocoding on the fly. Let’s see it in action and feed in the address we obtained in the geocoding example from earlier; using the <code class="docutils literal notranslate"><span class="pre">graph_from_point</span></code> method will give us the network of streets around a location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>

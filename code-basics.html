@@ -127,6 +127,11 @@
    3. Advanced Coding
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-where.html">
+   4. Options for Writing Code
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -135,13 +140,13 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="wrkflow-best-practice-coding.html">
+  <a class="reference internal" href="wrkflow-best-practice.html">
    1. Tips for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-advcd-best-practice.html">
-   2. More Tips for Better Coding
+   2. Tools for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
@@ -326,14 +331,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="_sources/code-basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/code-basics.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/code-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -372,13 +374,18 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/code-basics.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/code-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/aeturrell/coding-for-economists/blob/main/code-basics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -535,7 +542,7 @@
 <p>This chapter has benefited from the excellent <a class="reference external" href="https://www.tomasbeuzen.com/python-programming-for-data-science/README.html"><em>Python Programming for Data Science</em></a> book by Tomas Beuzen.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Remember, you can download this notebook (to run it on your own computer) using the ‘download .ipynb’ button at the top of the page.</p>
+<p>Remember, you can launch this page interactively by using the ‘Colab’ or ‘Binder’ buttons under the rocket symbol at the top of the page. You can also download this page as a Jupyter Notebook to run on your own computer: use the ‘download .ipynb’ button under the download symbol the top of the page.</p>
 </div>
 <div class="section" id="if-you-get-stuck">
 <h2><span class="section-number">2.1. </span>If you get stuck<a class="headerlink" href="#if-you-get-stuck" title="Permalink to this headline">¶</a></h2>
@@ -1819,7 +1826,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25 10:15:57.334411
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30 14:19:06.966572
 </pre></div>
 </div>
 </div>
@@ -1837,7 +1844,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/4/25, 10:15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/4/30, 14:19
 </pre></div>
 </div>
 </div>
@@ -1853,7 +1860,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-25 15:15:57.334411
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-30 19:19:06.966572
 </pre></div>
 </div>
 </div>
@@ -1870,7 +1877,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251 days until New Year
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>246 days until New Year
 </pre></div>
 </div>
 </div>
@@ -1988,7 +1995,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-04-30
 </pre></div>
 </div>
 </div>

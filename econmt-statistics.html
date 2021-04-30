@@ -127,6 +127,11 @@
    3. Advanced Coding
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-where.html">
+   4. Options for Writing Code
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -135,13 +140,13 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="wrkflow-best-practice-coding.html">
+  <a class="reference internal" href="wrkflow-best-practice.html">
    1. Tips for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wrkflow-advcd-best-practice.html">
-   2. More Tips for Better Coding
+   2. Tools for Better Coding
   </a>
  </li>
  <li class="toctree-l1">
@@ -419,65 +424,99 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#one-sample-t-test">
-   2.3. One-sample t-test
+  <a class="reference internal nav-link" href="#parametric-tests">
+   2.3. Parametric tests
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connection-to-linear-regression">
-     2.3.1. Connection to linear regression
+    <a class="reference internal nav-link" href="#one-sample-t-test">
+     2.3.1. One-sample t-test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#connection-to-linear-regression">
+       2.3.1.1. Connection to linear regression
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-information-provided-by-pingouin-tests">
+       2.3.1.2. Other information provided by
+       <strong>
+        Pingouin
+       </strong>
+       tests
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-sample-t-test">
+     2.3.2. Two-sample t-test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-information-provided-by-pingouin-tests">
-     2.3.2. Other information provided by
-     <strong>
-      Pingouin
-     </strong>
-     tests
+    <a class="reference internal nav-link" href="#pearson-correlation">
+     2.3.3. Pearson correlation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#welch-s-t-test">
+     2.3.4. Welch’s t-test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-way-anova">
+     2.3.5. One-way ANOVA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-pairwise-t-tests">
+     2.3.6. Multiple pairwise t-tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-way-ancova">
+     2.3.7. One-way ANCOVA
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-sample-t-test">
-   2.4. Two-sample t-test
+  <a class="reference internal nav-link" href="#non-parametric-tests">
+   2.4. Non-parametric tests
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pearson-correlation">
-   2.5. Pearson correlation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#welch-s-t-test">
-   2.6. Welch’s t-test
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#one-way-anova">
-   2.7. One-way ANOVA
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-pairwise-t-tests">
-   2.8. Multiple pairwise t-tests
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#one-way-ancova">
-   2.9. One-way ANCOVA
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shapiro-wilk-test-for-normality">
-   2.10. Shapiro-Wilk Test for Normality
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#review">
-   2.11. Review
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wilcoxon-signed-rank-test">
+     2.4.1. Wilcoxon Signed-rank Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mann-whitney-u-test-aka-wilcoxon-rank-sum-test">
+     2.4.2. Mann-Whitney U Test (aka Wilcoxon rank-sum test)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spearman-correlation">
+     2.4.3. Spearman Correlation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kruskal-wallace">
+     2.4.4. Kruskal-Wallace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-chi-squared-test">
+     2.4.5. The Chi-Squared Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shapiro-wilk-test-for-normality">
+     2.4.6. Shapiro-Wilk Test for Normality
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -494,7 +533,7 @@
 <h1><span class="section-number">2. </span>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <span id="id1">[<a class="reference internal" href="zreferences.html#id4"><span>7</span></a>]</span>.</p>
+<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <span id="id1">[<a class="reference internal" href="zreferences.html#id4"><span>7</span></a>]</span>. This chapter also draws on Open Intro Statistics <span id="id2">[<a class="reference internal" href="zreferences.html#id15"><span>8</span></a>]</span>.</p>
 <div class="section" id="notation-and-basic-definitions">
 <h3><span class="section-number">2.1.1. </span>Notation and basic definitions<a class="headerlink" href="#notation-and-basic-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth and represent parameters. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Sometimes Greek letters will stand in for vectors of parameters. Most of the time, upper case Latin characters such as <span class="math notranslate nohighlight">\(X\)</span> will represent random variables (which could have more than one dimension). Lower case letters from the Latin alphabet denote realised data, for instance <span class="math notranslate nohighlight">\(x\)</span> (which again could be multi-dimensional).  Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{n} \displaystyle\sum_{i} x_i\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is number of samples. Parameters are given following a vertical bar, for example if <span class="math notranslate nohighlight">\(f(x|\mu, \sigma)\)</span> is a probability density function, the vertical line indicates that its parameters are <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>. The set of distributions with densities <span class="math notranslate nohighlight">\(f_\theta(x)\)</span>, <span class="math notranslate nohighlight">\(\theta \in \Theta\)</span> is called a parametric family, eg there is a family of different distributions that are parametrised by <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -529,6 +568,16 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/outdated/utils.py:14: OutdatedPackageWarning: The package outdated is out of date. Your version is 0.2.0, the latest is 0.2.1.
+Set the environment variable OUTDATED_IGNORE=1 to disable these warnings.
+  return warn(
+/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/outdated/utils.py:14: OutdatedPackageWarning: The package pingouin is out of date. Your version is 0.3.10, the latest is 0.3.11.
+Set the environment variable OUTDATED_IGNORE=1 to disable these warnings.
+  return warn(
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -554,7 +603,7 @@
 </div>
 </div>
 </div>
-<p>Okay, let’s see how some basic statistics are computed. The mean is <code class="docutils literal notranslate"><span class="pre">np.mean(data)=</span></code><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'49.5'</span></code></span>, the standard deviation is <code class="docutils literal notranslate"><span class="pre">np.std(data)=</span></code><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'28.9'</span></code></span>, and the median is given by <code class="docutils literal notranslate"><span class="pre">np.median(data)=</span></code><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'49.5'</span></code></span>. The mode is given by <code class="docutils literal notranslate"><span class="pre">stats.mode([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">5])[0]=</span></code><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'3.0'</span></code></span> (access the counts using <code class="docutils literal notranslate"><span class="pre">stats.mode(...)[1]</span></code>).</p>
+<p>Okay, let’s see how some basic statistics are computed. The mean is <code class="docutils literal notranslate"><span class="pre">np.mean(data)=</span></code> <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'49.5'</span></code></span>, the standard deviation is <code class="docutils literal notranslate"><span class="pre">np.std(data)=</span></code> <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'28.9'</span></code></span>, and the median is given by <code class="docutils literal notranslate"><span class="pre">np.median(data)=</span> </code><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'49.5'</span></code></span>. The mode is given by <code class="docutils literal notranslate"><span class="pre">stats.mode([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">3,</span> <span class="pre">5])[0]=</span></code> <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'3.0'</span></code></span> (access the counts using <code class="docutils literal notranslate"><span class="pre">stats.mode(...)[1]</span></code>).</p>
 <p>Less famous quantiles than the median are given by, for example for <span class="math notranslate nohighlight">\(q=0.25\)</span>,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,8 +679,11 @@
 </div>
 <p>Note that, as expected, the <span class="math notranslate nohighlight">\(C_{01}\)</span> term is -1 as the vectors are anti-correlated.</p>
 </div>
+<div class="section" id="parametric-tests">
+<h2><span class="section-number">2.3. </span>Parametric tests<a class="headerlink" href="#parametric-tests" title="Permalink to this headline">¶</a></h2>
+<p>Reminder: parametric tests assume that data are effectively drawn a probability distribution that can be described with fixed parameters.</p>
 <div class="section" id="one-sample-t-test">
-<h2><span class="section-number">2.3. </span>One-sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.1. </span>One-sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this headline">¶</a></h3>
 <p>The one-sample t-test tells us whether a given parameter for the mean, i.e. a suspected <span class="math notranslate nohighlight">\(\mu\)</span>, is likely to be consistent with the sample mean. The null hypothesis is that <span class="math notranslate nohighlight">\(\mu = \bar{x}\)</span>. Let’s see an example using the default <code class="docutils literal notranslate"><span class="pre">tail='two-sided'</span></code> option. Imagine we have data on the number of hours people spend working each day and we want to test the (alternative) hypothesis that <span class="math notranslate nohighlight">\(\bar{x}\)</span> is not <span class="math notranslate nohighlight">\(\mu=\)</span>8 hours:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -733,7 +785,7 @@ T = \frac{\sqrt{n}(\bar{x}-\mu)}{\hat{\sigma}} \thicksim t_{n-1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-statistics_19_0.png" src="_images/econmt-statistics_19_0.png" />
+<img alt="_images/econmt-statistics_20_0.png" src="_images/econmt-statistics_20_0.png" />
 </div>
 </div>
 <p>In this case, we would reject the alternative hypothesis. You can see why from the plot; the test statistic we have constructed lies within the interval where we cannot reject the null hypothesis. <span class="math notranslate nohighlight">\(\bar{x}-\mu\)</span> is close enough to zero to give us cause for concern. (You can also see from the plot why this is a two-tailed test: we don’t care if <span class="math notranslate nohighlight">\(\bar{x}\)</span> is greater or less than <span class="math notranslate nohighlight">\(\mu\)</span>, just that it’s different–and so the test statistic could appear in either tail of the distribution for us to accept <span class="math notranslate nohighlight">\(H_1\)</span>.)</p>
@@ -803,12 +855,12 @@ T = \frac{\sqrt{n}(\bar{x}-\mu)}{\hat{\sigma}} \thicksim t_{n-1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/econmt-statistics_23_0.png" src="_images/econmt-statistics_23_0.png" />
+<img alt="_images/econmt-statistics_24_0.png" src="_images/econmt-statistics_24_0.png" />
 </div>
 </div>
 <p>Now our test statistic is safely outside the interval.</p>
 <div class="section" id="connection-to-linear-regression">
-<h3><span class="section-number">2.3.1. </span>Connection to linear regression<a class="headerlink" href="#connection-to-linear-regression" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">2.3.1.1. </span>Connection to linear regression<a class="headerlink" href="#connection-to-linear-regression" title="Permalink to this headline">¶</a></h4>
 <p>Note that testing if <span class="math notranslate nohighlight">\(\mu\neq0\)</span> is equivalent to having the alternative hypothesis that a single, non-zero scalar value is a good expected value for <span class="math notranslate nohighlight">\(x\)</span>, i.e. that <span class="math notranslate nohighlight">\(\mathbb{E}(x) \neq 0\)</span>. Which may sound familiar if you’ve run <strong>linear regression</strong> and, indeed, this t-test has an equivalent linear model! It’s just regressing <span class="math notranslate nohighlight">\(X\)</span> on a constant–a single, non-zero scalar value. In general, t-tests appear in linear regression to test whether any coefficient <span class="math notranslate nohighlight">\(\beta \neq 0\)</span>.</p>
 <p>We can see this connection by running a hypothesis test of whether the sample mean is not zero. Note the confidence interval, t-statistic, and p-value.</p>
 <div class="cell docutils container">
@@ -888,12 +940,12 @@ Intercept      7.3250      0.642     11.406      0.000       5.806       8.844
 <p>Many tests have an equivalent  linear model.</p>
 </div>
 <div class="section" id="other-information-provided-by-pingouin-tests">
-<h3><span class="section-number">2.3.2. </span>Other information provided by <strong>Pingouin</strong> tests<a class="headerlink" href="#other-information-provided-by-pingouin-tests" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">2.3.1.2. </span>Other information provided by <strong>Pingouin</strong> tests<a class="headerlink" href="#other-information-provided-by-pingouin-tests" title="Permalink to this headline">¶</a></h4>
 <p>We’ve covered the degrees of freedom, the T statistic, the p-value, and the confidence interval. So what’s all that other gunk in our t-test? Cohen’s d is a measure of whether the difference being measured in our test is large or not (this is important; you can have statistically significant differences that are so small as to be inconsequential). Cohen suggested that <span class="math notranslate nohighlight">\(d = 0.2\)</span> be considered a ‘small’ effect size, 0.5 represents a ‘medium’ effect size and 0.8 a ‘large’ effect size. BF10 represents the Bayes factor, the ratio (given the data) of the likelihood of the alternative hypothesis relative to the null hypothesis. Values greater than unity therefore favour the alternative hypothesis. Finally, power is the achieved power of the test, which is <span class="math notranslate nohighlight">\(1 - \mathbb{P}(\text{type II error})\)</span>. A common default to have in mind is a power greater than 0.8.</p>
 </div>
 </div>
 <div class="section" id="two-sample-t-test">
-<h2><span class="section-number">2.4. </span>Two-sample t-test<a class="headerlink" href="#two-sample-t-test" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.2. </span>Two-sample t-test<a class="headerlink" href="#two-sample-t-test" title="Permalink to this headline">¶</a></h3>
 <p>The two-sample t-test is used to determine if two population means are equal (with the null being that they <em>are</em> equal). Let’s look at an example with synthetic data of equal length, which means we can use the <em>paired</em> version of this. We’ll imagine we are looking at an intervention with a pre- and post- dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +1003,7 @@ Intercept      7.3250      0.642     11.406      0.000       5.806       8.844
 <p>In this case, we cannot reject the null hypothesis that the means are the same pre- and post-intervention.</p>
 </div>
 <div class="section" id="pearson-correlation">
-<h2><span class="section-number">2.5. </span>Pearson correlation<a class="headerlink" href="#pearson-correlation" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.3. </span>Pearson correlation<a class="headerlink" href="#pearson-correlation" title="Permalink to this headline">¶</a></h3>
 <p>The Pearson correlation coefficient measures the linear relationship between two datasets. Strictly speaking, it requires that each dataset be normally distributed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1009,7 +1061,7 @@ Intercept      7.3250      0.642     11.406      0.000       5.806       8.844
 </div>
 </div>
 <div class="section" id="welch-s-t-test">
-<h2><span class="section-number">2.6. </span>Welch’s t-test<a class="headerlink" href="#welch-s-t-test" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.4. </span>Welch’s t-test<a class="headerlink" href="#welch-s-t-test" title="Permalink to this headline">¶</a></h3>
 <p>In the case where you have two samples with unequal variances (or, really, unequal sample sizes too), Welch’s t-test is appropriate. With <code class="docutils literal notranslate"><span class="pre">correction='true'</span></code>, it assumes that variances are not equal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1066,7 +1118,7 @@ Intercept      7.3250      0.642     11.406      0.000       5.806       8.844
 </div>
 </div>
 <div class="section" id="one-way-anova">
-<h2><span class="section-number">2.7. </span>One-way ANOVA<a class="headerlink" href="#one-way-anova" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.5. </span>One-way ANOVA<a class="headerlink" href="#one-way-anova" title="Permalink to this headline">¶</a></h3>
 <p>Analysis of variance (ANOVA) is a technique for testing hypotheses about means, for example testing the equality of the means of <span class="math notranslate nohighlight">\(k&gt;2\)</span> groups. The model would be</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1207,7 +1259,7 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </div>
 </div>
 <div class="section" id="multiple-pairwise-t-tests">
-<h2><span class="section-number">2.8. </span>Multiple pairwise t-tests<a class="headerlink" href="#multiple-pairwise-t-tests" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.6. </span>Multiple pairwise t-tests<a class="headerlink" href="#multiple-pairwise-t-tests" title="Permalink to this headline">¶</a></h3>
 <p>There’s a problem with running multiple t-tests: if you run enough of them, something is bound to come up as significant! As such, some <em>post-hoc</em> adjustments exist that correct for the fact that multiple tests are occurring simultaneously. In the example below, multiple pairwise comparisons are made between the scores by time group. There is a corrected p-value, <code class="docutils literal notranslate"><span class="pre">p-corr</span></code>, computed using the Benjamini/Hochberg FDR correction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1305,7 +1357,7 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </div>
 </div>
 <div class="section" id="one-way-ancova">
-<h2><span class="section-number">2.9. </span>One-way ANCOVA<a class="headerlink" href="#one-way-ancova" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.3.7. </span>One-way ANCOVA<a class="headerlink" href="#one-way-ancova" title="Permalink to this headline">¶</a></h3>
 <p>Analysis of covariance (ANCOVA) is a general linear model which blends ANOVA and regression. ANCOVA evaluates whether the means of a dependent variable (dv) are equal across levels of a categorical independent variable (between) often called a treatment, while statistically controlling for the effects of other continuous variables that are not of primary interest, known as covariates or nuisance variables (covar).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1445,8 +1497,460 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </div></div></div>
 </div>
 </div>
+</div>
+<div class="section" id="non-parametric-tests">
+<h2><span class="section-number">2.4. </span>Non-parametric tests<a class="headerlink" href="#non-parametric-tests" title="Permalink to this headline">¶</a></h2>
+<p>Reminder: non-parametrics tests do not make any assumptions about the distribution from which data are drawn or that it can be described by fixed parameters.</p>
+<div class="section" id="wilcoxon-signed-rank-test">
+<h3><span class="section-number">2.4.1. </span>Wilcoxon Signed-rank Test<a class="headerlink" href="#wilcoxon-signed-rank-test" title="Permalink to this headline">¶</a></h3>
+<p>This tests the null hypothesis that two related paired samples come from the same distribution. It is the non-parametric equivalent of the t-test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">38</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W-val</th>
+      <th>tail</th>
+      <th>p-val</th>
+      <th>RBC</th>
+      <th>CLES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Wilcoxon</th>
+      <td>20.5</td>
+      <td>two-sided</td>
+      <td>0.29</td>
+      <td>-0.38</td>
+      <td>0.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="mann-whitney-u-test-aka-wilcoxon-rank-sum-test">
+<h3><span class="section-number">2.4.2. </span>Mann-Whitney U Test (aka Wilcoxon rank-sum test)<a class="headerlink" href="#mann-whitney-u-test-aka-wilcoxon-rank-sum-test" title="Permalink to this headline">¶</a></h3>
+<p>The Mann–Whitney U test is a non-parametric test of the null hypothesis that it is equally likely that a randomly selected value from one sample will be less than or greater than a randomly selected value from a second sample. It is the non-parametric version of the two-sample T-test.</p>
+<p>Like many non-parametric <strong>pingouin</strong> tests, it can take values of tail that are ‘two-sided’, ‘one-sided’, ‘greater’, or ‘less’. Below, we ask if a randomly selected value from <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than one from <code class="docutils literal notranslate"><span class="pre">y</span></code>, with the null that it is not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">prng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">prng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">mwu</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>U-val</th>
+      <th>tail</th>
+      <th>p-val</th>
+      <th>RBC</th>
+      <th>CLES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MWU</th>
+      <td>133.0</td>
+      <td>greater</td>
+      <td>0.966066</td>
+      <td>0.335</td>
+      <td>0.3325</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="spearman-correlation">
+<h3><span class="section-number">2.4.3. </span>Spearman Correlation<a class="headerlink" href="#spearman-correlation" title="Permalink to this headline">¶</a></h3>
+<p>The Spearman correlation coefficient is the Pearson correlation coefficient between the rank variables, and does not assume normality of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">prng</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;spearman&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n</th>
+      <th>r</th>
+      <th>CI95%</th>
+      <th>r2</th>
+      <th>adj_r2</th>
+      <th>p-val</th>
+      <th>power</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>spearman</th>
+      <td>30</td>
+      <td>0.54</td>
+      <td>[0.22, 0.75]</td>
+      <td>0.29</td>
+      <td>0.24</td>
+      <td>0.0</td>
+      <td>0.89</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="kruskal-wallace">
+<h3><span class="section-number">2.4.4. </span>Kruskal-Wallace<a class="headerlink" href="#kruskal-wallace" title="Permalink to this headline">¶</a></h3>
+<p>The Kruskal-Wallis H-test tests the null hypothesis that the population median of all of the groups are equal. It is a non-parametric version of ANOVA. The test works on 2 or more independent samples, which may have different sizes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">read_dataset</span><span class="p">(</span><span class="s1">&#39;anova&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Hair color</th>
+      <th>Pain threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Light Blond</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Light Blond</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Light Blond</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Light Blond</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Light Blond</td>
+      <td>48</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">.</span><span class="n">kruskal</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">dv</span><span class="o">=</span><span class="s1">&#39;Pain threshold&#39;</span><span class="p">,</span> <span class="n">between</span><span class="o">=</span><span class="s1">&#39;Hair color&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Source</th>
+      <th>ddof1</th>
+      <th>H</th>
+      <th>p-unc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Kruskal</th>
+      <td>Hair color</td>
+      <td>3</td>
+      <td>10.58863</td>
+      <td>0.014172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="the-chi-squared-test">
+<h3><span class="section-number">2.4.5. </span>The Chi-Squared Test<a class="headerlink" href="#the-chi-squared-test" title="Permalink to this headline">¶</a></h3>
+<p>The chi-squared test is used to determine whether there is a significant difference between the expected frequencies and the observed frequencies in one or more categories. This test can be used to evaluate the quality of a categorical variable in a classification problem or to check the similarity between two categorical variables.</p>
+<p>There are two conditions for a chi-squared test:</p>
+<ul class="simple">
+<li><p>Independence: Each case that contributes a count to the table must be independent of all the other cases in the table.</p></li>
+<li><p>Sample size or distribution: Each particular case (ie cell count) must have at least 5 expected cases.</p></li>
+</ul>
+<p>Let’s see an example from the <strong>pingouin</strong> docs: whether gender is a good predictor of heart disease. First, let’s load the data and look at the gender split in total:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi_data</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">read_dataset</span><span class="p">(</span><span class="s1">&#39;chi2_independence&#39;</span><span class="p">)</span>
+<span class="n">chi_data</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     96
+1    207
+Name: sex, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If gender is <em>not</em> a predictor, we would expect a roughly similar split between those who have heart disease and those who do not. Let’s look at the observerd versus the expected split once we categorise by gender and ‘target’ (heart disease or not).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected</span><span class="p">,</span> <span class="n">observed</span><span class="p">,</span> <span class="n">stats</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">chi2_independence</span><span class="p">(</span><span class="n">chi_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
+<span class="n">observed</span> <span class="o">-</span> <span class="n">expected</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>target</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-19.222772</td>
+      <td>19.222772</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>19.222772</td>
+      <td>-19.222772</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So we have fewer in the 0, 0 and 1, 1 buckets than expected but more in the 0, 1 and 1, 0 buckets. Let’s now see how the test interprets this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>test</th>
+      <th>lambda</th>
+      <th>chi2</th>
+      <th>dof</th>
+      <th>pval</th>
+      <th>cramer</th>
+      <th>power</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>pearson</td>
+      <td>1.000</td>
+      <td>22.717</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.274</td>
+      <td>0.997</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cressie-read</td>
+      <td>0.667</td>
+      <td>22.931</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.275</td>
+      <td>0.998</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>log-likelihood</td>
+      <td>0.000</td>
+      <td>23.557</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.279</td>
+      <td>0.998</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>freeman-tukey</td>
+      <td>-0.500</td>
+      <td>24.220</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.283</td>
+      <td>0.998</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mod-log-likelihood</td>
+      <td>-1.000</td>
+      <td>25.071</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.288</td>
+      <td>0.999</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>neyman</td>
+      <td>-2.000</td>
+      <td>27.458</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.301</td>
+      <td>0.999</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>From these, it is clear we can reject the null and therefore it seems like gender is a good predictor of heart disease.</p>
+</div>
 <div class="section" id="shapiro-wilk-test-for-normality">
-<h2><span class="section-number">2.10. </span>Shapiro-Wilk Test for Normality<a class="headerlink" href="#shapiro-wilk-test-for-normality" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">2.4.6. </span>Shapiro-Wilk Test for Normality<a class="headerlink" href="#shapiro-wilk-test-for-normality" title="Permalink to this headline">¶</a></h3>
 <p>Note that the null here is that the distribution <em>is</em> normal, so normality is only rejected when the p-value is sufficiently small.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1482,9 +1986,9 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.954132</td>
-      <td>0.434179</td>
-      <td>True</td>
+      <td>0.896262</td>
+      <td>0.035113</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -1493,7 +1997,8 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 <p>The test can also be run on multiple variables in a dataframe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">.</span><span class="n">normality</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Scores&#39;</span><span class="p">,</span> <span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="s1">&#39;BMI&#39;</span><span class="p">]],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;normaltest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">read_dataset</span><span class="p">(</span><span class="s1">&#39;ancova&#39;</span><span class="p">)</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">normality</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Scores&#39;</span><span class="p">,</span> <span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="s1">&#39;BMI&#39;</span><span class="p">]],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;normaltest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1545,12 +2050,6 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </div></div></div>
 </div>
 </div>
-<div class="section" id="review">
-<h2><span class="section-number">2.11. </span>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
-<p>In this very short introduction to statistics with code, you should have learned how to:</p>
-<ul class="simple">
-<li><p>✅</p></li>
-</ul>
 </div>
 </div>
 
