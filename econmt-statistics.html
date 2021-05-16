@@ -187,8 +187,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -206,18 +211,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="maths-maths-coding.html">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -245,6 +238,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -257,6 +262,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -279,6 +296,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -479,6 +501,11 @@
      2.3.7. One-way ANCOVA
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#power-calculations">
+     2.3.8. Power calculations
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -533,7 +560,7 @@
 <h1><span class="section-number">2. </span>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <span id="id1">[<a class="reference internal" href="zreferences.html#id4"><span>7</span></a>]</span>. This chapter also draws on Open Intro Statistics <span id="id2">[<a class="reference internal" href="zreferences.html#id15"><span>8</span></a>]</span>.</p>
+<p>In this chapter, you’ll learn about how to do statistics with code. We already saw some statistics in the chapter on probability and random processes: here we’ll focus on computing basic statistics and using statistical tests. We’ll make use of the excellent <a class="reference external" href="https://pingouin-stats.org/index.html"><em>pingouin</em></a> statistics package and its documentation for many of the examples and methods in this chapter <span id="id1">[<a class="reference internal" href="zreferences.html#id4"><span>5</span></a>]</span>. This chapter also draws on Open Intro Statistics <span id="id2">[<a class="reference internal" href="zreferences.html#id15"><span>6</span></a>]</span>.</p>
 <div class="section" id="notation-and-basic-definitions">
 <h3><span class="section-number">2.1.1. </span>Notation and basic definitions<a class="headerlink" href="#notation-and-basic-definitions" title="Permalink to this headline">¶</a></h3>
 <p>Greek letters, like <span class="math notranslate nohighlight">\(\beta\)</span>, are the truth and represent parameters. Modified Greek letters are an estimate of the truth, for example <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. Sometimes Greek letters will stand in for vectors of parameters. Most of the time, upper case Latin characters such as <span class="math notranslate nohighlight">\(X\)</span> will represent random variables (which could have more than one dimension). Lower case letters from the Latin alphabet denote realised data, for instance <span class="math notranslate nohighlight">\(x\)</span> (which again could be multi-dimensional).  Modified Latin alphabet letters denote computations performed on data, for instance <span class="math notranslate nohighlight">\(\bar{x} = \frac{1}{n} \displaystyle\sum_{i} x_i\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is number of samples. Parameters are given following a vertical bar, for example if <span class="math notranslate nohighlight">\(f(x|\mu, \sigma)\)</span> is a probability density function, the vertical line indicates that its parameters are <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>. The set of distributions with densities <span class="math notranslate nohighlight">\(f_\theta(x)\)</span>, <span class="math notranslate nohighlight">\(\theta \in \Theta\)</span> is called a parametric family, eg there is a family of different distributions that are parametrised by <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -565,16 +592,6 @@
 <span class="c1"># Set seed for random numbers</span>
 <span class="n">seed_for_prng</span> <span class="o">=</span> <span class="mi">78557</span>
 <span class="n">prng</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">PCG64</span><span class="p">(</span><span class="n">seed_for_prng</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/outdated/utils.py:14: OutdatedPackageWarning: The package outdated is out of date. Your version is 0.2.0, the latest is 0.2.1.
-Set the environment variable OUTDATED_IGNORE=1 to disable these warnings.
-  return warn(
-/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/outdated/utils.py:14: OutdatedPackageWarning: The package pingouin is out of date. Your version is 0.3.10, the latest is 0.3.11.
-Set the environment variable OUTDATED_IGNORE=1 to disable these warnings.
-  return warn(
 </pre></div>
 </div>
 </div>
@@ -1496,6 +1513,40 @@ X_{ij} = \mu_i + \epsilon_{ij} \quad j=1, \dots, n_i \quad i=1, \dots, k.
 </table>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="power-calculations">
+<h3><span class="section-number">2.3.8. </span>Power calculations<a class="headerlink" href="#power-calculations" title="Permalink to this headline">¶</a></h3>
+<p>Often, it’s quite useful to know what sample size is needed to avoid certain types of testing errors. <strong>Pingouin</strong> offers ways to compute effect sizes and test powers to help with these questions.</p>
+<p>As an example, let’s assume we have a new drug (<code class="docutils literal notranslate"><span class="pre">x</span></code>) and an old drug (<code class="docutils literal notranslate"><span class="pre">y</span></code>) that are both intended to reduce blood pressure. The standard deviation of the reduction in blood pressure of those receiving the old drug is 12 units. The null hypothesis is that the new drug is no more effective than the new drug. But it will only be worth switching production to the new drug if it reduces blood pressure by more than 3 units versus the old drug. In this case, the effect size of interest is 3 units.</p>
+<p>Let’s assume for a moment that the true difference is 3 units and we want to perform a test with <span class="math notranslate nohighlight">\(\alpha=0.05\)</span>. The problem is that, for small differences in the effect, the distribution of effects under the null and the distribution of effects under the alternative have a great deal of overlap. So the chances of making a Type II error - accepting the null hypothesis when it is actually false - is quite high. Let’s say we’d ideally have at most a 20% chance of making a Type II error: what sample size do we need?</p>
+<p>We can compute this, but we need an extra piece of information first: a normalised version of the effect size called Cohen’s <span class="math notranslate nohighlight">\(d\)</span>. We need to transform the difference in means to compute this. For independent samples, <span class="math notranslate nohighlight">\(d\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\overline{X} - \overline{Y}}{\sqrt{\frac{(n_{1} - 1)\sigma_{1}^{2} + (n_{2} - 1)\sigma_{2}^{2}}{n_1 + n_2 - 2}}}\]</div>
+<p>(If you have real data samples, you can compute this using <code class="docutils literal notranslate"><span class="pre">pg.compute_effsize</span></code>.)</p>
+<p>For this case, <span class="math notranslate nohighlight">\(d\)</span> is <span class="math notranslate nohighlight">\(-3/12 = -1/4\)</span> if we assume the standard deviations are the same across the old (<code class="docutils literal notranslate"><span class="pre">y</span></code>) and new (<code class="docutils literal notranslate"><span class="pre">x</span></code>) drugs. So we will plug that <span class="math notranslate nohighlight">\(d\)</span> in and look at a range of possible sample sizes along with a standard value for <span class="math notranslate nohighlight">\(alpha\)</span> of 0.05. In the below <code class="docutils literal notranslate"><span class="pre">tail=less</span></code> tests the alternative that <code class="docutils literal notranslate"><span class="pre">x</span></code> has a smaller mean than <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cohen_d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.25</span>  <span class="c1"># Fixed effect size</span>
+<span class="n">sample_size_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># Incrementing sample size</span>
+<span class="c1"># Compute the achieved power</span>
+<span class="n">pwr</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">power_ttest</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="n">cohen_d</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">sample_size_array</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                     <span class="n">contrast</span><span class="o">=</span><span class="s1">&#39;two-samples&#39;</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;less&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample_size_array</span><span class="p">,</span> <span class="n">pwr</span><span class="p">,</span> <span class="s1">&#39;ko-.&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sample size&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Power (1 - type II error)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Achieved power of a T-test&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/econmt-statistics_47_0.png" src="_images/econmt-statistics_47_0.png" />
+</div>
+</div>
+<p>From this, we can see we need a sample size of at least 200 in order to have a power of 0.8.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pg.power_ttest</span></code> function takes any three of the four of <code class="docutils literal notranslate"><span class="pre">d</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">power</span></code>, and <code class="docutils literal notranslate"><span class="pre">alpha</span></code> (ie leave one of these out), and then returns what the missing parameter should be. We passed in <code class="docutils literal notranslate"><span class="pre">d</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>, and <code class="docutils literal notranslate"><span class="pre">alpha</span></code>, and so the <code class="docutils literal notranslate"><span class="pre">power</span></code> was returned.</p>
 </div>
 </div>
 <div class="section" id="non-parametric-tests">

@@ -59,8 +59,8 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/maths-maths-coding.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Probability and Random Processes" href="econmt-probability-random.html" />
-    <link rel="prev" title="2. Common Plots" href="vis-common-plots.html" />
+    <link rel="next" title="Coming from Stata" href="coming-from-stata.html" />
+    <link rel="prev" title="2. Geo-Spatial Visualisation" href="geo-vis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -187,8 +187,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -206,18 +211,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -245,6 +238,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -257,6 +262,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -279,6 +296,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -799,7 +821,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>203 µs ± 7.25 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>193 µs ± 1.63 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -813,7 +835,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>836 ns ± 25.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>789 ns ± 7.88 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1302,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 <div class="section" id="advanced-composable-function-transformations">
 <h2><span class="section-number">1.3. </span>Advanced: Composable Function Transformations<a class="headerlink" href="#advanced-composable-function-transformations" title="Permalink to this headline">¶</a></h2>
 <p>In recent years, there have been great developments in the ability of Python to easily carry out numerical ‘composable function transformations’. What this means is that, if you can dream up an arbitrary numerical operations – including differentiation, linear algebrea, and optimisation – you can write code that will execute it quickly and automatically on CPUs, GPUs, or TPUs as you like.</p>
-<p>Here we’ll look at one library that does this, <strong>jax</strong>, developed by Google <span id="id1">[<a class="reference internal" href="zreferences.html#id3"><span>5</span></a>]</span>. It can automatically differentiate native Python and <strong>numpy</strong> functions, including when they are in loops, branches, or subject to recursion, and it can take derivatives of derivatives of derivatives. It supports reverse-mode differentiation (a.k.a. backpropagation) via grad as well as forward-mode differentiation, and the two can be composed arbitrarily to any order.</p>
+<p>Here we’ll look at one library that does this, <strong>jax</strong>, developed by Google <span id="id1">[<a class="reference internal" href="zreferences.html#id3"><span>13</span></a>]</span>. It can automatically differentiate native Python and <strong>numpy</strong> functions, including when they are in loops, branches, or subject to recursion, and it can take derivatives of derivatives of derivatives. It supports reverse-mode differentiation (a.k.a. backpropagation) via grad as well as forward-mode differentiation, and the two can be composed arbitrarily to any order.</p>
 <p>To do these at speed, it uses just-in-time compilation. If you don’t know what that is, don’t worry: the details aren’t important. It’s just a way of getting close to C++ or Fortran speeds while still being able to write code in <em>much</em> more user friendly Python!</p>
 <div class="section" id="auto-differentiation">
 <h3><span class="section-number">1.3.1. </span>Auto-differentiation<a class="headerlink" href="#auto-differentiation" title="Permalink to this headline">¶</a></h3>
@@ -1363,7 +1385,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59.9 ms ± 6.11 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.4 ms ± 6.97 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
 </pre></div>
 </div>
 </div>
@@ -1376,7 +1398,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17 ms ± 665 µs per loop (mean ± std. dev. of 3 runs, 15 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.5 ms ± 959 µs per loop (mean ± std. dev. of 3 runs, 15 loops each)
 </pre></div>
 </div>
 </div>
@@ -1386,7 +1408,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 <div class="section" id="set-theory">
 <h2><span class="section-number">1.4. </span>Set theory<a class="headerlink" href="#set-theory" title="Permalink to this headline">¶</a></h2>
-<p>Set theory is a surprisingly useful tool in research (and invaluable in spatial analysis). Here are some really useful bits of set theory inspired by examples in <span id="id2">[<a class="reference internal" href="zreferences.html#id2"><span>6</span></a>]</span>.</p>
+<p>Set theory is a surprisingly useful tool in research (and invaluable in spatial analysis). Here are some really useful bits of set theory inspired by examples in <span id="id2">[<a class="reference internal" href="zreferences.html#id2"><span>14</span></a>]</span>.</p>
 <p>Sets are first class citizens in Python in the same way that lists are. We can define and view a set like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1516,8 +1538,8 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="vis-common-plots.html" title="previous page"><span class="section-number">2. </span>Common Plots</a>
-    <a class='right-next' id="next-link" href="econmt-probability-random.html" title="next page"><span class="section-number">1. </span>Probability and Random Processes</a>
+    <a class='left-prev' id="prev-link" href="geo-vis.html" title="previous page"><span class="section-number">2. </span>Geo-Spatial Visualisation</a>
+    <a class='right-next' id="next-link" href="coming-from-stata.html" title="next page">Coming from Stata</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

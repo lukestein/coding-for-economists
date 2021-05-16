@@ -185,8 +185,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -204,18 +209,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="maths-maths-coding.html">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -243,6 +236,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -255,6 +260,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -277,6 +294,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -422,11 +444,17 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filter-rows-and-columns-with-conditions-using-df-loc-condition-s-column-s">
+  <a class="reference internal nav-link" href="#filter-rows-and-columns-with-conditions-using-df-loc-condition-s-or-row-s-column-s">
    1.3. Filter rows and columns with conditions using
    <code class="docutils literal notranslate">
     <span class="pre">
-     df.loc[condition(s),
+     df.loc[condition(s)
+    </span>
+    <span class="pre">
+     or
+    </span>
+    <span class="pre">
+     row(s),
     </span>
     <span class="pre">
      column(s)]
@@ -542,7 +570,7 @@
               <div>
                 
   <div class="section" id="data-analysis-quickstart">
-<h1><span class="section-number">1. </span>Data Analysis Quickstart<a class="headerlink" href="#data-analysis-quickstart" title="Permalink to this headline">¶</a></h1>
+<span id="data-quickstart"></span><h1><span class="section-number">1. </span>Data Analysis Quickstart<a class="headerlink" href="#data-analysis-quickstart" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Here we’ll do a whistlestop tour of data analysis on a <em>single</em> dataframe using the Star Wars’ characters dataset as an example. For a more thorough grounding in using data, see the next chapter.</p>
@@ -692,9 +720,12 @@ memory usage: 6.1+ KB
 </div>
 </div>
 </div>
-<div class="section" id="filter-rows-and-columns-with-conditions-using-df-loc-condition-s-column-s">
-<h2><span class="section-number">1.3. </span>Filter rows and columns with conditions using <code class="docutils literal notranslate"><span class="pre">df.loc[condition(s),</span> <span class="pre">column(s)]</span></code><a class="headerlink" href="#filter-rows-and-columns-with-conditions-using-df-loc-condition-s-column-s" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> stands for location. By passing conditions to <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, you are able to select and work with a subset of rows in a dataframe. The second argument passes columns of interest (use <code class="docutils literal notranslate"><span class="pre">:</span></code> for all columns).</p>
+<div class="section" id="filter-rows-and-columns-with-conditions-using-df-loc-condition-s-or-row-s-column-s">
+<h2><span class="section-number">1.3. </span>Filter rows and columns with conditions using <code class="docutils literal notranslate"><span class="pre">df.loc[condition(s)</span> <span class="pre">or</span> <span class="pre">row(s),</span> <span class="pre">column(s)]</span></code><a class="headerlink" href="#filter-rows-and-columns-with-conditions-using-df-loc-condition-s-or-row-s-column-s" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.loc</span></code> stands for location and allows you to filter (aka subset) a dataframe. <code class="docutils literal notranslate"><span class="pre">.loc</span></code> works like an index, so it always comes with square brackets, eg <code class="docutils literal notranslate"><span class="pre">df.loc[...]</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">loc</span></code> takes two arguments. The first is a list of the names of the rows that you’d like to select <em>or</em> a condition (ie a list of booleans with the same length as the dataframe) that selects certain rows. Remember, you can easily create a series of booleans by checking a column against a condition, for example <code class="docutils literal notranslate"><span class="pre">df['column1']</span> <span class="pre">==</span> <span class="pre">'black'</span></code>.</p>
+<p>The second argument consists of a list of column names you’d like to select. In both cases, <code class="docutils literal notranslate"><span class="pre">:</span></code> is shorthand for ‘use all rows’ or ‘use all columns’. If you have <em>either</em> condition(s) <em>or</em> column(s) (but not both), you can simply write <code class="docutils literal notranslate"><span class="pre">df[condition(s)]</span></code> or <code class="docutils literal notranslate"><span class="pre">df[column(s)]</span></code>.</p>
+<p>Here’s an example with a condition built up out of two parts and a list of columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;hair_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;brown&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;eye_color&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;blue&#39;</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;species&#39;</span><span class="p">]]</span>
@@ -891,10 +922,10 @@ memory usage: 6.1+ KB
 <div class="section" id="choose-multiple-rows-or-columns-using-slices">
 <h2><span class="section-number">1.5. </span>Choose multiple rows or columns using slices<a class="headerlink" href="#choose-multiple-rows-or-columns-using-slices" title="Permalink to this headline">¶</a></h2>
 <p>Slices can be passed by name using <code class="docutils literal notranslate"><span class="pre">.loc[startrow:stoprow:step,</span> <span class="pre">startcolumn:stopcolumn:step]</span></code> or by position using <code class="docutils literal notranslate"><span class="pre">.iloc[start:stop:step,</span> <span class="pre">start:stop:step]</span></code>.</p>
-<p>Choosing every 10th row, and the columns between ‘name’ and ‘gender’:</p>
+<p>Choosing every 10th row from the second, and the columns between ‘name’ and ‘gender’:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -927,30 +958,30 @@ memory usage: 6.1+ KB
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>Luke Skywalker</td>
-      <td>172.0</td>
-      <td>77.0</td>
-      <td>blond</td>
-      <td>blue</td>
-      <td>male</td>
+      <th>2</th>
+      <td>R2-D2</td>
+      <td>96.0</td>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>red</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>Anakin Skywalker</td>
-      <td>188.0</td>
-      <td>84.0</td>
-      <td>blond</td>
-      <td>blue</td>
-      <td>male</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Boba Fett</td>
-      <td>183.0</td>
-      <td>78.2</td>
-      <td>black</td>
+      <th>12</th>
+      <td>Chewbacca</td>
+      <td>228.0</td>
+      <td>112.0</td>
       <td>brown</td>
+      <td>blue</td>
+      <td>male</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Bossk</td>
+      <td>190.0</td>
+      <td>113.0</td>
+      <td>none</td>
+      <td>red</td>
       <td>male</td>
     </tr>
     <tr>
@@ -963,38 +994,39 @@ memory usage: 6.1+ KB
       <td>...</td>
     </tr>
     <tr>
-      <th>60</th>
-      <td>Luminara Unduli</td>
-      <td>170.0</td>
-      <td>56.2</td>
-      <td>black</td>
-      <td>blue</td>
-      <td>female</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>Jocasta Nu</td>
-      <td>167.0</td>
+      <th>62</th>
+      <td>Dormé</td>
+      <td>165.0</td>
       <td>NaN</td>
-      <td>white</td>
-      <td>blue</td>
+      <td>brown</td>
+      <td>brown</td>
       <td>female</td>
     </tr>
     <tr>
-      <th>80</th>
-      <td>Tion Medon</td>
-      <td>206.0</td>
-      <td>80.0</td>
+      <th>72</th>
+      <td>R4-P17</td>
+      <td>96.0</td>
+      <td>NaN</td>
       <td>none</td>
-      <td>black</td>
-      <td>male</td>
+      <td>red, blue</td>
+      <td>female</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Rey</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>brown</td>
+      <td>hazel</td>
+      <td>female</td>
     </tr>
   </tbody>
 </table>
 <p>9 rows × 6 columns</p>
 </div></div></div>
 </div>
-<p>Choosing the first 5 rows and the last 2 columns by position:</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">loc</span></code> only works here with numbers for rows because it just so happens that the names of the rows <em>are</em> numbers. If the rows had names that were strings, and we wanted to subset rows by their index position, we would have to use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> instead.</p>
+<p>Choosing the first 5 rows and the last 2 columns by index position:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
@@ -1057,7 +1089,7 @@ memory usage: 6.1+ KB
 </div>
 <div class="section" id="randomly-selecting-a-sample-using-sample">
 <h2><span class="section-number">1.6. </span>Randomly selecting a sample using <code class="docutils literal notranslate"><span class="pre">.sample</span></code><a class="headerlink" href="#randomly-selecting-a-sample-using-sample" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">.sample(n)</span></code> randomly selects <code class="docutils literal notranslate"><span class="pre">n</span></code> rows, <code class="docutils literal notranslate"><span class="pre">.sample(frac=0.4)</span></code> selects 40% of the data, <code class="docutils literal notranslate"><span class="pre">replace=True</span></code> samples with replacement, and passing <code class="docutils literal notranslate"><span class="pre">weights=</span></code> selects a number of fraction with the probabilities given by the passed weights.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.sample(n)</span></code> randomly selects <code class="docutils literal notranslate"><span class="pre">n</span></code> rows, <code class="docutils literal notranslate"><span class="pre">.sample(frac=0.4)</span></code> selects 40% of the data, <code class="docutils literal notranslate"><span class="pre">replace=True</span></code> samples with replacement, and passing <code class="docutils literal notranslate"><span class="pre">weights=</span></code> selects a number or fraction with the probabilities given by the passed weights. (Note that weights passed should have the same length as the dataframe.)</p>
 <p>Taking a sample of 5 rows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1699,10 +1731,13 @@ memory usage: 6.1+ KB
 <p>Below is an example of transform being used to demean a variable according to the mean by species. Note that we use <code class="docutils literal notranslate"><span class="pre">pd.notna</span></code> to filter out missing species values (otherwise this would result in an error, which is actually <em>helpful</em> behaviour) and we are using lambda functions. Lambda functions are a quick way of writing functions, e.g. <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x+1</span></code> defines a function that adds one to x.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])]</span>
- <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">height_demean_species</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])]</span>
-                                 <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span>
-                                 <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First take a cut of the dataframe with no NA values in the species column:</span>
+<span class="n">df_cut</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">])]</span>
+<span class="c1"># Now create a demeaned mass col</span>
+<span class="p">(</span><span class="n">df_cut</span>
+ <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">mass_demean_species</span> <span class="o">=</span> <span class="n">df_cut</span>
+                               <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span>
+                               <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1734,7 +1769,7 @@ memory usage: 6.1+ KB
       <th>gender</th>
       <th>homeworld</th>
       <th>species</th>
-      <th>height_demean_species</th>
+      <th>mass_demean_species</th>
     </tr>
   </thead>
   <tbody>
@@ -1843,7 +1878,7 @@ memory usage: 6.1+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;species&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1853,7 +1888,7 @@ memory usage: 6.1+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">bw_method</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

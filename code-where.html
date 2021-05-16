@@ -187,8 +187,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -206,18 +211,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="maths-maths-coding.html">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -245,6 +238,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -257,6 +262,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -279,6 +296,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -444,7 +466,7 @@
   <div class="section" id="options-for-writing-code">
 <h1><span class="section-number">4. </span>Options for Writing Code<a class="headerlink" href="#options-for-writing-code" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, we’ll look at the different options for writing code.</p>
-<p>We already met some ways to write (and run) code. Here, we’ll be a bit more systematic so that, by the end of the chapter, you’ll be comfortable writing scripts, notebooks, and even markdown with executable code chunks. The first two, scripts and notebooks, are by far the most common ways to run code.</p>
+<p>We already met some ways to write (and run) code. Here, we’ll be a bit more systematic so that, by the end of the chapter, you’ll be comfortable writing scripts, notebooks, and even markdown with executable code chunks. The first two, scripts and notebooks, are by far the most popular, while many coders will not have tried markdown with code chunks.</p>
 <p>The table below sets out the different ways you can write code.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -547,9 +569,7 @@ This notebook demonstrates printing &#39;hello world!&#39; to screen.
 <div class="math notranslate nohighlight">
 \[u'(c_{t})=\beta(1+r_{t+1})u'(c_{t+1})\]</div>
 <p>Because all you need to write markdown is a simple text editor, it has found huge popularity in the coding and academic communities. Sites like github use it. Viewing markdown is less easy, but the <strong>markdown-all-in-one</strong> extension of VS Code can show a preview of how it will look. If you open a markdown file in VS Code, just right click and select preview.</p>
-<p>While  often you might want to write something that just has a little bit of code in but is mostly text <em>and</em> display the outputs of the code (perhaps without showing the code inputs). Markdown with executable code chunks allows you to do this.</p>
-<p>The magic package that we’ll use to achieve this is called <a class="reference external" href="https://github.com/gpoore/codebraid"><strong>codebraid</strong></a>. <strong>codebraid</strong> can take markdown documents, execute any code in them, and incorporate the outputs of that code in a final version of the document. It has built-in code execution that currently supports Python 3.5+, Julia, Rust, R, Bash, JavaScript, and SageMath. It can mix and match languages within the same document too.</p>
-<p>Code chunks in markdown are written with three backticks, followed by the name of the language, followed by the code, followed by another three backticks. So to express a non-executable Python code chunk (ie a chunk that is displayed only) it’s</p>
+<p>Regular code chunks (ones that are <em>not</em> executed) are written with three backticks, followed by the name of the language, followed by the code, followed by another three backticks. So to express a non-executable Python code chunk (ie a chunk that is displayed only) it’s</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
 import pandas as pd
 ```
@@ -559,6 +579,8 @@ import pandas as pd
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
+<p>Adding <em>executable code chunks</em> to markdown allows you to include code chunks <em>and</em> the outputs they create when they are run <em>or</em> just the outputs (with the code hidden). This is useful when you want to write something that just has a little bit of code in but is mostly text. Or when you want to create documents or slides that update automatically by displaying the outputs of code run on updating inputs. Markdown with executable code chunks allows you to do all of these.</p>
+<p>The magic package that weaves together code and markdown is called <a class="reference external" href="https://github.com/gpoore/codebraid"><strong>codebraid</strong></a>. <strong>codebraid</strong> can take markdown documents, execute any code in them, and incorporate the outputs of that code in a final version of the document. It has built-in code execution that currently supports Python 3.5+, Julia, Rust, R, Bash, JavaScript, and SageMath. It can mix and match languages within the same document too.</p>
 <p>Let’s now try an example with an <em>executable code chunk</em>. For this, you will need to have installed the <a class="reference external" href="https://github.com/gpoore/codebraid"><strong>codebraid</strong></a> Python package and <a class="reference external" href="https://pandoc.org/installing.html"><strong>pandoc</strong></a>, an application. Pandoc is a universal document converter. Codebraid ‘braids’ together code and text.</p>
 <p>Create a new markdown file called ‘hello_world_raw.md’ and add this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>---

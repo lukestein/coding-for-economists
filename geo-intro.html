@@ -58,7 +58,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Geo-Spatial Visualisation" href="geo-vis.html" />
-    <link rel="prev" title="3. Regression" href="econmt-regression.html" />
+    <link rel="prev" title="1. Introduction to Text" href="text-intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -185,8 +185,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -204,18 +209,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="maths-maths-coding.html">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -243,6 +236,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -255,6 +260,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -277,6 +294,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -1861,7 +1883,7 @@ Name: geometry, dtype: geometry
 <div class="section" id="openstreetmap-and-osmnx">
 <h2><span class="section-number">1.7. </span>OpenStreetMap and Osmnx<a class="headerlink" href="#openstreetmap-and-osmnx" title="Permalink to this headline">¶</a></h2>
 <p>OpenStreetMap (OSM) is a crowd-sourced project that aims to create a free map of the world containing information about streets, buildings, landmarks, landuse, and more. Its users regularly update the information it holds. Think Wikipedia but for a world map. It excels at highly detailed and freely available renderings of streets.</p>
-<p><a class="reference external" href="https://geoffboeing.com/publications/osmnx-complex-street-networks/"><strong>Osmnx</strong></a> is a package that can retrieve, construct, analyze, and visualize street networks from OpenStreetMap <span id="id2">[<a class="reference internal" href="zreferences.html#id13"><span>14</span></a>]</span>. It also does some geocoding on the fly. Let’s see it in action and feed in the address we obtained in the geocoding example from earlier; using the <code class="docutils literal notranslate"><span class="pre">graph_from_point</span></code> method will give us the network of streets around a location.</p>
+<p><a class="reference external" href="https://geoffboeing.com/publications/osmnx-complex-street-networks/"><strong>Osmnx</strong></a> is a package that can retrieve, construct, analyze, and visualize street networks from OpenStreetMap <span id="id2">[<a class="reference internal" href="zreferences.html#id13"><span>12</span></a>]</span>. It also does some geocoding on the fly. Let’s see it in action and feed in the address we obtained in the geocoding example from earlier; using the <code class="docutils literal notranslate"><span class="pre">graph_from_point</span></code> method will give us the network of streets around a location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
@@ -2025,7 +2047,7 @@ Name: geometry, dtype: geometry
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="econmt-regression.html" title="previous page"><span class="section-number">3. </span>Regression</a>
+    <a class='left-prev' id="prev-link" href="text-intro.html" title="previous page"><span class="section-number">1. </span>Introduction to Text</a>
     <a class='right-next' id="next-link" href="geo-vis.html" title="next page"><span class="section-number">2. </span>Geo-Spatial Visualisation</a>
 
     </div>

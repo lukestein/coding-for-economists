@@ -59,7 +59,7 @@
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/econmt-regression.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Intro to Geo-Spatial Analysis" href="geo-intro.html" />
+    <link rel="next" title="1. Introduction to Text" href="text-intro.html" />
     <link rel="prev" title="2. Statistics" href="econmt-statistics.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -187,8 +187,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -206,18 +211,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="maths-maths-coding.html">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -245,6 +238,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -257,6 +262,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -279,6 +296,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -773,8 +795,8 @@ y = x'\cdot \hat{\beta} + \epsilon
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     1.040
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):              0.312
-Time:                        14:24:26   Log-Likelihood:                -385.50
+Date:                Sun, 16 May 2021   Prob (F-statistic):              0.312
+Time:                        17:13:20   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -856,8 +878,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.580
 Model:                            OLS   Adj. R-squared:                  0.572
 Method:                 Least Squares   F-statistic:                     77.18
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):           4.02e-12
-Time:                        14:24:27   Log-Likelihood:                -252.48
+Date:                Sun, 16 May 2021   Prob (F-statistic):           4.02e-12
+Time:                        17:13:20   Log-Likelihood:                -252.48
 No. Observations:                  58   AIC:                             509.0
 Df Residuals:                      56   BIC:                             513.1
 Df Model:                           1                                         
@@ -900,8 +922,8 @@ Method:                          IRLS   Df Model:                            1
 Norm:                     TrimmedMean                                         
 Scale Est.:                       mad                                         
 Cov Type:                          H1                                         
-Date:                Fri, 30 Apr 2021                                         
-Time:                        14:24:27                                         
+Date:                Sun, 16 May 2021                                         
+Time:                        17:13:20                                         
 No. Iterations:                     7                                         
 ==============================================================================
                  coef    std err          z      P&gt;|z|      [0.025      0.975]
@@ -973,8 +995,8 @@ If the model instance has been used for another fit with different fit parameter
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     52.75
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):           1.16e-09
-Time:                        14:24:27   Log-Likelihood:                -385.50
+Date:                Sun, 16 May 2021   Prob (F-statistic):           1.16e-09
+Time:                        17:13:20   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -1028,8 +1050,8 @@ errors in panel data, again with keyword arguments; and</p></li>
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     39.44
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):           2.63e-07
-Time:                        14:24:27   Log-Likelihood:                -361.23
+Date:                Sun, 16 May 2021   Prob (F-statistic):           2.63e-07
+Time:                        17:13:20   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1070,8 +1092,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     35.10
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):           1.96e-06
-Time:                        14:24:27   Log-Likelihood:                -361.23
+Date:                Sun, 16 May 2021   Prob (F-statistic):           1.96e-06
+Time:                        17:13:21   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1240,8 +1262,8 @@ Notes:
 Dep. Variable:                    mpg   R-squared:                       0.754
 Model:                            OLS   Adj. R-squared:                  0.727
 Method:                 Least Squares   F-statistic:                     28.59
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):           1.14e-08
-Time:                        14:24:27   Log-Likelihood:                -79.948
+Date:                Sun, 16 May 2021   Prob (F-statistic):           1.14e-08
+Time:                        17:13:21   Log-Likelihood:                -79.948
 No. Observations:                  32   AIC:                             167.9
 Df Residuals:                      28   BIC:                             173.8
 Df Model:                           3                                         
@@ -1372,43 +1394,43 @@ y_i = x_i\cdot \beta + z_i\cdot \gamma +\epsilon_i
   <tbody>
     <tr>
       <th>0</th>
-      <td>7</td>
-      <td>197070</td>
-      <td>-1.137455</td>
-      <td>0.008762</td>
-      <td>-1.901981</td>
+      <td>15</td>
+      <td>60821</td>
+      <td>0.339671</td>
+      <td>-1.125923</td>
+      <td>-3.312589</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>7</td>
-      <td>814</td>
-      <td>-1.121035</td>
-      <td>0.133291</td>
-      <td>-1.155134</td>
+      <td>29</td>
+      <td>71695</td>
+      <td>0.512975</td>
+      <td>-1.476191</td>
+      <td>-1.110783</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>23</td>
-      <td>75600</td>
-      <td>-0.219113</td>
-      <td>-1.081802</td>
-      <td>-4.475444</td>
+      <td>15</td>
+      <td>5856</td>
+      <td>0.934741</td>
+      <td>0.193679</td>
+      <td>1.318424</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>7</td>
-      <td>56199</td>
-      <td>0.162058</td>
-      <td>1.320175</td>
-      <td>8.187108</td>
+      <td>28</td>
+      <td>118884</td>
+      <td>0.484486</td>
+      <td>-1.458130</td>
+      <td>-6.125906</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3</td>
-      <td>43240</td>
-      <td>-0.114429</td>
-      <td>0.314113</td>
-      <td>2.702421</td>
+      <td>25</td>
+      <td>97586</td>
+      <td>-0.729686</td>
+      <td>0.879079</td>
+      <td>1.493969</td>
     </tr>
   </tbody>
 </table>
@@ -1427,19 +1449,19 @@ y_i = x_i\cdot \beta + z_i\cdot \gamma +\epsilon_i
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Absorbing LS Estimation Summary                          
 ==================================================================================
-Dep. Variable:                      y   R-squared:                          0.9393
-Estimator:               Absorbing LS   Adj. R-squared:                     0.9243
-No. Observations:             1000000   F-statistic:                     9.823e+06
-Date:                Fri, Apr 30 2021   P-value (F-stat):                   0.0000
-Time:                        14:24:32   Distribution:                      chi2(2)
-Cov. Estimator:                robust   R-squared (No Effects):             0.9089
-                                        Varaibles Absorbed:              1.987e+05
+Dep. Variable:                      y   R-squared:                          0.9385
+Estimator:               Absorbing LS   Adj. R-squared:                     0.9232
+No. Observations:             1000000   F-statistic:                     9.847e+06
+Date:                Sun, May 16 2021   P-value (F-stat):                   0.0000
+Time:                        17:13:25   Distribution:                      chi2(2)
+Cov. Estimator:                robust   R-squared (No Effects):             0.9092
+                                        Varaibles Absorbed:              1.988e+05
                              Parameter Estimates                              
 ==============================================================================
             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
 ------------------------------------------------------------------------------
-exog_0         1.0010     0.0010     994.38     0.0000      0.9991      1.0030
-exog_1         2.9990     0.0010     2972.7     0.0000      2.9970      3.0010
+exog_0         1.0003     0.0010     993.06     0.0000      0.9983      1.0022
+exog_1         2.9993     0.0010     2975.0     0.0000      2.9973      3.0013
 ==============================================================================
 </pre></div>
 </div>
@@ -1494,7 +1516,7 @@ np.log(hp)   -10.7642      1.224     -8.792      0.000     -13.265      -8.264
 </div>
 </div>
 </div>
-<p>Clearly, the first method will work for <code class="docutils literal notranslate"><span class="pre">arcsinh(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">log(x+1)</span></code>, but you can also pass both of these into the formula directly too. (For more on the pros and cons of arcsinh, see <span id="id1">[<a class="reference internal" href="zreferences.html#id6"><span>9</span></a>]</span>.) Here it is with arcsinh:</p>
+<p>Clearly, the first method will work for <code class="docutils literal notranslate"><span class="pre">arcsinh(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">log(x+1)</span></code>, but you can also pass both of these into the formula directly too. (For more on the pros and cons of arcsinh, see <span id="id1">[<a class="reference internal" href="zreferences.html#id6"><span>7</span></a>]</span>.) Here it is with arcsinh:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;mpg ~ np.arcsinh(hp)&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
@@ -1529,7 +1551,7 @@ y = \beta_0 + \beta_1 x_1 \cdot x_2
 y = \beta_0 + \beta_1 x_1^2
 \]</div>
 <p>i.e. the last term enters only after it is multiplied by itself.</p>
-<p>One note of warning: the interpretation of the effect of a variable is no longer as simple as was set out at the start of this chapter. To work out <em>what</em> the new interpretation is, the procedure is the same though: just take the derivative. In the case of the interaction model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> is now going to be a function of <span class="math notranslate nohighlight">\(x_2\)</span>. In the case of the polynomial model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> will be <span class="math notranslate nohighlight">\(2\beta_1 \cdot x_1\)</span>. For more on interaction terms, see <span id="id2">[<a class="reference internal" href="zreferences.html#id7"><span>10</span></a>]</span>.</p>
+<p>One note of warning: the interpretation of the effect of a variable is no longer as simple as was set out at the start of this chapter. To work out <em>what</em> the new interpretation is, the procedure is the same though: just take the derivative. In the case of the interaction model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> is now going to be a function of <span class="math notranslate nohighlight">\(x_2\)</span>. In the case of the polynomial model above, the effect of a unit change in <span class="math notranslate nohighlight">\(x_1\)</span> on <span class="math notranslate nohighlight">\(y\)</span> will be <span class="math notranslate nohighlight">\(2\beta_1 \cdot x_1\)</span>. For more on interaction terms, see <span id="id2">[<a class="reference internal" href="zreferences.html#id7"><span>8</span></a>]</span>.</p>
 <p>Alright, with all of that preamble out of the way, let’s see how we actual do some of this! Let’s try including a linear and squared term in the regression of <code class="docutils literal notranslate"><span class="pre">mpg</span></code> on <code class="docutils literal notranslate"><span class="pre">hp</span></code> making use of the numpy power function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1683,8 +1705,8 @@ hp:disp       -0.0001   1.91e-05     -7.409      0.000      -0.000      -0.000
 Dep. Variable:                      y   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                    0.7446
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):              0.392
-Time:                        14:24:32   Log-Likelihood:                -361.23
+Date:                Sun, 16 May 2021   Prob (F-statistic):              0.392
+Time:                        17:13:25   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1846,8 +1868,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.998
 Model:                            OLS   Adj. R-squared:                  0.998
 Method:                 Least Squares   F-statistic:                 4.302e+04
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):          6.90e-261
-Time:                        14:24:32   Log-Likelihood:                 165.45
+Date:                Sun, 16 May 2021   Prob (F-statistic):          6.90e-261
+Time:                        17:13:25   Log-Likelihood:                 165.45
 No. Observations:                 200   AIC:                            -324.9
 Df Residuals:                     197   BIC:                            -315.0
 Df Model:                           2                                         
@@ -2042,8 +2064,8 @@ x_{2i} &amp; = z_{1i}\hat{\delta} + z_{2i}\hat{\gamma} + \nu_i\end{split}
 Dep. Variable:          np.log(packs)   R-squared:                      0.9659
 Estimator:                    IV-2SLS   Adj. R-squared:                 0.9279
 No. Observations:                  96   F-statistic:                  2.66e+16
-Date:                Fri, Apr 30 2021   P-value (F-stat)                0.0000
-Time:                        14:24:33   Distribution:                 chi2(50)
+Date:                Sun, May 16 2021   P-value (F-stat)                0.0000
+Time:                        17:13:25   Distribution:                 chi2(50)
 Cov. Estimator:             clustered                                         
                                                                               
                                 Parameter Estimates                                
@@ -2259,7 +2281,7 @@ H0: Endogenous variables are exogenous
 Statistic: 14000039221717696.0000
 P-value: 0.0000
 Distributed: chi2(1)
-WaldTestStatistic, id: 0x7fb878d74400
+WaldTestStatistic, id: 0x7f9a549f2e20
 </pre></div>
 </div>
 </div>
@@ -2475,8 +2497,8 @@ T-stats reported in parentheses
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                          Logit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Fri, 30 Apr 2021   Pseudo R-squ.:                  0.3740
-Time:                        14:24:33   Log-Likelihood:                -12.890
+Date:                Sun, 16 May 2021   Pseudo R-squ.:                  0.3740
+Time:                        17:13:26   Log-Likelihood:                -12.890
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001502
 ==============================================================================
@@ -2560,8 +2582,8 @@ PSI            2.3787      1.065      2.234      0.025       0.292       4.465
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                         Probit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Fri, 30 Apr 2021   Pseudo R-squ.:                  0.3775
-Time:                        14:24:33   Log-Likelihood:                -12.819
+Date:                Sun, 16 May 2021   Pseudo R-squ.:                  0.3775
+Time:                        17:13:26   Log-Likelihood:                -12.819
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001405
 ==============================================================================
@@ -2755,8 +2777,8 @@ y = x' \cdot \beta
 Dep. Variable:                foodexp   Pseudo R-squared:               0.6206
 Model:                       QuantReg   Bandwidth:                       64.51
 Method:                 Least Squares   Sparsity:                        209.3
-Date:                Fri, 30 Apr 2021   No. Observations:                  235
-Time:                        14:24:33   Df Residuals:                      233
+Date:                Sun, 16 May 2021   No. Observations:                  235
+Time:                        17:13:26   Df Residuals:                      233
                                         Df Model:                            1
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
@@ -2881,7 +2903,7 @@ strong multicollinearity or other numerical problems.
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/econmt-regression_118_0.png" src="_images/econmt-regression_118_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8776892696004)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8768898984283)&gt;
 </pre></div>
 </div>
 </div>
@@ -2916,8 +2938,8 @@ strong multicollinearity or other numerical problems.
 Dep. Variable:                 murder   R-squared:                       0.813
 Model:                            OLS   Adj. R-squared:                  0.797
 Method:                 Least Squares   F-statistic:                     50.08
-Date:                Fri, 30 Apr 2021   Prob (F-statistic):           3.42e-16
-Time:                        14:24:35   Log-Likelihood:                -95.050
+Date:                Sun, 16 May 2021   Prob (F-statistic):           3.42e-16
+Time:                        17:13:28   Log-Likelihood:                -95.050
 No. Observations:                  51   AIC:                             200.1
 Df Residuals:                      46   BIC:                             209.8
 Df Model:                           4                                         
@@ -2991,7 +3013,7 @@ strong multicollinearity or other numerical problems.
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/econmt-regression_130_0.png" src="_images/econmt-regression_130_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8776859627499)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8768848996157)&gt;
 </pre></div>
 </div>
 </div>
@@ -3000,18 +3022,18 @@ strong multicollinearity or other numerical problems.
 <div class="section" id="specification-curve-analysis">
 <h2><span class="section-number">3.14. </span>Specification curve analysis<a class="headerlink" href="#specification-curve-analysis" title="Permalink to this headline">¶</a></h2>
 <p>When specifying a model, modellers have many options. These can be informed by field intelligence, priors, and even misguided attempts to find a significant result. Even with the best of intentions, research teams can reach entirely different conclusions using the same, or similar, data because of different choices made in preparing data or in modelling it.</p>
-<p>There’s formal evidence that researchers really do make different decisions; one study <span id="id3">[<a class="reference internal" href="zreferences.html#id8"><span>11</span></a>]</span> gave the same research question - whether soccer referees are more likely to give red cards to dark-skin-toned players than to light-skin-toned players - to 29 different teams. From the abstract of that paper:</p>
+<p>There’s formal evidence that researchers really do make different decisions; one study <span id="id3">[<a class="reference internal" href="zreferences.html#id8"><span>9</span></a>]</span> gave the same research question - whether soccer referees are more likely to give red cards to dark-skin-toned players than to light-skin-toned players - to 29 different teams. From the abstract of that paper:</p>
 <blockquote>
 <div><p>Analytic approaches varied widely across the teams, and the estimated effect sizes ranged from 0.89 to 2.93 (Mdn = 1.31) in odds-ratio units. Twenty teams (69%) found a statistically significant positive effect, and 9 teams (31%) did not observe a significant relationship. Overall, the 29 different analyses used 21 unique combinations of covariates. Neither analysts’ prior beliefs about the effect of interest nor their level of expertise readily explained the variation in the outcomes of the analyses. Peer ratings of the quality of the analyses also did not account for the variability.</p>
 </div></blockquote>
 <p>So not only were different decisions made, there seems to be no clearly identifiable reason for them. There is usually scope for reasonable alternative model specifications when estimating coefficients, and those coefficients will vary with those specifications.</p>
-<p>Specification curve analysis <span id="id4">[<a class="reference internal" href="zreferences.html#id9"><span>12</span></a>]</span> looks for a more exhaustive way of trying out alternative specifications. The three steps of specification curve analysis are:</p>
+<p>Specification curve analysis <span id="id4">[<a class="reference internal" href="zreferences.html#id9"><span>10</span></a>]</span> looks for a more exhaustive way of trying out alternative specifications. The three steps of specification curve analysis are:</p>
 <ol class="simple">
 <li><p>identifying the set of theoretically justified, statistically valid, and non-redundant analytic specifications;</p></li>
 <li><p>displaying alternative results graphically, allowing the identification of decisions producing different results; and</p></li>
 <li><p>conducting statistical tests to determine whether as a whole results are inconsistent with the null hypothesis.</p></li>
 </ol>
-<p>For a good example of specification curve analysis in action, see this recent Nature Human Behaviour paper <span id="id5">[<a class="reference internal" href="zreferences.html#id10"><span>13</span></a>]</span> on the association between adolescent well-being and the use of digital technology.</p>
+<p>For a good example of specification curve analysis in action, see this recent Nature Human Behaviour paper <span id="id5">[<a class="reference internal" href="zreferences.html#id10"><span>11</span></a>]</span> on the association between adolescent well-being and the use of digital technology.</p>
 <p>We’ll use the <a class="reference external" href="https://specification-curve.readthedocs.io/en/latest/readme.html"><strong>specification curve analysis</strong></a> package to do the first two, which you can install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">specification_curve</span></code> (full disclosure: I wrote this package). To demonstrate the full functionality, we’ll create a second, alternative ‘hp’ that is a transformed version of the original.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3090,7 +3112,7 @@ strong multicollinearity or other numerical problems.
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="econmt-statistics.html" title="previous page"><span class="section-number">2. </span>Statistics</a>
-    <a class='right-next' id="next-link" href="geo-intro.html" title="next page"><span class="section-number">1. </span>Intro to Geo-Spatial Analysis</a>
+    <a class='right-next' id="next-link" href="text-intro.html" title="next page"><span class="section-number">1. </span>Introduction to Text</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

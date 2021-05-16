@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming from Excel &#8212; Coding for Economists</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/coming-from-excel.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="zreferences.html" />
+    <link rel="prev" title="Coming from R" href="coming-from-r.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://aeturrell.github.io/coding-for-economists/coming-from-excel.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Coming from Excel" />
+<meta property="og:description" content="Coming from Excel  Like it or loathe it, Microsoft’s Excel spreadsheet programme is ubiquitous in our offices and homes. If you’re looking to get off Excel, loo" />
+<meta property="og:image"       content="https://aeturrell.github.io/coding-for-economists/_static/smith_lovelace.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/smith_lovelace.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding for Economists</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coding
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-preliminaries.html">
+   1. Preliminaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-basics.html">
+   2. Basics of Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-advanced.html">
+   3. Advanced Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code-where.html">
+   4. Options for Writing Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workflow
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-best-practice.html">
+   1. Tips for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-advcd-best-practice.html">
+   2. Tools for Better Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrkflow-command-line.html">
+   3. The Command Line
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-quickstart.html">
+   1. Data Analysis Quickstart
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-intro.html">
+   2. Working with Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-exploratory-analysis.html">
+   3. Exploratory Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-read-and-write.html">
+   4. Reading and Writing Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-extraction.html">
+   5. Extracting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-advanced.html">
+   7. Advanced Data
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Visualisation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-intro.html">
+   1. Intro to Data Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-common-plots.html">
+   2. Common Plots
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Econometrics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-probability-random.html">
+   1. Probability and Random Processes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-statistics.html">
+   2. Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="econmt-regression.html">
+   3. Regression
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Geospatial
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-intro.html">
+   1. Intro to Geo-Spatial Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="geo-vis.html">
+   2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coming from ...
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-stata.html">
+   Coming from Stata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-matlab.html">
+   Coming from Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-r.html">
+   Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Coming from Excel
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Elsewhere
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/coming-from-excel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/coming-from-excel.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/aeturrell/coding-for-economists"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/aeturrell/coding-for-economists/issues/new?title=Issue%20on%20page%20%2Fcoming-from-excel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/aeturrell/coding-for-economists/main?urlpath=tree/coming-from-excel.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#excel-python">
+   Excel &lt;==&gt; Python
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="coming-from-excel">
+<h1>Coming from Excel<a class="headerlink" href="#coming-from-excel" title="Permalink to this headline">¶</a></h1>
+<p>Like it or loathe it, Microsoft’s Excel spreadsheet programme is ubiquitous in our offices and homes. If you’re looking to get off Excel, look no further because code can do everything Excel can-and a whole lot more!</p>
+<p>The biggest difference between a fully-fledged programming language, such as Python, and a graphical tool for spreadsheet analysis is that you write out all of your instructions in code in the former, but only some instructions are written in code in the latter (such as cell formulae). Another big difference is that Python (and related tools like Visual Studio Code and git) are free!</p>
+<p>The three main packages (extensions of the basic Python programming language) that cover Excel’s functionality are <strong>pandas</strong>, which is for panel data analysis (such as spreadsheets). For some Excel functions, <strong>numpy</strong>, which provides tools for working with numbers, and <strong>matplotlib</strong>, which creates charts, will be necessary.</p>
+<p>In this chapter, we’ll focus on how to go from Excel to Python by <em>replacing</em> Excel. The situation where you want to work with Excel from Python (eg by populating a spreadsheet with data, formulae, and charts) will be covered in another chapter on automation.</p>
+<div class="section" id="excel-python">
+<h2>Excel &lt;==&gt; Python<a class="headerlink" href="#excel-python" title="Permalink to this headline">¶</a></h2>
+<p>To get started with Excel, you open the application and create a new empty file. To get started with Python, follow the instructions in the preliminaries chapter of this book and create a new script (a file ending in <code class="docutils literal notranslate"><span class="pre">.py</span></code>) in Visual Studio Code. You will also need to have the Python package <strong>pandas</strong> installed. The translations of common Excel tasks in the table below assume you have already run <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, and that you have your data in a pandas dataframe called <code class="docutils literal notranslate"><span class="pre">df</span></code> (see the parts of this book on data analysis for more on using pandas). Although the table only covers a small fraction of what Excel does, and is certainly not comprehensive, it should give an idea of the ease and flexibility of <strong>pandas</strong> in replacing common Excel functions.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>Excel</p></th>
+<th class="head"><p>Python (pandas)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>View data</p></td>
+<td><p>Open the file using Excel</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.head(n)</span></code> to see the first n rows; use <code class="docutils literal notranslate"><span class="pre">df</span></code> to see all</p></td>
+</tr>
+<tr class="row-odd"><td><p>Count rows</p></td>
+<td><p>Select a column with the mouse and look at the count indicator</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.count()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Find Sum, Average, Max, or Min of the 1st column</p></td>
+<td><p>eg, <code class="docutils literal notranslate"><span class="pre">=SUM(A:A)</span></code></p></td>
+<td><p>eg, <code class="docutils literal notranslate"><span class="pre">df.iloc[:,</span> <span class="pre">0].sum()</span></code>. Other commands are <code class="docutils literal notranslate"><span class="pre">.mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">.max()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.min()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Perform an operation on, eg sum, on the first row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=SUM(1:1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.iloc[0,</span> <span class="pre">:].sum()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Count occurrences of distinct items within a column</p></td>
+<td><p>See <a class="reference external" href="https://superuser.com/questions/442653/ms-excel-how-to-count-occurrences-of-items-in-a-list">here</a> (complicated!)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['column_name'].value_counts()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Return true or false given values in another column based on a condition</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(A1&lt;100,</span> <span class="pre">TRUE,</span> <span class="pre">FALSE)</span></code> etc, with 1 changing according to row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['new_column']</span> <span class="pre">=</span> <span class="pre">df['column_name']</span> <span class="pre">&lt;</span> <span class="pre">100</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Adding two columns</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">A1</span> <span class="pre">+</span> <span class="pre">B1</span></code> etc, with 1 changing according to row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['new_column']</span> <span class="pre">=</span> <span class="pre">df['column_A']</span> <span class="pre">+</span> <span class="pre">df['column_B']</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Create a date column</p></td>
+<td><p>Click on the column; select “Date” from list of number-format categories.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['column']</span> <span class="pre">=</span> <span class="pre">pd.to_datetime(df['column'])</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Count days between two dates</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=DAYS(A1,</span> <span class="pre">B1)</span></code> with 1 changing according to row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['new_column']</span> <span class="pre">=</span> <span class="pre">df['column_A']</span> <span class="pre">-</span> <span class="pre">df['column_B']</span></code>, where both existing columns are datetimes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create a cumulative sum on a column</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=SUM(A$1:A10)</span></code> where 10 is the maximum row index number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['new_columns']</span> <span class="pre">=</span> <span class="pre">df['column'].cumsum()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Concatenate string columns</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=CONCATENATE(A1,B1)</span></code> where 1 changes by row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['new_column']</span> <span class="pre">=</span> <span class="pre">df['string_column_a']</span> <span class="pre">+</span> <span class="pre">df['string_column_b']</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Find out which cells in a column have invalid entries</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=ISERROR(A1)</span></code> where 1 changes by row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['column'].notna()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Remove excess whitespace</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=TRIM(A1)</span></code> where 1 changes by row</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df['new_column']</span> <span class="pre">=</span> <span class="pre">df['column'].replace(&quot;\s+&quot;,</span> <span class="pre">&quot;</span> <span class="pre">&quot;,</span> <span class="pre">regex=True)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Transpose data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=TRANSPOSE(A1:C100)</span></code>, assuming a 3 by 100 input data set between columns A and C, and rows 1 to 100</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">df.T</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Create a pivot table</p></td>
+<td><p>Manually select data and use the various menus (example <a class="reference external" href="https://www.excel-easy.com/data-analysis/pivot-tables.html">here</a>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pd.pivot_table(df,</span> <span class="pre">values='D',</span> <span class="pre">index=['A'],</span> <span class="pre">columns=['C'],</span> <span class="pre">aggfunc=np.sum)</span></code> by summing over a column named ‘D’ with rows ‘A’, creating columns ‘C’</p></td>
+</tr>
+</tbody>
+</table>
+<p>For more on how to replace Excel with Python and <strong>pandas</strong>, see the <a class="reference internal" href="data-analysis-quickstart.html#data-quickstart"><span class="std std-ref">Data Analysis Quickstart</span></a> and <a class="reference internal" href="data-advanced.html#data-analysis"><span class="std std-ref">Data Analysis</span></a> sections.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "codeforecon"
+        },
+        kernelOptions: {
+            kernelName: "codeforecon",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'codeforecon'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="coming-from-r.html" title="previous page">Coming from R</a>
+    <a class='right-next' id="next-link" href="zreferences.html" title="next page">Bibliography</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Arthur Turrell<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This book is available under an MIT license.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-189705534-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

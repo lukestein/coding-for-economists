@@ -185,8 +185,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-sharing.html">
+   6. Sharing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-advanced.html">
-   6. Advanced Data
+   7. Advanced Data
   </a>
  </li>
 </ul>
@@ -204,18 +209,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="vis-common-plots.html">
    2. Common Plots
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics with Code
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="maths-maths-coding.html">
-   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -243,6 +236,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Text Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-intro.html">
+   1. Introduction to Text
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Geospatial
  </span>
 </p>
@@ -255,6 +260,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="geo-vis.html">
    2. Geo-Spatial Visualisation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics with Code
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="maths-maths-coding.html">
+   1. Intro to Mathematics with Code
   </a>
  </li>
 </ul>
@@ -277,6 +294,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="coming-from-r.html">
    Coming from R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coming-from-excel.html">
+   Coming from Excel
   </a>
  </li>
 </ul>
@@ -552,13 +574,23 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plydata">
-     2.13.1. Plydata
+    <a class="reference internal nav-link" href="#datatable">
+     2.13.1. Datatable
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#datatable">
-     2.13.2. Datatable
+    <a class="reference internal nav-link" href="#cudf">
+     2.13.2. cuDF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polars">
+     2.13.3. Polars
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plydata">
+     2.13.4. Plydata
     </a>
    </li>
   </ul>
@@ -592,7 +624,7 @@
 <h3><span class="section-number">2.1.1. </span>Using tidy data<a class="headerlink" href="#using-tidy-data" title="Permalink to this headline">¶</a></h3>
 <p>As an aside, if you’re working with tabular data, it’s good to try and use a so-called ‘tidy data’ format. This is data with one observation per row, and one variable per column, like so:</p>
 <p><img alt="" src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" /></p>
-<p>Tidy data aren’t going to be appropriate <em>every</em> time and in every case, but they’re a really, really good default for tabular data. Once you use it as your default, it’s easier to think about how to perform subsequent operations. Some plotting libraries, such as <strong>seaborn</strong>, take that youre data are in tidy format as a given. And many operations that you can perform on dataframes (the objects that hold tabular data within many programming languages) are easier when you have tidy data. If you’re are writing out data to file to share, putting it in tidy format is a really good idea.</p>
+<p>Tidy data aren’t going to be appropriate <em>every</em> time and in every case, but they’re a really, really good default for tabular data. Once you use it as your default, it’s easier to think about how to perform subsequent operations. Some plotting libraries, such as <strong>seaborn</strong>, take that your data are in tidy format as a given. And many operations that you can perform on dataframes (the objects that hold tabular data within many programming languages) are easier when you have tidy data. If you’re writing out data to file to share, putting it in tidy format is a really good idea.</p>
 <p>Of course, <em>getting</em> your messy dataset into a tidy format may take a bit of work… but we’re about to enter the exciting world of coding for data analysis and the tools you’ll see in the rest of this chapter will help you to ‘wrangle’ even the most messy of datasets.</p>
 <p>Having said that tidy data are great, and they are, one of standard data library <strong>pandas</strong>’ advantages relative to other data analysis libraries is that it isn’t <em>too</em> tied to tidy data and can navigate awkward non-tidy data manipulation tasks happily too.</p>
 </div>
@@ -601,6 +633,7 @@
 <h2><span class="section-number">2.2. </span>Dataframes and series<a class="headerlink" href="#dataframes-and-series" title="Permalink to this headline">¶</a></h2>
 <p>Let’s start with the absolute basics. The most basic <strong>pandas</strong> object is a dataframe. A DataFrame is a 2-dimensional data structure that can store data of different types (including characters, integers, floating point values, categorical data, even lists) in columns.</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/01_table_dataframe.svg" /></p>
+<p>We’ll now import some useful packages, set a random number seed (some examples use randomly generated data), set up some nice plot settings, and load a dataset.</p>
 <p>We’ll look at a dataframe of the <em>penguins</em> dataset. To show just the first 5 rows, I’ll be using the <code class="docutils literal notranslate"><span class="pre">head()</span></code> method (there’s also a <code class="docutils literal notranslate"><span class="pre">tail()</span></code> method).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -794,7 +827,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>If you ever want to turn a series into a dataframe, just called <code class="docutils literal notranslate"><span class="pre">pd.DataFrame(series)</span></code> on it.</p>
+<p>If you ever want to turn a series into a dataframe, just called <code class="docutils literal notranslate"><span class="pre">pd.DataFrame(series)</span></code> on it. Note that while series have an index and an object name (eg <code class="docutils literal notranslate"><span class="pre">s2</span></code> above), they don’t have any column labels because they only have one column.</p>
 <p>Now let’s try creating our own dataframe with more than one column of data using a <em>dictionary</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -870,6 +903,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+<p>Remember, curly brackets in the format <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value}</span></code> denote a dictionary. In the above example, the <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code> function understands that any single value entries in the dictionary that is passed, such as <code class="docutils literal notranslate"><span class="pre">{'A':</span> <span class="pre">1.}</span></code>, should be repeated as many times as are needed to match the longest series in the dictionary (4 in the above example).</p>
 <p>Another way to create dataframes is to pass a bunch of series (note that <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">columns</span></code>, and <code class="docutils literal notranslate"><span class="pre">dtype</span></code> are optional–you can just specify the data):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -967,6 +1001,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">reshape</span></code> takes an input and puts it into a given shape (a 6 by 6 matrix in the above example).</p>
 <div class="section" id="values-columns-and-index">
 <h3><span class="section-number">2.2.1. </span>Values, columns, and index<a class="headerlink" href="#values-columns-and-index" title="Permalink to this headline">¶</a></h3>
 <p>You’ll have seen that there are three different things that make up a dataframe: the values that are in the cells, the column names, and the index. The column and index can take on values that are the same as the values in a dataframe do; string, int, float, datetime, and more. It’s pretty obvious what role the columns play: they keep track of the name of different sets of values. But for people who may have seen other dataframe-like libraries, the role played by the index may be less familiar. The easiest way to think about a <strong>pandas</strong> index is that it does for row values what the columns do for columnar values: it’s a way of keeping track of what individual roles are and it <em>doesn’t</em> get used for calculations (just as summing a column ignores the name of the row).</p>
@@ -1335,7 +1370,7 @@ memory usage: 224.0+ bytes
 </div>
 </div>
 </div>
-<p>Note that the data type for all of these columns is the generic ‘Dtype’. Let’s fix that:</p>
+<p>Note that the data type for all of these columns is the generic ‘Object’ (you can see this from the <code class="docutils literal notranslate"><span class="pre">Dtype</span></code> column that is printed when you use <code class="docutils literal notranslate"><span class="pre">df.info()</span></code>). Let’s fix that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;string_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
@@ -1401,7 +1436,7 @@ memory usage: 320.0 bytes
 </div>
 <div class="section" id="categorical-variables">
 <h3><span class="section-number">2.3.1. </span>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this headline">¶</a></h3>
-<p>Categorical variables can be especially useful and there are a couple of convenience functions that allow you to create them from other types of columns. Cut splits input data into a given number of (evenly spaced) bins that you can optionally give names to via the <code class="docutils literal notranslate"><span class="pre">labels=</span></code> keyword.</p>
+<p>Categorical variables can be especially useful and there are a couple of convenience functions that allow you to create them from other types of columns. Cut splits input data into a given number of (evenly spaced) bins that you can optionally give names to via the <code class="docutils literal notranslate"><span class="pre">labels=</span></code> keyword. The default behaviour is for the order of the labels to matter so that, in the below example, the bins will be evenly spaced from the smallest value to the largest, with the smallest receiving the label <code class="docutils literal notranslate"><span class="pre">bad</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
@@ -1550,6 +1585,29 @@ Name: col1, dtype: float64
 </div>
 </div>
 </div>
+<p>With all of these different ways to access values in dataframes, it can get confusing. These are the different ways to get the first column of a dataframe (when that first column is called <code class="docutils literal notranslate"><span class="pre">column</span></code> and the dataframe is <code class="docutils literal notranslate"><span class="pre">df</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.column</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df[&quot;column&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[:,</span> <span class="pre">&quot;column&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[:,</span> <span class="pre">0]</span></code></p></li>
+</ul>
+<p>The ways to access rows are similar (here assuming the first row is called <code class="docutils literal notranslate"><span class="pre">row</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[&quot;row&quot;,</span> <span class="pre">:]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[0,</span> <span class="pre">:]</span></code></p></li>
+</ul>
+<p>And to access the first value (ie the value in first row, first column):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.column[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df[&quot;column&quot;][0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[0,</span> <span class="pre">0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[&quot;row&quot;,</span> <span class="pre">&quot;column&quot;]</span></code></p></li>
+</ul>
+<p>In the above examples, square brackets are instructions about <em>where</em> to grab bits from the dataframe. They are a bit like an address system for values within a dataframe.</p>
+<p>Square brackets <em>also</em> denote lists though. So if you want to select <em>multiple</em> columns or rows, you might see syntax like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">df.loc[[&quot;row0&quot;,</span> <span class="pre">&quot;row1&quot;],</span> <span class="pre">[&quot;column0&quot;,</span> <span class="pre">&quot;column2&quot;]]</span></code></p>
+<p>which picks out two rows and two columns via the lists <code class="docutils literal notranslate"><span class="pre">[&quot;row0&quot;,</span> <span class="pre">&quot;row1&quot;]</span></code> and <code class="docutils literal notranslate"><span class="pre">[&quot;column0&quot;,</span> <span class="pre">&quot;column2&quot;]</span></code>. Because there are lists alongside the usual system of selecting values, there are two sets of square brackets.</p>
 <p>So often what we really want is a subset of values (as opposed to <em>all</em> values or just <em>one</em> value). This is where <em>slicing</em> comes in. If you’ve looked at the Basics of Coding chapter, you’ll know a bit about slicing and indexing already, but we’ll cover the basics here too.</p>
 <p>The syntax for slicing is similar to what we’ve seen already: there are two methods <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to access items by name, and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> to access them by position. The syntax for the former is <code class="docutils literal notranslate"><span class="pre">df.loc[start:stop:step,</span> <span class="pre">start:stop:step]</span></code>, where the first position is index name and the second is column name (and the same applies for numbers and <code class="docutils literal notranslate"><span class="pre">df.iloc</span></code>). Let’s see an example using the storms dataset, and do some cuts.</p>
 <div class="cell docutils container">
@@ -1927,7 +1985,7 @@ Name: col1, dtype: float64
 <div class="section" id="operations-on-dataframes">
 <h2><span class="section-number">2.5. </span>Operations on dataframes<a class="headerlink" href="#operations-on-dataframes" title="Permalink to this headline">¶</a></h2>
 <p>Columns in dataframes can undergo all the usual arithmetic operations you’d expect of addition, multiplication, division, and so on. If the underlying datatypes of two columns have a group operation, then the dataframe columns will use that.</p>
-<p><img alt="" src="https://pandas.pydata.org/docs/_images/05_newcolumn_21.svg" /></p>
+<p><img alt="" src="https://github.com/pandas-dev/pandas/raw/059c8bac51e47d6eaaa3e36d6a293a22312925e6/doc/source/_static/schemas/05_newcolumn_1.svg" /></p>
 <p>The results of these manipulations can just be saved as a new series, eg, <code class="docutils literal notranslate"><span class="pre">new_series</span> <span class="pre">=</span> <span class="pre">df['A']</span> <span class="pre">+</span> <span class="pre">df['B']</span></code> or created as a new column of the dataframe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2630,6 +2688,7 @@ dtype: int64
 <div class="section" id="filter">
 <h3><span class="section-number">2.8.1. </span>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
 <p>Filtering does exactly what it sounds like, but it can make use of group-by commands. In the example below, all but one species is filtered out.</p>
+<p>In the example below, <code class="docutils literal notranslate"><span class="pre">filter</span></code> passes a grouped version of the dataframe into the <code class="docutils literal notranslate"><span class="pre">filter_func</span></code> we’ve defined (imagine that a dataframe is passed for each group). Because the passed variable is a dataframe, and variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is defined in the function, the <code class="docutils literal notranslate"><span class="pre">x</span></code> within <code class="docutils literal notranslate"><span class="pre">filter_func</span></code> body behaves like our dataframe-including having the same columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filter_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -2831,7 +2890,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<p>Now we take the yearly means by type. <code class="docutils literal notranslate"><span class="pre">pd.Grouper(freq='A')</span></code> is an instruction to take the <code class="docutils literal notranslate"><span class="pre">A</span></code>nnual mean using the given datetime index.</p>
+<p>Now we take the yearly means by type. <code class="docutils literal notranslate"><span class="pre">pd.Grouper(freq='A')</span></code> is an instruction to take the <code class="docutils literal notranslate"><span class="pre">A</span></code>nnual mean using the given datetime index. You can group on as many coloumns and/or index properties as you like: this example groups by a property of the datetime index and on the <code class="docutils literal notranslate"><span class="pre">type</span></code> column, but performs the computation on the <code class="docutils literal notranslate"><span class="pre">values1</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;v1_demean_yr_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">),</span> <span class="s1">&#39;type&#39;</span><span class="p">])[</span><span class="s1">&#39;values1&#39;</span><span class="p">]</span>
@@ -3457,7 +3516,7 @@ Freq: M, Name: diff_values, dtype: float64
 <p>Let’s see a method chain in action on a real dataset so you get a feel for it. We’ll use 1,000 rows of flight data from BTS (a popular online dataset for demos of data cleaning!). TODO use github path. (For further info on method chaining in Python, <a class="reference external" href="https://calmcode.io/method-chains/introduction.html">see these videos</a>–but be aware they assume advanced knowledge of the language.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;flights1kBTS.csv&#39;</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://github.com/aeturrell/coding-for-economists/raw/main/data/flights1kBTS.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3481,7 +3540,6 @@ Freq: M, Name: diff_values, dtype: float64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
       <th>FL_DATE</th>
       <th>OP_UNIQUE_CARRIER</th>
       <th>TAIL_NUM</th>
@@ -3500,8 +3558,7 @@ Freq: M, Name: diff_values, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>403296</td>
+      <th>403296</th>
       <td>2020-01-20</td>
       <td>G4</td>
       <td>231NV</td>
@@ -3518,8 +3575,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>NaN</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>126199</td>
+      <th>126199</th>
       <td>2020-01-06</td>
       <td>MQ</td>
       <td>N687JS</td>
@@ -3536,8 +3592,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>NaN</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>417268</td>
+      <th>417268</th>
       <td>2020-01-20</td>
       <td>YV</td>
       <td>N516LR</td>
@@ -3554,8 +3609,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>NaN</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>67589</td>
+      <th>67589</th>
       <td>2020-01-04</td>
       <td>OO</td>
       <td>N804SK</td>
@@ -3572,8 +3626,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>NaN</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>102760</td>
+      <th>102760</th>
       <td>2020-01-05</td>
       <td>WN</td>
       <td>N789SW</td>
@@ -3686,7 +3739,7 @@ Freq: M, Name: diff_values, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>403296</th>
       <td>2020-01-20</td>
       <td>G4</td>
       <td>231NV</td>
@@ -3704,7 +3757,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>less near</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>126199</th>
       <td>2020-01-06</td>
       <td>MQ</td>
       <td>N687JS</td>
@@ -3722,7 +3775,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>near</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>417268</th>
       <td>2020-01-20</td>
       <td>YV</td>
       <td>N516LR</td>
@@ -3740,7 +3793,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>less near</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>67589</th>
       <td>2020-01-04</td>
       <td>OO</td>
       <td>N804SK</td>
@@ -3758,7 +3811,7 @@ Freq: M, Name: diff_values, dtype: float64
       <td>far</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>102760</th>
       <td>2020-01-05</td>
       <td>WN</td>
       <td>N789SW</td>
@@ -4049,7 +4102,7 @@ Freq: M, Name: diff_values, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>If you don’t wan tthe headscratching of melt, there’s also <code class="docutils literal notranslate"><span class="pre">wide_to_long</span></code>, which is really useful for typical data cleaning cases where you have data like this:</p>
+<p>If you don’t wan the headscratching of melt, there’s also <code class="docutils literal notranslate"><span class="pre">wide_to_long</span></code>, which is really useful for typical data cleaning cases where you have data like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A1970&quot;</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">},</span>
@@ -4852,14 +4905,13 @@ dtype: float64
 <div class="section" id="advanced-alternatives-to-pandas">
 <h2><span class="section-number">2.13. </span>(Advanced) alternatives to <strong>pandas</strong><a class="headerlink" href="#advanced-alternatives-to-pandas" title="Permalink to this headline">¶</a></h2>
 <p>Feel free to skip this section if you’re just interested in getting going as quickly as possible.</p>
-<p><strong>pandas</strong> isn’t the only game in town, not by a long way–though it’s by far the best supported and the most fully featured. But it’s always good to have options (Or, put another way, options have value!) Two alternatives to pandas are <strong>Data.Table</strong> and <strong>plydata</strong>.</p>
-<div class="section" id="plydata">
-<h3><span class="section-number">2.13.1. </span>Plydata<a class="headerlink" href="#plydata" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://plydata.readthedocs.io/en/stable/index.html">Plydata</a> follows, more or less, the syntax of the <strong>dplyr</strong> package in the R statistical language (the package is a really important part of the data ecosystem in R). It’s built around method chaining and everything being in a tidy format, which has pros and cons. Largely, the benefits are in readability and a smaller number of commands to cover the ground that you need to. The downsides are that it plays best with tidy data and when chained methods go wrong it can be more difficult to find out what the issue is. This package is quite new but it’s one to watch for the future.</p>
-</div>
+<p><strong>pandas</strong> isn’t the only game in town, not by a long way–though it’s by far the best supported and the most fully featured. But it’s always good to have options-or, put another way, options have value! Other dataframe libraries may have a syntax that you prefer or provide a speed-up (perhaps in certain situations, for example when working with very large datasets).</p>
+<p>If you’re specifically interested in how different dataframe options perform on increasingly large datasets, take a look at the benchmarks <a class="reference external" href="https://h2oai.github.io/db-benchmark/">here</a>.</p>
+<p>Here’s a quick run-through of some alternatives to <strong>pandas</strong>:</p>
 <div class="section" id="datatable">
-<h3><span class="section-number">2.13.2. </span>Datatable<a class="headerlink" href="#datatable" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://datatable.readthedocs.io/en/latest/"><strong>datatable</strong></a> is another dataframe based way to do analysis, and it has quite a different syntax again for data manipulation again. I am indebted to the very well-written datatable documentation for this explanation.</p>
+<h3><span class="section-number">2.13.1. </span>Datatable<a class="headerlink" href="#datatable" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://datatable.readthedocs.io/en/latest/"><strong>datatable</strong></a> is another dataframe based way to do analysis, and it has quite a different syntax to <strong>pandas</strong> for data manipulation. <strong>datatable</strong> is very fast, not the fastest dataframe option out there, but it holds its own. Its other major advantage is that it is comfortable running on extremely large (think 50GB) datasets. Most other dataframe packages (including in other languages) cannot cope with this.</p>
+<p>I am indebted to the very well-written datatable documentation for the rest of this demonstration.</p>
 <p>In datatable, almost all operations are achieved via so-called ‘square-bracket notation’. Operations with a (data) Frame are almost all expressed in the form</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DT</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
@@ -5135,6 +5187,25 @@ dtype: float64
 </div>
 </div></div>
 </div>
+</div>
+<div class="section" id="cudf">
+<h3><span class="section-number">2.13.2. </span>cuDF<a class="headerlink" href="#cudf" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/rapidsai/cudf"><strong>cuDF</strong></a> is still under development and so doesn’t yet have all the features of <strong>pandas</strong>. It’s a Python GPU DataFrame library built on the blisteringly fast Apache Arrow columnar memory format. The parts of the library that have been implemented follow the same commands and structure as <strong>pandas</strong>, so it should be easy to use it should you need to.</p>
+<p><strong>cuDF</strong> is <em>the</em> fastest dataframe library out there in any of Python, Julia, Rust, or R with the caveats that:</p>
+<ul class="simple">
+<li><p>this only applies to in-memory datasets, ie datasets smaller than a few GB</p></li>
+<li><p>it doesn’t yet do everything</p></li>
+<li><p>it’s only currently available on the Linux operating system</p></li>
+<li><p>you need a GPU (and associated software) to use it!</p></li>
+</ul>
+</div>
+<div class="section" id="polars">
+<h3><span class="section-number">2.13.3. </span>Polars<a class="headerlink" href="#polars" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst"><strong>Polars</strong></span> is almost as fast as <strong>cuDF</strong>, but is further down the development path. It also uses Apache Arrow as backend. It currently consists of an ‘eager’ (for datasets smaller than approximately a few GB) interface that’s very similar to <strong>pandas</strong> and a ‘lazy’ interface (don’t worry if you don’t know what that means, it’s a big data thing) that is somewhat similar to spark (a big data tool). <strong>Polars</strong> is built on the Rust language. It’s particularly effective at merging datasets.</p>
+</div>
+<div class="section" id="plydata">
+<h3><span class="section-number">2.13.4. </span>Plydata<a class="headerlink" href="#plydata" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://plydata.readthedocs.io/en/stable/index.html">Plydata</a> follows, more or less, the syntax of the <strong>dplyr</strong> package in the R statistical language (the package is a really important part of the data ecosystem in R). It’s built around method chaining and everything being in a tidy format, which has pros and cons. Largely, the benefits are in readability and a smaller number of commands to cover the ground that you need to. The downsides are that it plays best with tidy data and when chained methods go wrong it can be more difficult to find out what the issue is. This package is quite new but it’s one to watch for the future.</p>
 </div>
 </div>
 <div class="section" id="review">
