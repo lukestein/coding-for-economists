@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -54,8 +56,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/code-basics.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -1377,9 +1377,6 @@ The name in position 4 is Babbage
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ada Lovelace&#39;, &#39;Adam Smith&#39;, &#39;Grace Hopper&#39;, &#39;Charles Babbage&#39;]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">zip</span></code> keyword is doing this magic; think of it like a zipper, bringing an element of each list together in turn. It can also be used directly in a for loop:</p>
@@ -1433,7 +1430,9 @@ Charles Babbage
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-9
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 8
 7
 6
@@ -1545,9 +1544,7 @@ Cox maps into Apple
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello student&#39;, 4.8)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Hello Ada&#39;, 4.8)
+(&#39;Hello Ada&#39;, 4.8)
 </pre></div>
 </div>
 </div>
@@ -1853,7 +1850,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-16 17:13:15.646372
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-29 17:35:10.769455
 </pre></div>
 </div>
 </div>
@@ -1871,7 +1868,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/5/16, 17:13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/5/29, 17:35
 </pre></div>
 </div>
 </div>
@@ -1887,7 +1884,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-16 22:13:15.646372
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-29 22:35:10.769455
 </pre></div>
 </div>
 </div>
@@ -1904,7 +1901,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230 days until New Year
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>217 days until New Year
 </pre></div>
 </div>
 </div>
@@ -2022,7 +2019,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-29
 </pre></div>
 </div>
 </div>

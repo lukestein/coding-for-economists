@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -54,8 +56,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/code-where.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -521,9 +521,9 @@
 <p>Jupyter Notebooks are for experimentation, tinkering, and keeping text and code together. They are the lab books of the coding world. The name, ‘Jupyter’, is a reference to the three original languages supported by Jupyter, which are Julia, Python, and R, and to Galileo’s notebooks recording the discovery of the moons of Jupiter. Jupyter notebooks now support a vast number of languages beyond the original three, including Ruby, Haskell, Go, Scala, Octave, Java, and <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">more</a>.</p>
 <p>To get started with Jupyter Notebooks, you’ll need to have a Python installation and to run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyterlab</span></code> on the command line.</p>
 <p>Create a new file in Visual Studio Code and save it as <code class="docutils literal notranslate"><span class="pre">hello_world.ipynb</span></code>. The notebook interface should automatically load and you’ll see options to create cells with plus signs labelled ‘Code’ and ‘Markdown’. A cell is an independent chunk of either code or text. Text cells have markdown in them. Create a markdown cell containing the following:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># This is a title</span>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span># This is a title
 
-<span class="gu">## This is a subtitle</span>
+## This is a subtitle
 
 This notebook demonstrates printing &#39;hello world!&#39; to screen.
 </pre></div>
@@ -557,8 +557,8 @@ This notebook demonstrates printing &#39;hello world!&#39; to screen.
 </div>
 <p>When you have much more text and code, even using Jupyter Notebooks can feel a bit onerous and, historically, editing the text in a notebook was a bit tedious - especially if you wanted to move cells around a lot. Markdown makes for a much more pleasant writing experience.</p>
 <p><em>Markdown</em> is, like HTML, a mark-up language: a way of specifying rich text (such as links, including an image, displaying bullets, italics) using simple text commands. What this means is that by using a few extra symbols, Markdown creates a document with rich features. For example, here is the markdown syntax for showing different text styles:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="ge">*this is displayed in italics*</span>
-<span class="gs">**this is displayed in bold**</span>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>*this is displayed in italics*
+**this is displayed in bold**
 </pre></div>
 </div>
 <p>Markdown supports LaTeX equations too:</p>

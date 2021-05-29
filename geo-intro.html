@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -1883,7 +1885,7 @@ Name: geometry, dtype: geometry
 <div class="section" id="openstreetmap-and-osmnx">
 <h2><span class="section-number">1.7. </span>OpenStreetMap and Osmnx<a class="headerlink" href="#openstreetmap-and-osmnx" title="Permalink to this headline">¶</a></h2>
 <p>OpenStreetMap (OSM) is a crowd-sourced project that aims to create a free map of the world containing information about streets, buildings, landmarks, landuse, and more. Its users regularly update the information it holds. Think Wikipedia but for a world map. It excels at highly detailed and freely available renderings of streets.</p>
-<p><a class="reference external" href="https://geoffboeing.com/publications/osmnx-complex-street-networks/"><strong>Osmnx</strong></a> is a package that can retrieve, construct, analyze, and visualize street networks from OpenStreetMap <span id="id2">[<a class="reference internal" href="zreferences.html#id13"><span>12</span></a>]</span>. It also does some geocoding on the fly. Let’s see it in action and feed in the address we obtained in the geocoding example from earlier; using the <code class="docutils literal notranslate"><span class="pre">graph_from_point</span></code> method will give us the network of streets around a location.</p>
+<p><a class="reference external" href="https://geoffboeing.com/publications/osmnx-complex-street-networks/"><strong>Osmnx</strong></a> is a package that can retrieve, construct, analyze, and visualize street networks from OpenStreetMap <span id="id2">[<a class="reference internal" href="zreferences.html#id13"><span>13</span></a>]</span>. It also does some geocoding on the fly. Let’s see it in action and feed in the address we obtained in the geocoding example from earlier; using the <code class="docutils literal notranslate"><span class="pre">graph_from_point</span></code> method will give us the network of streets around a location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
@@ -1977,7 +1979,11 @@ Name: geometry, dtype: geometry
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/geo-intro_87_0.png" src="_images/geo-intro_87_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+<img alt="_images/geo-intro_87_1.png" src="_images/geo-intro_87_1.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">amenity</span></code> is just one type of geometry that can be retrieved too: others are <code class="docutils literal notranslate"><span class="pre">building</span></code>, <code class="docutils literal notranslate"><span class="pre">landuse</span></code>, and <code class="docutils literal notranslate"><span class="pre">leisure</span></code>. You can find a list of them <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Map_features">here</a>. For example, here are the (many) churches within around 1km of the Bank of England:</p>
@@ -1990,6 +1996,12 @@ Name: geometry, dtype: geometry
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1998,7 +2010,11 @@ Name: geometry, dtype: geometry
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/geo-intro_90_0.png" src="_images/geo-intro_90_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+<img alt="_images/geo-intro_90_1.png" src="_images/geo-intro_90_1.png" />
 </div>
 </div>
 </div>
