@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,10 +54,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/text-intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Intro to Geo-Spatial Analysis" href="geo-intro.html" />
+    <link rel="next" title="2. Natural Language Processing" href="text-nlp.html" />
     <link rel="prev" title="3. Regression" href="econmt-regression.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -247,6 +247,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +279,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -548,7 +565,7 @@
               <div>
                 
   <div class="section" id="introduction-to-text">
-<h1><span class="section-number">1. </span>Introduction to Text<a class="headerlink" href="#introduction-to-text" title="Permalink to this headline">¶</a></h1>
+<span id="text-intro"></span><h1><span class="section-number">1. </span>Introduction to Text<a class="headerlink" href="#introduction-to-text" title="Permalink to this headline">¶</a></h1>
 <p>This chapter covers how to use code to work with text as data, including opening files with text in, changing and cleaning text, regular expressions, and vectorised operations on text.</p>
 <p>It has benefitted from the <a class="reference external" href="https://mkaz.blog/code/python-string-format-cookbook/">Python String Cook Book</a> and Jake VanderPlas’ <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/03.10-working-with-strings.html">Python Data Science Handbook</a>.</p>
 <div class="section" id="an-aside-on-encodings">
@@ -614,7 +631,7 @@
 </div>
 </div>
 </div>
-<p>Strings do have many similarities to lists but one way in which they are different is that they are immutable. This means commands like <code class="docutils literal notranslate"><span class="pre">var[1]</span> <span class="pre">=</span> <span class="pre">&quot;B&quot;</span></code> will result in an error. If you want to change a single character, you will have to replace the entire string. In this example, the command to do that would be <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">&quot;Banana&quot;</span></code>.</p>
+<p>Note that strings, like tuples such as <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> but unlike lists such as <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, are <em>immutable</em>. This means commands like <code class="docutils literal notranslate"><span class="pre">var[0]</span> <span class="pre">=</span> <span class="pre">&quot;B&quot;</span></code> will result in an error. If you want to change a single character, you will have to replace the entire string. In this example, the command to do that would be <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">&quot;Banana&quot;</span></code>.</p>
 <p>Like lists, you can find the length of a string using <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1463,7 +1480,7 @@ The lazy match is stacko
 </div>
 <div class="section" id="scaling-up-from-a-single-string-to-a-corpus">
 <h2><span class="section-number">1.5. </span>Scaling up from a single string to a corpus<a class="headerlink" href="#scaling-up-from-a-single-string-to-a-corpus" title="Permalink to this headline">¶</a></h2>
-<p>For this section, it’s useful to be familiar with the <strong>pandas</strong> package, which is covered in the <a class="reference internal" href="data-analysis-quickstart.html#data-quickstart"><span class="std std-ref">Data Analysis Quickstart</span></a> and <a class="reference internal" href="data-advanced.html#data-analysis"><span class="std std-ref">Data Analysis</span></a> sections. This section will closely follow the treatment by Jake VanderPlas.</p>
+<p>For this section, it’s useful to be familiar with the <strong>pandas</strong> package, which is covered in the <a class="reference internal" href="data-analysis-quickstart.html#data-quickstart"><span class="std std-ref">Data Analysis Quickstart</span></a> and <a class="reference internal" href="data-intro.html#working-with-data"><span class="std std-ref">Working with Data</span></a> sections. This section will closely follow the treatment by Jake VanderPlas.</p>
 <p>We’ve seen how to work with individual strings. But often we want to work with a group of strings, otherwise known as a corpus, that is a collection of texts. It could be a collection of words, sentences, paragraphs, or some domain-based grouping (eg job descriptions).</p>
 <p>Fortunately, many of the methods that we have seen deployed on a single string can be straightforwardly scaled up to hundreds, thousands, or millions of strings using <strong>pandas</strong> or other tools. This scaling up is achieved via <em>vectorisation</em>, in analogy with going from a single value (a scalar) to multiple values in a list (a vector).</p>
 <p>As a very minimal example, here is capitalisation of names vectorised using a list comprehension:</p>
@@ -1989,7 +2006,7 @@ Name: names, dtype: object
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="econmt-regression.html" title="previous page"><span class="section-number">3. </span>Regression</a>
-    <a class='right-next' id="next-link" href="geo-intro.html" title="next page"><span class="section-number">1. </span>Intro to Geo-Spatial Analysis</a>
+    <a class='right-next' id="next-link" href="text-nlp.html" title="next page"><span class="section-number">2. </span>Natural Language Processing</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

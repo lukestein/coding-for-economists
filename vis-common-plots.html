@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,6 +54,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/vis-common-plots.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -247,6 +247,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +279,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -1313,7 +1330,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_15_0.png" src="_images/vis-common-plots_15_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783046570367)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775517902876)&gt;
 </pre></div>
 </div>
 </div>
@@ -1337,12 +1354,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-555bf52ee7ad49b4aeebe01ff0feb1f0"></div>
+<div id="altair-viz-ca23e059f6aa403eb54cc9d53e25b049"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-555bf52ee7ad49b4aeebe01ff0feb1f0") {
-      outputDiv = document.getElementById("altair-viz-555bf52ee7ad49b4aeebe01ff0feb1f0");
+    if (outputDiv.id !== "altair-viz-ca23e059f6aa403eb54cc9d53e25b049") {
+      outputDiv = document.getElementById("altair-viz-ca23e059f6aa403eb54cc9d53e25b049");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1553,11 +1570,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_25_1.png" src="_images/vis-common-plots_25_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783045522044)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449132487)&gt;
 </pre></div>
 </div>
 </div>
@@ -1579,12 +1596,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3d5934452b8840a7ac2b9f0b960c7e8f"></div>
+<div id="altair-viz-123956ecceaa4e0bacab3585ecf07e7b"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3d5934452b8840a7ac2b9f0b960c7e8f") {
-      outputDiv = document.getElementById("altair-viz-3d5934452b8840a7ac2b9f0b960c7e8f");
+    if (outputDiv.id !== "altair-viz-123956ecceaa4e0bacab3585ecf07e7b") {
+      outputDiv = document.getElementById("altair-viz-123956ecceaa4e0bacab3585ecf07e7b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1779,7 +1796,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_33_0.png" src="_images/vis-common-plots_33_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783047267015)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449046143)&gt;
 </pre></div>
 </div>
 </div>
@@ -1840,11 +1857,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 14 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_41_1.png" src="_images/vis-common-plots_41_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783050183656)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775500034335)&gt;
 </pre></div>
 </div>
 </div>
@@ -1864,12 +1881,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3f6591893aa7470a984b23fd9bcee832"></div>
+<div id="altair-viz-cb0e720d75c14977adda8e3f02d85880"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3f6591893aa7470a984b23fd9bcee832") {
-      outputDiv = document.getElementById("altair-viz-3f6591893aa7470a984b23fd9bcee832");
+    if (outputDiv.id !== "altair-viz-cb0e720d75c14977adda8e3f02d85880") {
+      outputDiv = document.getElementById("altair-viz-cb0e720d75c14977adda8e3f02d85880");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2069,11 +2086,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom_path.py:75: PlotnineWarning: geom_path: Removed 4 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/geoms/geom_path.py:75: PlotnineWarning: geom_path: Removed 4 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_51_1.png" src="_images/vis-common-plots_51_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783018214816)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775519261380)&gt;
 </pre></div>
 </div>
 </div>
@@ -2094,12 +2111,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-02cd72e902f24baf844f744da5986b8b"></div>
+<div id="altair-viz-9d20b07c321a46568f270627ef756cbb"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-02cd72e902f24baf844f744da5986b8b") {
-      outputDiv = document.getElementById("altair-viz-02cd72e902f24baf844f744da5986b8b");
+    if (outputDiv.id !== "altair-viz-9d20b07c321a46568f270627ef756cbb") {
+      outputDiv = document.getElementById("altair-viz-9d20b07c321a46568f270627ef756cbb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2239,7 +2256,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fcf6a3b2a00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fb369a4c3d0&gt;
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_59_1.png" src="_images/vis-common-plots_59_1.png" />
@@ -2261,7 +2278,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_61_0.png" src="_images/vis-common-plots_61_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783050208452)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775519266907)&gt;
 </pre></div>
 </div>
 </div>
@@ -2283,12 +2300,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-ea0b3d17fe8d40e18ca9fe6239a3eddf"></div>
+<div id="altair-viz-65517d42eeae41ceb985f8ee0c602871"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ea0b3d17fe8d40e18ca9fe6239a3eddf") {
-      outputDiv = document.getElementById("altair-viz-ea0b3d17fe8d40e18ca9fe6239a3eddf");
+    if (outputDiv.id !== "altair-viz-65517d42eeae41ceb985f8ee0c602871") {
+      outputDiv = document.getElementById("altair-viz-65517d42eeae41ceb985f8ee0c602871");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2444,7 +2461,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fcf61da3a30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fb35a855760&gt;
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_69_1.png" src="_images/vis-common-plots_69_1.png" />
@@ -2465,7 +2482,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_71_0.png" src="_images/vis-common-plots_71_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783045629684)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449176610)&gt;
 </pre></div>
 </div>
 </div>
@@ -2488,12 +2505,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-0e0a28231ca64087beed84111c071e96"></div>
+<div id="altair-viz-cb0297415907495baf5480130990aefc"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0e0a28231ca64087beed84111c071e96") {
-      outputDiv = document.getElementById("altair-viz-0e0a28231ca64087beed84111c071e96");
+    if (outputDiv.id !== "altair-viz-cb0297415907495baf5480130990aefc") {
+      outputDiv = document.getElementById("altair-viz-cb0297415907495baf5480130990aefc");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2586,7 +2603,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_79_0.png" src="_images/vis-common-plots_79_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783047420633)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775432509483)&gt;
 </pre></div>
 </div>
 </div>
@@ -2608,12 +2625,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-0e8f055a41794dfc907b1d40b66a10f7"></div>
+<div id="altair-viz-c2f0d61e6e81492a9a68248b195bd288"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0e8f055a41794dfc907b1d40b66a10f7") {
-      outputDiv = document.getElementById("altair-viz-0e8f055a41794dfc907b1d40b66a10f7");
+    if (outputDiv.id !== "altair-viz-c2f0d61e6e81492a9a68248b195bd288") {
+      outputDiv = document.getElementById("altair-viz-c2f0d61e6e81492a9a68248b195bd288");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2803,7 +2820,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_88_0.png" src="_images/vis-common-plots_88_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783047109386)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775499918906)&gt;
 </pre></div>
 </div>
 </div>
@@ -2827,12 +2844,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-96cd823b70e746058de98022d02dd628"></div>
+<div id="altair-viz-10337cf41903428fba4bd832c4d1e630"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-96cd823b70e746058de98022d02dd628") {
-      outputDiv = document.getElementById("altair-viz-96cd823b70e746058de98022d02dd628");
+    if (outputDiv.id !== "altair-viz-10337cf41903428fba4bd832c4d1e630") {
+      outputDiv = document.getElementById("altair-viz-10337cf41903428fba4bd832c4d1e630");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3016,11 +3033,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:372: PlotnineWarning: stat_bin : Removed 2 rows containing non-finite values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:372: PlotnineWarning: stat_bin : Removed 2 rows containing non-finite values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_98_1.png" src="_images/vis-common-plots_98_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783045610578)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775517897722)&gt;
 </pre></div>
 </div>
 </div>
@@ -3039,12 +3056,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-aa65ed0b567146ad97502bb6f0bf96f4"></div>
+<div id="altair-viz-a76eb1c34e70469993da3a1f50edcf3c"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-aa65ed0b567146ad97502bb6f0bf96f4") {
-      outputDiv = document.getElementById("altair-viz-aa65ed0b567146ad97502bb6f0bf96f4");
+    if (outputDiv.id !== "altair-viz-a76eb1c34e70469993da3a1f50edcf3c") {
+      outputDiv = document.getElementById("altair-viz-a76eb1c34e70469993da3a1f50edcf3c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3144,11 +3161,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/plotnine/layer.py:467: PlotnineWarning: geom_point : Removed 2 rows containing missing values.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_107_1.png" src="_images/vis-common-plots_107_1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783049602877)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449198689)&gt;
 </pre></div>
 </div>
 </div>
@@ -3198,12 +3215,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c5f95a5088a948d69faed197fdd5b7f8"></div>
+<div id="altair-viz-643b8bbf8486467085aa6b5524369883"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c5f95a5088a948d69faed197fdd5b7f8") {
-      outputDiv = document.getElementById("altair-viz-c5f95a5088a948d69faed197fdd5b7f8");
+    if (outputDiv.id !== "altair-viz-643b8bbf8486467085aa6b5524369883") {
+      outputDiv = document.getElementById("altair-viz-643b8bbf8486467085aa6b5524369883");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3439,7 +3456,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_117_0.png" src="_images/vis-common-plots_117_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783038343623)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449239354)&gt;
 </pre></div>
 </div>
 </div>
@@ -3459,12 +3476,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-e7e19d1b6b3c4c0f9f03cf7f52e0dfbc"></div>
+<div id="altair-viz-82b294961f98462e897ea3ef47fb1f66"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e7e19d1b6b3c4c0f9f03cf7f52e0dfbc") {
-      outputDiv = document.getElementById("altair-viz-e7e19d1b6b3c4c0f9f03cf7f52e0dfbc");
+    if (outputDiv.id !== "altair-viz-82b294961f98462e897ea3ef47fb1f66") {
+      outputDiv = document.getElementById("altair-viz-82b294961f98462e897ea3ef47fb1f66");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3659,7 +3676,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_127_0.png" src="_images/vis-common-plots_127_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783047361359)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449211408)&gt;
 </pre></div>
 </div>
 </div>
@@ -3679,12 +3696,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-49d26d7c5ab047be8fc738b6315be0e6"></div>
+<div id="altair-viz-3e5e8ccde0fc479bbda5b20b87973b1e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-49d26d7c5ab047be8fc738b6315be0e6") {
-      outputDiv = document.getElementById("altair-viz-49d26d7c5ab047be8fc738b6315be0e6");
+    if (outputDiv.id !== "altair-viz-3e5e8ccde0fc479bbda5b20b87973b1e") {
+      outputDiv = document.getElementById("altair-viz-3e5e8ccde0fc479bbda5b20b87973b1e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3786,7 +3803,7 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_136_0.png" src="_images/vis-common-plots_136_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783048993274)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449417789)&gt;
 </pre></div>
 </div>
 </div>
@@ -3830,12 +3847,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3c1c684a9a2c45138f5eb459497d480a"></div>
+<div id="altair-viz-878f77cc000344529ead56b90d3fd642"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3c1c684a9a2c45138f5eb459497d480a") {
-      outputDiv = document.getElementById("altair-viz-3c1c684a9a2c45138f5eb459497d480a");
+    if (outputDiv.id !== "altair-viz-878f77cc000344529ead56b90d3fd642") {
+      outputDiv = document.getElementById("altair-viz-878f77cc000344529ead56b90d3fd642");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -3943,7 +3960,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_145_0.png" src="_images/vis-common-plots_145_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783048670326)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775534624690)&gt;
 </pre></div>
 </div>
 </div>
@@ -4084,7 +4101,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_153_0.png" src="_images/vis-common-plots_153_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783045715152)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775449480042)&gt;
 </pre></div>
 </div>
 </div>
@@ -4104,12 +4121,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-88abad7c3ba1406bae8a4df584d4e9c6"></div>
+<div id="altair-viz-17326203e4c645498d55042e926fff6d"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-88abad7c3ba1406bae8a4df584d4e9c6") {
-      outputDiv = document.getElementById("altair-viz-88abad7c3ba1406bae8a4df584d4e9c6");
+    if (outputDiv.id !== "altair-viz-17326203e4c645498d55042e926fff6d") {
+      outputDiv = document.getElementById("altair-viz-17326203e4c645498d55042e926fff6d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4320,7 +4337,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_163_0.png" src="_images/vis-common-plots_163_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783038353261)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775432502456)&gt;
 </pre></div>
 </div>
 </div>
@@ -4340,12 +4357,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-58ba7620f6bc4689924d694057dcde11"></div>
+<div id="altair-viz-b6d8eeca12b14341b151b8bcf77f142e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-58ba7620f6bc4689924d694057dcde11") {
-      outputDiv = document.getElementById("altair-viz-58ba7620f6bc4689924d694057dcde11");
+    if (outputDiv.id !== "altair-viz-b6d8eeca12b14341b151b8bcf77f142e") {
+      outputDiv = document.getElementById("altair-viz-b6d8eeca12b14341b151b8bcf77f142e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -4612,7 +4629,7 @@ Name: number, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
 </pre></div>
 </div>
 <img alt="_images/vis-common-plots_175_1.png" src="_images/vis-common-plots_175_1.png" />
@@ -4969,12 +4986,12 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a668afd6f5ee4cc4b0ac82df35dc3e37"></div>
+<div id="altair-viz-53296caa0eac441aaf25a0522e5af3cc"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a668afd6f5ee4cc4b0ac82df35dc3e37") {
-      outputDiv = document.getElementById("altair-viz-a668afd6f5ee4cc4b0ac82df35dc3e37");
+    if (outputDiv.id !== "altair-viz-53296caa0eac441aaf25a0522e5af3cc") {
+      outputDiv = document.getElementById("altair-viz-53296caa0eac441aaf25a0522e5af3cc");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -5281,7 +5298,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_200_0.png" src="_images/vis-common-plots_200_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783023937181)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775415855159)&gt;
 </pre></div>
 </div>
 </div>
@@ -5406,7 +5423,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_206_0.png" src="_images/vis-common-plots_206_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783023936531)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775535303307)&gt;
 </pre></div>
 </div>
 </div>
@@ -5533,7 +5550,7 @@ Name: number, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/vis-common-plots_212_0.png" src="_images/vis-common-plots_212_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8783024714849)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8775519332852)&gt;
 </pre></div>
 </div>
 </div>

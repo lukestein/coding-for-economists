@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,10 +54,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/maths-maths-coding.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Coming from Stata" href="coming-from-stata.html" />
+    <link rel="next" title="1. Automating Research Outputs" href="auto-research-outputs.html" />
     <link rel="prev" title="2. Geo-Spatial Visualisation" href="geo-vis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -247,6 +247,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +279,18 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -821,7 +838,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>289 µs ± 63.8 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>198 µs ± 7.58 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -835,7 +852,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>858 ns ± 13.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>813 ns ± 14.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -978,8 +995,7 @@
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([[1., 0., 0.],
         [0., 1., 0.],
-        [0., 0., 1.]]),
- array([], shape=(0, 3), dtype=float64)]
+        [0., 0., 1.]]), array([], shape=(0, 3), dtype=float64)]
 </pre></div>
 </div>
 </div>
@@ -1386,7 +1402,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>273 ms ± 68.3 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.3 ms ± 9.05 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
 </pre></div>
 </div>
 </div>
@@ -1399,7 +1415,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.4 ms ± 2.96 ms per loop (mean ± std. dev. of 3 runs, 15 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 ms ± 231 µs per loop (mean ± std. dev. of 3 runs, 15 loops each)
 </pre></div>
 </div>
 </div>
@@ -1540,7 +1556,7 @@ M^{-1} M \cdot \vec{x} = I \cdot \vec{x} = M^{-1} \cdot \vec{c}
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="geo-vis.html" title="previous page"><span class="section-number">2. </span>Geo-Spatial Visualisation</a>
-    <a class='right-next' id="next-link" href="coming-from-stata.html" title="next page">Coming from Stata</a>
+    <a class='right-next' id="next-link" href="auto-research-outputs.html" title="next page"><span class="section-number">1. </span>Automating Research Outputs</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

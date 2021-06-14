@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,6 +54,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/code-basics.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -247,6 +247,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +279,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -581,7 +598,7 @@
 <div class="section" id="values-variables-and-types">
 <h2><span class="section-number">2.2. </span>Values, variables, and types<a class="headerlink" href="#values-variables-and-types" title="Permalink to this headline">¶</a></h2>
 <p>A value is datum such as a number or text. There are different types of values: 352.3 is known as a float or double, 22 is an integer, and “Hello World!” is a string. A variable is a name that refers to a value: you can think of a variable as a box that has a value, or multiple values, packed inside it.</p>
-<p>Almost word can be a variable name as long as it starts with a letter or an underscore, although there are some special keywords that can’t be used because they already have a role in the Python language: these include <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, and <code class="docutils literal notranslate"><span class="pre">lambda</span></code>.</p>
+<p>Almost any word can be a variable name as long as it starts with a letter or an underscore, although there are some special keywords that can’t be used because they already have a role in the Python language: these include <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, and <code class="docutils literal notranslate"><span class="pre">lambda</span></code>.</p>
 <p>Creating a variable in Python is achieved via an assignment (putting a value in the box), and this assignment is done via the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator. The box, or variable, goes on the left while the value we wish to store appears on the right. It’s simpler than it sounds:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,7 +770,6 @@ one more entry
 </div>
 </div>
 </div>
-<p>You can</p>
 <p>As well as accessing positions in lists using indexing, you can use <em>slices</em> on lists. This uses the colon character, <code class="docutils literal notranslate"><span class="pre">:</span></code>, to stand in for ‘from the beginning’ or ‘until the end’ (when only appearing once). For instance, to print just the last two entries, we would use the index <code class="docutils literal notranslate"><span class="pre">-2:</span></code> to mean from the second-to-last onwards. Here are two distinct examples: getting the first three and last three entries to be successively printed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1430,9 +1446,7 @@ Charles Babbage
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+9
 8
 7
 6
@@ -1850,7 +1864,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-29 17:35:10.769455
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-06-14 20:57:07.376286
 </pre></div>
 </div>
 </div>
@@ -1868,7 +1882,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/5/29, 17:35
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021/6/14, 20:57
 </pre></div>
 </div>
 </div>
@@ -1884,7 +1898,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-29 22:35:10.769455
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-15 01:57:07.376286
 </pre></div>
 </div>
 </div>
@@ -1901,7 +1915,7 @@ Name: strings, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>217 days until New Year
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>201 days until New Year
 </pre></div>
 </div>
 </div>
@@ -2019,7 +2033,7 @@ red lorry
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-29
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-06-14
 </pre></div>
 </div>
 </div>

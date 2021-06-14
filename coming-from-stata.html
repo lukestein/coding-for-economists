@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -60,7 +58,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Coming from Matlab" href="coming-from-matlab.html" />
-    <link rel="prev" title="1. Intro to Mathematics with Code" href="maths-maths-coding.html" />
+    <link rel="prev" title="1. Automating Research Outputs" href="auto-research-outputs.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -247,6 +245,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +277,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -447,7 +462,7 @@
 <div class="section" id="stata-python">
 <h2>Stata &lt;==&gt; Python<a class="headerlink" href="#stata-python" title="Permalink to this headline">¶</a></h2>
 <p>What follows is a giant table of translations between Stata code and Python’s <a class="reference external" href="https://pandas.pydata.org/"><strong>pandas</strong></a>(panel-data-analysis) package. The econometrics examples below use Daniel M Sullivan’s <a class="reference external" href="https://www.danielmsullivan.com/econtools/metrics.html"><strong>econtools</strong></a> package, but you could also use <a class="reference external" href="https://www.statsmodels.org/"><strong>statsmodels</strong></a>. Bear in mind, it’s certainly not meant to be exhaustive but it should give you a flavour of the syntax differences and, in some cases, I’ve pointed out where to find further information.</p>
-<p>Following, Daniel’s treatment, the Stata-to-Python translations assume that, in Python, you have a <strong>pandas</strong> DataFrame called <code class="docutils literal notranslate"><span class="pre">df</span></code>. We will use placeholders like <code class="docutils literal notranslate"><span class="pre">varname</span></code> for Stata variables and <code class="docutils literal notranslate"><span class="pre">df['varname']</span></code> for the Python equivalent. Remember that you need to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code> before running any of the examples that use <code class="docutils literal notranslate"><span class="pre">pd</span></code>. For the econometrics examples, you will need <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">econtools.metrics</span> <span class="pre">as</span> <span class="pre">mt</span></code>.</p>
+<p>Following Daniel’s treatment, the Stata-to-Python translations assume that, in Python, you have a <strong>pandas</strong> DataFrame called <code class="docutils literal notranslate"><span class="pre">df</span></code>. We will use placeholders like <code class="docutils literal notranslate"><span class="pre">varname</span></code> for Stata variables and <code class="docutils literal notranslate"><span class="pre">df['varname']</span></code> for the Python equivalent. Remember that you need to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code> before running any of the examples that use <code class="docutils literal notranslate"><span class="pre">pd</span></code>. For the econometrics examples, you will need <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">econtools.metrics</span> <span class="pre">as</span> <span class="pre">mt</span></code>.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Stata</p></th>
@@ -626,7 +641,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="maths-maths-coding.html" title="previous page"><span class="section-number">1. </span>Intro to Mathematics with Code</a>
+    <a class='left-prev' id="prev-link" href="auto-research-outputs.html" title="previous page"><span class="section-number">1. </span>Automating Research Outputs</a>
     <a class='right-next' id="next-link" href="coming-from-matlab.html" title="next page">Coming from Matlab</a>
 
     </div>

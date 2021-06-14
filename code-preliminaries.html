@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -247,6 +245,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +277,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -473,7 +488,7 @@
                 
   <div class="section" id="preliminaries">
 <h1><span class="section-number">1. </span>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, you’ll find out about how to get the basic tools you need to code set up on your own computer. While you don’t need to know all of this if you’re planning on using the ‘Googler Colab’ or ‘Binder’ options to run code examples from the book, you may find it helpful to read through this chapter anyway.</p>
+<p>In this chapter, you’ll find out about how to get the basic tools you need to code set up on your own computer. While you don’t need to know all of this if you’re planning on using the ‘Google Colab’ or ‘Binder’ options to run code examples from the book, you may find it helpful to read through this chapter anyway.</p>
 <div class="section" id="computational-environment">
 <h2><span class="section-number">1.1. </span>Computational environment<a class="headerlink" href="#computational-environment" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="operating-system">
@@ -516,7 +531,7 @@
 <li><p>automatic code checking for basic errors</p></li>
 </ul>
 <p>People have strong feelings about which IDE they prefer. I strongly recommend <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, a free and open source IDE from Microsoft that is available on all major operating systems. Just like Python itself, Visual Studio can be extended with packages, and it is those packages, called extensions in this case, that make it so useful. Visual Studio Code is available on all major operating systems.</p>
-<p>Another IDE that you might find useful from time to time is <a class="reference external" href="https://jupyter.org/">Jupyter Lab</a>, which runs in a browser window. It is designed around ‘Jupyter’ notebooks (with the extension ‘.ipynb’), which mix code and text, rather than scripts, which are predominantly code (and have extension ‘.py’). The name, ‘Jupyter’, is a reference to the three original languages supported by Jupyter, which are Julia, Python, and R, and to Galileo’s notebooks recording the discovery of the moons of Jupiter. Jupyter notebooks now support a vast number of languages beyond the original three, including Ruby, Haskell, Go, Scala, Octave, Java, and <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">more</a>. There’ll be more about the difference between scripts and notebooks later on in the book, for now though, we’ll keep our focus on scripts and Visual Studio Code though.</p>
+<p>Another IDE that you might find useful from time to time is <a class="reference external" href="https://jupyter.org/">Jupyter Lab</a>, which runs in a browser window. It is designed around ‘Jupyter’ notebooks (with the extension ‘.ipynb’), which mix code and text, rather than scripts, which are predominantly code (and have extension ‘.py’). The name, ‘Jupyter’, is a reference to the three original languages supported by Jupyter, which are Julia, Python, and R, and to Galileo’s notebooks recording the discovery of the moons of Jupiter. Jupyter notebooks now support a vast number of languages beyond the original three, including Ruby, Haskell, Go, Scala, Octave, Java, and <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">more</a>. There’ll be more about the difference between scripts and notebooks later on in the book, for now though, we’ll keep our focus on scripts and Visual Studio Code.</p>
 <p>Download and install Visual Studio Code. If you need some help, see this <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">very short tutorial</a> on setting it up from Microsoft (ignore the bits about debugging and installing packages).</p>
 <p>Once you have Visual Studio Code installed and opened, navigate to the ‘extensions’ tab on the left hand side navigation bar. You’ll need to install the following extensions, which you can search for by using the text box:</p>
 <ul class="simple">
@@ -529,7 +544,8 @@
 </div>
 <div class="section" id="running-your-first-code-hello-world">
 <h2><span class="section-number">1.2. </span>Running your first code: Hello World!<a class="headerlink" href="#running-your-first-code-hello-world" title="Permalink to this headline">¶</a></h2>
-<p>Now you will run your first code. Create a new folder for your work (perhaps named ‘codingforeconomists’, no white space), open that folder with Visual Studio Code and create a new file, naming it <code class="docutils literal notranslate"><span class="pre">hello_world.py</span></code>. The file extension, <code class="docutils literal notranslate"><span class="pre">.py</span></code>, is very important as it implicitly tells Visual Studio Code that this is a Python script. In the Visual Studio Code editor, add a single line to the file:</p>
+<p>Now you will create and run your first code. If you get stuck, there’s a more in-depth tutorial over at the <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">VS Code documentation</a>.</p>
+<p>Create a new folder for your work (perhaps named ‘codingforeconomists’, no white space), open that folder with Visual Studio Code and create a new file, naming it <code class="docutils literal notranslate"><span class="pre">hello_world.py</span></code>. The file extension, <code class="docutils literal notranslate"><span class="pre">.py</span></code>, is very important as it implicitly tells Visual Studio Code that this is a Python script. In the Visual Studio Code editor, add a single line to the file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -597,14 +613,14 @@
 </div>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
-<p>Try installing the <strong>matplotlib</strong>, *<em>pandas</em>, and <strong>statsmodels</strong> packages.</p>
+<p>Try installing the <strong>matplotlib</strong>, <strong>pandas</strong>, and <strong>statsmodels</strong> packages.</p>
 </div>
 </div>
 </div>
 <div class="section" id="fine-tuning-your-integrated-development-environment">
 <h2><span class="section-number">1.4. </span>Fine-tuning your integrated development environment<a class="headerlink" href="#fine-tuning-your-integrated-development-environment" title="Permalink to this headline">¶</a></h2>
 <p>If you just want to get on with some coding, feel free to skip this section.</p>
-<p>Once you’ve downloaded <em>Visual Studio Code</em> and installed some basic extension - Python, Pylance, and Jupyter - you’ll have enough to get going but VS Code can do a whole lot more with some extra add ons. You can install these using the extensions tab on the left hand side of VS Code. Here are the ones I recommend and why:</p>
+<p>Once you’ve downloaded <em>Visual Studio Code</em> and installed some basic extensions - Python, Pylance, and Jupyter - you’ll have enough to get going but VS Code can do a whole lot more with some extra add ons. You can install these using the extensions tab on the left hand side of VS Code. Here are the ones I recommend and why:</p>
 <ul class="simple">
 <li><p>Markdown extensions - markdown is a simple text language that is often used to provide readmes for code repositories. It comes with the file extension .md</p>
 <ul>

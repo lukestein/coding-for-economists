@@ -1,6 +1,6 @@
 # Preliminaries
 
-In this chapter, you'll find out about how to get the basic tools you need to code set up on your own computer. While you don't need to know all of this if you're planning on using the 'Googler Colab' or 'Binder' options to run code examples from the book, you may find it helpful to read through this chapter anyway.
+In this chapter, you'll find out about how to get the basic tools you need to code set up on your own computer. While you don't need to know all of this if you're planning on using the 'Google Colab' or 'Binder' options to run code examples from the book, you may find it helpful to read through this chapter anyway.
 
 ## Computational environment
 
@@ -62,7 +62,7 @@ Here are some of the useful features an IDE might have:
 
 People have strong feelings about which IDE they prefer. I strongly recommend [Visual Studio Code](https://code.visualstudio.com/), a free and open source IDE from Microsoft that is available on all major operating systems. Just like Python itself, Visual Studio can be extended with packages, and it is those packages, called extensions in this case, that make it so useful. Visual Studio Code is available on all major operating systems.
 
-Another IDE that you might find useful from time to time is [Jupyter Lab](https://jupyter.org/), which runs in a browser window. It is designed around 'Jupyter' notebooks (with the extension '.ipynb'), which mix code and text, rather than scripts, which are predominantly code (and have extension '.py'). The name, 'Jupyter', is a reference to the three original languages supported by Jupyter, which are Julia, Python, and R, and to Galileo's notebooks recording the discovery of the moons of Jupiter. Jupyter notebooks now support a vast number of languages beyond the original three, including Ruby, Haskell, Go, Scala, Octave, Java, and [more](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels). There'll be more about the difference between scripts and notebooks later on in the book, for now though, we'll keep our focus on scripts and Visual Studio Code though.
+Another IDE that you might find useful from time to time is [Jupyter Lab](https://jupyter.org/), which runs in a browser window. It is designed around 'Jupyter' notebooks (with the extension '.ipynb'), which mix code and text, rather than scripts, which are predominantly code (and have extension '.py'). The name, 'Jupyter', is a reference to the three original languages supported by Jupyter, which are Julia, Python, and R, and to Galileo's notebooks recording the discovery of the moons of Jupiter. Jupyter notebooks now support a vast number of languages beyond the original three, including Ruby, Haskell, Go, Scala, Octave, Java, and [more](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels). There'll be more about the difference between scripts and notebooks later on in the book, for now though, we'll keep our focus on scripts and Visual Studio Code.
 
 Download and install Visual Studio Code. If you need some help, see this [very short tutorial](https://code.visualstudio.com/docs/python/python-tutorial) on setting it up from Microsoft (ignore the bits about debugging and installing packages).
 
@@ -76,7 +76,9 @@ If you have installed these and Python then you are ready to run your first scri
 
 ## Running your first code: Hello World!
 
-Now you will run your first code. Create a new folder for your work (perhaps named 'codingforeconomists', no white space), open that folder with Visual Studio Code and create a new file, naming it `hello_world.py`. The file extension, `.py`, is very important as it implicitly tells Visual Studio Code that this is a Python script. In the Visual Studio Code editor, add a single line to the file:
+Now you will create and run your first code. If you get stuck, there's a more in-depth tutorial over at the [VS Code documentation](https://code.visualstudio.com/docs/python/python-tutorial).
+
+Create a new folder for your work (perhaps named 'codingforeconomists', no white space), open that folder with Visual Studio Code and create a new file, naming it `hello_world.py`. The file extension, `.py`, is very important as it implicitly tells Visual Studio Code that this is a Python script. In the Visual Studio Code editor, add a single line to the file:
 
 ```python
 print('Hello World!')
@@ -174,14 +176,14 @@ your-username@your-computer current-directory % conda activate
 ```
 
 ```{admonition} Exercise
-Try installing the **matplotlib**, **pandas*, and **statsmodels** packages.
+Try installing the **matplotlib**, **pandas**, and **statsmodels** packages.
 ```
 
 ## Fine-tuning your integrated development environment
 
 If you just want to get on with some coding, feel free to skip this section.
 
-Once you've downloaded *Visual Studio Code* and installed some basic extension - Python, Pylance, and Jupyter - you'll have enough to get going but VS Code can do a whole lot more with some extra add ons. You can install these using the extensions tab on the left hand side of VS Code. Here are the ones I recommend and why:
+Once you've downloaded *Visual Studio Code* and installed some basic extensions - Python, Pylance, and Jupyter - you'll have enough to get going but VS Code can do a whole lot more with some extra add ons. You can install these using the extensions tab on the left hand side of VS Code. Here are the ones I recommend and why:
 
 - Markdown extensions - markdown is a simple text language that is often used to provide readmes for code repositories. It comes with the file extension .md
   - *Markdown All in One*, to help writing Markdown docs.

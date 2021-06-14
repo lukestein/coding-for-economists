@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,6 +54,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/data-extraction.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -247,6 +247,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +279,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -456,6 +473,13 @@
   <a class="reference internal nav-link" href="#webscraping">
    5.4. Webscraping
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webscraping-tables">
+     5.4.1. Webscraping Tables
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#extracting-data-from-pdfs">
@@ -831,7 +855,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;p class=&quot;card-text&quot;&gt;This is an example repository for a research project. git clone the project and use it as a skeleton for your own research project. A full explanation may be found in &lt;a href=&quot;http://aeturrell.com//2019/06/26/get-organised/&quot;&gt; this accompanying blog post&lt;/a&gt;.&lt;/p&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;p class=&quot;card-text&quot;&gt;This is an example repo for a LaTeX manuscript for a book, designed to be simple enough to easily export to Microsoft Word with Chapters (including hyperlinks), citations, and figures.&lt;/p&gt;
 </pre></div>
 </div>
 </div>
@@ -844,7 +868,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is an example repository for a research project. git clone the project and use it as a skeleton for your own research project. A full explanation may be found in  this accompanying blog post.&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is an example repo for a LaTeX manuscript for a book, designed to be simple enough to easily export to Microsoft Word with Chapters (including hyperlinks), citations, and figures.&#39;
 </pre></div>
 </div>
 </div>
@@ -883,6 +907,111 @@
 </pre></div>
 </div>
 <p>That’s all we’ll cover here but remember we’ve barely <em>scraped</em> the surface of this big, complex topic. If you want to read about an application, it’s hard not to recommend the paper on webscraping that has undoubtedly change the world the most, and very likely has affected your own life in numerous ways: <a class="reference external" href="http://ilpubs.stanford.edu:8090/422/">“The PageRank Citation Ranking: Bringing Order to the Web”</a> by Page, Brin, Motwani and Winograd. For a more in-depth example of webscraping, check out realpython’s <a class="reference external" href="https://realpython.com/python-web-scraping-practical-introduction/">tutorial</a>.</p>
+<div class="section" id="webscraping-tables">
+<h3><span class="section-number">5.4.1. </span>Webscraping Tables<a class="headerlink" href="#webscraping-tables" title="Permalink to this headline">¶</a></h3>
+<p>Often there are times when you don’t actually want to scrape an entire webpage and all you want is the data from a <em>table</em> within the page. Fortunately, there is an easy way to scrape individual tables using the <strong>pandas</strong> package.</p>
+<p>We will read data from the first table on ‘<a class="reference external" href="https://simple.wikipedia.org/wiki/FIFA_World_Cup">https://simple.wikipedia.org/wiki/FIFA_World_Cup</a>’ using <strong>pandas</strong>. The function we’ll use is <code class="docutils literal notranslate"><span class="pre">read_html</span></code>, which returns a list of dataframes of all the tables it finds when you pass it a URL. If you want to filter the list of tables, use the <code class="docutils literal notranslate"><span class="pre">match=</span></code> keyword argument with text that only appears in the table(s) you’re interested in.</p>
+<p>The example below shows how this works; looking at the website, we can see that the table we’re interested in (of past world cup results), has a ‘fourth place’ column while other tables on the page do not. Therefore we run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://simple.wikipedia.org/wiki/FIFA_World_Cup&#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s1">&#39;Fourth Place&#39;</span><span class="p">)</span>
+<span class="c1"># Retrieve first and only entry from list of dataframes</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Host</th>
+      <th>Winner</th>
+      <th>Score</th>
+      <th>Runners-up</th>
+      <th>Third Place</th>
+      <th>Score.1</th>
+      <th>Fourth Place</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1930 Details</td>
+      <td>Uruguay</td>
+      <td>Uruguay</td>
+      <td>4 - 2</td>
+      <td>Argentina</td>
+      <td>United States</td>
+      <td>[note 1]</td>
+      <td>Yugoslavia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1934 Details</td>
+      <td>Italy</td>
+      <td>Italy</td>
+      <td>2 - 1(a.e.t.)</td>
+      <td>Czechoslovakia</td>
+      <td>Germany</td>
+      <td>3 - 2</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1938 Details</td>
+      <td>France</td>
+      <td>Italy</td>
+      <td>4 - 2</td>
+      <td>Hungary</td>
+      <td>Brazil</td>
+      <td>4 - 2</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1950 Details</td>
+      <td>Brazil</td>
+      <td>Uruguay</td>
+      <td>[note 2]</td>
+      <td>Brazil</td>
+      <td>Sweden</td>
+      <td>[note 2]</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1954 Details</td>
+      <td>Switzerland</td>
+      <td>West Germany</td>
+      <td>3 - 2</td>
+      <td>Hungary</td>
+      <td>Austria</td>
+      <td>3 - 1</td>
+      <td>Uruguay</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This gives us the table neatly loaded into a <strong>pandas</strong> dataframe ready for further use.</p>
+</div>
 </div>
 <div class="section" id="extracting-data-from-pdfs">
 <h2><span class="section-number">5.5. </span>Extracting data from PDFs<a class="headerlink" href="#extracting-data-from-pdfs" title="Permalink to this headline">¶</a></h2>

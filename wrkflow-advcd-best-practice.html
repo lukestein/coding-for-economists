@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -247,6 +245,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +277,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -456,8 +471,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#auto-magically-improving-your-code-s-style">
-   2.4. Auto-magically improving your code’s style
+  <a class="reference internal nav-link" href="#auto-magically-improving-your-code">
+   2.4. Auto-magically improving your code
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -751,7 +766,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-29 17:37:46.904 | DEBUG    | __main__:&lt;module&gt;:3 - Simple logging!
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-06-14 20:56:39.910 | DEBUG    | __main__:&lt;module&gt;:3 - Simple logging!
 </pre></div>
 </div>
 </div>
@@ -810,8 +825,8 @@ ZeroDivisionError: division by zero
 </pre></div>
 </div>
 </div>
-<div class="section" id="auto-magically-improving-your-code-s-style">
-<h2><span class="section-number">2.4. </span>Auto-magically improving your code’s style<a class="headerlink" href="#auto-magically-improving-your-code-s-style" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="auto-magically-improving-your-code">
+<h2><span class="section-number">2.4. </span>Auto-magically improving your code<a class="headerlink" href="#auto-magically-improving-your-code" title="Permalink to this headline">¶</a></h2>
 <p>In the previous chapter, we met the idea of <em>code style</em>: even for code that runs, <em>how</em> you write it matters for readability. (And it goes without saying that you don’t want bugs in your code that stop it running at all.) It is possible to catch some errors, to flag style issues, and even to re-format code to comply with a code style automatically. In this section, we’ll see how to use tools to perform these functions automatically.</p>
 <div class="section" id="linting">
 <h3><span class="section-number">2.4.1. </span>Linting<a class="headerlink" href="#linting" title="Permalink to this headline">¶</a></h3>

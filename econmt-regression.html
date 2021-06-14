@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,6 +54,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://aeturrell.github.io/coding-for-economists/econmt-regression.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -247,6 +247,11 @@
    1. Introduction to Text
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text-nlp.html">
+   2. Natural Language Processing
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -274,6 +279,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="maths-maths-coding.html">
    1. Intro to Mathematics with Code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Automation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auto-research-outputs.html">
+   1. Automating Research Outputs
   </a>
  </li>
 </ul>
@@ -800,8 +817,8 @@ y = x'\cdot \hat{\beta} + \epsilon
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     1.040
-Date:                Sat, 29 May 2021   Prob (F-statistic):              0.312
-Time:                        17:37:30   Log-Likelihood:                -385.50
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):              0.312
+Time:                        21:01:20   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -883,8 +900,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.580
 Model:                            OLS   Adj. R-squared:                  0.572
 Method:                 Least Squares   F-statistic:                     77.18
-Date:                Sat, 29 May 2021   Prob (F-statistic):           4.02e-12
-Time:                        17:37:31   Log-Likelihood:                -252.48
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):           4.02e-12
+Time:                        21:01:20   Log-Likelihood:                -252.48
 No. Observations:                  58   AIC:                             509.0
 Df Residuals:                      56   BIC:                             513.1
 Df Model:                           1                                         
@@ -927,8 +944,8 @@ Method:                          IRLS   Df Model:                            1
 Norm:                     TrimmedMean                                         
 Scale Est.:                       mad                                         
 Cov Type:                          H1                                         
-Date:                Sat, 29 May 2021                                         
-Time:                        17:37:32                                         
+Date:                Mon, 14 Jun 2021                                         
+Time:                        21:01:20                                         
 No. Iterations:                     7                                         
 ==============================================================================
                  coef    std err          z      P&gt;|z|      [0.025      0.975]
@@ -1000,8 +1017,8 @@ If the model instance has been used for another fit with different fit parameter
 Dep. Variable:                   mass   R-squared:                       0.018
 Model:                            OLS   Adj. R-squared:                  0.001
 Method:                 Least Squares   F-statistic:                     52.75
-Date:                Sat, 29 May 2021   Prob (F-statistic):           1.16e-09
-Time:                        17:37:32   Log-Likelihood:                -385.50
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):           1.16e-09
+Time:                        21:01:21   Log-Likelihood:                -385.50
 No. Observations:                  59   AIC:                             775.0
 Df Residuals:                      57   BIC:                             779.2
 Df Model:                           1                                         
@@ -1055,8 +1072,8 @@ errors in panel data, again with keyword arguments; and</p></li>
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     39.44
-Date:                Sat, 29 May 2021   Prob (F-statistic):           2.63e-07
-Time:                        17:37:32   Log-Likelihood:                -361.23
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):           2.63e-07
+Time:                        21:01:21   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1097,8 +1114,8 @@ Notes:
 Dep. Variable:                   mass   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                     35.10
-Date:                Sat, 29 May 2021   Prob (F-statistic):           1.96e-06
-Time:                        17:37:32   Log-Likelihood:                -361.23
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):           1.96e-06
+Time:                        21:01:21   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1267,8 +1284,8 @@ Notes:
 Dep. Variable:                    mpg   R-squared:                       0.754
 Model:                            OLS   Adj. R-squared:                  0.727
 Method:                 Least Squares   F-statistic:                     28.59
-Date:                Sat, 29 May 2021   Prob (F-statistic):           1.14e-08
-Time:                        17:37:33   Log-Likelihood:                -79.948
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):           1.14e-08
+Time:                        21:01:21   Log-Likelihood:                -79.948
 No. Observations:                  32   AIC:                             167.9
 Df Residuals:                      28   BIC:                             173.8
 Df Model:                           3                                         
@@ -1399,43 +1416,43 @@ y_i = x_i\cdot \beta + z_i\cdot \gamma +\epsilon_i
   <tbody>
     <tr>
       <th>0</th>
-      <td>42</td>
-      <td>177072</td>
-      <td>-1.550878</td>
-      <td>0.653490</td>
-      <td>-0.177027</td>
+      <td>25</td>
+      <td>195176</td>
+      <td>0.305342</td>
+      <td>-0.637350</td>
+      <td>-3.543140</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>35</td>
-      <td>172236</td>
-      <td>0.364405</td>
-      <td>-0.753560</td>
-      <td>-5.667378</td>
+      <td>16</td>
+      <td>77607</td>
+      <td>-1.460044</td>
+      <td>0.683277</td>
+      <td>3.218225</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>34</td>
-      <td>164348</td>
-      <td>-1.483277</td>
-      <td>-0.514063</td>
-      <td>-3.747654</td>
+      <td>20</td>
+      <td>41168</td>
+      <td>-0.858980</td>
+      <td>-0.693698</td>
+      <td>-1.577125</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>12</td>
-      <td>123572</td>
-      <td>-1.850815</td>
-      <td>-2.956635</td>
-      <td>-8.445128</td>
+      <td>48</td>
+      <td>117807</td>
+      <td>-0.667798</td>
+      <td>0.874590</td>
+      <td>-1.115149</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>28</td>
-      <td>159343</td>
-      <td>0.283112</td>
-      <td>-0.196989</td>
-      <td>-0.188609</td>
+      <td>49</td>
+      <td>147849</td>
+      <td>-1.561631</td>
+      <td>0.618072</td>
+      <td>-0.569195</td>
     </tr>
   </tbody>
 </table>
@@ -1454,19 +1471,19 @@ y_i = x_i\cdot \beta + z_i\cdot \gamma +\epsilon_i
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Absorbing LS Estimation Summary                          
 ==================================================================================
-Dep. Variable:                      y   R-squared:                          0.9385
-Estimator:               Absorbing LS   Adj. R-squared:                     0.9233
-No. Observations:             1000000   F-statistic:                     9.829e+06
-Date:                Sat, May 29 2021   P-value (F-stat):                   0.0000
-Time:                        17:37:38   Distribution:                      chi2(2)
-Cov. Estimator:                robust   R-squared (No Effects):             0.9091
+Dep. Variable:                      y   R-squared:                          0.9379
+Estimator:               Absorbing LS   Adj. R-squared:                     0.9225
+No. Observations:             1000000   F-statistic:                     9.808e+06
+Date:                Mon, Jun 14 2021   P-value (F-stat):                   0.0000
+Time:                        21:01:25   Distribution:                      chi2(2)
+Cov. Estimator:                robust   R-squared (No Effects):             0.9090
                                         Varaibles Absorbed:              1.987e+05
                              Parameter Estimates                              
 ==============================================================================
             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
 ------------------------------------------------------------------------------
-exog_0         0.9999     0.0010     992.28     0.0000      0.9979      1.0019
-exog_1         3.0000     0.0010     2972.4     0.0000      2.9980      3.0020
+exog_0         0.9992     0.0010     989.61     0.0000      0.9972      1.0012
+exog_1         2.9996     0.0010     2976.0     0.0000      2.9976      3.0015
 ==============================================================================
 </pre></div>
 </div>
@@ -1710,8 +1727,8 @@ hp:disp       -0.0001   1.91e-05     -7.409      0.000      -0.000      -0.000
 Dep. Variable:                      y   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.005
 Method:                 Least Squares   F-statistic:                    0.7446
-Date:                Sat, 29 May 2021   Prob (F-statistic):              0.392
-Time:                        17:37:38   Log-Likelihood:                -361.23
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):              0.392
+Time:                        21:01:25   Log-Likelihood:                -361.23
 No. Observations:                  55   AIC:                             726.5
 Df Residuals:                      53   BIC:                             730.5
 Df Model:                           1                                         
@@ -1873,8 +1890,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.998
 Model:                            OLS   Adj. R-squared:                  0.998
 Method:                 Least Squares   F-statistic:                 4.302e+04
-Date:                Sat, 29 May 2021   Prob (F-statistic):          6.90e-261
-Time:                        17:37:38   Log-Likelihood:                 165.45
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):          6.90e-261
+Time:                        21:01:26   Log-Likelihood:                 165.45
 No. Observations:                 200   AIC:                            -324.9
 Df Residuals:                     197   BIC:                            -315.0
 Df Model:                           2                                         
@@ -2068,9 +2085,9 @@ x_{2i} &amp; = z_{1i}\hat{\delta} + z_{2i}\hat{\gamma} + \nu_i\end{split}
 ==============================================================================
 Dep. Variable:          np.log(packs)   R-squared:                      0.9659
 Estimator:                    IV-2SLS   Adj. R-squared:                 0.9279
-No. Observations:                  96   F-statistic:                -1.776e+16
-Date:                Sat, May 29 2021   P-value (F-stat)                1.0000
-Time:                        17:37:38   Distribution:                 chi2(50)
+No. Observations:                  96   F-statistic:                  2.66e+16
+Date:                Mon, Jun 14 2021   P-value (F-stat)                0.0000
+Time:                        21:01:26   Distribution:                 chi2(50)
 Cov. Estimator:             clustered                                         
                                                                               
                                 Parameter Estimates                                
@@ -2078,7 +2095,7 @@ Cov. Estimator:             clustered
                  Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
 -----------------------------------------------------------------------------------
 Intercept           9.4924     0.0263     360.24     0.0000      9.4407      9.5440
-C(year)[T.1995]    -0.0328  5.401e-09 -6.075e+06     0.0000     -0.0328     -0.0328
+C(year)[T.1995]    -0.0328                                                         
 C(state)[T.AR]      0.1770     0.0531     3.3338     0.0009      0.0729      0.2810
 C(state)[T.AZ]     -0.0899     0.0132    -6.8132     0.0000     -0.1158     -0.0640
 C(state)[T.CA]     -0.2781     0.0214    -12.996     0.0000     -0.3200     -0.2361
@@ -2126,8 +2143,8 @@ C(state)[T.WA]      0.0064     0.0011     6.0151     0.0000      0.0043      0.0
 C(state)[T.WI]      0.0741     0.0590     1.2569     0.2088     -0.0415      0.1897
 C(state)[T.WV]      0.1576     0.0582     2.7097     0.0067      0.0436      0.2716
 C(state)[T.WY]     -0.0169     0.0590    -0.2858     0.7750     -0.1325      0.0988
-np.log(rincome)     0.4434   6.69e-08  6.628e+06     0.0000      0.4434      0.4434
-np.log(rprice)     -1.2793                                                         
+np.log(rincome)     0.4434  6.274e-08  7.068e+06     0.0000      0.4434      0.4434
+np.log(rprice)     -1.2793  8.704e-09  -1.47e+08     0.0000     -1.2793     -1.2793
 ===================================================================================
 
 Endogenous: np.log(rprice)
@@ -2137,7 +2154,7 @@ Debiased: False
 Num Clusters: 2
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/aet/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/linearmodels/iv/results.py:189: RuntimeWarning: invalid value encountered in sqrt
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/linearmodels/iv/results.py:189: RuntimeWarning: invalid value encountered in sqrt
   std_errors = sqrt(diag(self.cov))
 </pre></div>
 </div>
@@ -2159,14 +2176,14 @@ Num Clusters: 2
 R-squared                          0.9760
 Partial R-squared                  0.7070
 Shea&#39;s R-squared                   0.7070
-Partial F-statistic             1.432e+28
+Partial F-statistic             4.104e+28
 P-value (Partial F-stat)           0.0000
 Partial F-stat Distn              chi2(1)
-========================== ==============
+==========================   ============
 Intercept                          4.4375
                                  (410.34)
 C(year)[T.1995]                    0.0822
-                              (6.064e+07)
+                               (        )
 C(state)[T.AR]                    -0.0190
                                 (-3.5717)
 C(state)[T.AZ]                     0.0552
@@ -2262,9 +2279,9 @@ C(state)[T.WV]                     0.0205
 C(state)[T.WY]                    -0.0005
                                 (-0.0220)
 np.log(rincome)                   -0.0296
-                             (-2.503e+06)
-taxs                               0.0051
                                (        )
+taxs                               0.0051
+                               (2.94e+08)
 -----------------------------------------
 
 T-stats reported in parentheses
@@ -2283,10 +2300,10 @@ T-stats use same covariance type as original model
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wooldridge&#39;s regression test of exogeneity
 H0: Endogenous variables are exogenous
-Statistic: -141329958331265456.0000
-P-value: 1.0000
+Statistic: 14000039221717696.0000
+P-value: 0.0000
 Distributed: chi2(1)
-WaldTestStatistic, id: 0x7f8eba665490
+WaldTestStatistic, id: 0x7f85c1948280
 </pre></div>
 </div>
 </div>
@@ -2326,13 +2343,13 @@ No. Observations                    96                96
 Cov. Est.                    clustered         clustered
 R-squared                       0.9675            0.9659
 Adj. R-squared                  0.9313            0.9279
-F-statistic                 -4.865e+16        -1.776e+16
-P-value (F-stat)                1.0000            1.0000
+F-statistic                 -3.086e+17          2.66e+16
+P-value (F-stat)                1.0000            0.0000
 ==================     ===============   ===============
 Intercept                       8.3597            9.4924
                               (484.80)          (360.24)
 C(year)[T.1995]                -0.0885           -0.0328
-                          (-2.224e+07)      (-6.075e+06)
+                                                        
 C(state)[T.AR]                  0.1686            0.1770
                               (3.7460)          (3.3338)
 C(state)[T.AZ]                 -0.1280           -0.0899
@@ -2428,14 +2445,18 @@ C(state)[T.WV]                  0.1490            0.1576
 C(state)[T.WY]                 -0.0150           -0.0169
                              (-0.2771)         (-0.2858)
 np.log(rincome)                 0.4974            0.4434
-                           (1.084e+07)       (6.628e+06)
+                                             (7.068e+06)
 np.log(rprice)                 -1.0560           -1.2793
-                          (-8.873e+07)                  
+                                             (-1.47e+08)
 ==================== ================= =================
 Instruments                                         taxs
 --------------------------------------------------------
 
 T-stats reported in parentheses
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/arthurturrell/opt/anaconda3/envs/codeforecon/lib/python3.8/site-packages/linearmodels/iv/results.py:189: RuntimeWarning: invalid value encountered in sqrt
+  std_errors = sqrt(diag(self.cov))
 </pre></div>
 </div>
 </div>
@@ -2498,8 +2519,8 @@ T-stats reported in parentheses
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                          Logit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Sat, 29 May 2021   Pseudo R-squ.:                  0.3740
-Time:                        17:37:39   Log-Likelihood:                -12.890
+Date:                Mon, 14 Jun 2021   Pseudo R-squ.:                  0.3740
+Time:                        21:01:26   Log-Likelihood:                -12.890
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001502
 ==============================================================================
@@ -2510,9 +2531,6 @@ GPA            2.8261      1.263      2.238      0.025       0.351       5.301
 TUCE           0.0952      0.142      0.672      0.501      -0.182       0.373
 PSI            2.3787      1.065      2.234      0.025       0.292       4.465
 ==============================================================================
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2586,8 +2604,8 @@ PSI            2.3787      1.065      2.234      0.025       0.292       4.465
 Dep. Variable:                  GRADE   No. Observations:                   32
 Model:                         Probit   Df Residuals:                       28
 Method:                           MLE   Df Model:                            3
-Date:                Sat, 29 May 2021   Pseudo R-squ.:                  0.3775
-Time:                        17:37:39   Log-Likelihood:                -12.819
+Date:                Mon, 14 Jun 2021   Pseudo R-squ.:                  0.3775
+Time:                        21:01:26   Log-Likelihood:                -12.819
 converged:                       True   LL-Null:                       -20.592
 Covariance Type:            nonrobust   LLR p-value:                  0.001405
 ==============================================================================
@@ -2781,8 +2799,8 @@ y = x' \cdot \beta
 Dep. Variable:                foodexp   Pseudo R-squared:               0.6206
 Model:                       QuantReg   Bandwidth:                       64.51
 Method:                 Least Squares   Sparsity:                        209.3
-Date:                Sat, 29 May 2021   No. Observations:                  235
-Time:                        17:37:39   Df Residuals:                      233
+Date:                Mon, 14 Jun 2021   No. Observations:                  235
+Time:                        21:01:26   Df Residuals:                      233
                                         Df Model:                            1
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
@@ -3014,8 +3032,8 @@ strong multicollinearity or other numerical problems.
 ==============================================================================
 Dep. Variable:                 target   No. Observations:                  200
 Model:                    RecursiveLS   Log Likelihood                -570.923
-Date:                Sat, 29 May 2021   R-squared:                       0.988
-Time:                        17:37:40   AIC                           1145.847
+Date:                Mon, 14 Jun 2021   R-squared:                       0.988
+Time:                        21:01:27   AIC                           1145.847
 Sample:                             0   BIC                           1152.444
                                 - 200   HQIC                          1148.516
 Covariance Type:            nonrobust   Scale                           17.413
@@ -3133,7 +3151,7 @@ Warnings:
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/econmt-regression_130_0.png" src="_images/econmt-regression_130_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8765628560415)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8763277974914)&gt;
 </pre></div>
 </div>
 </div>
@@ -3168,8 +3186,8 @@ Warnings:
 Dep. Variable:                 murder   R-squared:                       0.813
 Model:                            OLS   Adj. R-squared:                  0.797
 Method:                 Least Squares   F-statistic:                     50.08
-Date:                Sat, 29 May 2021   Prob (F-statistic):           3.42e-16
-Time:                        17:37:43   Log-Likelihood:                -95.050
+Date:                Mon, 14 Jun 2021   Prob (F-statistic):           3.42e-16
+Time:                        21:01:29   Log-Likelihood:                -95.050
 No. Observations:                  51   AIC:                             200.1
 Df Residuals:                      46   BIC:                             209.8
 Df Model:                           4                                         
@@ -3243,7 +3261,7 @@ strong multicollinearity or other numerical problems.
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/econmt-regression_142_0.png" src="_images/econmt-regression_142_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8765631207244)&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggplot: (8763169012134)&gt;
 </pre></div>
 </div>
 </div>
