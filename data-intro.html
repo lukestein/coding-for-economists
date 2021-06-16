@@ -211,6 +211,11 @@
    2. Common Plots
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-animation.html">
+   3. Animation
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -1526,7 +1531,7 @@ Name: col1, dtype: float64
 </div>
 </div>
 </div>
-<p>To access a particular row, it’s <code class="docutils literal notranslate"><span class="pre">df.loc['rowname']</span></code> or df.loc[[‘rowname1’, ‘rowname1’]].</p>
+<p>To access a particular row, it’s <code class="docutils literal notranslate"><span class="pre">df.loc['rowname']</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[['rowname1',</span> <span class="pre">'rowname1']]</span></code>.</p>
 <p><img alt="" src="https://pandas.pydata.org/docs/_images/03_subset_rows.svg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2353,7 +2358,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<p>The aggregations from the previous <a class="reference external" href="#aggregations">part</a> all work on grouped data. An example is <code class="docutils literal notranslate"><span class="pre">df['body_mass_g'].groupby('island').std()</span></code> for the standard deviation of body mass by island.</p>
+<p>The aggregations from the previous part all work on grouped data. An example is <code class="docutils literal notranslate"><span class="pre">df['body_mass_g'].groupby('island').std()</span></code> for the standard deviation of body mass by island.</p>
 <p>You can also pass other functions via the <code class="docutils literal notranslate"><span class="pre">agg</span></code> method (short for aggregation). Here we pass two numpy functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

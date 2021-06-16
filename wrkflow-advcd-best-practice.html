@@ -211,6 +211,11 @@
    2. Common Plots
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vis-animation.html">
+   3. Animation
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -662,7 +667,7 @@
 </div>
 <div class="section" id="icecream-and-better-print-statements">
 <h3><span class="section-number">2.2.2. </span>Icecream and better print statements<a class="headerlink" href="#icecream-and-better-print-statements" title="Permalink to this headline">¶</a></h3>
-<p>Typing <code class="docutils literal notranslate"><span class="pre">print</span></code> statements with arguments that help you debug code can become tedious. There are better ways to work, which we’ll come to, but we must also recognise that <code class="docutils literal notranslate"><span class="pre">print</span></code> is used widely in practice. So what if we had a function that was as easier to use as <code class="docutils literal notranslate"><span class="pre">print</span></code> but better geared toward debugging? Well, we do, and it’s called [<strong>icecream</strong>], and it’s available in most major languages, including Python, Dart, Rust, javascript, C++, PHP, Go, Ruby, and Java.</p>
+<p>Typing <code class="docutils literal notranslate"><span class="pre">print</span></code> statements with arguments that help you debug code can become tedious. There are better ways to work, which we’ll come to, but we must also recognise that <code class="docutils literal notranslate"><span class="pre">print</span></code> is used widely in practice. So what if we had a function that was as easier to use as <code class="docutils literal notranslate"><span class="pre">print</span></code> but better geared toward debugging? Well, we do, and it’s called <a class="reference external" href="https://github.com/gruns/icecream"><strong>icecream</strong></a>, and it’s available in most major languages, including Python, Dart, Rust, javascript, C++, PHP, Go, Ruby, and Java.</p>
 <p>Let’s take an example from earlier in this chapter, where we used a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to display the contents of <code class="docutils literal notranslate"><span class="pre">in_arr_one</span></code> in advance of the line that caused an error being run. All we will do now is switch out <code class="docutils literal notranslate"><span class="pre">print(f'in_arr_one</span> <span class="pre">is</span> <span class="pre">{in_arr_one}')</span></code> for <code class="docutils literal notranslate"><span class="pre">ic(in_arr_one)</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">icecream</span> <span class="kn">import</span> <span class="n">ic</span>
 
@@ -755,7 +760,7 @@
 <h2><span class="section-number">2.3. </span>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
 <p>Logging is a means of tracking events that happen when software runs. An event is described by a descriptive message that can optionally contain data about variables that are defined as the code is executing.</p>
 <p>Logging has two main purposes: to record events of interest, such as an error, and to act as an auditable account of what happened after the fact.</p>
-<p>Although Python has a built-in logger, we will see an example of logging using <span class="xref myst"><strong>loguru</strong></span>, a package that makes logging a little easier and has some nice settings.</p>
+<p>Although Python has a built-in logger, we will see an example of logging using <a class="reference external" href="https://github.com/Delgan/loguru"><strong>loguru</strong></a>, a package that makes logging a little easier and has some nice settings.</p>
 <p>Let’s see how to log a debug message:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,7 +771,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-06-14 20:56:39.910 | DEBUG    | __main__:&lt;module&gt;:3 - Simple logging!
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-06-16 23:32:18.807 | DEBUG    | __main__:&lt;module&gt;:3 - Simple logging!
 </pre></div>
 </div>
 </div>
